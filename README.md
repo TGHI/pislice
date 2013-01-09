@@ -1,6 +1,4 @@
-piSlice
-==============
-The simple, responsive template for Joomla! 3.x
+piSlice - The simple, responsive template for Joomla! 3.x
 --------------
 
 **copyright**	Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
