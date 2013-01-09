@@ -50,18 +50,26 @@ $cparams = JComponentHelper::getParams('com_media');
 <?php endforeach; ?>
   </div>
   <?php endif; ?>
+   
   <?php
 	$introcount = (count($this->intro_items));
 	$counter = 0;
 ?>
   <?php if (!empty($this->intro_items)) : ?>
   <?php foreach ($this->intro_items as $key => &$item) : ?>
+  
   <div class="blog-item">
     <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
 <?php
 			$this->item = &$item;
-			echo $this->loadTemplate('item');
+			
 ?>
+      <div style="float:left" class="span2 center article-date">
+        <span class="narrow"><?php echo JHTML::date($item->publish_up,'M',true) ?></span>
+        <span class="big" ><?php echo JHTML::date($item->publish_up,'d',true) ?></span>
+      </div>
+      <div style="float:left" class="span10"><?php echo $this->loadTemplate('item'); ?></div>
+      <br style="clear:both" />
     </article>
     <div class="blog-item-separator"></div>
   </div>
@@ -84,4 +92,5 @@ $cparams = JComponentHelper::getParams('com_media');
     <?php endif; ?>
     <?php echo $this->pagination->getPagesLinks(); ?> </div>
   <?php  endif; ?>
+  </div>
 </section>
