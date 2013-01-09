@@ -63,7 +63,6 @@ if ($tpl_param_jquery == "local"){
 </head>
 <body>
 <div class="container center">
-<div class="navbar-fixed-top" style="background:#000">test</div>
   <jdoc:include type="message" />
   <jdoc:include type="modules" name="article-top" style="none" />
   <jdoc:include type="modules" name="article-top2" style="none" />
