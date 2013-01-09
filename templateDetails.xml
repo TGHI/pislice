@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.0" type="template" client="site">
+	<name>pislice</name>
+	<version>1.0</version>
+	<creationDate>11/28/2012</creationDate>
+	<author>Justin Renaud</author>
+	<authorEmail>tghidsgn@gmail.com</authorEmail>
+	<copyright>Copyright (C) 2012</copyright>
+	<description>TPL_PISLICE_XML_DESCRIPTION</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+	</files>
+	<positions>
+		<position>debug</position>
+		<position>header</position>
+		<position>navigation</position>
+		<position>body</position>
+		<position>article-top</position>
+		<position>article-top2</position>
+		<position>article</position>
+		<position>article-bottom</position>
+		<position>article-bottom2</position>
+		<position>sidebar</position>
+		<position>footer</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_pislice.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_pislice.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+			<field name="Javascript" type="spacer" class="invalid"></field>
+			<field name="framework" 
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_PISLICE_FIELD_FRAMEWORK_LABEL"
+					description="TPL_PISLICE_FIELD_FRAMEWORK_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			<field name="jquery" 
+					type="list"
+					default="local"
+					label="TPL_PISLICE_FIELD_JQUERY_LABEL"
+					description="TPL_PISLICE_FIELD_JQUERY_DESC"
+					filter="word"
+				>
+					<option value="local">TPL_PISLICE_FIELD_JQUERY_LOCAL</option>
+					<option value="cdn">TPL_PISLICE_FIELD_JQUERY_CDN</option>
+					<option value="none">TPL_PISLICE_FIELD_JQUERY_NONE</option>
+				</field>
+				<field name="Misc" type="spacer" class="invalid"></field>
+					<field name="generator" 
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_PISLICE_FIELD_GENERATOR_LABEL"
+					description="TPL_PISLICE_FIELD_GENERATOR_DESC"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,44 @@
+body{font-family: 'Open Sans', sans-serif;font-weight:300;color:#353535}
+a{color:#ff6f05;text-decoration:none}
+a:hover{background:#fffaf7;border-bottom:1px solid #ffd9bd;text-shadow:1px 1px 0 #fff}
+h1,h2,h3{font-family:'Droid Serif',serif;font-weight:700;margin:1.5em 0;}
+h1,blockquote{font-size:24pt}
+img {max-width: 100%;height: auto}
+p{line-height:1.8em;margin:1.5em 0;text-align:justify}
+
+.center{margin: 0 auto}
+.container{max-width: 1020px}
+
+/* category blog layout */
+
+.article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
+
+.blog-roll{}
+.blog-item{}
+.blog-item h2 a{color:#353535;font-size:32pt}
+.blog-item h2 a:hover{background:#f9f9f9;border-color:#ddd;text-shadow:1px 1px 0 #fff}
+
+.blog-item-separator{}
+
+
+/* Article layout */
+
+blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:1.2em}
+
+.article-image-container{position:relative;border:1px solid #f00;overflow:hidden}
+.article-image-container:hover img {transform:scale(1.5) rotate(-10deg)}
+.article-image-container:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,-130px) rotate(0deg)}
+
+.anim-4{transition: all 0.4s ease-in-out}
+
+.caption{
+	position:absolute;
+	width:100%;
+	padding:10px;
+	color:#fff;
+	text-shadow:1px 1px 0 #000;
+	bottom:-120px;
+	z-index:3;
+	transform:translate(200px,0px) rotate(-25deg);
+	background:transparent
+}
