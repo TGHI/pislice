@@ -7,7 +7,10 @@ img {max-width: 100%;height: auto}
 p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 .center{margin: 0 auto}
-.container{max-width: 1020px}
+.narrow{font-family:"helvultracompressed"}
+.big{font-size:40pt}
+
+.container{max-width:1240px}
 
 /* category blog layout */
 
@@ -15,6 +18,7 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 .blog-roll{}
 .blog-item{}
+
 .blog-item h2 a{color:#353535;font-size:32pt}
 .blog-item h2 a:hover{background:#f9f9f9;border-color:#ddd;text-shadow:1px 1px 0 #fff}
 
@@ -22,6 +26,11 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 
 /* Article layout */
+
+.article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:10px 0 0 0;padding:12px 0 0 0}
+.article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:26px 0 0 10px}
+.article-date .big{font-weight:600;letter-spacing:-0.1em;float:left}
+
 
 blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:1.2em}
 
