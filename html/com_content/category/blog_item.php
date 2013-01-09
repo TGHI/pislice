@@ -12,9 +12,8 @@ $app = JFactory::getApplication();
 $canEdit = $this->item->params->get('access-edit');
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
-
-if ($this->item->state == 0) : ?>
-
+?>
+<?php if ($this->item->state == 0) : ?>
 <div class="system-unpublished">
 <?php endif; ?>
 <?php if ($params->get('show_title')) : ?>
