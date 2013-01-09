@@ -62,7 +62,7 @@ if ($tpl_param_jquery == "local"){
 <jdoc:include type="head" />
 </head>
 <body>
-<div class="container center">
+<div class="container center row-fluid">
   <jdoc:include type="message" />
   <jdoc:include type="modules" name="article-top" style="none" />
   <jdoc:include type="modules" name="article-top2" style="none" />
