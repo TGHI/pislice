@@ -39,7 +39,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
       </div>
       <div style="float:left" class="span10">
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
-        <div class="page-header">
+        <div class="article-header">
           <h2>
             <?php if ($this->item->state == 0): ?>
             <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
@@ -63,7 +63,12 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 			?>
           <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
           <?php else: ?>
-          <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
+            <dl class="article-details">
+              <dd><span class="icon author"></span><?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?></dd>
+<?php if ($params->get('show_hits')) : ?>
+              <dd><span class="icon hits"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+            </dl>
+<?php endif; ?>
           <?php endif; ?>
           <?php endif; ?>
           <?php if (!$this->print) : ?>
@@ -118,11 +123,6 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
                 <?php endif; ?>
               </div>
             </dd>
-            <?php if ($params->get('show_hits')) : ?>
-            <dd>
-              <div class="hits"> <i class="icon-eye-open"></i> <?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?> </div>
-            </dd>
-            <?php endif; ?>
             <?php endif; ?>
           </dl>
         </div>
@@ -197,11 +197,6 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
             <?php if ($params->get('show_modify_date')) : ?>
             <dd>
               <div class="modified"><i class="icon-calendar"> </i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
-            </dd>
-            <?php endif; ?>
-            <?php if ($params->get('show_hits')) : ?>
-            <dd>
-              <div class="hits"> <i class="icon-eye-open"></i> <?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?> </div>
             </dd>
             <?php endif; ?>
           </dl>
