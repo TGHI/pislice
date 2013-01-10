@@ -34,6 +34,8 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:1.2em}
 
+.item-image img{width:100%}
+
 .article-image-container{position:relative;border:1px solid #f00;overflow:hidden}
 .article-image-container:hover img {transform:scale(1.5) rotate(-10deg)}
 .article-image-container:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,-130px) rotate(0deg)}
