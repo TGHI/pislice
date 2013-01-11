@@ -67,6 +67,7 @@ if ($tpl_param_jquery == "local"){
   <jdoc:include type="modules" name="article-top" style="none" />
   <jdoc:include type="modules" name="article-top2" style="none" />
   <jdoc:include type="component" />
+  <jdoc:include type="modules" name="article-bottom" style="none" />
   <jdoc:include type="modules" name="debug" style="none" />
 </div>
 </body>
