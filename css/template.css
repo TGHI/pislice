@@ -9,8 +9,12 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 .center{margin: 0 auto}
 .narrow{font-family:"helvultracompressed"}
 .huge{font-size:40pt}
+.medium{font-size:16pt !important}
 
 .container{max-width:1240px}
+
+.system-unpublished{background:#f8f8f8;color:#aaa;text-shadow:1px 0 0 #fff}
+.system-unpublished .article-date{background:#888;text-shadow:1px 1px 1px #444}
 
 /* category blog layout */
 
