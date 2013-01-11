@@ -33,7 +33,7 @@ $doc->addStyleSheet('http://fonts.googleapis.com/css?family=Droid+Serif:400,700,
 if ($tpl_param_framework == 1){
 	JHtml::_('behavior.framework', true);
 }else{
-	if (JRequest::getVar('layout') !== 'edit'){
+	if ($layout !== 'edit'){
 		$s = array('mootools','caption','core');
 		foreach($this->_scripts as $k => $v) {
 			foreach($s as $f) {
