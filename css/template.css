@@ -11,7 +11,15 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 .huge{font-size:40pt}
 .medium{font-size:16pt !important}
 
-.container{max-width:1240px}
+
+.label{position:relative;font-size:10pt;font-family:"open sans";font-weight:500;border-radius:20px;padding:2px 10px}
+.hole{padding:3px;background:#fff;border-radius:50%;font-size:1pt;position:absolute;top:8px;left:6px}
+.label-warning{background:#fa7272;color:#fff;text-shadow:1px 1px 0 #d92b2b}
+
+.span10,.span2{float:left}
+.span2{text-align:center}
+
+.container{max-width:1270px}
 
 .system-unpublished{background:#f8f8f8;color:#aaa;text-shadow:1px 0 0 #fff}
 .system-unpublished .article-date{background:#888;text-shadow:1px 1px 1px #444}
@@ -20,23 +28,17 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 .article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
-.blog-roll{}
-.blog-item{}
-
 .article-item h2,.blog-item h2 a{color:#353535;font-size:32pt;margin:0}
 .blog-item h2 a:hover{background:#f9f9f9;border-color:#ddd;text-shadow:1px 1px 0 #fff}
 
-.blog-item-separator{}
 
 
 /* Article layout */
 
-.span10{margin:0.8em;float:left}
-.span2{float:left}
-
-.article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:10px 0 0 0;padding:12px 0 0 0}
-.article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:26px 0 0 10px}
-.article-date .huge{font-weight:600;letter-spacing:-0.1em;float:left}
+.article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px;transition: all 0.4s ease-in-out;cursor:default}
+.article-date:hover{transform: rotate(-30deg)}
+.article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:36px 0 0 10px}
+.article-date .huge{font-weight:600;letter-spacing:-0.1em;float:left;margin:10px 0 0 0}
 
 .article-details{overflow:hidden;margin:0}
 .article-details dd{float:left;margin:0 10px 0 0;padding:5px 0 0 0;line-height:34px}
