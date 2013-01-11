@@ -27,7 +27,8 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 /* Article layout */
 
-.span10{margin:1em 0 0 0 }
+.span10{margin:0.8em;float:left}
+.span2{float:left}
 
 .article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:10px 0 0 0;padding:12px 0 0 0}
 .article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:26px 0 0 10px}

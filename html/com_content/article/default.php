@@ -18,7 +18,6 @@ $info    = $params->get('info_block_position', 0);
 //JHtml::_('behavior.caption');
 
 ?>
-
 <section class="article-content">
   <div class="article-item<?php echo $this->pageclass_sfx?>">
     <article>
@@ -32,12 +31,12 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	echo $this->item->pagination;
 }
 ?>
-      <div style="float:left" class="span2 center article-date">
+      <div class="span2 center article-date">
         <?php if ($params->get('show_publish_date')) : ?>
         <span class="narrow" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span>
         <?php endif; ?>
       </div>
-      <div style="float:left" class="span10">
+      <div class="span10">
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
           <h2>
