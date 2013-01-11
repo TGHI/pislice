@@ -26,7 +26,6 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 /* category blog layout */
 
-.article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
 .article-item h2,.blog-item h2 a{color:#353535;font-size:32pt;margin:0}
 .blog-item h2 a:hover{background:#f9f9f9;border-color:#ddd;text-shadow:1px 1px 0 #fff}
@@ -35,7 +34,7 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 /* Article layout */
 
-.article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px;transition: all 0.4s ease-out;cursor:default}
+.article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px;transition: all 0.3s ease-out;cursor:default}
 .blog-item:hover .article-date{transform: rotate(-30deg) scale(1.8)}
 .article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:36px 0 0 10px}
 .article-date .huge{font-weight:600;letter-spacing:-0.1em;float:left;margin:10px 0 0 0}
@@ -46,6 +45,8 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 .article-details .icon:before{content: '';float:left;width:32px;height:32px;background:  url(../img/icons/article-header-icons.png)}
 .article-details .author:before {background-position:1px 0}
 .article-details .hits:before {background-position:1px 32px}
+
+.article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
 blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:0.8em}
 
