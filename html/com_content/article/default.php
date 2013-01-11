@@ -31,15 +31,18 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	echo $this->item->pagination;
 }
 ?>
-      <div class="span2 center article-date">
+      <div class="span2">
 <?php if ($params->get('show_publish_date')) : ?>
-        <span class="narrow" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span>
+        <div class="article-date">
+          <span class="narrow" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span>
+        </div>
 <?php endif; ?>
+        <?php if ($this->item->state == 0): ?><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php endif; ?>
       </div>
       <div class="span10">
 <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
-          <h2><?php if ($this->item->state == 0): ?><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php endif; ?><?php if ($params->get('show_title')) : ?><?php echo $this->escape($this->item->title); ?><?php endif; ?></h2>
+          <h2><?php if ($params->get('show_title')) : ?><?php echo $this->escape($this->item->title); ?><?php endif; ?></h2>
 <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
 <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
 <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
