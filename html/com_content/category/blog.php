@@ -62,8 +62,12 @@ $cparams = JComponentHelper::getParams('com_media');
 			
 ?>
       <div style="float:left" class="span2 center article-date">
+<?php if ($this->item->state == 0): ?>
+		<span class="narrow medium">unpusblished</span>
+<?php else : ?>
         <span class="narrow"><?php echo JHTML::date($item->publish_up,'M',true) ?></span>
         <span class="huge" ><?php echo JHTML::date($item->publish_up,'d',true) ?></span>
+<?php endif; ?>
       </div>
       <div style="float:left" class="span10"><?php echo $this->loadTemplate('item'); ?></div>
       <br style="clear:both" />
