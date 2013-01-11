@@ -7,22 +7,22 @@
  */
 
 //Some handy variables
-$app			= JFactory::getApplication();
-$doc			= JFactory::getDocument();
-$this->language	= $doc->language;
-$this->direction= $doc->direction;
-$user			= JFactory::getUser();
-$option   		= $app->input->getCmd('option', '');
-$view		    = $app->input->getCmd('view', '');
-$layout   		= $app->input->getCmd('layout', '');
-$task     		= $app->input->getCmd('task', '');
-$itemid   		= $app->input->getCmd('Itemid', '');
-$sitename 		= $app->getCfg('sitename');
+$app				= JFactory::getApplication();
+$doc				= JFactory::getDocument();
+$this->language		= $doc->language;
+$this->direction	= $doc->direction;
+$user				= JFactory::getUser();
+$option				= $app->input->getCmd('option', '');
+$view				= $app->input->getCmd('view', '');
+$layout				= $app->input->getCmd('layout', '');
+$task				= $app->input->getCmd('task', '');
+$itemid				= $app->input->getCmd('Itemid', '');
+$sitename			= $app->getCfg('sitename');
 
 // Get template params
-$tpl_param_generator		= $this->params->get('generator');
-$tpl_param_jquery			= $this->params->get('jquery');
-$tpl_param_framework		= $this->params->get('framework');
+$tpl_param_generator= $this->params->get('generator');
+$tpl_param_jquery	= $this->params->get('jquery');
+$tpl_param_framework= $this->params->get('framework');
 
 // Add Stylesheets
 $doc->addStyleSheet('templates/'.$this->template.'/css/template.css');
