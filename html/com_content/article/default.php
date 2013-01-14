@@ -45,6 +45,8 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
           <h2><?php if ($params->get('show_title')) : ?><?php echo $this->escape($this->item->title); ?><?php endif; ?></h2>
 <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
 <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
+            <dl class="article-details">
+              <dd><span class="icon author"></span>
 <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
 <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -53,13 +55,13 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 				$cntlink = !empty($item) ? $needle . '&Itemid=' . $item->id : $needle;
 ?>
           <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
-<?php else: ?>
-            <dl class="article-details">
-              <dd><span class="icon author"></span><?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?></dd>
+<?php else : ?>
+            <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
+            <?php endif; ?> 
+              </dd>
 <?php if ($params->get('show_hits')) : ?>
               <dd><span class="icon hits"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
             </dl>
-<?php endif; ?>
 <?php endif; ?>
 <?php endif; ?>
 <?php if (!$this->print) : ?>
