@@ -1,4 +1,4 @@
-piSlice - The simple, responsive template for [Joomla]! 3.x
+piSlice - The simple, responsive template for [Joomla!] 3.x
 --------------
 The goal of piSlice is to provide a clean, simple template that can be used standalone or as the building blocks of your next template.
 piSlice is also intended to showcase the new features of Joomla! 3.0+ such as the inclusion of [bootstrap] and [jQuery].
@@ -23,9 +23,12 @@ Future
 
 Pending release of 1.0.0 and how well I can stick to the project, I may also add functionality for K2 (www.getk2.org).
 
+Jargon
+--------------
+
 Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
 GNU General Public License version 3 or later; see LICENCE.txt
 
-[Joomla]: http://www.joomla.org
+[Joomla!]: http://www.joomla.org
 [bootstrap]: http://twitter.github.com/bootstrap/
 [jQuery]: http://www.jquery.com
