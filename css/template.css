@@ -5,18 +5,19 @@ h1,h2,h3{font-family:'Droid Serif',serif;font-weight:700;margin:1.5em 0;}
 h1,blockquote{font-size:24pt}
 img {max-width: 100%;height: auto}
 p{line-height:1.8em;margin:1.5em 0;text-align:justify}
+blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:0.8em}
 
 .center{margin: 0 auto}
 .narrow{font-family:"helvultracompressed"}
 .huge{font-size:40pt}
 .medium{font-size:16pt !important}
-
+.anim-4{transition: all 0.4s ease-in-out}
 
 .label{position:relative;font-size:10pt;font-family:"open sans";font-weight:500;border-radius:20px;padding:2px 10px}
 .hole{padding:3px;background:#fff;border-radius:50%;font-size:1pt;position:absolute;top:8px;left:6px}
 .label-warning{background:#fa7272;color:#fff;text-shadow:1px 1px 0 #d92b2b}
 
-.span10,.span2{float:left}
+.span10,.span2{float:left;position:relative}
 .span2{text-align:center}
 
 .container{max-width:1270px}
@@ -49,15 +50,11 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 
 .article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
-blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:0.8em}
+.article-image {position:relative;overflow:hidden;width:100%;width:100%}
+.article-image img {position:relative;transform:scale(1) rotate(0deg)}
+.article-image:hover img.anim-4 {transform:scale(1.6) rotate(-20deg)}
+.article-image:hover .caption{background:rgba(0,0,0,.4);transform:translate(0,0) rotate(0deg)}
 
-.item-image img{width:100%}
-
-.article-image-container{position:relative;border:1px solid #f00;overflow:hidden}
-.article-image-container:hover img {transform:scale(1.5) rotate(-10deg)}
-.article-image-container:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,-130px) rotate(0deg)}
-
-.anim-4{transition: all 0.4s ease-in-out}
 
 .caption{
 	position:absolute;
@@ -65,8 +62,11 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 	padding:10px;
 	color:#fff;
 	text-shadow:1px 1px 0 #000;
-	bottom:-120px;
+	bottom:-10px;
+	height:60px;
 	z-index:3;
-	transform:translate(200px,0px) rotate(-25deg);
-	background:transparent
+	transform:translate(200px,100px) rotate(-20deg);
+	background:transparent;
 }
+
+.caption h4{margin:0;padding:0}

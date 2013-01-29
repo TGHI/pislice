@@ -131,7 +131,12 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
         <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <?php $imgfloat = (empty($images->float_fulltext)) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
-        <div class="item-image"> <img <?php if ($images->image_fulltext_caption): echo 'class=""'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/> </div>
+        <div class="article-image">
+          <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim-4"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
+          <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
+          <div class="caption anim-4"><h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4><?php echo htmlspecialchars($images->image_fulltext_caption); ?></div>
+          <?php endif; ?>
+        </div>
         <?php endif; ?>
         <?php
 	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && !$this->item->paginationrelative):
