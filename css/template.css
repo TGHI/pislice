@@ -36,7 +36,7 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 /* Article layout */
 
 .article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px;transition: all 0.3s ease-out;cursor:default}
-.blog-item:hover .article-date{transform: rotate(-30deg) scale(1.8)}
+.blog-item:hover .article-date{transform: rotate(-30deg) scale(1.5)}
 .article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:36px 0 0 10px}
 .article-date .huge{font-weight:600;letter-spacing:-0.1em;float:left;margin:10px 0 0 0}
 
