@@ -56,12 +56,12 @@ $cparams = JComponentHelper::getParams('com_media');
   <?php foreach ($this->intro_items as $key => &$item) : ?>
   
   <div class="blog-item">
-    <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
+   <!-- <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"> -->
 <?php
 			$this->item = &$item;
 			
 ?>
-      <div style="float:left" class="span2 center article-date">
+      <div class="span2 center article-date">
 <?php if ($this->item->state == 0): ?>
 		<span class="narrow medium">unpusblished</span>
 <?php else : ?>
@@ -69,9 +69,9 @@ $cparams = JComponentHelper::getParams('com_media');
         <span class="huge" ><?php echo JHTML::date($item->publish_up,'d',true) ?></span>
 <?php endif; ?>
       </div>
-      <div style="float:left" class="span10"><?php echo $this->loadTemplate('item'); ?></div>
+      <div class="span10"><?php echo $this->loadTemplate('item'); ?></div>
       <br style="clear:both" />
-    </article>
+   <!-- </article> -->
     <div class="blog-item-separator"></div>
   </div>
   
