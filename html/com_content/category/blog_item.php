@@ -17,6 +17,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 <div class="system-unpublished">
   <?php endif; ?>
+  <div class="article-header">
   <?php if ($params->get('show_title')) : ?>
   <h2>
     <?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
@@ -25,6 +26,27 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
     <?php echo $this->escape($this->item->title); ?>
     <?php endif; ?>
   </h2>
+  <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
+  <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
+  <dl class="article-details">
+    <dd><span class="icon author"></span>
+      <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
+      <?php
+				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
+				$menu = JFactory::getApplication()->getMenu();
+				$item = $menu->getItems('link', $needle, true);
+				$cntlink = !empty($item) ? $needle . '&Itemid=' . $item->id : $needle;
+?>
+      <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
+      <?php else : ?>
+      <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
+      <?php endif; ?>
+    </dd>
+    <?php if ($params->get('show_hits')) : ?>
+    <dd><span class="icon hits"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+  </dl>
+  <?php endif; ?>
+  <?php endif; ?>
   <?php endif; ?>
   <?php if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
   <ul class="article-actions">
@@ -44,7 +66,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
   <?php endif; ?>
   <?php echo $this->item->event->beforeDisplayContent; ?>
   <?php // to do not that elegant would be nice to group the params ?>
-  <?php if (($params->get('show_author')) or ($params->get('show_category')) or ($params->get('show_create_date')) or ($params->get('show_modify_date')) or ($params->get('show_publish_date')) or ($params->get('show_parent_category')) or ($params->get('show_hits'))) : ?>
+  <?php if (($params->get('show_category')) or ($params->get('show_modify_date')) or ($params->get('show_parent_category'))) : ?>
   <dl class="article-info">
     <?php endif; ?>
     <?php if ($params->get('show_parent_category') && $this->item->parent_id != 1) : ?>
@@ -69,34 +91,10 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       <?php endif; ?>
     </dd>
     <?php endif; ?>
-    <?php if ($params->get('show_create_date')) : ?>
-    <dd class="create"> <?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2'))); ?> </dd>
-    <?php endif; ?>
-    <?php if ($params->get('show_modify_date')) : ?>
-    <dd class="modified"> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC2'))); ?> </dd>
-    <?php endif; ?>
-    <?php if ($params->get('show_publish_date')) : ?>
-    <dd class="published"> <?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHtml::_('date', $this->item->publish_up, JText::_('DATE_FORMAT_LC2'))); ?> </dd>
-    <?php endif; ?>
-    <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
-    <dd class="createdby">
-      <?php $author = $this->item->author; ?>
-      <?php $author = ($this->item->created_by_alias ? $this->item->created_by_alias : $author);?>
-      <?php if (!empty($this->item->contactid ) &&  $params->get('link_author') == true):?>
-      <?php 	echo JText::sprintf('COM_CONTENT_WRITTEN_BY',
-					JHtml::_('link', JRoute::_('index.php?option=com_contact&view=contact&id=' . $this->item->contactid), $author)
-				); ?>
-      <?php else :?>
-      <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
-      <?php endif; ?>
-    </dd>
-    <?php endif; ?>
-    <?php if ($params->get('show_hits')) : ?>
-    <dd class="hits"> <?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?> </dd>
-    <?php endif; ?>
-    <?php if (($params->get('show_author')) or ($params->get('show_category')) or ($params->get('show_create_date')) or ($params->get('show_modify_date')) or ($params->get('show_publish_date')) or ($params->get('show_parent_category')) or ($params->get('show_hits'))) :?>
+    <?php if (($params->get('show_category')) or ($params->get('show_modify_date')) or ($params->get('show_parent_category'))) :?>
   </dl>
   <?php endif; ?>
+  </div>
   <?php  if (isset($images->image_intro) and !empty($images->image_intro)) : ?>
   <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
   <div class="item-image<?php echo htmlspecialchars($imgfloat); ?>"> <img
