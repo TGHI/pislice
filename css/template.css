@@ -27,9 +27,10 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 /* category blog layout */
 
 
-.article-item h2,.blog-item h2 a{color:#353535;font-size:32pt;margin:0}
+.article-item h2,.blog-item h2 a{color:#353535;font-size:32pt}
 .blog-item h2 a:hover{background:#f9f9f9;border-color:#ddd;text-shadow:1px 1px 0 #fff}
 
+.article-header h2{margin:0}
 
 
 /* Article layout */
