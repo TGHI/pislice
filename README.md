@@ -1,12 +1,12 @@
 piSlice - The simple, responsive template for [Joomla!] 3.x
 --------------
-The goal of piSlice is to provide a clean, simple template that can be used standalone or as the building blocks of your next template.
-piSlice is also intended to showcase the new features of Joomla! 3.0+ such as the inclusion of [bootstrap] and [jQuery].
+The goal of piSlice is to provide a clean, simple template that can be used standalone or as the building blocks of your next Joomla! template.
+piSlice is also intended to showcase the new features of Joomla! 3.0+ such as the inclusion of [bootstrap] and [jQuery], and is built with standards-compliant, semantic HTML5 and CSS3.
 
 Milestones
 --------------
 
-**Current version: 0.1.2**
+**Current version: 0.1.3**
 
 - 0.1.0 - Basic layout, styling and functionality.
 - 0.2.0 - Further layouts (search, logins, etc)
