@@ -58,7 +58,7 @@ if ($tpl_param_jquery == "local"){
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 <?php if ($tpl_param_generator == 0) $doc->_generator = ""; ?>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
 </head>
 <body>
@@ -69,13 +69,11 @@ if ($tpl_param_jquery == "local"){
 <div class="container-fluid center">
   <jdoc:include type="message" />
   <jdoc:include type="component" />
-  <div class="span2">
-    test?
-  </div>
+  <div class="span2"> test? </div>
 </div>
 <div class="container-fluid center">
-   <jdoc:include type="modules" name="article-bottom" style="none" />
+  <jdoc:include type="modules" name="article-bottom" style="none" />
   <jdoc:include type="modules" name="debug" style="none" />
-  </div>
+</div>
 </body>
 </html>

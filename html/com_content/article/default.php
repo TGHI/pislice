@@ -18,7 +18,6 @@ $info    = $params->get('info_block_position', 0);
 //JHtml::_('behavior.caption');
 
 ?>
-
 <section class="article-content">
   <div class="article-item<?php echo $this->pageclass_sfx?>">
     <article>
@@ -130,13 +129,13 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
         <?php if ($params->get('access-view')):?>
         <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
-        <?php $imgfloat = (empty($images->float_fulltext)) ? $params->get('float_fulltext') : $images->float_fulltext; ?>
-        <div class="article-image">
-          <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
+        <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
           <div class="zoom in anim"></div>
           <div class="zoom out anim"></div>
-          <div class="caption anim"><h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4><?php echo htmlspecialchars($images->image_fulltext_caption); ?></div>
+          <div class="caption anim">
+            <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
+            <?php echo htmlspecialchars($images->image_fulltext_caption); ?></div>
           <?php endif; ?>
         </div>
         <?php endif; ?>
