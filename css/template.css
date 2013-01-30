@@ -47,6 +47,11 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
 .article-image{position:relative;overflow:hidden;width:100%;width:100%}
+
+.caption{position:absolute;width:100%;padding:20px;color:#fff;text-shadow:1px 1px 0 #000;bottom:10px;z-index:3}
+.caption h4{margin:0;padding:0}
+
+@media (min-width: 979px){
 .article-image .zoom{background:url(../img/icons/zoom.png) no-repeat;position:absolute;top:0px;right:20px;width:34px;height:56px}
 .article-image .in{background-position: 0 -54px}
 .article-image:hover .in{background-position:0 -108px;opacity:0}
@@ -54,31 +59,21 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .article-image:hover .out{background-position:0 20px;opacity:1}
 .article-image img {position:relative;transform:scale(1) rotate(0deg)}
 .article-image:hover img.anim {transform:scale(1.6) rotate(-20deg)}
-.article-image:hover .caption{background:rgba(0,0,0,.4);transform:translate(0,0) rotate(0deg)}
+.article-image:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,0) rotate(0deg)}
 
-
-.caption{
-	position:absolute;
-	width:100%;
-	padding:20px;
-	color:#fff;
-	text-shadow:1px 1px 0 #000;
-	bottom:10px;
-	z-index:3;
-	transform:translate(0,200px) rotate(-15deg);
-	background:transparent;
+.caption{transform:translate(0,200px) rotate(-15deg)}
 }
-
-.caption h4{margin:0;padding:0}
-
- /* Large desktop */
-@media (min-width: 1200px) {}
-     
+	
+/* handheld devices */
+@media (max-width: 979px){
+.anim{transition: none !important} 
+.caption{background:rgba(0,0,0,0.4)}
+	
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {  }
+@media (min-width: 768px) and (max-width: 979px) { }
      
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {  }
+@media (max-width: 767px) {} }
      
 /* Landscape phones and down */
-@media (max-width: 480px) {  }
+@media (max-width: 480px) {}  }
