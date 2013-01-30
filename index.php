@@ -62,13 +62,20 @@ if ($tpl_param_jquery == "local"){
 <jdoc:include type="head" />
 </head>
 <body>
-<div class="container center row-fluid">
-  <jdoc:include type="message" />
+<div class="container-fluid center">
   <jdoc:include type="modules" name="article-top" style="none" />
   <jdoc:include type="modules" name="article-top2" style="none" />
-  <jdoc:include type="component" />
-  <jdoc:include type="modules" name="article-bottom" style="none" />
-  <jdoc:include type="modules" name="debug" style="none" />
 </div>
+<div class="container-fluid center">
+  <jdoc:include type="message" />
+  <jdoc:include type="component" />
+  <div class="span2">
+    test?
+  </div>
+</div>
+<div class="container-fluid center">
+   <jdoc:include type="modules" name="article-bottom" style="none" />
+  <jdoc:include type="modules" name="debug" style="none" />
+  </div>
 </body>
 </html>
