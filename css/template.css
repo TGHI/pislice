@@ -11,7 +11,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .narrow{font-family:"helvultracompressed"}
 .huge{font-size:40pt}
 .medium{font-size:16pt !important}
-.anim{transition: all 0.5s ease-in-out}
+.anim{transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;-o-transition:all 0.5s ease-in-out}
 
 .label{position:relative;font-size:10pt;font-family:"open sans";font-weight:500;border-radius:20px;padding:2px 10px}
 .hole{padding:3px;background:#fff;border-radius:50%;font-size:1pt;position:absolute;top:8px;left:6px}
@@ -40,13 +40,14 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .article-details{overflow:hidden;margin:0}
 .article-details dd{float:left;margin:0 10px 0 0;padding:5px 0 0 0;line-height:34px}
 .article-details dd span{float:left;border-radius:50%;padding:3px;background:#e0e1e2;margin:0 10px 0 0}
-.article-details .icon:before{content: '';float:left;width:32px;height:32px;background:  url(../img/icons/article-header-icons.png)}
+.article-details .icon:before{content:'';float:left;width:32px;height:32px;background:  url(../img/icons/article-header-icons.png)}
 .article-details .author:before {background-position:1px 0}
 .article-details .hits:before {background-position:1px 32px}
 
 .article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
-.article-image{position:relative;overflow:hidden;width:100%;width:100%}
+.article-image{position:relative;overflow:hidden;padding:0;margin:0;max-width:100%;background:#f00}
+.article-image img{display:block}
 
 .caption{position:absolute;width:100%;padding:20px;color:#fff;text-shadow:1px 1px 0 #000;bottom:10px;z-index:3}
 .caption h4{margin:0;padding:0}
@@ -57,11 +58,10 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .article-image:hover .in{background-position:0 -108px;opacity:0}
 .article-image .out{background-position: 0 -20px;opacity:0}
 .article-image:hover .out{background-position:0 20px;opacity:1}
-.article-image img {position:relative;transform:scale(1) rotate(0deg)}
-.article-image:hover img.anim {transform:scale(1.6) rotate(-20deg)}
-.article-image:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,0) rotate(0deg)}
+.article-image:hover img.anim {transform:scale(1.6) rotate(-20deg);-webkit-transform:scale(1.6) rotate(-20deg)}
+.article-image:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,0) rotate(0deg);-webkit-transform:translate(0,0) rotate(0deg)}
 
-.caption{transform:translate(0,200px) rotate(-15deg)}
+.caption{transform:translate(0,200px) rotate(-15deg);-webkit-transform:translate(0,200px) rotate(-15deg)}
 }
 	
 /* handheld devices */
