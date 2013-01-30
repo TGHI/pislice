@@ -17,16 +17,12 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .hole{padding:3px;background:#fff;border-radius:50%;font-size:1pt;position:absolute;top:8px;left:6px}
 .label-warning{background:#fa7272;color:#fff;text-shadow:1px 1px 0 #d92b2b}
 
-.span10,.span2{float:left;position:relative}
-.span2{text-align:center}
-
-.container{max-width:1270px}
+.container-fluid{max-width:1280px}
 
 .system-unpublished{background:#f8f8f8;color:#aaa;text-shadow:1px 0 0 #fff}
 .system-unpublished .article-date{background:#888;text-shadow:1px 1px 1px #444}
 
 /* category blog layout */
-
 
 .article-item h2,.blog-item h2 a{color:#353535;font-size:32pt}
 .blog-item h2 a:hover{background:#f9f9f9;border-color:#ddd;text-shadow:1px 1px 0 #fff}
@@ -50,7 +46,12 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 
 .article-introtext{font-family:'Droid Serif',serif;font-size:14pt}
 
-.article-image {position:relative;overflow:hidden;width:100%;width:100%}
+.article-image{position:relative;overflow:hidden;width:100%;width:100%}
+.article-image .zoom{background:url(../img/icons/zoom.png) no-repeat;position:absolute;top:0px;right:20px;width:34px;height:56px}
+.article-image .in{background-position: 0 -54px}
+.article-image:hover .in{background-position:0 -108px;opacity:0}
+.article-image .out{background-position: 0 -20px;opacity:0}
+.article-image:hover .out{background-position:0 20px;opacity:1}
 .article-image img {position:relative;transform:scale(1) rotate(0deg)}
 .article-image:hover img.anim {transform:scale(1.6) rotate(-20deg)}
 .article-image:hover .caption{background:rgba(0,0,0,.4);transform:translate(0,0) rotate(0deg)}
@@ -69,3 +70,15 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 }
 
 .caption h4{margin:0;padding:0}
+
+ /* Large desktop */
+@media (min-width: 1200px) {}
+     
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+     
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {  }
+     
+/* Landscape phones and down */
+@media (max-width: 480px) {  }
