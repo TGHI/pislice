@@ -21,6 +21,7 @@ $user    		= JFactory::getUser();
 
 
 ?>
+
 <section class="article-content">
   <div class="article-item<?php echo $this->pageclass_sfx?>">
     <article>
@@ -40,6 +41,9 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
         <?php endif; ?>
         <?php if ($this->item->state == 0): ?>
         <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
+        <?php endif; ?>
+        <?php if (isset ($this->item->toc)) : ?>
+        <?php echo $this->item->toc; ?>
         <?php endif; ?>
       </div>
       <div class="span8">
@@ -142,15 +146,11 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
           <?php endif; ?>
         </div>
         <?php endif; ?>
-        <?php
-	if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && !$this->item->paginationrelative):
-		echo $this->item->pagination;
-	endif;
-?>
-        <?php if (isset ($this->item->toc)) :
-		echo $this->item->toc;
-	endif; ?>
-        <?php echo $this->item->text; ?>
+        <?php 
+		// get rid of those stupid page numbers
+		$this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
+		echo $this->item->text;		
+		?>
         <?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
         <div class="article-info muted">
           <dl class="article-info">
