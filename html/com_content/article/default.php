@@ -9,13 +9,16 @@
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 // Create shortcuts to some parameters.
-$params  = $this->item->params;
-$images  = json_decode($this->item->images);
-$urls    = json_decode($this->item->urls);
-$canEdit = $params->get('access-edit');
-$user    = JFactory::getUser();
-$info    = $params->get('info_block_position', 0);
-//JHtml::_('behavior.caption');
+
+
+$app 			= JFactory::getApplication();
+$params 		= $this->item->params;
+$images 		= json_decode($this->item->images);
+$urls 			= json_decode($this->item->urls);
+$info    		= $params->get('info_block_position', 0);
+$canEdit		= $params->get('access-edit');
+$user    		= JFactory::getUser();
+
 
 ?>
 <section class="article-content">
@@ -147,7 +150,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
         <?php if (isset ($this->item->toc)) :
 		echo $this->item->toc;
 	endif; ?>
-        <?php echo $this->item->fulltext; ?>
+        <?php echo $this->item->text; ?>
         <?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
         <div class="article-info muted">
           <dl class="article-info">
