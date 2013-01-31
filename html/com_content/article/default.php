@@ -138,11 +138,11 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
-          <div class="zoom in anim"></div>
-          <div class="zoom out anim"></div>
+          <div class="zoom-in anim"></div>
           <div class="caption anim">
             <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
-            <?php echo htmlspecialchars($images->image_fulltext_caption); ?></div>
+            <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
+          </div>
           <?php endif; ?>
         </div>
         <?php endif; ?>
