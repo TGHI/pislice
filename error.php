@@ -25,15 +25,6 @@ $task     = $app->input->getCmd('task', '');
 $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = $app->getCfg('sitename');
 
-if($task == "edit" || $layout == "form" )
-{
-	$fullWidth = 1;
-}
-else
-{
-	$fullWidth = 0;
-}
-
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
 
@@ -54,67 +45,20 @@ else
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-	<title><?php echo $this->title; ?> <?php echo $this->error->getMessage();?></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="language" content="<?php echo $this->language; ?>" />
-	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
-	<?php
-	// If Right-to-Left
-	if ($this->direction == 'rtl')
-	{
-	?>
-		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-rtl.css" type="text/css" />
-	<?php
-	}
-	// Use of Google Font
-	if ($params->get('googleFont'))
-	{
-	?>
-		<link href='http://fonts.googleapis.com/css?family=<?php echo $params->get('googleFontName');?>' rel='stylesheet' type='text/css'>
-	<?php
-	}
-	?>
-	<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<?php
-	// Template color
-	if ($params->get('templateColor'))
-	{
-	?>
-	<style type="text/css">
-		body.site
-		{
-			border-top: 3px solid <?php echo $params->get('templateColor');?>;
-			background-color: <?php echo $params->get('templateBackgroundColor');?>
-		}
-		a
-		{
-			color: <?php echo $params->get('templateColor');?>;
-		}
-		.navbar-inner, .nav-list > .active > a, .nav-list > .active > a:hover, .dropdown-menu li > a:hover, .dropdown-menu .active > a, .dropdown-menu .active > a:hover, .nav-pills > .active > a, .nav-pills > .active > a:hover
-		{
-			background: <?php echo $params->get('templateColor');?>;
-		}
-		.navbar-inner
-		{
-			-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-			box-shadow: 0 1px 3px rgba(0, 0, 0, .25), inset 0 -1px 0 rgba(0, 0, 0, .1), inset 0 30px 10px rgba(0, 0, 0, .2);
-		}
-	</style>
-	<?php
-	}
-	?>
-	<!--[if lt IE 9]>
-		<script src="<?php echo $this->baseurl ?>/media/jui/js/html5.js"></script>
-	<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<?php 
+$doc->addStyleSheet('templates/' . $template . '/css/template.css');
+$doc->addStyleSheet('templates/' . $template . '/css/bootstrap-responsive.min.css');
+$doc->addStyleSheet('http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:400,300,700,300italic,400italic');
+?>
+<jdoc:include type="head" />
 </head>
 
 <body class="site <?php echo $option . " view-" . $view . " layout-" . $layout . " task-" . $task . " itemid-" . $itemid . " ";?> <?php if ($params->get('fluidContainer')) { echo "fluid"; } ?>">
 
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php if ($params->get('fluidContainer')) { echo "-fluid"; } ?>">
+		<div class="container">
 			<!-- Header -->
 			<div class="header">
 				<div class="header-inner">
@@ -124,7 +68,7 @@ else
 					<div class="header-search pull-right">
 						<?php
 						// Display position-0 modules
-						$this->searchmodules = JModuleHelper::getModules('position-0');
+						$this->searchmodules = JModuleHelper::getModules('article-top');
 						foreach ($this->searchmodules as $searchmodule) {
 							$output = JModuleHelper::renderModule($searchmodule, array('style' => 'none'));
 							$params = new JRegistry;
@@ -139,7 +83,7 @@ else
 			<div class="navigation">
 				<?php
 				// Display position-1 modules
-				$this->navmodules = JModuleHelper::getModules('position-1');
+				$this->navmodules = JModuleHelper::getModules('article-top2');
 				foreach ($this->navmodules as $navmodule) {
 					$output = JModuleHelper::renderModule($navmodule, array('style' => 'none'));
 					$params = new JRegistry;
