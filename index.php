@@ -21,46 +21,18 @@ $task				= $app->input->getCmd('task', '');
 $itemid				= $app->input->getCmd('Itemid', '');
 $sitename			= $app->getCfg('sitename');
 
-// Get template params
-$tpl_param_generator= $this->params->get('generator');
-$tpl_param_jquery	= $this->params->get('jquery');
-$tpl_param_framework= $this->params->get('framework');
-
-// Add Stylesheets
-$doc->addStyleSheet('templates/'. $template .'/css/template.css');
-$doc->addStyleSheet('templates/'. $template .'/css/bootstrap-responsive.min.css');
-$doc->addStyleSheet('http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:400,300,700,300italic,400italic');
-
-// Javascript Resources
-if ($tpl_param_framework == 1){
-	JHtml::_('behavior.framework', true);
-}else{
-	if ($layout !== 'edit'){
-		$s = array('mootools','caption','core');
-		foreach($this->_scripts as $k => $v) {
-			foreach($s as $f) {
-				if(stristr($k, $f) !== false) {
-					unset($this->_scripts[$k]);
-				}
-			}
-		}
-	}
-	$this->_script = preg_replace('%window\.addEvent\(\'load\',\s*function\(\)\s*{\s*new\s*JCaption\(\'img.caption\'\);\s*}\);\s*%', '', $script);
-	$this->_script = preg_replace('%window\.addEvent\(\'domready\',\s*function\(\)\s*{\s*\$\$\(\'.hasTip\'\).each\(function\(el\)\s*{\s*var\s*title\s*=\s*el.get\(\'title\'\);\s*if\s*\(title\)\s*{\s*var\s*parts\s*=\s*title.split\(\'::\',\s*2\);\s*el.store\(\'tip:title\',\s*parts\[0\]\);\s*el.store\(\'tip:text\',\s*parts\[1\]\);\s*}\s*}\);\s*var\s*JTooltips\s*=\s*new\s*Tips\(\$\$\(\'.hasTip\'\),\s*{\s*maxTitleChars:\s*50,\s*fixed:\s*false}\);\s*}\);%', '', $script);
-}
-
-if ($tpl_param_jquery == "local"){
-	$doc->addScript('templates/' . $template . '/js/lib/jquery/jquery.min.js');
-}elseif ($tpl_param_jquery == "cdn"){
-	$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js');
-}
+require_once('lib/params.php');
 
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-<?php if ($tpl_param_generator == 0) $doc->_generator = ""; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<?php 
+$doc->addStyleSheet('templates/' . $template . '/css/template.css');
+$doc->addStyleSheet('templates/' . $template . '/css/bootstrap-responsive.min.css');
+$doc->addStyleSheet('http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:400,300,700,300italic,400italic');
+?>
 <jdoc:include type="head" />
 </head>
 <body>
