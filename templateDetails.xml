@@ -42,36 +42,13 @@
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">
-			<field name="Javascript" type="spacer" class="invalid"></field>
-			<field name="framework" 
-					type="radio"
-					class="btn-group"
-					default="1"
-					label="TPL_PISLICE_FIELD_FRAMEWORK_LABEL"
-					description="TPL_PISLICE_FIELD_FRAMEWORK_DESC"
-				>
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
-				</field>
-			<field name="jquery" 
-					type="list"
-					default="local"
-					label="TPL_PISLICE_FIELD_JQUERY_LABEL"
-					description="TPL_PISLICE_FIELD_JQUERY_DESC"
-					filter="word"
-				>
-					<option value="local">TPL_PISLICE_FIELD_JQUERY_LOCAL</option>
-					<option value="cdn">TPL_PISLICE_FIELD_JQUERY_CDN</option>
-					<option value="none">TPL_PISLICE_FIELD_JQUERY_NONE</option>
-				</field>
 				<field name="Misc" type="spacer" class="invalid"></field>
 					<field name="generator" 
 					type="radio"
 					class="btn-group"
 					default="1"
 					label="TPL_PISLICE_FIELD_GENERATOR_LABEL"
-					description="TPL_PISLICE_FIELD_GENERATOR_DESC"
-				>
+					description="TPL_PISLICE_FIELD_GENERATOR_DESC">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>
