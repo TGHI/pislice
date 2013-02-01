@@ -18,7 +18,7 @@ $urls 			= json_decode($this->item->urls);
 $info    		= $params->get('info_block_position', 0);
 $canEdit		= $params->get('access-edit');
 $user    		= JFactory::getUser();
-
+$limitstart		= JRequest::getVar('limitstart')
 
 ?>
 
@@ -29,21 +29,13 @@ $user    		= JFactory::getUser();
       <!-- <div class="page-header">
     <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
   </div>-->
-      <?php endif;
-if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->paginationposition && $this->item->paginationrelative)
-{
-	echo $this->item->pagination;
-}
-?>
+      <?php endif;?>
       <div class="span2">
         <?php if ($params->get('show_publish_date')) : ?>
         <div class="article-date"> <span class="narrow" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span> </div>
         <?php endif; ?>
         <?php if ($this->item->state == 0): ?>
         <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
-        <?php endif; ?>
-        <?php if (isset ($this->item->toc)) : ?>
-        <?php echo $this->item->toc; ?>
         <?php endif; ?>
       </div>
       <div class="span8">
@@ -134,7 +126,10 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
         <?php echo $this->loadTemplate('links'); ?>
         <?php endif; ?>
         <?php if ($params->get('access-view')):?>
-        <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
+        <?php 
+		// only display introtext/image on first page of a paginated of article
+		if (empty($limitstart)): ?>
+        <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>        
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
@@ -145,6 +140,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
           </div>
           <?php endif; ?>
         </div>
+        <?php endif; ?>
         <?php endif; ?>
         <?php 
 		// get rid of those stupid page numbers
@@ -233,10 +229,13 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
         <?php endif; ?>
         <?php endif; ?>
         <?php
-if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && $this->item->paginationrelative) :
-	echo $this->item->pagination;
+if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && $this->item->paginationrelative) {
+	echo $this->item->pagination; 
+	}
+if (isset ($this->item->toc)){
+         echo $this->item->toc;
+}
 ?>
-        <?php endif; ?>
         <?php echo $this->item->event->afterDisplayContent; ?>
         <?php if ($info == 0): ?>
         <?php if ($params->get('show_modify_date')) : ?>
