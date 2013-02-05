@@ -24,8 +24,6 @@ if ($tpl_param_animations == 0){
   $templateStyles .= "\n    .anim,.span2{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}";
 }
   
-$doc->addStyleDeclaration($templateStyles);
-
 // Misc Params
 
 if ($tpl_param_generator == 0) {
