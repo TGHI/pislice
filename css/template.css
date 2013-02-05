@@ -1,6 +1,6 @@
 body{font-family: 'Open Sans', sans-serif;font-weight:300;color:#353535}
-a{color:#ff6f05;text-decoration:none}
-a:hover{background:#fffaf7;border-bottom:1px solid #ffd9bd;text-shadow:1px 1px 0 #fff}
+a{text-decoration:none}
+a:hover{text-shadow:1px 1px 0 #fff}
 h1,h2,h3{font-family:'Droid Serif',serif;font-weight:700;margin:1.5em 0;}
 h1,blockquote{font-size:24pt}
 img {max-width: 100%;height: auto}
@@ -41,7 +41,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 
 .article-details{overflow:hidden;margin:0}
 .article-details dd{float:left;margin:0 10px 0 0;padding:5px 0 0 0;line-height:34px}
-.article-details dd span{float:left;border-radius:50%;padding:3px;background:#e0e1e2;margin:0 10px 0 0}
+.article-details dd span{float:left;border-radius:50%;padding:3px;margin:0 10px 0 0}
 .article-details .icon:before{content:'';float:left;width:32px;height:32px;background:  url(../img/icons/article-header-icons.png)}
 .article-details .author:before {background-position:1px 0}
 .article-details .hits:before {background-position:1px 32px}
@@ -54,11 +54,11 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .caption{width:100%;color:#fff;text-shadow:1px 1px 0 #000;}
 
 @media (min-width: 979px){
-.article-image .zoom-in{background:url(../img/icons/zoom.png) no-repeat 0 -54px;position:absolute;top:0px;right:20px;width:34px;height:56px}
+.article-image .zoom-in{background:url(../img/icons/zoom-in.png) no-repeat;position:absolute;top:20px;right:20px;width:34px;height:34px}
 .article-image:hover .zoom-in{opacity:0;transform:scale(2)}
 .article-image:hover img.anim {transform:scale(1.6) rotate(-20deg);-webkit-transform:scale(1.6) rotate(-20deg)}
 .article-image:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,0);-webkit-transform:translate(0,0);opacity:1}
-.caption{position:absolute;bottom:20px;background:rgba(0,0,0,0.4);padding:20px;z-index:3;transform:translate(0,100px) scale(2);-webkit-transform:translate(0,200px) scale(2);opacity:0;}
+.caption{position:absolute;bottom:20px;background:rgba(0,0,0,0.4);padding:20px;z-index:3;transform:scale(2);opacity:0}
 }
 /* handheld devices */
 @media (max-width: 979px){
