@@ -63,7 +63,7 @@ $limitstart		= JRequest::getVar('limitstart')
               <?php endif; ?>
             </dd>
             <?php if ($params->get('show_hits')) : ?>
-            <dd><span class="icon hits"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+            <dd><span class="icon hits"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
           </dl>
           <?php endif; ?>
           <?php endif; ?>
