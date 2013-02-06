@@ -16,7 +16,7 @@ $tpl_param_generator = 			$this->params->get('generator');
 
 // Add styles
 
-$templateStyles =  "    a{color:" . $tpl_param_linkColour . "}\n";
+$templateStyles  = "    a{color:" . $tpl_param_linkColour . "}\n";
 $templateStyles .= "    a:hover{" . $tpl_param_linkHover . "}\n";
 $templateStyles .= "    .article-details dd span{background:" . $tpl_param_detailIconsColour . "}";
   
