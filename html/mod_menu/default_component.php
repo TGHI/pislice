@@ -7,7 +7,7 @@
  */
 
 // Note. It is important to remove spaces between elements.
-$class = $item->anchor_css ? 'class="'.$item->anchor_css.'" ' : '';
+$class = $item->anchor_css ? 'class="'.$item->anchor_css.' narrow big" ' : 'class="narrow big"';
 $title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
 if ($item->menu_image) {
 		$item->params->get('menu_text', 1) ?
@@ -20,7 +20,7 @@ else { $linktype = $item->title;
 switch ($item->browserNav) :
 	default:
 	case 0:
-?><a <?php echo $class; ?>href="<?php echo $item->flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><br /><?php echo $item->note; ?><?php
+?><a <?php echo $class; ?>href="<?php echo $item->flink; ?>" <?php echo $title; ?>><?php echo $linktype; ?></a><div class="small"><?php echo $item->note; ?></div><?php
 		break;
 	case 1:
 		// _blank
