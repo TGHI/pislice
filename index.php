@@ -39,16 +39,20 @@ $doc->addStyleDeclaration($templateStyles);
 <body>
 <div class="navbar navbar-fixed-top">
   <div class="container-fluid center">
+  <div class="navbar-inner" style="height:65px">
     <div class="logo">
       <a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a>
     </div>
     <jdoc:include type="modules" name="navigation" style="none" />
+    </div>
   </div>
 </div>
 <div class="container-fluid center">
   <jdoc:include type="message" />
   <jdoc:include type="component" />
-  <div class="span3"> this is going to be the side bar </div>
+  <div class="span3">
+    <jdoc:include type="modules" name="sidebar" style="none" />
+  </div>
 </div>
 <div class="container-fluid center">
   <jdoc:include type="modules" name="article-bottom" style="none" />
