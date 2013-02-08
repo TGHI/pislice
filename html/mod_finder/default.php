@@ -48,7 +48,7 @@ if ($params->get('show_label', 1))
 
 if ($params->get('show_button', 1))
 {
-	$button = '<button class="btn btn-primary hasTooltip ' . $suffix . ' finder' . $suffix . '" type="submit" title="' . JText::_('MOD_FINDER_SEARCH_BUTTON') . '"><i class="icon-search icon-white"></i></button>';
+	$button = '<div class="button-container"><button class="search-button hasTooltip ' . $suffix . $suffix . '" type="submit" title="' . JText::_('MOD_FINDER_SEARCH_BUTTON') . '"><i class="icon-search icon-white"></i></button></div>';
 
 	switch ($params->get('button_pos', 'right')):
 		case 'top' :
@@ -75,7 +75,7 @@ if ($params->get('show_button', 1))
 JHtml::stylesheet('templates/' . $doc->template . '/css/finder.css', true, false, false);
 
 $finderJs  = "window.addEvent('domready', function(){". "\n";
-$finderJs .= '  var value'. "\n";
+$finderJs .= '  var value;'. "\n";
 $finderJs .= "  if (!document.id('mod-finder-searchword').getProperty('value')){". "\n";
 $finderJs .= "    document.id('mod-finder-searchword').setProperty('value', '" . JText::_('MOD_FINDER_SEARCH_VALUE', true) . "');". "\n";
 $finderJs .= "  }". "\n";
@@ -89,7 +89,7 @@ $finderJs .= "  });". "\n";
 $finderJs .= "  document.id('mod-finder-searchword').addEvent('blur', function(){". "\n";
 $finderJs .= "    if (!this.getProperty('value')){". "\n";
 $finderJs .= "      this.setProperty('value', value);". "\n";
-$finderJs .= "      this.setStyle('color', '#aaa');". "\n";
+$finderJs .= "      this.setStyle('color', '#999');". "\n";
 $finderJs .= "    }". "\n";
 $finderJs .= "  });". "\n";
 $finderJs .= "  document.id('mod-finder-searchform').addEvent('submit', function(e){". "\n";
@@ -105,7 +105,7 @@ $finderJs .= "    }". "\n";
 $finderJs .="     document.id('mod-finder-searchform').submit();". "\n";
 $finderJs .= "  });". "\n";
 if ($params->get('show_autosuggest', 1)){
-  JHtml::script('com_finder/autocompleter.js', false, true);
+  JHtml::script('templates/' . $doc->template . '/js/autocompleter.js');
   $finderJs .= "  var url = '" . JRoute::_('index.php?option=com_finder&task=suggestions.display&format=json&tmpl=component', false) . "';". "\n";
   $finderJs .= "  var ModCompleter = new Autocompleter.Request.JSON(document.id('mod-finder-searchword'), url, {'postVar': 'q'});". "\n";
 }

@@ -44,7 +44,7 @@
 }
 
 span.highlight {
-	background-color:#FFFFCC;
+	background-color:#FFC;
 	font-weight:bold;
 	padding:1px 4px;
 }
@@ -54,27 +54,26 @@ ul.autocompleter-choices {
 	margin:0;
 	padding:0;
 	list-style:none;
-	border:1px solid #EEEEEE;
-	background-color:white;
-	border-right-color:#DDDDDD;
-	border-bottom-color:#DDDDDD;
-	text-align:left;
-	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
-	z-index:99999;
+	background:#fff;
+	padding-left:5px;
+	border-left:1px solid #dedfe3;
+	border-right:1px solid #dedfe3;
+	border-bottom:1px solid #dedfe3;
+	border-bottom-right-radius:3px;
+	border-bottom-left-radius:3px;
+	box-shadow:2px 2px 2px #dedfe3
 }
 
 ul.autocompleter-choices li {
-	background:none;
 	position:relative;
-	padding:0.1em 1.5em 0.1em 1em;
+	margin:4px;
+	padding:4px 3px;
 	cursor:pointer;
-	font-weight:normal;
-	font-size:1em;
 }
 
 ul.autocompleter-choices li.autocompleter-selected {
-	background-color:#444;
-	color:#fff;
+	background-color:#f7f7f7;
+	border-radius:3px;
 }
 
 ul.autocompleter-choices span.autocompleter-queried {
@@ -82,7 +81,7 @@ ul.autocompleter-choices span.autocompleter-queried {
 }
 
 ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
-	color:#9FCFFF;
+	color:#ff6f05;
 }
 
 ul#finder-filter-select-list {

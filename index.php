@@ -50,7 +50,7 @@ $doc->addStyleDeclaration($templateStyles);
 <div class="container-fluid center">
   <jdoc:include type="message" />
   <jdoc:include type="component" />
-  <div class="span3">
+  <div class="span3" style="background:#f00">
     <jdoc:include type="modules" name="sidebar" style="none" />
   </div>
 </div>
