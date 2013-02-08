@@ -1,5 +1,5 @@
 html,body{margin:0;padding:0}
-body{font-family: 'Open Sans', sans-serif;font-weight:300;color:#353535;padding-top: 95px;}
+body{font-family: 'Open Sans', sans-serif;font-weight:300;color:#353535;padding-top: 105px;}
 a{text-decoration:none}
 a:hover{text-shadow:1px 1px 0 #fff}
 h1,h2,h3{font-family:'Droid Serif',serif;font-weight:700;margin:1.5em 0;}
@@ -11,6 +11,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .center{margin: 0 auto}
 .narrow{font-family:"helvultracompressed"}
 .huge{font-size:40pt}
+.big{font-size:28pt}
 .medium{font-size:16pt !important}
 .small{font-size:10pt}
 .anim, .span2{transition: all 0.3s ease-in-out;-webkit-transition: all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-o-transition:all 0.4s ease-in-out}
@@ -21,11 +22,19 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .hole{padding:3px;background:#fff;border-radius:50%;font-size:1pt;position:absolute;top:8px;left:6px}
 .label-warning{background:#fa7272;color:#fff;text-shadow:1px 1px 0 #d92b2b}
 
-.navbar{padding:8px 0;background:#f6f7f9;box-shadow:6px 0 6px rgba(49,52,57,0.4);border-bottom:1px solid #fff}
+.navbar{width:100%;padding:8px 0;background:#f6f7f9;box-shadow:6px 0 6px rgba(49,52,57,0.4);border-bottom:1px solid #fff}
+.navbar-fixed-top{position:fixed;top:0;z-index:1030}
 
 .logo{position:relative;float:left;height:100%;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;padding:0 15px 0 0;margin:0 0 0 22px}
-.logo a:hover{border:0 !important;background:0!important}
-.go-home{position:absolute;top:22px;opacity:0;transform:scale(3);color:#000;text-shadow:1px 1px 0 #fff;left:60px}
+.logo a:hover,.nav li a:hover{border:0 !important;background:0!important;text-shadow:none;}
+
+/* navigation */
+
+.nav-inner{position:relative}
+.nav{list-style-type:none;float:left;margin:0 0 0 15px;height:100%}
+.nav li{float:left;margin:0px 15px 0 0;padding:0 15px 0 0;height:100%;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;text-shadow:1px 1px 0 #fff}
+.nav li a{position:relative;display:block;text-transform:uppercase;line-height:22pt;top:12px}
+.nav li div{position:relative;text-transform:uppercase;color:#6f7477;line-height:10pt;top:14px}
 
 .container-fluid{max-width:1280px}
 
@@ -39,7 +48,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 
 /* Article layout */
 
-.nav{list-style-type:none;font-size:10pt}
+
 
 .article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px}
 .blog-item:hover .article-date{transform: rotate(-30deg) scale(1.5)}
@@ -73,10 +82,10 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 .caption{background:#f5f5f5;border-bottom:2px solid #999;padding:5px 10px;margin:5px 0;color:#000;text-shadow:1px 1px 0 #fff}
 	
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { }
+@media (min-width: 768px) and (max-width: 979px) {} }
      
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {} }
-     
+@media (max-width: 767px) {}
+  
 /* Landscape phones and down */
-@media (max-width: 480px) {}  }
+@media (max-width: 480px) {} 
