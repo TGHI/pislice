@@ -7,7 +7,7 @@
  */
 
 // Note. It is important to remove spaces between elements.
-$class = $item->anchor_css ? 'class="'.$item->anchor_css.' narrow big" ' : 'class="narrow big"';
+$class = $item->anchor_css ? 'class="'.$item->anchor_css.' narrow big"' : 'class="narrow big" ';
 $title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
 if ($item->menu_image) {
 		$item->params->get('menu_text', 1) ?
