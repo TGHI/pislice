@@ -42,6 +42,16 @@
   <config>
     <fields name="params">
       <fieldset name="advanced">
+	  <field name="TPL_PISLICE_PARAMS_TITLE_THEME_FONTS" type="spacer" class="invalid"></field>
+	  <field name="titleFont" class="" type="text" default="Droid+Serif:400,400italic,700"
+					label="TPL_PISLICE_FONT_TITLE_LABEL"
+					description="TPL_PISLICE_FONT_TITLE_DESC" />
+	  <field name="bodyFont" class="" type="text" default="Open+Sans:300italic,700,300"
+					label="TPL_PISLICE_FONT_BODY_LABEL"
+					description="TPL_PISLICE_FONT_BODY_DESC" />
+	  <field name="navFont" class="" type="text" default="Fjalla+One"
+					label="TPL_PISLICE_FONT_NAV_LABEL"
+					description="TPL_PISLICE_FONT_NAV_DESC" />
       <field name="TPL_PISLICE_PARAMS_TITLE_THEME_COLOURS" type="spacer" class="invalid"></field>
       <field name="linkColour" class="" type="color" default="#ff6f05"
 					label="TPL_PISLICE_LINK_COLOUR_LABEL"

@@ -31,7 +31,7 @@ require_once('lib/params.php');
 <?php 
 $doc->addStyleSheet('templates/' . $template . '/css/template.css');
 $doc->addStyleSheet('templates/' . $template . '/css/bootstrap-responsive.min.css');
-$doc->addStyleSheet('http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:300italic,700,300|Droid+Serif:400,400italic,700');
+$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleFonts);
 $doc->addStyleDeclaration($templateStyles);
 ?>
 <jdoc:include type="head" />
