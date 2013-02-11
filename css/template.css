@@ -1,6 +1,6 @@
 html,body{margin:0;padding:0}
-*{font-family: 'Open Sans', sans-serif}
-body{font-family: 'Open Sans', sans-serif;font-weight:300;color:#353535;padding-top: 105px;}
+select,input,body{font-family: 'Open Sans', sans-serif;font-weight:300;color:#353535}
+body{padding-top: 105px}
 button{box-shadow:inset 0 !important}
 a{text-decoration:none}
 a:hover{text-shadow:1px 1px 0 #fff}
@@ -11,9 +11,9 @@ p{line-height:1.8em;margin:1.5em 0;text-align:justify}
 blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-family:'Droid Serif',serif;font-style:italic;font-weight:500;line-height:1.4em;margin:0.8em}
 
 .center{margin: 0 auto}
-.narrow{font-family:"helvultracompressed"}
+.narrow{font-family:"Fjalla One";letter-spacing:-2.0pt}
 .huge{font-size:40pt}
-.big{font-size:28pt}
+.big{font-size:24pt}
 .medium{font-size:16pt !important}
 .small{font-size:10pt}
 .anim, .span2{transition: all 0.3s ease-in-out;-webkit-transition: all 0.4s ease-in-out;-moz-transition:all 0.4s ease-in-out;-o-transition:all 0.4s ease-in-out}
@@ -59,7 +59,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-famil
 
 .article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;max-width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px}
 .blog-item:hover .article-date{transform: rotate(-30deg) scale(1.5)}
-.article-date .narrow{font-size:20pt;font-weight:500;float:left;margin:36px 0 0 10px}
+.article-date .narrow{font-size:18pt;font-weight:500;float:left;margin:42px 0 0 10px}
 .article-date .huge{font-weight:600;letter-spacing:-0.1em;float:left;margin:10px 0 0 0}
 
 .article-details{overflow:hidden;margin:0}
