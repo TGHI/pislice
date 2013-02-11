@@ -55,7 +55,7 @@ ul.autocompleter-choices {
 	padding:0;
 	list-style:none;
 	background:#fff;
-	padding-left:5px;
+	padding:1px 3px;
 	border-left:1px solid #dedfe3;
 	border-right:1px solid #dedfe3;
 	border-bottom:1px solid #dedfe3;
