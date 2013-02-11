@@ -38,7 +38,7 @@ $limitstart		= JRequest::getVar('limitstart')
         <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
         <?php endif; ?>
       </div>
-      <div class="span7">
+      <div class="span8">
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
           <h2>
