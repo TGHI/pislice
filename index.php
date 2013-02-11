@@ -39,19 +39,19 @@ $doc->addStyleDeclaration($templateStyles);
 <body>
 <div class="navbar navbar-fixed-top">
   <div class="container-fluid center">
-  <div class="navbar-inner" style="height:65px">
-    <div class="logo">
-      <a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a>
-    </div>
-    <jdoc:include type="modules" name="navigation" style="none" />
+    <div class="navbar-inner">
+      <div class="logo"><a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a> </div>
+      <jdoc:include type="modules" name="navigation" style="none" />
     </div>
   </div>
 </div>
 <div class="container-fluid center">
-  <jdoc:include type="message" />
-  <jdoc:include type="component" />
-  <div class="span3" style="background:#f00">
-    <jdoc:include type="modules" name="sidebar" style="none" />
+  <div class="row-fluid">
+    <jdoc:include type="message" />
+    <jdoc:include type="component" />
+    <div class="span2">
+      <jdoc:include type="modules" name="sidebar" style="none" />
+    </div>
   </div>
 </div>
 <div class="container-fluid center">
