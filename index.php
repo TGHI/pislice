@@ -39,7 +39,7 @@ $doc->addStyleDeclaration($templateStyles);
 <body>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner center">
-      <div class="brand"><a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a> </div>
+      <div class="brand pull-left"><a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a> </div>
       <jdoc:include type="modules" name="navigation" style="none" />
     </div>
   </div>

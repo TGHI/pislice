@@ -32,7 +32,7 @@ $limitstart		= JRequest::getVar('limitstart')
       <?php endif;?>
       <div class="span2">
         <?php if ($params->get('show_publish_date')) : ?>
-        <div class="article-date"> <span class="narrow" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span> </div>
+        <div class="article-date"> <span class="narrow pull-left" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge pull-left"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span> </div>
         <?php endif; ?>
         <?php if ($this->item->state == 0): ?>
         <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
