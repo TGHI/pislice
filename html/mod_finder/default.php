@@ -115,7 +115,7 @@ $doc->addScriptDeclaration($finderJs);
 
 ?>
 <form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="form-search pull-right">
-	<div class="finder<?php echo $suffix; ?> pull-right">
+	<div class="finder<?php echo $suffix; ?>">
 		<?php
 		// Show the form fields.
 		echo $output;
