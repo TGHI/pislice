@@ -32,7 +32,7 @@ if($tpl_param_titleFont || $tpl_param_bodyFont || $tpl_param_navFont){
     }
   }
 
-  $templateStyles .= "    h1,h2,h3,.article-introtext{font-family:\"" . str_replace('+', ' ',$fonts[0]) . "\",serif}\n";
+  $templateStyles .= "    h1,h2,h3,.article-introtext,blockquote{font-family:\"" . str_replace('+', ' ',$fonts[0]) . "\",serif}\n";
   $templateStyles .= "    select,input,body{font-family:\"" . str_replace('+',' ',$fonts[1]) . "\",sans-serif}\n";
   $templateStyles .= "    .narrow{font-family:\"" . str_replace('+', ' ',$fonts[2]) . "\",sans-serif}\n";
 
