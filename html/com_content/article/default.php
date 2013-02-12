@@ -21,7 +21,6 @@ $user    		= JFactory::getUser();
 $limitstart		= JRequest::getVar('limitstart')
 
 ?>
-
 <section class="article-content">
   <div class="article-item<?php echo $this->pageclass_sfx?>">
     <article>
@@ -46,9 +45,10 @@ $limitstart		= JRequest::getVar('limitstart')
             <?php echo $this->escape($this->item->title); ?>
             <?php endif; ?>
           </h2>
-          <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
+          <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category')): ?>
           <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
           <dl class="article-details">
+            <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
             <dd><span class="icon author"></span>
               <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
               <?php
@@ -61,11 +61,32 @@ $limitstart		= JRequest::getVar('limitstart')
               <?php else : ?>
               <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
               <?php endif; ?>
+              <?php endif; ?>
             </dd>
             <?php if ($params->get('show_hits')) : ?>
             <dd><span class="icon hits"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+            <?php endif; ?>
+            <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
+            <dd><span class="icon category"></span>
+              <?php if (!empty($this->item->parent_slug)) : ?>
+              <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
+              <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
+              <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($params->get('show_category')) : ?>
+              <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
+              <?php if ($params->get('link_category') && $this->item->catslug) : ?>
+              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+            </dd>
+            <?php endif; ?>
           </dl>
-          <?php endif; ?>
           <?php endif; ?>
           <?php if (!$this->print) : ?>
           <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
@@ -88,37 +109,6 @@ $limitstart		= JRequest::getVar('limitstart')
           <?php endif; ?>
         </div>
         <?php endif; ?>
-        <?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category')); ?>
-        <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-        <div class="article-info muted">
-          <dl class="article-info">
-            <?php if ($params->get('show_parent_category') && !empty($this->item->parent_slug)) : ?>
-            <dd>
-              <div class="parent-category-name">
-                <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
-                <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
-                <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-                <?php else : ?>
-                <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-                <?php endif; ?>
-              </div>
-            </dd>
-            <?php endif; ?>
-            <?php if ($params->get('show_category')) : ?>
-            <dd>
-              <div class="category-name">
-                <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
-                <?php if ($params->get('link_category') && $this->item->catslug) : ?>
-                <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-                <?php else : ?>
-                <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
-                <?php endif; ?>
-              </div>
-            </dd>
-            <?php endif; ?>
-          </dl>
-        </div>
-        <?php endif; ?>
         <?php if (!$params->get('show_intro')) : echo $this->item->event->afterDisplayTitle; endif; ?>
         <?php echo $this->item->event->beforeDisplayContent; ?>
         <?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '0')) || ($params->get('urls_position') == '0' && empty($urls->urls_position)))
@@ -129,7 +119,7 @@ $limitstart		= JRequest::getVar('limitstart')
         <?php 
 		// only display introtext/image on first page of a paginated of article
 		if (empty($limitstart)): ?>
-        <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>        
+        <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
@@ -147,54 +137,6 @@ $limitstart		= JRequest::getVar('limitstart')
 		$this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
 		echo $this->item->text;		
 		?>
-        <?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
-        <div class="article-info muted">
-          <dl class="article-info">
-            <dt class="article-info-term"><?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></dt>
-            <?php if ($info == 1): ?>
-            <?php if ($params->get('show_parent_category') && !empty($this->item->parent_slug)) : ?>
-            <dd>
-              <div class="parent-category-name">
-                <?php $title = $this->escape($this->item->parent_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)) . '">' . $title . '</a>';?>
-                <?php if ($params->get('link_parent_category') && $this->item->parent_slug) : ?>
-                <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-                <?php else : ?>
-                <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-                <?php endif; ?>
-              </div>
-            </dd>
-            <?php endif; ?>
-            <?php if ($params->get('show_category')) : ?>
-            <dd>
-              <div class="category-name">
-                <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
-                <?php if ($params->get('link_category') && $this->item->catslug) : ?>
-                <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-                <?php else : ?>
-                <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
-                <?php endif; ?>
-              </div>
-            </dd>
-            <?php endif; ?>
-            <?php endif; ?>
-            <?php if ($params->get('show_publish_date')) : ?>
-            <dd>
-              <div class="published"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHtml::_('date', $this->item->publish_up, JText::_('DATE_FORMAT_LC3'))); ?> </div>
-            </dd>
-            <?php endif; ?>
-            <?php if ($params->get('show_create_date')) : ?>
-            <dd>
-              <div class="create"><i class="icon-calendar"> </i> <?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
-            </dd>
-            <?php endif; ?>
-            <?php if ($params->get('show_modify_date')) : ?>
-            <dd>
-              <div class="modified"><i class="icon-calendar"> </i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
-            </dd>
-            <?php endif; ?>
-          </dl>
-        </div>
-        <?php endif; ?>
         <?php
 if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
 	echo $this->item->pagination;
