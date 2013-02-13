@@ -36,6 +36,11 @@ $limitstart		= JRequest::getVar('limitstart')
         <?php if ($this->item->state == 0): ?>
         <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
         <?php endif; ?>
+        <?php 
+        if (isset ($this->item->toc)){
+         echo $this->item->toc;
+		}
+      ?>
       </div>
       <div class="span8">
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
@@ -174,9 +179,6 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && $this->item->paginationrelative) {
 	echo $this->item->pagination; 
 	}
-if (isset ($this->item->toc)){
-         echo $this->item->toc;
-}
 ?>
         <?php echo $this->item->event->afterDisplayContent; ?>
         <?php if ($info == 0): ?>
