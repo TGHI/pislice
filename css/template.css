@@ -52,7 +52,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-style
 
 /* Article layout */
 
-.article-header{margin:0 0 43px 0}
+.article-header{margin:0 0 40px 0}
 
 .article-date{background:#7dd3f7;color:#fff;border-radius:50%;height:100px;width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px}
 .blog-item:hover .article-date{transform: rotate(-30deg) scale(1.5)}
@@ -121,9 +121,10 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-style
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px){	
-.article-date{width:100%;height:auto;border-radius:0;overflow:hidden;padding:0;text-align:left;border-bottom:2px solid #58b9ed}
+.article-date{width:100%;height:auto;border-radius:0;overflow:hidden;padding:0;text-align:left;border-bottom:2px solid #58b9ed;margin:0 0 25px 0}
 .article-date .huge{margin:0}
 .article-date .narrow{	margin:32px 0 0 10px}
+.article-header{margin:0 0 25px 0}
 .article-index{margin:0;border-left:1px solid #F6F7F9;padding:0 0 0 10px}
 .article-index ul{border: 0;}
 .navbar{width:auto}
