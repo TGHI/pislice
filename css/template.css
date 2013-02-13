@@ -65,7 +65,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-style
 .article-index li{padding:5px 0;margin:5px 0;line-height:12pt;overflow:hidden}
 .article-index ul a{position:relative;top:5px}
 .article-index ul a:before{content:'\2192';float:left;color:#aaa;text-shadow:1px 1px 0 #fff;background:#E0E1E2;border-radius:50%;height:20px;width:14px;padding:5px 8px;margin:0 10px 0 0}
-.article-index ul a:hover:before{background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed;transform:translate(5px, 0)}
+.article-index ul a:hover:before{background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed;transform:translate(5px, 0) rotate(360deg)}
 .article-index ul a.active:before{content:'\2192';background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed;}
 .article-index ul a.active:hover:before{transform:translate(0,0)}
 
@@ -121,7 +121,7 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-style
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px){	
-.article-date{width:100%;height:auto;border-radius:0;overflow:hidden;padding:0;text-align:left;border-bottom:2px solid #58b9ed;margin:0 0 25px 0}
+.article-date{width:100%;height:auto;border-radius:0;overflow:hidden;padding:0;text-align:left;margin:0 0 25px 0}
 .article-date .huge{margin:0}
 .article-date .narrow{	margin:32px 0 0 10px}
 .article-header{margin:0 0 25px 0}
