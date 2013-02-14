@@ -8,9 +8,6 @@
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
-// Create shortcuts to some parameters.
-
-
 $app 			= JFactory::getApplication();
 $params 		= $this->item->params;
 $images 		= json_decode($this->item->images);
@@ -18,7 +15,7 @@ $urls 			= json_decode($this->item->urls);
 $info    		= $params->get('info_block_position', 0);
 $canEdit		= $params->get('access-edit');
 $user    		= JFactory::getUser();
-$limitstart		= JRequest::getVar('limitstart')
+$limitstart		= JRequest::getVar('limitstart');
 
 ?>
 <section class="article-content">

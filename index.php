@@ -6,7 +6,6 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-//Some handy variables
 $app				= JFactory::getApplication();
 $doc				= JFactory::getDocument();
 $this->language		= $doc->language;
