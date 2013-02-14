@@ -43,8 +43,9 @@ $doc->addStyleDeclaration($templateStyles);
   </div>
 </div>
 <div class="container-fluid center">
-  <div class="row-fluid">
+  <div class="row-fluid clearfix">
     <jdoc:include type="message" />
+    <jdoc:include type="modules" name="article-top" style="none" />
     <jdoc:include type="component" />
     <div class="span2">
       <jdoc:include type="modules" name="sidebar" style="none" />
