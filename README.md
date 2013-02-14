@@ -18,6 +18,11 @@ Milestones
 - 0.9.0 - Release Candidate, bugs, bugs, bugs
 - 1.0.0 - Complete version
 
+- Want more?
+--------------
+
+You can get the source PSDs for pislice over at [pislice-extras].
+
 Future
 --------------
 
@@ -33,3 +38,4 @@ GNU General Public License version 3 or later; see LICENCE.txt
 [bootstrap]: http://twitter.github.com/bootstrap/
 [jQuery]: http://www.jquery.com
 [K2]: http://getk2.org
+[pislice-extras]:https://github.com/TGHI/pislice-extras
