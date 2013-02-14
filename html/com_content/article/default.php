@@ -142,10 +142,15 @@ $limitstart		= JRequest::getVar('limitstart')
 		$this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
 		echo $this->item->text;		
 		?>
+		<?php if ($info == 0): ?>
+        <?php if ($params->get('show_modify_date')) : ?>
+        <div class="modified"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
+        <?php endif; ?>
+        <?php endif; ?>
         <?php
-if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
-	echo $this->item->pagination;
-?>
+			if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
+			echo $this->item->pagination;
+		?>
         <?php endif; ?>
         <?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '1')) || ($params->get('urls_position') == '1'))): ?>
         <?php echo $this->loadTemplate('links'); ?>
@@ -180,12 +185,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 	echo $this->item->pagination; 
 	}
 ?>
-        <?php echo $this->item->event->afterDisplayContent; ?>
-        <?php if ($info == 0): ?>
-        <?php if ($params->get('show_modify_date')) : ?>
-        <div class="modified"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
-        <?php endif; ?>
-        <?php endif; ?>
+       <?php echo $this->item->event->afterDisplayContent; ?>
       </div>
     </article>
   </div>
