@@ -25,7 +25,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       <?php echo $this->escape($this->item->title); ?>
       <?php endif; ?>
     </h2>
-    <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
+    <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category')): ?>
     <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
     <dl class="article-details">
       <dd><span class="icon author"></span>
@@ -43,8 +43,28 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       </dd>
       <?php if ($params->get('show_hits')) : ?>
       <dd><span class="icon hits"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+      <?php endif; ?>
+      <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
+            <dd><span class="icon category"></span>
+              <?php if (!empty($this->item->parent_slug)) : ?>
+              <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
+              <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
+              <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($params->get('show_category')) : ?>
+              <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
+              <?php if ($params->get('link_category') && $this->item->catslug) : ?>
+              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+            </dd>
+            <?php endif; ?>
     </dl>
-    <?php endif; ?>
     <?php endif; ?>
     <?php endif; ?>
     <?php if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
@@ -64,35 +84,6 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
     <?php echo $this->item->event->afterDisplayTitle; ?>
     <?php endif; ?>
     <?php echo $this->item->event->beforeDisplayContent; ?>
-    <?php // to do not that elegant would be nice to group the params ?>
-    <?php if (($params->get('show_category')) or ($params->get('show_modify_date')) or ($params->get('show_parent_category'))) : ?>
-    <dl class="article-info">
-      <?php endif; ?>
-      <?php if ($params->get('show_parent_category') && $this->item->parent_id != 1) : ?>
-      <dd class="parent-category-name">
-        <?php $title = $this->escape($this->item->parent_title);
-				$url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_id)) . '">' . $title . '</a>'; ?>
-        <?php if ($params->get('link_parent_category')) : ?>
-        <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-        <?php else : ?>
-        <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-        <?php endif; ?>
-      </dd>
-      <?php endif; ?>
-      <?php if ($params->get('show_category')) : ?>
-      <dd class="category-name">
-        <?php $title = $this->escape($this->item->category_title);
-					$url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catid)) . '">' . $title . '</a>'; ?>
-        <?php if ($params->get('link_category')) : ?>
-        <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-        <?php else : ?>
-        <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
-        <?php endif; ?>
-      </dd>
-      <?php endif; ?>
-      <?php if (($params->get('show_category')) or ($params->get('show_modify_date')) or ($params->get('show_parent_category'))) :?>
-    </dl>
-    <?php endif; ?>
   </div>
   <?php  if (isset($images->image_intro) and !empty($images->image_intro)) : ?>
   <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
