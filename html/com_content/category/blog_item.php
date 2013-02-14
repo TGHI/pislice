@@ -28,7 +28,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
     <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category')): ?>
     <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
     <dl class="article-details">
-      <dd><span class="icon author"></span>
+      <dd><span class="icon author round"></span>
         <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
         <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -42,10 +42,10 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
         <?php endif; ?>
       </dd>
       <?php if ($params->get('show_hits')) : ?>
-      <dd><span class="icon hits"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+      <dd><span class="icon hits round"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
       <?php endif; ?>
       <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-            <dd><span class="icon category"></span>
+            <dd><span class="icon category round"></span>
               <?php if (!empty($this->item->parent_slug)) : ?>
               <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
               <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>

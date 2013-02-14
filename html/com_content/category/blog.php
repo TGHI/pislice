@@ -47,7 +47,7 @@ $cparams = JComponentHelper::getParams('com_media');
     <article class="<?php echo $item->state == 0 ? 'system-unpublished' : null; ?>">
       <?php $this->item = &$item; ?>
       <div class="span2">
-        <div class="article-date anim">
+        <div class="article-date anim round">
           <?php if ($this->item->state == 0): ?>
           <span class="narrow medium">unpusblished</span>
           <?php else : ?>
@@ -79,7 +79,7 @@ $cparams = JComponentHelper::getParams('com_media');
     <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
       <?php $this->item = &$item; ?>
       <div class="span2">
-        <div class="article-date anim">
+        <div class="article-date anim round">
           <?php if ($this->item->state == 0): ?>
           <span class="narrow medium">unpusblished</span>
           <?php else : ?>

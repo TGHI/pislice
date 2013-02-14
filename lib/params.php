@@ -42,7 +42,7 @@ if($tpl_param_titleFont || $tpl_param_bodyFont || $tpl_param_navFont){
 
 $templateStyles .= "    a{color:" . $tpl_param_linkColour . "}\n";
 $templateStyles .= "    a:hover{" . $tpl_param_linkHover . "}\n";
-$templateStyles .= "    .article-details dd span{background:" . $tpl_param_detailIconsColour . "}";
+$templateStyles .= "    .article-details dd span,.article-index ul a:before{background:" . $tpl_param_detailIconsColour . "}";
 
 // Theme Misc
 

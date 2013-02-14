@@ -28,7 +28,7 @@ $limitstart		= JRequest::getVar('limitstart');
       <?php endif;?>
       <div class="span2">
         <?php if ($params->get('show_publish_date')) : ?>
-        <div class="article-date"> <span class="narrow pull-left" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge pull-left"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span> </div>
+        <div class="article-date round"> <span class="narrow pull-left" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge pull-left"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span> </div>
         <?php endif; ?>
         <?php if ($this->item->state == 0): ?>
         <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
@@ -51,7 +51,7 @@ $limitstart		= JRequest::getVar('limitstart');
           <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
           <dl class="article-details">
             <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
-            <dd><span class="icon author"></span>
+            <dd><span class="icon author round"></span>
               <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
               <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -66,10 +66,10 @@ $limitstart		= JRequest::getVar('limitstart');
               <?php endif; ?>
             </dd>
             <?php if ($params->get('show_hits')) : ?>
-            <dd><span class="icon hits"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+            <dd><span class="icon hits round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
             <?php endif; ?>
             <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-            <dd><span class="icon category"></span>
+            <dd><span class="icon category round"></span>
               <?php if (!empty($this->item->parent_slug)) : ?>
               <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
               <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
