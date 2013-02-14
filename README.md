@@ -18,7 +18,7 @@ Milestones
 - 0.9.0 - Release Candidate, bugs, bugs, bugs
 - 1.0.0 - Complete version
 
-- Want more?
+Want more?
 --------------
 
 You can get the source PSDs for pislice over at [pislice-extras].
