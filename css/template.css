@@ -84,9 +84,10 @@ blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-style
 .caption{width:100%;color:#fff;text-shadow:1px 1px 0 #000;}
 
 .pager ul{list-style-type:none;width:100%;padding:10px 0;overflow:hidden;}
-.pager ul li{float:left;color:#fff}
+.pager ul li{float:left;color:#bbb}
 .pager ul li:last-child{float:right}
-
+.pager ul li:last-child a:after,.pager ul li:first-child a:before{content:'\2192';float:right;background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed;border-radius:50%;height:20px;width:14px;padding:5px 8px;margin:0 10px 0 0}
+.pager ul li:first-child a:before{content:'\2190';float:left}
 
 @media (max-width: 1279px){
 .navbar{min-height:50px;padding:5px}
