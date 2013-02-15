@@ -50,13 +50,15 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .subheading-category{color:#999;background:transparent}
 
 .article-item h2,.blog-item h2 a{color:#353535;font-size:32pt}
-.blog-item h2 a:hover{background:#f9f9f9;border-color:#dedfe3;text-shadow:1px 1px 0 #fff}
+.blog-item h2:hover{border-bottom:1px solid #7DD3F7}
 .blog-item:hover .article-date{transform: rotate(-30deg) scale(1.5)}
-.blog-item-separator{border-bottom:1px solid #e6e7e9;margin:35px 0}
+.blog-item .span8{margin:0 0 35px 0}
+.blog-item-separator{border-bottom:3px dotted #e6e7e9}
 
 /* Article layout */
 
-.article-header{margin:0 0 40px}
+.article-header{margin:0 0 30px}
+.article-header h2{border-bottom:1px solid #e6e7e9;margin:0 0 15px;padding:0 0 15px}
 
 .article-date{background:#7dd3f7;color:#fff;height:100px;width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px;z-index:997}
 .article-date .narrow{font-size:18pt;font-weight:500;margin:42px 3px 0 8px}

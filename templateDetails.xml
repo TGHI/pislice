@@ -56,7 +56,7 @@
       <field name="linkColour" class="" type="color" default="#ff6f05"
 					label="TPL_PISLICE_LINK_COLOUR_LABEL"
 					description="TPL_PISLICE_LINK_COLOUR_DESC" />
-      <field name="linkHover" class="" type="text" default="background:#fffaf7;border-bottom:1px solid #ffd9bd;"
+      <field name="linkHover" class="" type="text" default="text-decoration:none"
 					label="TPL_PISLICE_LINK_HOVER_LABEL"
 					description="TPL_PISLICE_LINK_HOVER_DESC" />
       <field name="detailIconsColour" class="" type="color" default="#e0e1e2"
