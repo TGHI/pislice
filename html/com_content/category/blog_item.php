@@ -42,7 +42,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
         <?php endif; ?>
       </dd>
       <?php if ($params->get('show_hits')) : ?>
-      <dd><span class="icon hits round"></span><?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?></dd>
+      <dd><span class="icon hits round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
       <?php endif; ?>
       <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
             <dd><span class="icon category round"></span>
