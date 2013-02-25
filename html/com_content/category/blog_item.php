@@ -15,8 +15,17 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
 <?php if ($this->item->state == 0) : ?>
 <div class="system-unpublished">
-  <?php endif; ?>
+<?php endif; ?>
   <div class="article-header">
+<?php if ($params->get('show_publish_date')) : ?>
+    <div class="article-date">
+<?php if ($this->item->state == 0): ?>
+      <span class="narrow medium">unpusblished</span>
+<?php else : ?>
+      <span class="bold"><?php echo JHTML::date($this->item->publish_up) ?></span>
+<?php endif; ?>
+      </div>
+    <?php endif; ?>
     <?php if ($params->get('show_title')) : ?>
     <h2>
       <?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
@@ -85,6 +94,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
     <?php endif; ?>
     <?php echo $this->item->event->beforeDisplayContent; ?>
   </div>
+  <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
   <?php  if (isset($images->image_intro) and !empty($images->image_intro)) : ?>
   <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
   <div class="item-image<?php echo htmlspecialchars($imgfloat); ?>"> <img
@@ -93,7 +103,6 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		endif; ?>
 		src="<?php echo htmlspecialchars($images->image_intro); ?>" alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>"/> </div>
   <?php endif; ?>
-  <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
   <?php if ($params->get('show_readmore') && $this->item->readmore) :
 	if ($params->get('access-view')) :
 		$link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid));

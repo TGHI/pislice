@@ -18,6 +18,7 @@ $user    		= JFactory::getUser();
 $limitstart		= JRequest::getVar('limitstart');
 
 ?>
+
 <section class="article-content">
   <div class="article-item<?php echo $this->pageclass_sfx?>">
     <article>
@@ -27,12 +28,6 @@ $limitstart		= JRequest::getVar('limitstart');
   </div>-->
       <?php endif;?>
       <div class="span2">
-        <?php if ($params->get('show_publish_date')) : ?>
-        <div class="article-date round"> <span class="narrow pull-left" ><?php echo JHTML::date($this->item->publish_up,'M',true) ?></span> <span class="huge pull-left"><?php echo JHTML::date($this->item->publish_up,'d',true) ?></span> </div>
-        <?php endif; ?>
-        <?php if ($this->item->state == 0): ?>
-        <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
-        <?php endif; ?>
         <?php 
         if (isset ($this->item->toc)){
          echo $this->item->toc;
@@ -42,6 +37,15 @@ $limitstart		= JRequest::getVar('limitstart');
       <div class="span8">
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
+          <?php if ($params->get('show_publish_date')) : ?>
+          <div class="article-date">
+            <?php if ($this->item->state == 0): ?>
+            <span class="bold">unpusblished</span>
+            <?php else : ?>
+            <span class="bold"><?php echo JHTML::date($this->item->publish_up) ?></span>
+            <?php endif; ?>
+          </div>
+          <?php endif; ?>
           <h2>
             <?php if ($params->get('show_title')) : ?>
             <?php echo $this->escape($this->item->title); ?>
@@ -139,7 +143,7 @@ $limitstart		= JRequest::getVar('limitstart');
 		$this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
 		echo $this->item->text;		
 		?>
-		<?php if ($info == 0): ?>
+        <?php if ($info == 0): ?>
         <?php if ($params->get('show_modify_date')) : ?>
         <div class="modified"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
         <?php endif; ?>
@@ -182,8 +186,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 	echo $this->item->pagination; 
 	}
 ?>
-       <?php echo $this->item->event->afterDisplayContent; ?>
-      </div>
+        <?php echo $this->item->event->afterDisplayContent; ?> </div>
     </article>
   </div>
 </section>
