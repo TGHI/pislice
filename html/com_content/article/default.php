@@ -42,7 +42,7 @@ $limitstart		= JRequest::getVar('limitstart');
             <?php if ($this->item->state == 0): ?>
             <span class="bold">unpusblished</span>
             <?php else : ?>
-            <span class="bold"><?php echo JHTML::date($this->item->publish_up) ?></span>
+            <span class="bold"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
             <?php endif; ?>
           </div>
           <?php endif; ?>
