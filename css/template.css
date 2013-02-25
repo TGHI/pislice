@@ -5,7 +5,7 @@ a{text-decoration:none}
 h1,h2,h3{font-weight:700;margin:1.5em 0}
 h1,blockquote{font-size:24pt}
 img {max-width: 100%;height: auto}
-p{line-height:1.8em;margin:1.5em 0;text-align:justify}
+p{line-height:1.7em;margin:1.5em 0;text-align:justify}
 blockquote{position:relative;float:left;max-width:350px;color:#9a9a9a;font-style:italic;font-weight:500;line-height:1.4em;margin:.8em}
 html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 
@@ -16,7 +16,7 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .medium{font-size:16pt !important}
 .small{font-size:10pt}
 .round{border-radius:50%}
-.anim,.span2,.article-index ul a:before{transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out}
+.anim,.article-index ul a:before{transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out}
 
 .btn-group,.article-actions{display:none}
 
@@ -27,7 +27,6 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .system-unpublished .article-date{background:#888;text-shadow:1px 1px 1px #444}
 
 /* navbar */
-
 .navbar{width:100%;padding:8px 0;background:#f6f7f9;box-shadow:6px 0 6px rgba(49,52,57,0.4);border-bottom:1px solid #fff}
 .navbar-fixed-top{position:fixed;top:0;z-index:999}
 
@@ -45,22 +44,19 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .search-button{background:#383B3D url(../img/search-button-bg.png) center center no-repeat;border:0;padding:10px;margin:5px 0 0 -24px}
 
 /* category blog layout */
-
 .blog-roll h1{margin:0;padding:0 0 40px}
 .subheading-category{color:#999;background:transparent}
 
 .article-item h2,.blog-item h2 a{color:#353535;font-size:32pt}
-.blog-item h2:hover{border-bottom:1px solid #7DD3F7}
 .blog-item:hover .article-date{transform: rotate(-30deg) scale(1.5)}
-.blog-item .span8{margin:0 0 35px 0}
-.blog-item-separator{border-bottom:3px dotted #e6e7e9}
+.span10{margin:0 !important}
+.blog-item-separator{border-bottom:0px dotted #353535}
 
 /* Article layout */
-
 .article-header{margin:0 0 30px}
 .article-header h2{border-bottom:1px solid #e6e7e9;margin:0 0 15px;padding:0 0 15px}
 
-.article-date{background:#7dd3f7;color:#fff;height:100px;width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;margin:0 auto 10px;z-index:997}
+.article-date{background:#7dd3f7;color:#fff;height:100px;width:100px;text-shadow:1px 1px 1px #58b9ed;text-transform:uppercase;z-index:997;transform:scale(1.5)}
 .article-date .narrow{font-size:18pt;font-weight:500;margin:42px 3px 0 8px}
 .article-date .huge{font-weight:600;letter-spacing:-0.1em;margin:10px 0 0}
 .article-item .article-date{transform: rotate(-30deg) scale(1.3)}
@@ -70,14 +66,14 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .article-index ul{list-style-type:none;border-top:1px solid #F6F7F9;border-bottom:1px solid #F6F7F9}
 .article-index ul a{position:relative;top:5px}
 .article-index ul a:before{content:'\2192';float:left;color:#aaa;text-shadow:1px 1px 0 #fff;border-radius:50%;height:20px;width:14px;padding:5px 8px;margin:0 10px 0 0}
-.article-index ul a:hover:before{background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed;transform:translate(5px, 0) rotate(360deg)}
+.article-index ul a:hover:before{background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed}
 .article-index ul a.active:before{content:'\2192';background:#7DD3F7;color:#fff;text-shadow:1px 1px 1px #58b9ed}
 .article-index ul a.active:hover:before{transform:translate(0,0)}
 .article-index li{padding:5px 0;margin:5px 0;line-height:12pt;overflow:hidden}
 
 .article-details{overflow:hidden;margin:10px 0 0 0}
 .article-details dd{float:left;margin:0 20px 0 0;padding-top:5px;line-height:34px}
-.article-details dd span{float:left;padding:3px;margin:0 10px 0 0}
+.article-details dd span{float:left;padding:1px;margin:0 10px 0 0}
 .article-details .icon:before{content:'';float:left;width:32px;height:32px;background:  url(../img/icons/article-header-icons.png)}
 .article-details .author:before {background-position:1px 0}
 .article-details .hits:before {background-position:1px -64px}

@@ -13,6 +13,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $cparams = JComponentHelper::getParams('com_media');
 
 ?>
+<div class="span10">
 <section class="blog-roll<?php echo $this->pageclass_sfx;?>">
   <?php if ($this->params->get('show_page_heading', 1) || $this->params->get('show_category_title')): ?>
   <h1>
@@ -45,28 +46,11 @@ $cparams = JComponentHelper::getParams('com_media');
   <div class="blog-item leading clearfix">
     <?php foreach ($this->lead_items as &$item) : ?>
     <article class="<?php echo $item->state == 0 ? 'system-unpublished' : null; ?>">
-      <?php $this->item = &$item; ?>
-      <div class="span2">
-        <div class="article-date anim round">
-          <?php if ($this->item->state == 0): ?>
-          <span class="narrow medium">unpusblished</span>
-          <?php else : ?>
-          <span class="narrow pull-left"><?php echo JHTML::date($item->publish_up,'M',true) ?></span> <span class="huge pull-left" ><?php echo JHTML::date($item->publish_up,'d',true) ?></span>
-          <?php endif; ?>
-        </div>
-      </div>
-      <div class="span8">
-        <?php
-				
-				echo $this->loadTemplate('item');
-?>
-        <div class="blog-item-separator"></div>
-      </div>
+      <?php $this->item = &$item; echo $this->loadTemplate('item'); ?>
+      <div class="blog-item-separator"></div>
     </article>
-    <?php
-			$leadingcount++;
-?>
-    <?php endforeach; ?>
+<?php $leadingcount++; ?>
+<?php endforeach; ?>
   </div>
   <?php endif; ?>
   <?php
@@ -78,19 +62,10 @@ $cparams = JComponentHelper::getParams('com_media');
   <div class="blog-item">
     <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
       <?php $this->item = &$item; ?>
-      <div class="span2">
-        <div class="article-date anim round">
-          <?php if ($this->item->state == 0): ?>
-          <span class="narrow medium">unpusblished</span>
-          <?php else : ?>
-          <span class="narrow pull-left"><?php echo JHTML::date($item->publish_up,'M',true) ?></span> <span class="huge pull-left" ><?php echo JHTML::date($item->publish_up,'d',true) ?></span>
-          <?php endif; ?>
-        </div>
-      </div>
-      <div class="span8"> <?php echo $this->loadTemplate('item'); ?>
+     
+     <?php echo $this->loadTemplate('item'); ?>
         <div class="blog-item-separator"></div>
-      </div>
-      <br style="clear:both" />
+
     </article>
   </div>
   <?php $counter++; ?>
@@ -112,3 +87,4 @@ $cparams = JComponentHelper::getParams('com_media');
     <?php echo $this->pagination->getPagesLinks(); ?> </div>
   <?php  endif; ?>
 </section>
+</div>
