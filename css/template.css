@@ -52,7 +52,7 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .blog-item-separator{border-bottom:8px dotted #f6f6f6;margin:15px 0}
 
 /* Article layout */
-.article-header{margin:0 0 30px}
+.article-header{margin:0 0 30px;color:#999}
 .article-date{color:#7dd3f7;margin:0 0 10px}
 .article-header h2{border-bottom:1px solid #e6e7e9;margin:0 0 15px;padding:0 0 5px}
 
