@@ -75,7 +75,7 @@ html,.caption h4,.caption p,.article-header h2,.nav,.navbar{margin:0;padding:0}
 .article-details .category:before {background-position:1px -96px}
 
 .article-introtext{font-size:14pt}
-.article-image{position:relative;overflow:hidden;max-width:100%}
+.article-image{position:relative;overflow:hidden;max-width:100%;border:10px solid #F6F7F9;box-shadow:1px 1px 2px #bbb;border-radius:3px}
 .article-image img{display:block}
 
 .caption{width:100%;color:#fff;text-shadow:1px 1px 0 #000}
