@@ -28,13 +28,13 @@
     <position>navigation</position>
 	<position>search</position>
     <position>body</position>
-	<position>left-nav</position>
+	<position>sidebar-left</position>
     <position>article-top</position>
     <position>article-top2</position>
     <position>article</position>
     <position>article-bottom</position>
     <position>article-bottom2</position>
-    <position>sidebar</position>
+    <position>sidebar-right</position>
     <position>footer</position>
   </positions>
   <languages folder="language">

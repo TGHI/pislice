@@ -46,7 +46,7 @@ $doc->addStyleDeclaration($templateStyles);
 <div class="container-fluid">
   <div class="row-fluid clearfix">
     <div class="span2">
-      <jdoc:include type="modules" name="left-nav" style="none" />
+      <jdoc:include type="modules" name="sidebar-left" style="none" />
     </div>
     <div class="span7">
       <jdoc:include type="message" />
@@ -56,7 +56,7 @@ $doc->addStyleDeclaration($templateStyles);
       <jdoc:include type="modules" name="debug" style="none" />
     </div>
     <div class="span3">
-      <jdoc:include type="modules" name="sidebar" style="none" />
+      <jdoc:include type="modules" name="sidebar-right" style="none" />
     </div>
   </div>
 </div>
