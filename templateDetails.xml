@@ -26,6 +26,7 @@
     <position>debug</position>
     <position>header</position>
     <position>navigation</position>
+	<position>search</position>
     <position>body</position>
     <position>article-top</position>
     <position>article-top2</position>
