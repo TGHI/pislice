@@ -36,20 +36,18 @@ $doc->addStyleDeclaration($templateStyles);
 <jdoc:include type="head" />
 </head>
 <body>
-<div class="navbar navbar-fixed-top anim">
+<div class="navbar navbar-fixed-top container-fluid anim">
   <div class="navbar-inner row-fluid">
-    <div class="brand span2"> <a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a> </div>
-    <div class="span7">
-      <jdoc:include type="modules" name="navigation" style="none" />
-    </div>
-    <div class="span3">
-      <jdoc:include type="modules" name="search" style="none" />
-    </div>
+    <a href="<?php echo $this->baseurl; ?>/" class="brand span2"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a>
+    <jdoc:include type="modules" name="navigation" style="none" />
+    <jdoc:include type="modules" name="search" style="none" />
   </div>
 </div>
-<div class="container-fluid center">
+<div class="container-fluid">
   <div class="row-fluid clearfix">
-    <div class="span2"> test </div>
+    <div class="span2">
+      <jdoc:include type="modules" name="left-nav" style="none" />
+    </div>
     <div class="span7">
       <jdoc:include type="message" />
       <jdoc:include type="modules" name="article-top" style="none" />
