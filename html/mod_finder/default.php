@@ -114,23 +114,15 @@ $finderJs .= "});". "\n";
 $doc->addScriptDeclaration($finderJs);
 
 ?>
-<form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="form-search pull-right">
-	<div class="finder<?php echo $suffix; ?>">
-		<?php
-		// Show the form fields.
-		echo $output;
-		?>
-
-		<?php if ($params->get('show_advanced', 1)) : ?>
-			<?php if ($params->get('show_advanced', 1) == 2) : ?>
-				<br />
-				<a href="<?php echo JRoute::_($route); ?>"><?php echo JText::_('COM_FINDER_ADVANCED_SEARCH'); ?></a>
-			<?php elseif ($params->get('show_advanced', 1) == 1) : ?>
-				<div id="mod-finder-advanced">
-					<?php echo JHtml::_('filter.select', $query, $params); ?>
-				</div>
-			<?php endif; ?>
-		<?php endif; ?>
-		<?php echo modFinderHelper::getGetFields($route); ?>
-	</div>
-</form>
+<form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="form-search">
+    <div class="finder<?php echo $suffix; ?>">
+      <?php echo $output; ?>
+      <?php if ($params->get('show_advanced', 1)) : ?>
+      <?php if ($params->get('show_advanced', 1) == 2) : ?>
+      <a href="<?php echo JRoute::_($route); ?>"><?php echo JText::_('COM_FINDER_ADVANCED_SEARCH'); ?></a>
+      <?php elseif ($params->get('show_advanced', 1) == 1) : ?>
+      <div id="mod-finder-advanced"> <?php echo JHtml::_('filter.select', $query, $params); ?> </div>
+      <?php endif; ?>
+      <?php endif; ?>
+      <?php echo modFinderHelper::getGetFields($route); ?> </div>
+  </form>
