@@ -13,7 +13,7 @@
 
 ?>
 
-<ul class="nav menu pull-left clearfix <?php echo $class_sfx;?>"<?php
+<ul class="nav menu clearfix <?php echo $class_sfx;?>"<?php
 	$tag = '';
 	if ($params->get('tag_id') != null)
 	{
