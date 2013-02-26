@@ -114,7 +114,7 @@ $finderJs .= "});". "\n";
 $doc->addScriptDeclaration($finderJs);
 
 ?>
-<form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="form-search">
+<form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="navbar-search pull-left">
     <div class="finder<?php echo $suffix; ?>">
       <?php echo $output; ?>
       <?php if ($params->get('show_advanced', 1)) : ?>
