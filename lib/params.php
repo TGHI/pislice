@@ -31,11 +31,12 @@ if($tpl_param_titleFont || $tpl_param_bodyFont || $tpl_param_navFont || $tpl_par
     if(strpos($fonts[$i],':')){
       $fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
     }
+	$fonts[$i] = str_replace('+', ' ',$fonts[$i]);
   }
 
-  $templateStyles .= "    h1,h2,h3,.article-introtext,blockquote{font-family:\"" . str_replace('+', ' ',$fonts[0]) . "\",serif}\n";
-  $templateStyles .= "    select,input,body{font-family:\"" . str_replace('+',' ',$fonts[1]) . "\",sans-serif}\n";
-  $templateStyles .= "    .narrow{font-family:\"" . str_replace('+', ' ',$fonts[2]) . "\",sans-serif}\n";
+  $templateStyles .= "    h1,h2,h3,.article-introtext,blockquote{font-family:\"" . $fonts[0] . "\",serif}\n";
+  $templateStyles .= "    select,input,body{font-family:\"" . $fonts[1] . "\",sans-serif}\n";
+  $templateStyles .= "    .narrow{font-family:\"" . $fonts[2] . "\",sans-serif}\n";
 
 }
 
