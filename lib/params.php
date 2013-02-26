@@ -15,13 +15,14 @@ $tpl_param_bodyFont = 			$this->params->get('bodyFont');
 $tpl_param_navFont = 			$this->params->get('navFont');
 $tpl_param_linkColour = 		$this->params->get('linkColour');
 $tpl_param_linkHover = 			$this->params->get('linkHover');
+$tpl_param_complementColour = 	$this->params->get('complementColour');
 $tpl_param_detailIconsColour = 	$this->params->get('detailIconsColour');
 $tpl_param_animations = 		$this->params->get('animations');
 $tpl_param_generator = 			$this->params->get('generator');
 
 // Google Fonts
 
-if($tpl_param_titleFont || $tpl_param_bodyFont || $tpl_param_navFont){
+if($tpl_param_titleFont || $tpl_param_bodyFont || $tpl_param_navFont || $tpl_param_complementColour){
 
   $fonts = array($tpl_param_titleFont,$tpl_param_bodyFont,$tpl_param_navFont);
   $googleFonts = implode("|",$fonts);
@@ -42,7 +43,11 @@ if($tpl_param_titleFont || $tpl_param_bodyFont || $tpl_param_navFont){
 
 $templateStyles .= "    a{color:" . $tpl_param_linkColour . "}\n";
 $templateStyles .= "    a:hover{" . $tpl_param_linkHover . "}\n";
-$templateStyles .= "    .article-details dd span,.article-index ul a:before{background:" . $tpl_param_detailIconsColour . "}";
+$templateStyles .= "    .article-details dd span,.article-index ul a:before{background:" . $tpl_param_detailIconsColour . "}\n";
+$templateStyles .= "    .blog-item-separator{border-bottom:5px dotted " . $tpl_param_complementColour . "}\n";
+$templateStyles .= "    .article-date{color:" . $tpl_param_complementColour . "}\n";
+$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $tpl_param_complementColour . "}";
+
 
 // Theme Misc
 

@@ -28,6 +28,7 @@
     <position>navigation</position>
 	<position>search</position>
     <position>body</position>
+	<position>left-nav</position>
     <position>article-top</position>
     <position>article-top2</position>
     <position>article</position>
@@ -60,6 +61,9 @@
       <field name="linkHover" class="" type="text" default="text-decoration:none"
 					label="TPL_PISLICE_LINK_HOVER_LABEL"
 					description="TPL_PISLICE_LINK_HOVER_DESC" />
+	  <field name="complementColour" class="" type="color" default="#7dd3f7"
+					label="TPL_PISLICE_COMPLEMENT_COLOUR_LABEL"
+					description="TPL_PISLICE_COMPLEMENT_COLOUR_DESC" />
       <field name="detailIconsColour" class="" type="color" default="#e0e1e2"
 					label="TPL_PISLICE_DETAIL_ICON_COLOUR_LABEL"
 					description="TPL_PISLICE_DETAIL_ICON_COLOUR_DESC" />
