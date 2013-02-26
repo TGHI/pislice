@@ -34,7 +34,6 @@ $limitstart		= JRequest::getVar('limitstart');
 		}
       ?>
       </div>
-      <div class="span8">
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
           <?php if ($params->get('show_publish_date')) : ?>
@@ -188,5 +187,4 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 ?>
         <?php echo $this->item->event->afterDisplayContent; ?> </div>
     </article>
-  </div>
 </section>

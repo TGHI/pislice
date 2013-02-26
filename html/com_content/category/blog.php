@@ -13,7 +13,6 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $cparams = JComponentHelper::getParams('com_media');
 
 ?>
-<div class="span10">
 <section class="blog-roll<?php echo $this->pageclass_sfx;?>">
   <?php if ($this->params->get('show_page_heading', 1) || $this->params->get('show_category_title')): ?>
   <h1>
@@ -87,4 +86,3 @@ $cparams = JComponentHelper::getParams('com_media');
     <?php echo $this->pagination->getPagesLinks(); ?> </div>
   <?php  endif; ?>
 </section>
-</div>

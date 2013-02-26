@@ -37,24 +37,30 @@ $doc->addStyleDeclaration($templateStyles);
 </head>
 <body>
 <div class="navbar navbar-fixed-top anim">
-  <div class="navbar-inner center">
-    <div class="brand pull-left"><a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a> </div>
-    <jdoc:include type="modules" name="navigation" style="none" />
-  </div>
-</div>
-<div class="container-fluid center">
-  <div class="row-fluid clearfix">
-    <jdoc:include type="message" />
-    <jdoc:include type="modules" name="article-top" style="none" />
-    <jdoc:include type="component" />
-    <div class="span2">
-      <jdoc:include type="modules" name="sidebar" style="none" />
+  <div class="navbar-inner row-fluid">
+    <div class="brand span2"> <a href="<?php echo $this->baseurl; ?>/"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a> </div>
+    <div class="span7">
+      <jdoc:include type="modules" name="navigation" style="none" />
+    </div>
+    <div class="span3">
+      <jdoc:include type="modules" name="search" style="none" />
     </div>
   </div>
 </div>
 <div class="container-fluid center">
-  <jdoc:include type="modules" name="article-bottom" style="none" />
-  <jdoc:include type="modules" name="debug" style="none" />
+  <div class="row-fluid clearfix">
+    <div class="span2"> test </div>
+    <div class="span7">
+      <jdoc:include type="message" />
+      <jdoc:include type="modules" name="article-top" style="none" />
+      <jdoc:include type="component" />
+      <jdoc:include type="modules" name="article-bottom" style="none" />
+      <jdoc:include type="modules" name="debug" style="none" />
+    </div>
+    <div class="span3">
+      <jdoc:include type="modules" name="sidebar" style="none" />
+    </div>
+  </div>
 </div>
 </body>
 </html>
