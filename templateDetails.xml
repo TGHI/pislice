@@ -43,8 +43,7 @@
   </languages>
   <config>
     <fields name="params">
-      <fieldset name="advanced">
-	  <field name="TPL_PISLICE_PARAMS_TITLE_THEME_FONTS" type="spacer" class="invalid"></field>
+      <fieldset name="FONTS">
 	  <field name="titleFont" class="" type="text" default="Droid+Serif:400,400italic,700"
 					label="TPL_PISLICE_FONT_TITLE_LABEL"
 					description="TPL_PISLICE_FONT_TITLE_DESC" />
@@ -54,7 +53,8 @@
 	  <field name="navFont" class="" type="text" default="Fjalla+One"
 					label="TPL_PISLICE_FONT_NAV_LABEL"
 					description="TPL_PISLICE_FONT_NAV_DESC" />
-      <field name="TPL_PISLICE_PARAMS_TITLE_THEME_COLOURS" type="spacer" class="invalid"></field>
+	</fieldset>
+	<fieldset name="COLOURS">
       <field name="linkColour" class="" type="color" default="#ff6f05"
 					label="TPL_PISLICE_LINK_COLOUR_LABEL"
 					description="TPL_PISLICE_LINK_COLOUR_DESC" />
@@ -67,7 +67,8 @@
       <field name="detailIconsColour" class="" type="color" default="#e0e1e2"
 					label="TPL_PISLICE_DETAIL_ICON_COLOUR_LABEL"
 					description="TPL_PISLICE_DETAIL_ICON_COLOUR_DESC" />
-      <field name="TPL_PISLICE_PARAMS_TITLE_THEME_MISC" type="spacer" class="invalid"></field>
+      </fieldset>
+	  <fieldset name="MISC">
       <field name="animations" 
 					type="radio"
 					class="btn-group"
@@ -77,7 +78,6 @@
         <option value="1">JYES</option>
         <option value="0">JNO</option>
       </field>
-      <field name="TPL_PISLICE_PARAMS_TITLE_MISC" type="spacer" class="invalid"></field>
       <field name="generator" 
 					type="radio"
 					class="btn-group"
