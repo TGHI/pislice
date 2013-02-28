@@ -8,12 +8,10 @@
 
 $db					= JFactory::getDBO();
 $query				= $db->getQuery(true);
-$params 			= $this->params;
+$template_params 	= json_decode($this->params);
 $templateStyles		= "";
 
-//check for template params
-if($params == "{}"){
-
+if(count($this->params)){
   jimport('joomla.filesystem.file');
 
   $config = file_get_contents('templates/' . $template . '/config/default.config.json');
@@ -22,11 +20,6 @@ if($params == "{}"){
   $result = $db->query();
 
   $template_params = json_decode($config);
-
-}else{
-
-  $template_params = json_decode($params);
-
 }
 
 // Google Fonts
