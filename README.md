@@ -31,7 +31,9 @@ Pending release of 1.0.0 and how well I can stick to the project, I may also add
 Jargon
 --------------
 
-Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
+This package includes the [Elusive Icon font]. 
+
+All other portions Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
 
 GNU General Public License version 3 or later; see LICENCE.txt
 
@@ -40,3 +42,4 @@ GNU General Public License version 3 or later; see LICENCE.txt
 [jQuery]: http://www.jquery.com
 [K2]: http://getk2.org
 [pislice-extras]:https://github.com/TGHI/pislice-extras
+[Elusive Icon font]:https://github.com/aristath/elusive-iconfont
