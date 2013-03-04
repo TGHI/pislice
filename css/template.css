@@ -28,7 +28,7 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 /* navbar */
 .navbar{width:100%;padding:8px 0;background:#f6f7f9;box-shadow:6px 0 6px rgba(49,52,57,0.4);border-bottom:1px solid #fff}
 .navbar-fixed-top{position:fixed;top:0;z-index:999}
-.brand,.nav{text-align:center;padding:0!important;margin:0 !important}
+.brand,.nav{text-align:center;padding:0!important;margin:0 10px 0 !important}
 
 .navbar-inner .nav{list-style-type:none;text-align:left}
 .navbar-inner .nav li:first-child{border-left:1px solid #dedfe3;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff}
