@@ -27,13 +27,13 @@ $limitstart		= JRequest::getVar('limitstart');
     <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
   </div>-->
       <?php endif;?>
-      <div class="span2">
+
         <?php 
         if (isset ($this->item->toc)){
          echo $this->item->toc;
 		}
       ?>
-      </div>
+
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
           <?php if ($params->get('show_publish_date')) : ?>
@@ -54,7 +54,7 @@ $limitstart		= JRequest::getVar('limitstart');
           <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
           <dl class="article-details">
             <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
-            <dd><span class="icon author round"></span>
+            <dd><span class="icon-user round"></span>
               <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
               <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -69,10 +69,10 @@ $limitstart		= JRequest::getVar('limitstart');
               <?php endif; ?>
             </dd>
             <?php if ($params->get('show_hits')) : ?>
-            <dd><span class="icon hits round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+            <dd><span class="icon-eye-open round">test this please</span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
             <?php endif; ?>
             <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-            <dd><span class="icon category round"></span>
+            <dd><span class="icon-tag round"></span>
               <?php if (!empty($this->item->parent_slug)) : ?>
               <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
               <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
