@@ -30,6 +30,7 @@ require_once('lib/params.php');
 <?php 
 $doc->addStyleSheet('templates/' . $template . '/css/template.css');
 $doc->addStyleSheet('templates/' . $template . '/css/bootstrap-responsive.min.css');
+$doc->addStyleSheet('templates/' . $template . '/css/elusive-webfont.css');
 $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleFonts);
 $doc->addStyleDeclaration($templateStyles);
 ?>
@@ -38,7 +39,7 @@ $doc->addStyleDeclaration($templateStyles);
 <body>
 <div class="navbar navbar-fixed-top container-fluid anim">
   <div class="navbar-inner row-fluid">
-    <a href="<?php echo $this->baseurl; ?>/" class="brand span2"><img src="templates/<?php echo $template; ?>/img/logo.png" alt="" class="anim" /></a>
+    <a href="<?php echo $this->baseurl; ?>/" class="brand span2"><img src="templates/<?php echo $template; ?>/img/pislice-logo.png" alt="" class="anim" /></a>
     <jdoc:include type="modules" name="navigation" style="none" />
     <jdoc:include type="modules" name="search" style="none" />
   </div>
