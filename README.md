@@ -35,7 +35,7 @@ This package includes the [Elusive Icon font].
 
 All other portions Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
 
-GNU General Public License version 3 or later; see LICENCE.txt
+piSlice is licensed under the GNU General Public License version 3 or later; see LICENCE.txt
 
 [Joomla!]: http://www.joomla.org
 [bootstrap]: http://twitter.github.com/bootstrap/
