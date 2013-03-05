@@ -27,13 +27,6 @@ $limitstart		= JRequest::getVar('limitstart');
     <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
   </div>-->
       <?php endif;?>
-
-        <?php 
-        if (isset ($this->item->toc)){
-         echo $this->item->toc;
-		}
-      ?>
-
         <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
         <div class="article-header">
           <?php if ($params->get('show_publish_date')) : ?>
@@ -129,7 +122,7 @@ $limitstart		= JRequest::getVar('limitstart');
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
           <div class="zoom-in icon-zoom-in anim"></div>
-          <div class="caption icon-camera anim">
+          <div class="caption icon-picture anim">
             <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
             <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
           </div>
@@ -137,10 +130,17 @@ $limitstart		= JRequest::getVar('limitstart');
         </div>
         <?php endif; ?>
         <?php endif; ?>
+                <?php 
+        if (isset ($this->item->toc)){
+         echo $this->item->toc;
+		}
+         ?>
         <?php 
 		// get rid of those stupid page numbers
+	
 		$this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
-		echo $this->item->text;		
+		echo $this->item->text;	
+		
 		?>
         <?php if ($info == 0): ?>
         <?php if ($params->get('show_modify_date')) : ?>
@@ -184,7 +184,7 @@ $limitstart		= JRequest::getVar('limitstart');
 if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && $this->item->paginationrelative) {
 	echo $this->item->pagination; 
 	}
-?>
+?>		
         <?php echo $this->item->event->afterDisplayContent; ?>
     </article>
   </div>
