@@ -36,10 +36,10 @@ $doc->addStyleDeclaration($templateStyles);
 ?>
 <jdoc:include type="head" />
 </head>
-<body>
-<div class="navbar navbar-fixed-top container-fluid anim">
+<body class="anim">
+<div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
-    <a href="<?php echo $this->baseurl; ?>/" class="brand span2"><img src="templates/<?php echo $template; ?>/img/pislice-logo.png" alt="" class="anim" /></a>
+    <a href="<?php echo $this->baseurl; ?>/" class="brand span2"><img src="templates/<?php echo $template; ?>/img/pislice-logo.png" alt="" /></a>
     <jdoc:include type="modules" name="navigation" style="none" />
     <jdoc:include type="modules" name="search" style="none" />
   </div>
