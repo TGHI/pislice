@@ -30,13 +30,12 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .navbar-fixed-top{position:fixed;top:0;z-index:999}
 .brand,.nav{text-align:center;padding:0!important;margin:0 10px 0 !important}
 
-.navbar-inner .nav{list-style-type:none;text-align:left}
-.navbar-inner .nav li:first-child{border-left:1px solid #dedfe3;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff}
+.navbar-inner .nav{list-style-type:none;text-align:left;float:left;overflow:hidden;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff;border-left:1px solid #dedfe3}
 .navbar-inner .nav li{float:left;min-height:65px;padding:0 15px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;text-shadow:1px 1px 0 #fff}
 .navbar-inner .nav li a{margin-top:11px;display:block;text-transform:uppercase;line-height:22pt;letter-spacing:-2pt}
 .navbar-inner .nav li div{text-transform:uppercase;color:#6f7477}
 
-.navbar-search{margin:0 20px 0}
+.navbar-search{margin:0 0 0 15px}
 .navbar-search-inner{position:relative;height:30px;box-shadow:inset 0 0 5px #dedfe3;margin:12px 0 0;padding:4px;border-width:1px;border-style:solid;border-color:#dedfe3 #fff #fff #dedfe3;border-radius:3px}
 .search-query{height:100%;padding:0 0 0 5px;color:#999;border-radius:3px 0 0 3px;border:0;box-shadow: 1px 1px 1px #dedfe3}
 .button-container{position:relative;height:100%;width:5px;background:#fff;box-shadow:1px 1px 1px #dedfe3;border-radius:0 3px 3px 0}
@@ -101,14 +100,18 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .navbar-search-inner{margin:3px 0 0}
 .anim{transition: none !important} 
 .caption{background:#F6F7F9;padding:5px 10px;margin:5px 0;color:#353535;text-shadow:1px 1px 0 #fff}
+.search-query{width:175px}
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px){
 .article-index{margin:0;border-left:1px solid #F6F7F9;padding:0 0 0 10px}
 .article-index ul{border:0}
 .navbar{position:relative;width:auto;margin:0;padding:0}
-.navbar-inner .nav li:first-child,.navbar-inner .nav li{min-height:20px;padding-left:5px;border:0;box-shadow:none}
-.navbar-search{position:relative;float:none !important;clear:both;padding:5px 0 0 0;margin:5px 10px 0 5px;border-top:1px solid #DEDFE3;box-shadow:inset 0 1px 0 #fff}
+.navbar-inner .brand{max-width:100px;float:left !important;padding:4px}
+.navbar-inner .span2{margin:4px 8px 0 6px!important;padding: 0 !important}
+.navbar-inner .nav,.navbar-inner .nav li{border:0;box-shadow:none;padding:2px 0}
+.navbar-inner .nav li{margin:0 15px 0 0}
+.navbar-search{position:relative;float:none !important;clear:both;margin:5px 10px 0 5px}
 .navbar-search-inner{padding:5px 10px 5px 5px}
 .search-query{width:100%}
 .search-button,.button-container{display:none !important}
