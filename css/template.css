@@ -72,6 +72,7 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .article-image{position:relative;overflow:hidden;max-width:100%;border:10px solid #F6F7F9;box-shadow:1px 1px 2px #bbb;border-radius:3px}
 .article-image img{display:block}
 
+.caption:before{float:left;padding:10px 20px 10px 5px;margin:0 20px 0 0;font-size:32px;border-right:1px solid rgba(0,0,0,0.4);box-shadow:1px 0 0 rgba(255,255,255,0.1)}
 .caption{width:100%;color:#fff;text-shadow:1px 1px 0 #000}
 
 .pager ul{list-style-type:none;width:100%;padding:10px 0;overflow:hidden}
@@ -86,11 +87,10 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 }
 /* at least handheld devices */
 @media (min-width: 979px){
-.article-image .zoom-in{position:absolute;top:20px;right:20px;width:34px;height:34px}
+.article-image .zoom-in{position:absolute;top:20px;right:20px;font-size:32px;color:#fff;opacity:0.6;text-shadow:1px 1px 1px #000}
 .article-image:hover .zoom-in{opacity:0;transform:scale(2);-webkit-transform:scale(2)}
 .article-image:hover img.anim {transform:scale(1.6) rotate(-20deg);-webkit-transform:scale(1.6) rotate(-20deg)}
-.article-image:hover .caption{background:rgba(0,0,0,0.4);transform:translate(0,0);-webkit-transform:translate(0,0);opacity:1}
-.caption{position:absolute;bottom:20px;background:rgba(0,0,0,0.4);padding:20px;z-index:3;transform:scale(2);opacity:0}
+.caption{position:absolute;bottom:0px;background:rgba(0,0,0,0.4);padding:20px;z-index:3}
 }
 /* handheld devices */
 @media (max-width: 980px){

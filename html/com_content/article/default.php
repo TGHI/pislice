@@ -128,8 +128,8 @@ $limitstart		= JRequest::getVar('limitstart');
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
-          <div class="zoom-in anim"></div>
-          <div class="caption anim">
+          <div class="zoom-in icon-zoom-in anim"></div>
+          <div class="caption icon-camera anim">
             <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
             <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
           </div>
@@ -185,6 +185,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 	echo $this->item->pagination; 
 	}
 ?>
-        <?php echo $this->item->event->afterDisplayContent; ?> </div>
+        <?php echo $this->item->event->afterDisplayContent; ?>
     </article>
+  </div>
 </section>
