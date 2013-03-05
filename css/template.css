@@ -28,7 +28,7 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 /* navbar */
 .navbar{width:100%;padding:8px 0;background:#f6f7f9;box-shadow:6px 0 6px rgba(49,52,57,0.4);border-bottom:1px solid #fff}
 .navbar-fixed-top{position:fixed;top:0;z-index:999}
-.brand,.nav{text-align:center;padding:0!important;margin:0 10px 0 !important}
+.brand,.navbar-inner .nav{text-align:center;padding:0!important;margin:0 10px 0 !important}
 
 .navbar-inner .nav{list-style-type:none;text-align:left;float:left;overflow:hidden;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff;border-left:1px solid #dedfe3}
 .navbar-inner .nav li{float:left;min-height:65px;padding:0 15px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;text-shadow:1px 1px 0 #fff}
@@ -54,14 +54,13 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .article-header h2{border-bottom:1px solid #e6e7e9;margin:0 0 15px;padding:0 0 5px}
 .article-date{margin:0 0 10px}
 
-.article-index{margin:45px 0 0}
-.article-index h3{margin:0;text-align:center;padding:10px 0}
-.article-index ul{list-style-type:none;border-top:1px solid #e6e7e9;border-bottom:1px solid #e6e7e9}
+.article-index{margin:20px;border-left:3px solid #e6e7e9;padding: 0 0 0 15px}
+.article-index h3{margin:0;padding:0}
+.article-index ul{list-style-type:none;padding:0}
 .article-index ul a{position:relative;top:5px}
-.article-index ul a:before{content:'\2192';float:left;color:#aaa;text-shadow:1px 1px 0 #fff;border-radius:50%;height:20px;width:14px;padding:5px 8px;margin:0 10px 0 0}
+.article-index ul a:before{font-family:"Elusive-Icons";content:"\e0cc";float:left;color:#aaa;text-shadow:1px 1px 0 #fff;border-radius:50%;height:16px;width:12px;padding:8px 10px;margin:0 10px 0 0}
 .article-index ul a:hover:before{color:#fff;text-shadow:1px 1px 1px #58b9ed}
-.article-index ul a.active:before{content:'\2192';color:#fff;text-shadow:1px 1px 1px #58b9ed}
-.article-index ul a.active:hover:before{transform:translate(0,0)}
+.article-index ul a.active:before{font-family:"Elusive-Icons";content:"\e0cc";color:#fff;text-shadow:1px 1px 1px #58b9ed}
 .article-index li{padding:5px 0;margin:5px 0;line-height:12pt;overflow:hidden}
 
 .article-details{overflow:hidden;margin:10px 0 0 0}
@@ -71,9 +70,10 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .article-introtext{font-size:14pt}
 .article-image{position:relative;overflow:hidden;max-width:100%;border:10px solid #F6F7F9;box-shadow:1px 1px 2px #bbb;border-radius:3px}
 .article-image img{display:block}
+.article-image .zoom-in{position:absolute;top:20px;right:20px;font-size:32px;color:#fff;opacity:0.6;text-shadow:1px 1px 1px #000}
 
+.caption{position:absolute;bottom:0px;background:rgba(0,0,0,0.4);padding:15px 20px;z-index:3;width:100%;color:#fff;text-shadow:1px 1px 0 #000}
 .caption:before{float:left;padding:10px 20px 10px 5px;margin:0 20px 0 0;font-size:32px;border-right:1px solid rgba(0,0,0,0.4);box-shadow:1px 0 0 rgba(255,255,255,0.1)}
-.caption{width:100%;color:#fff;text-shadow:1px 1px 0 #000}
 
 .pager ul{list-style-type:none;width:100%;padding:10px 0;overflow:hidden}
 .pager ul li{float:left;color:#bbb}
@@ -87,25 +87,23 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 }
 /* at least handheld devices */
 @media (min-width: 979px){
-.article-image .zoom-in{position:absolute;top:20px;right:20px;font-size:32px;color:#fff;opacity:0.6;text-shadow:1px 1px 1px #000}
 .article-image:hover .zoom-in{opacity:0;transform:scale(2);-webkit-transform:scale(2)}
 .article-image:hover img.anim {transform:scale(1.6) rotate(-20deg);-webkit-transform:scale(1.6) rotate(-20deg)}
-.caption{position:absolute;bottom:0px;background:rgba(0,0,0,0.4);padding:20px;z-index:3}
 }
 /* handheld devices */
 @media (max-width: 980px){
 .navbar{width:auto}
+.article-image .zoom-in{display:none}
 .navbar-inner .nav li{padding:6px 5px 0 5px;margin:0 0 5px 5px;min-height:36px}
 .navbar-inner .nav li a{font-size:110%;letter-spacing:0}
 .navbar-search-inner{margin:3px 0 0}
 .anim{transition: none !important} 
-.caption{background:#F6F7F9;padding:5px 10px;margin:5px 0;color:#353535;text-shadow:1px 1px 0 #fff}
+.caption{padding:5px}
+.caption:before{padding:10px 15px 10px;margin-right:10px;font-size:16px}
 .search-query{width:175px}
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px){
-.article-index{margin:0;border-left:1px solid #F6F7F9;padding:0 0 0 10px}
-.article-index ul{border:0}
 .navbar{position:relative;width:auto;margin:0;padding:0}
 .navbar-inner .brand{max-width:100px;float:left !important;padding:4px}
 .navbar-inner .span2{margin:4px 8px 0 6px!important;padding: 0 !important}
