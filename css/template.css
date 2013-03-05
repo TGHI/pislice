@@ -70,10 +70,10 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .article-introtext{font-size:14pt}
 .article-image{position:relative;overflow:hidden;max-width:100%;border:10px solid #F6F7F9;box-shadow:1px 1px 2px #bbb;border-radius:3px}
 .article-image img{display:block}
-.article-image .zoom-in{position:absolute;top:20px;right:20px;font-size:32px;color:#fff;opacity:0.6;text-shadow:1px 1px 1px #000}
+.article-image .zoom-in{position:absolute;top:20px;right:20px;font-size:32px;color:#fff;opacity:0.4;text-shadow:1px 1px 1px #000}
 
 .caption{position:absolute;bottom:0px;background:rgba(0,0,0,0.4);padding:15px 20px;z-index:3;width:100%;color:#fff;text-shadow:1px 1px 0 #000}
-.caption:before{float:left;padding:10px 20px 10px 5px;margin:0 20px 0 0;font-size:32px;border-right:1px solid rgba(0,0,0,0.4);box-shadow:1px 0 0 rgba(255,255,255,0.1)}
+.caption:before{float:left;padding:10px 20px 10px 5px;margin:0 20px 0 0;font-size:32px;border-right:1px solid rgba(0,0,0,0.3);box-shadow:1px 0 0 rgba(255,255,255,0.1)}
 
 .pager ul{list-style-type:none;width:100%;padding:10px 0;overflow:hidden}
 .pager ul li{float:left;color:#bbb}
