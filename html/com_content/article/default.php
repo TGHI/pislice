@@ -10,7 +10,6 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 $app	 			= JFactory::getApplication();
 $template			= $app->getTemplate(true);
-$template_params	= $template->params;
 $params				= $this->item->params;
 $images 			= json_decode($this->item->images);
 $urls 				= json_decode($this->item->urls);
