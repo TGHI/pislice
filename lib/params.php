@@ -37,7 +37,7 @@ for($i = 0; $i < count($fonts);$i++){
   $fonts[$i] = str_replace('+', ' ',$fonts[$i]);
 }
 
-$templateStyles .= "    h1,h2,h3,.article-introtext,blockquote{font-family:\"" . $fonts[0] . "\",serif}\n";
+$templateStyles .= "    h1,h2,h3,.article-introtext,blockquote,.serif{font-family:\"" . $fonts[0] . "\",serif}\n";
 $templateStyles .= "    select,input,body{font-family:\"" . $fonts[1] . "\",sans-serif}\n";
 $templateStyles .= "    .narrow{font-family:\"" . $fonts[2] . "\",sans-serif}\n";
 
