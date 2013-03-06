@@ -68,6 +68,17 @@
 					label="TPL_PISLICE_DETAIL_ICON_COLOUR_LABEL"
 					description="TPL_PISLICE_DETAIL_ICON_COLOUR_DESC" />
       </fieldset>
+	  <fieldset name="LAYOUT">
+	  <field name="pagenumbers" 
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="TPL_PISLICE_ARTICLE_PAGENUMBERS_LABEL"
+					description="TPL_PISLICE_ARTICLE_PAGENUMBERS_DESC">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
+	  </fieldset>
 	  <fieldset name="MISC">
       <field name="animations" 
 					type="radio"

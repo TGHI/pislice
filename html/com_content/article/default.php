@@ -8,17 +8,18 @@
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
-$app 			= JFactory::getApplication();
-$params 		= $this->item->params;
-$images 		= json_decode($this->item->images);
-$urls 			= json_decode($this->item->urls);
-$info    		= $params->get('info_block_position', 0);
-$canEdit		= $params->get('access-edit');
-$user    		= JFactory::getUser();
-$limitstart		= JRequest::getVar('limitstart');
+$app	 			= JFactory::getApplication();
+$template			= $app->getTemplate(true);
+$template_params	= $template->params;
+$params				= $this->item->params;
+$images 			= json_decode($this->item->images);
+$urls 				= json_decode($this->item->urls);
+$info   	 		= $params->get('info_block_position', 0);
+$canEdit			= $params->get('access-edit');
+$user    			= JFactory::getUser();
+$limitstart			= JRequest::getVar('limitstart');
 
 ?>
-
 <section class="article-content">
   <div class="article-item<?php echo $this->pageclass_sfx?>">
     <article>
@@ -136,9 +137,11 @@ $limitstart		= JRequest::getVar('limitstart');
 		}
          ?>
         <?php 
-		// get rid of those stupid page numbers
-	
-		$this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
+		
+		if ($template->params->get('pagenumbers') == 0) {
+			// get rid of those stupid page numbers
+		  $this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
+		}
 		echo $this->item->text;	
 		
 		?>
