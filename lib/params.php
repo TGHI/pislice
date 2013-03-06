@@ -16,9 +16,9 @@ if (empty($template_params)){
 
   jimport('joomla.filesystem.file');
 
-  $config = file_get_contents('templates/' . $templateName . '/config/default.config.json');
+  $config = file_get_contents('templates/' . $template . '/config/default.config.json');
   
-  $db->setQuery("UPDATE #__template_styles SET params = '$config' WHERE template = '$templateName' LIMIT 1");
+  $db->setQuery("UPDATE #__template_styles SET params = '$config' WHERE template = '$template' LIMIT 1");
   $result = $db->query();
   
   foreach(json_decode($config) as $param=>$value){
