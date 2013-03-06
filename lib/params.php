@@ -16,18 +16,19 @@ if (empty($template_params)){
 
   jimport('joomla.filesystem.file');
 
-  $config = file_get_contents('templates/' . $template . '/config/default.config.json');
+  $config = file_get_contents('templates/' . $templateName . '/config/default.config.json');
   
-  $db->setQuery("UPDATE #__template_styles SET params = '$config' WHERE template = '$template' LIMIT 1");
+  $db->setQuery("UPDATE #__template_styles SET params = '$config' WHERE template = '$templateName' LIMIT 1");
   $result = $db->query();
-
-  $template_params = (array)json_decode($config);
-
+  
+  foreach(json_decode($config) as $param=>$value){
+	$this->params->set($param,$value);
+  }
 }
 
 // Google Fonts
 
-$fonts = array($template_params['titleFont'],$template_params['bodyFont'],$template_params['navFont']);
+$fonts = array($this->params->get('titleFont'),$this->params->get('bodyFont'),$this->params->get('navFont'));
 $googleFonts = implode("|",$fonts);
 
 for($i = 0; $i < count($fonts);$i++){
@@ -43,22 +44,22 @@ $templateStyles .= "    .narrow{font-family:\"" . $fonts[2] . "\",sans-serif}\n"
 
 // Theme Colours
 
-$templateStyles .= "    a{color:" . $template_params['linkColour'] . "}\n";
-$templateStyles .= "    a:hover{" . $template_params['linkHover'] . "}\n";
-$templateStyles .= "    .article-details dd span,.article-index ul a:before{background:" . $template_params['detailIconsColour'] . "}\n";
-$templateStyles .= "    .blog-item-separator{border-bottom:5px dotted " . $template_params['complementColour'] . "}\n";
-$templateStyles .= "    .article-date{color:" . $template_params['complementColour'] . "}\n";
-$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $template_params['complementColour'] . "}";
+$templateStyles .= "    a{color:" . $this->params->get('linkColour') . "}\n";
+$templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
+$templateStyles .= "    .article-details dd span,.article-index ul a:before{background:" . $this->params->get('detailIconsColour') . "}\n";
+$templateStyles .= "    .blog-item-separator{border-bottom:5px dotted " . $this->params->get('complementColour') . "}\n";
+$templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
+$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}";
 
 // Theme Misc
 
-if ($template_params['animations'] == 0){
+if (! $this->params->get('animations')){
   $templateStyles .= "\n    .anim,.span2{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}";
 }
 
 // Misc Params
 
-if ($template_params['generator'] == 0) {
+if (! $this->params->get('generator')) {
   $doc->_generator = "";
 }
 
