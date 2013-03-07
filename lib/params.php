@@ -47,7 +47,6 @@ $templateStyles .= "    .narrow{font-family:\"" . $fonts[2] . "\",sans-serif}\n"
 $templateStyles .= "    a{color:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .article-details dd span,.article-index ul a:before{background:" . $this->params->get('detailIconsColour') . "}\n";
-$templateStyles .= "    .blog-item-separator{border-bottom:5px dotted " . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}";
 
