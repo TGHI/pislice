@@ -10,7 +10,8 @@
 <div class="breadcrumbs<?php echo $moduleclass_sfx; ?>">
 <?php if ($params->get('showHere', 1))
 	{
-		echo '<span class="showHere">' .JText::_('MOD_BREADCRUMBS_HERE').'</span>';
+		//echo '<span class="showHere">' .JText::_('MOD_BREADCRUMBS_HERE').'</span>';
+		echo '<span class="icon-home round"></span>';
 	}
 ?>
 <?php for ($i = 0; $i < $count; $i ++) :
@@ -30,12 +31,12 @@
 		}
 		if ($i < $count - 2)
 		{
-			echo ' &rarr; ';
+			echo ' <span class="icon-chevron-right round"></span> ';
 		}
 	}  elseif ($params->get('showLast', 1)) { // when $i == $count -1 and 'showLast' is true
 		if ($i > 0)
 		{
-			echo ' &rarr; ';
+			echo ' <span class="icon-chevron-right round"></span> ';
 		}
 		echo '<span>';
 		echo $list[$i]->name;
