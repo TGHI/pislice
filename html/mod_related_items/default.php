@@ -20,7 +20,7 @@ $module_tag = $params->get('module_tag');
 <?php foreach ($list as $item) : ?>
     <li>
       <a href="<?php echo $item->route; ?>"><?php echo $item->title; ?></a>
-	  <?php if ($showDate): ?><span class="italic grey serif"><?php echo JText::sprintf('TPL_PISLICE_PUBLISHED_ON', JHTML::_('date', $item->created, JText::_('DATE_FORMAT_LC4'))); ?></span><?php endif; ?>
+	  <?php if ($showDate): ?><span class="italic grey small serif"><?php echo JText::sprintf('TPL_PISLICE_PUBLISHED_ON', JHTML::_('date', $item->created, JText::_('DATE_FORMAT_LC4'))); ?></span><?php endif; ?>
     </li>
 <?php endforeach; ?>
   </ul>
