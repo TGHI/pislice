@@ -88,9 +88,10 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .related-items-list li{margin:0 0 15px 0}
 
 .footer{background:#f6f7f9;box-shadow:inset 0 10px 10px -10px #dee0e2;padding:35px 0;color:#777;text-shadow:1px 1px 0 #fff}
-.footer .search-query{width:100%}
+.footer .search-query{width:100%;padding:5px}
 
-.footer h2{color:#353535}
+.footer h3{color:#353535;margin:0 0 10px 0;padding:0 0 5px 0;border-bottom:1px solid #dedfe3;box-shadow:0 1px 0 #fff}
+.footer .span4 > div{margin: 0 0 15px}
 
 .footer .social{cursor:pointer;font-size:32px;color:#ccc;margin:0 10px 0 0}
 .footer .social:hover:before{transform:scale(1.3)}
