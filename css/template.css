@@ -18,7 +18,7 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .bold{font-weight:700}
 .italic{font-style:italic}
 .grey{color:#b0b0b0}
-.anim,.article-index ul a:before{transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out}
+.anim,.anim *:before{transition: all .3s ease-in-out;-webkit-transition: all .3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out}
 .pull-right{float:right}.pull-left{float:left}
 .btn-group,.article-actions{display:none}
 
@@ -29,30 +29,29 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 
 /* navbar */
 .navbar{padding:8px 0;background:#f6f7f9;box-shadow:6px 0 6px rgba(49,52,57,0.4);border-bottom:1px solid #fff;margin:0 0 38px 0}
-.brand,.navbar-inner .nav{text-align:center;padding:0!important;margin:0 10px 0 !important}
+.navbar-inner .nav{padding:0!important;margin:0 10px 0 !important}
 
-.navbar-inner .nav{list-style-type:none;text-align:left;float:left;overflow:hidden;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff;border-left:1px solid #dedfe3}
+.navbar-inner .nav{list-style-type:none;text-align:left;float:left;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff;border-left:1px solid #dedfe3}
 .navbar-inner .nav li{float:left;min-height:65px;padding:0 15px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;text-shadow:1px 1px 0 #fff}
 .navbar-inner .nav li a{margin-top:11px;display:block;text-transform:uppercase;line-height:22pt;letter-spacing:-2pt}
 .navbar-inner .nav li div{text-transform:uppercase;color:#6f7477}
 
-.navbar-search{margin:0 0 0 15px}
 .navbar-search-inner{position:relative;height:30px;box-shadow:inset 0 0 5px #dedfe3;margin:12px 0 0;padding:4px;border-width:1px;border-style:solid;border-color:#dedfe3 #fff #fff #dedfe3;border-radius:3px}
 .search-query{height:100%;padding:0 0 0 5px;color:#999;border-radius:3px 0 0 3px;border:0;box-shadow: 1px 1px 1px #dedfe3}
 .button-container{position:relative;height:100%;width:5px;background:#fff;box-shadow:1px 1px 1px #dedfe3;border-radius:0 3px 3px 0}
 .search-button{border:0;padding:2px 4px;line-height:16px;margin:5px 0 0 -24px;color:#fff;background:#353535;font-size:12px;transform:scale(-1, 1);-webkit-transform:scale(-1, 1);text-shadow:1px 1px 1px #111}
 
 /* category blog layout */
+.blog-item,.article-item{border-left: 1px solid #e6e7e9;padding:0 35px}
 .blog-roll h1{margin:0;padding:0 0 40px}
 .subheading-category{color:#999;background:transparent}
 
 .article-item h2,.blog-item h2 a{color:#353535;font-size:32pt}
 
-.blog-item-separator{margin:50px auto}
+.blog-item-separator{margin:45px auto;border-bottom:1px solid #e6e7e9}
 
 /* Article layout */
-.article-header{margin:0 0 45px;color:#999}
-.article-header h2{border-bottom:1px solid #e6e7e9;margin:0 0 15px;padding:0 0 5px}
+.article-header{color:#999}
 .article-date{margin:0 0 10px}
 
 .article-index{margin:20px;border-left:3px solid #e6e7e9;padding: 0 0 0 15px}
@@ -83,6 +82,14 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .pager ul li:last-child{float:right}
 
 .footer{background:#f6f7f9;box-shadow:inset 0 10px 10px -10px rgba(222,224,226,0.8);padding:50px 0;color:#888;text-shadow:1px 1px 0 #fff}
+.footer .search-query{padding:5px;width:100%;}
+
+.footer .social{cursor:pointer;font-size:32px;color:#ccc;margin:0 10px 0 0}
+.footer .social:hover:before{transform:scale(1.3)}
+.footer .icon-github:hover:before{color:#333}
+.footer .icon-facebook:hover:before{color:#3B5998}
+.footer .icon-twitter:hover:before{color:#00B9F4}
+.footer .icon-googleplus:hover:before{color:#D52527}
 
 @media (max-width: 1280px){
 .navbar-search-inner{margin:5px 0 0}
@@ -109,7 +116,8 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 }
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px){
-.navbar{position:relative;width:auto;margin:0;padding:0}
+body{padding:0 !important}
+.navbar{position:relative !important;width:auto;margin:0!important;padding:0}
 .navbar-inner .brand{max-width:100px;float:left !important;padding:4px}
 .navbar-inner .span2{margin:4px 8px 0 6px!important;padding: 0 !important}
 .navbar-inner .nav,.navbar-inner .nav li{border:0;box-shadow:none;padding:2px 0}
