@@ -36,6 +36,7 @@
     <position>article-bottom2</position>
     <position>sidebar-right</position>
     <position>footer</position>
+    <position>footer-search</position>
   </positions>
   <languages folder="language">
     <language tag="en-GB">en-GB/en-GB.tpl_pislice.ini</language>
@@ -69,6 +70,15 @@
 					description="TPL_PISLICE_DETAIL_ICON_COLOUR_DESC" />
       </fieldset>
 	  <fieldset name="LAYOUT">
+	   <field name="navbarfixed" 
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_PISLICE_NAVBAR_POSITION_LABEL"
+					description="TPL_PISLICE_NAVBAR_POSITION_DESC">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
 	  <field name="pagenumbers" 
 					type="radio"
 					class="btn-group"

@@ -57,6 +57,11 @@ if (! $this->params->get('animations')){
   $templateStyles .= "\n    .anim,.span2{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}";
 }
 
+if ($this->params->get('navbarfixed')){
+  $templateStyles .= ".navbar-fixed-top{position:fixed;top:0;z-index:999;width:100%}" . "\n";
+  $templateStyles .= "body{padding: 120px 0 0;margin:0}";
+}
+
 // Misc Params
 
 if (! $this->params->get('generator')) {
