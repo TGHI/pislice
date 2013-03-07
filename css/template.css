@@ -41,6 +41,8 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .button-container{position:relative;height:100%;width:5px;background:#fff;box-shadow:1px 1px 1px #dedfe3;border-radius:0 3px 3px 0}
 .search-button{border:0;padding:2px 4px;line-height:16px;margin:5px 0 0 -24px;color:#fff;background:#353535;font-size:12px;transform:scale(-1, 1);-webkit-transform:scale(-1, 1);text-shadow:1px 1px 1px #111}
 
+.breadcrumbs{margin:0 0 35px}
+
 /* category blog layout */
 .blog-item,.article-item{border-left: 1px solid #e6e7e9;padding:0 35px}
 .blog-roll h1{margin:0;padding:0 0 40px}
@@ -81,8 +83,14 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .pager ul li{float:left;color:#bbb}
 .pager ul li:last-child{float:right}
 
-.footer{background:#f6f7f9;box-shadow:inset 0 10px 10px -10px rgba(222,224,226,0.8);padding:50px 0;color:#888;text-shadow:1px 1px 0 #fff}
-.footer .search-query{padding:5px;width:100%;}
+.related-items{margin:15px 0}
+.related-items-list{list-style-type:none;padding:0;margin:0;overflow:hidden}
+.related-items-list li{margin:0 0 15px 0}
+
+.footer{background:#f6f7f9;box-shadow:inset 0 10px 10px -10px #dee0e2;padding:35px 0;color:#777;text-shadow:1px 1px 0 #fff}
+.footer .search-query{width:100%}
+
+.footer h2{color:#353535}
 
 .footer .social{cursor:pointer;font-size:32px;color:#ccc;margin:0 10px 0 0}
 .footer .social:hover:before{transform:scale(1.3)}
@@ -90,6 +98,10 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .footer .icon-facebook:hover:before{color:#3B5998}
 .footer .icon-twitter:hover:before{color:#00B9F4}
 .footer .icon-googleplus:hover:before{color:#D52527}
+
+/*modules */
+
+.moduletitle{border-bottom:1px solid #e6e7e9;padding:0 0 5px 0;margin:15px 0}
 
 @media (max-width: 1280px){
 .navbar-search-inner{margin:5px 0 0}
