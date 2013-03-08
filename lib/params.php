@@ -54,7 +54,7 @@ $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.act
 // Theme Misc
 
 if (! $this->params->get('animations')){
-  $templateStyles .= "\n    .anim,.span2{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}";
+  $templateStyles .= "\n    .anim,.anim *:before,body{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}";
 }
 
 if ($this->params->get('navbarfixed')){
