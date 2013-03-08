@@ -9,7 +9,6 @@
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 $app	 			= JFactory::getApplication();
-$template			= $app->getTemplate(true);
 $params				= $this->item->params;
 $images 			= json_decode($this->item->images);
 $urls 				= json_decode($this->item->urls);
@@ -43,7 +42,7 @@ $limitstart			= JRequest::getVar('limitstart');
             <?php echo $this->escape($this->item->title); ?>
             <?php endif; ?>
           </h2>
-          <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category')): ?>
+          <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_tags', 1)): ?>
           <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
           <dl class="article-details">
             <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
@@ -65,7 +64,7 @@ $limitstart			= JRequest::getVar('limitstart');
             <dd><span class="icon-eye-open round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
             <?php endif; ?>
             <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-            <dd><span class="icon-tag round"></span>
+            <dd><span class="icon-list round"></span>
               <?php if (!empty($this->item->parent_slug)) : ?>
               <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
               <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
@@ -83,6 +82,12 @@ $limitstart			= JRequest::getVar('limitstart');
               <?php endif; ?>
               <?php endif; ?>
             </dd>
+            <?php endif; ?>
+            <?php if ($params->get('show_tags', 1) && !empty($this->item->tags)):?>
+              <dd><span class="icon-tags round"></span>
+			    <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
+                <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
+              </dd>
             <?php endif; ?>
           </dl>
           <?php endif; ?>
@@ -137,7 +142,7 @@ $limitstart			= JRequest::getVar('limitstart');
          ?>
         <?php 
 		
-		if ($template->params->get('pagenumbers') == 0) {
+		if ($app->getTemplate(true)->params->get('pagenumbers') == 0) {
 			// get rid of those stupid page numbers
 		  $this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
 		}
