@@ -6,6 +6,9 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
+define('DS', DIRECTORY_SEPARATOR);
+$base_url = JURI::base();
+
 $app				= JFactory::getApplication();
 $doc				= JFactory::getDocument();
 $this->language		= $doc->language;
@@ -42,7 +45,7 @@ $doc->addStyleDeclaration($templateStyles);
     <div class="span2">
     </div>
     <div class="span7">
-      <a href="<?php echo $this->baseurl; ?>/" class="brand span2"><img src="templates/<?php echo $template; ?>/img/pislice-logo.png" alt="" /></a>
+      <a href="<?php echo $base_url; ?>" class="brand span2"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
       <jdoc:include type="modules" name="navigation" style="none" />
     </div>
     <div class="span3">
