@@ -14,17 +14,18 @@ $canEdit = $this->item->params->get('access-edit');
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
 <?php if ($this->item->state == 0) : ?>
+
 <div class="system-unpublished">
-<?php endif; ?>
+  <?php endif; ?>
   <div class="article-header">
-<?php if ($params->get('show_publish_date')) : ?>
+    <?php if ($params->get('show_publish_date')) : ?>
     <div class="article-date">
-<?php if ($this->item->state == 0): ?>
+      <?php if ($this->item->state == 0): ?>
       <span class="narrow medium">unpusblished</span>
-<?php else : ?>
+      <?php else : ?>
       <span class="icon-time"></span> <span class="bold"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
-<?php endif; ?>
-      </div>
+      <?php endif; ?>
+    </div>
     <?php endif; ?>
     <?php if ($params->get('show_title')) : ?>
     <h2>
@@ -54,31 +55,30 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       <dd><span class="icon-eye-open round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
       <?php endif; ?>
       <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-            <dd><span class="icon-list round"></span>
-              <?php if (!empty($this->item->parent_slug)) : ?>
-              <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
-              <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
-              <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-              <?php else : ?>
-              <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-              <?php endif; ?>
-              <?php endif; ?>
-              <?php if ($params->get('show_category')) : ?>
-              <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
-              <?php if ($params->get('link_category') && $this->item->catslug) : ?>
-              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-              <?php else : ?>
-              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
-              <?php endif; ?>
-              <?php endif; ?>
-            </dd>
-            <?php endif; ?>
-     <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
-              <dd><span class="icon-tags round"></span>
-			    <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
-                <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
-              </dd>
-    <?php endif; ?>
+      <dd><span class="icon-list round"></span>
+        <?php if (!empty($this->item->parent_slug)) : ?>
+        <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
+        <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
+        <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
+        <?php else : ?>
+        <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
+        <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($params->get('show_category')) : ?>
+        <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
+        <?php if ($params->get('link_category') && $this->item->catslug) : ?>
+        <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
+        <?php else : ?>
+        <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
+        <?php endif; ?>
+        <?php endif; ?>
+      </dd>
+      <?php endif; ?>
+      <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
+      <dd><span class="icon-tags round"></span>
+        <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
+        <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
+      <?php endif; ?>
     </dl>
     <?php endif; ?>
     <?php endif; ?>
@@ -98,8 +98,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
     <?php if (!$params->get('show_intro')) : ?>
     <?php echo $this->item->event->afterDisplayTitle; ?>
     <?php endif; ?>
-    <?php echo $this->item->event->beforeDisplayContent; ?>
-  </div>
+    <?php echo $this->item->event->beforeDisplayContent; ?> </div>
   <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
   <?php  if (isset($images->image_intro) and !empty($images->image_intro)) : ?>
   <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
