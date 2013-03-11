@@ -53,7 +53,7 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .blog-item-separator{margin:45px auto;border-bottom:1px solid #e6e7e9}
 
 /* Article layout */
-.article-header{color:#999}
+.article-header{color:#999;margin: 0 0 50px 0}
 .article-date{margin:0 0 10px}
 
 .article-index{margin:20px;border-left:3px solid #e6e7e9;padding: 0 0 0 15px}
