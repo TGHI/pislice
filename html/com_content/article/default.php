@@ -83,7 +83,7 @@ $limitstart			= JRequest::getVar('limitstart');
               <?php endif; ?>
             </dd>
             <?php endif; ?>
-            <?php if ($params->get('show_tags', 1) && !empty($this->item->tags)):?>
+            <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
               <dd><span class="icon-tags round"></span>
 			    <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
                 <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?>
