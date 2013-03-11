@@ -66,14 +66,12 @@ $limitstart			= JRequest::getVar('limitstart');
           <?php endif; ?>
           <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
           <dd><span class="icon-list round"></span>
-            <?php if (!empty($this->item->parent_slug)) : ?>
-            <?php if ($params->get('show_parent_category')): ?>
+            <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')): ?>
             <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
             <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
             <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
             <?php else : ?>
             <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-            <?php endif; ?>
             <?php endif; ?>
             <?php endif; ?>
             <?php if ($params->get('show_category')) : ?>
