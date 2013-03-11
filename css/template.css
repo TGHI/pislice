@@ -41,7 +41,11 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .button-container{position:relative;height:100%;width:5px;background:#fff;box-shadow:1px 1px 1px #dedfe3;border-radius:0 3px 3px 0}
 .search-button{border:0;padding:2px 4px;line-height:16px;margin:5px 0 0 -24px;color:#fff;background:#353535;font-size:12px;transform:scale(-1, 1);-webkit-transform:scale(-1, 1);text-shadow:1px 1px 1px #111}
 
-.breadcrumbs{margin:0 0 35px}
+.breadcrumbs{margin:0 0 35px;background:#f6f7f9;border-radius:3px;padding:8px 0 4px 0}
+.breadcrumbs span{color:#6f7477}
+.breadcrumbs span:before{color:#ccc;text-shadow:1px 1px 0 #fff;line-height:25px;vertical-align:top}
+.breadcrumbs span:first-child{padding:5px 10px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;margin:0 10px 0 0 }
+
 
 /* category blog layout */
 .blog-item,.article-item{border-left: 1px solid #e6e7e9;padding:0 35px}
