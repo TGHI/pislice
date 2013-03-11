@@ -73,10 +73,12 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .article-details dd{float:left;margin:0 20px 0 0;padding-top:5px;line-height:34px}
 .article-details dd > span{float:left;margin:0 10px 0 0;width:24px;height:32px;padding-left:8px;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,0.15)}
 
-.tags{float:left;padding:0;margin:-2px 0 0 0}
-.tags a{padding:4px 6px;border-radius:3px;box-shadow:inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.1);color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,0.2);text-transform:uppercase}
-.tags a:hover{box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1)}
-
+.tags{float:left;padding:0;margin:-2px 0 0 10px}
+.tags a:hover:before{box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1)}
+.tags a:focus { outline: 0; }
+.tags a {position: relative;display: inline-block;border-radius:3px;box-shadow:inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.1);color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,0.2);text-transform:uppercase;margin: 0 15px 5px 0; padding: 0 10px;line-height: 25px;text-decoration: none}
+.tags a:before {border-bottom-left-radius:5px;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);zoom: 1;content:'';z-index: -1;position: absolute;height:18px;width: 18px;left: -9px;top: 3px}
+.tags a:after{background: #fff;border-radius: 50%;content: '';position: absolute;padding:3px;top: 10px;left:0}
 
 .article-introtext{font-size:14pt}
 .article-image{position:relative;overflow:hidden;max-width:100%;border:10px solid #F6F7F9;box-shadow:1px 1px 2px #bbb;border-radius:3px}
