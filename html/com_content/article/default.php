@@ -20,7 +20,7 @@ $limitstart			= JRequest::getVar('limitstart');
 ?>
 
 <section class="article-content">
-  <div class="article-item<?php echo $this->pageclass_sfx?>">
+  <div class="article-item <?php echo $this->pageclass_sfx?>">
     <article>
       <?php if ($this->params->get('show_page_heading', 1)) : ?>
       <!-- <div class="page-header">
@@ -34,7 +34,7 @@ $limitstart			= JRequest::getVar('limitstart');
           <?php if ($this->item->state == 0): ?>
           <span class="bold">unpusblished</span>
           <?php else : ?>
-          <span class="icon-time"></span> <span class="bold"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
+          <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
           <?php endif; ?>
         </div>
         <?php endif; ?>

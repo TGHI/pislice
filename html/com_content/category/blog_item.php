@@ -23,7 +23,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       <?php if ($this->item->state == 0): ?>
       <span class="narrow medium">unpusblished</span>
       <?php else : ?>
-      <span class="icon-time"></span> <span class="bold"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
+      <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
       <?php endif; ?>
     </div>
     <?php endif; ?>
