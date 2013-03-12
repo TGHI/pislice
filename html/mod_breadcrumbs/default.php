@@ -6,6 +6,9 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
+$app = JFactory::getApplication();
+$option	= $app->input->getCmd('option', '');
+
 ?>
 <div class="breadcrumbs<?php echo $moduleclass_sfx; ?>">
 <?php if ($params->get('showHere', 1))
@@ -20,6 +23,7 @@
 		continue;
 	}
 	// If not the last item in the breadcrumbs add the separator
+		
 	if ($i < $count - 1)
 	{
 		if (!empty($list[$i]->link)) {
@@ -39,8 +43,13 @@
 			echo ' <span class="icon-chevron-right"></span> ';
 		}
 		echo '<span>';
+		// if we're in finder/search, safe to assume these are results
+		if ($option == "com_finder" || $option == "com_search"){
+			echo 'Search results for: <strong class="bold">' . $list[$i]->name . '</strong>';
+		}else{
 		echo $list[$i]->name;
 		echo '</span>';
+		}
 	}
 endfor; ?>
 </div>
