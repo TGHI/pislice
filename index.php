@@ -45,7 +45,7 @@ $doc->addStyleDeclaration($templateStyles);
     <div class="span2">
     </div>
     <div class="span7">
-      <a href="<?php echo $base_url; ?>" class="brand span2"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
+      <a href="<?php echo $base_url; ?>" class="brand pull-left"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
       <jdoc:include type="modules" name="navigation" style="none" />
     </div>
     <div class="span3">
@@ -54,7 +54,7 @@ $doc->addStyleDeclaration($templateStyles);
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row-fluid clearfix">
+  <div class="row-fluid">
     <div class="span2">
       <jdoc:include type="modules" name="sidebar-left" style="none" />
     </div>
