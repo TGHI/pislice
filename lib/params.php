@@ -59,7 +59,7 @@ if (! $this->params->get('animations')){
 
 if ($this->params->get('navbarfixed')){
   $templateStyles .= "    .navbar-fixed-top{position:fixed;top:0;right: 0;left: 0;z-index: 1030}" . "\n";
-  $templateStyles .= "    body{padding: 80px 0 0;margin:0}";
+  $templateStyles .= "    body{padding: 83px 0 0;margin:0}";
 }
 
 // Misc Params

@@ -41,13 +41,13 @@ html,.caption h4,.caption p,.article-header h2{margin:0;padding:0}
 .button-container{position:relative;height:100%;width:5px;background:#fff;box-shadow:1px 1px 1px #dedfe3;border-radius:0 3px 3px 0}
 .search-button{border:0;padding:2px 4px;line-height:16px;margin:5px 0 0 -24px;color:#fff;background:#353535;font-size:12px;transform:scale(-1, 1);-webkit-transform:scale(-1, 1);text-shadow:1px 1px 1px #111}
 
-.breadcrumbs{position:relative;margin:0 0 35px;background:#f6f7f9;border-radius:5px;padding:14px 0 8px 0;text-shadow:1px 1px 0 #fff;z-index:2}
+.breadcrumbs{position:relative;margin:0 0 35px;background:#f6f7f9;border-radius:5px;padding:14px 0 8px 0;text-shadow:1px 1px 0 #fff}
 .breadcrumbs span{color:#6f7477;margin:0 5px}
 .breadcrumbs span:before{color:#ccc;line-height:25px;vertical-align:top}
 .breadcrumbs span:first-child{padding:5px 15px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;margin:0 15px 0 0}
 
 
-.main .span7{background:#fff;box-shadow:0 0 10px #ddd;border-left: 1px solid #e6e7e9;border-right: 1px solid #e6e7e9;padding:0 35px;margin: 0 0 35px 0;border-bottom-right-radius:5px;border-bottom-left-radius:5px}
+.main .span7{background:#fff;box-shadow:0 0 10px #ddd;border-left: 1px solid #e6e7e9;border-right: 1px solid #e6e7e9;padding:35px 35px;margin: 0 0 35px;border-bottom-right-radius:5px;border-bottom-left-radius:5px}
 
 
 /* category blog layout */
