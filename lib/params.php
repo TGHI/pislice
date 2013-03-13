@@ -49,17 +49,17 @@ $templateStyles .= "    .tags a,.tags a:before{background:" . $this->params->get
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .article-details dd > span,.article-index ul a:before,.tags a:hover,.tags a:hover:before{background:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
-$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}";
+$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";;
 
 // Theme Misc
 
 if (! $this->params->get('animations')){
-  $templateStyles .= "\n    .anim,.anim *:before,body{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}";
+  $templateStyles .= "\n    .anim,.anim *:before,body{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}". "\n";;
 }
 
 if ($this->params->get('navbarfixed')){
-  $templateStyles .= ".navbar-fixed-top{position:fixed;top:0;right: 0;left: 0;z-index: 1030}" . "\n";
-  $templateStyles .= "body{padding: 80px 0 0;margin:0}";
+  $templateStyles .= "    .navbar-fixed-top{position:fixed;top:0;right: 0;left: 0;z-index: 1030}" . "\n";
+  $templateStyles .= "    body{padding: 80px 0 0;margin:0}";
 }
 
 // Misc Params
