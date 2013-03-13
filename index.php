@@ -53,7 +53,7 @@ $doc->addStyleDeclaration($templateStyles);
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div class="main container-fluid">
   <div class="row-fluid">
     <div class="span2">
       <jdoc:include type="modules" name="sidebar-left" style="none" />
