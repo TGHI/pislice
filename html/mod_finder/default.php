@@ -75,39 +75,39 @@ if ($params->get('show_button', 1))
 JHtml::stylesheet('templates/' . $doc->template . '/css/finder.css', true, false, false);
 
 $finderJs  = "window.addEvent('domready', function(){". "\n";
-$finderJs .= '  var value;'. "\n";
-$finderJs .= "  if (!document.id('mod-finder-searchword').getProperty('value')){". "\n";
-$finderJs .= "    document.id('mod-finder-searchword').setProperty('value', '" . JText::_('MOD_FINDER_SEARCH_VALUE', true) . "');". "\n";
+$finderJs .= '  var value,'. "\n";
+$finderJs .= "      searchField = document.id('mod-finder-searchword'),". "\n";
+$finderJs .= "      advancedField = document.id('mod-finder-advanced');". "\n";
+$finderJs .= "  if (!searchField.getProperty('value')){". "\n";
+$finderJs .= "    searchField.setProperty('value', '" . JText::_('MOD_FINDER_SEARCH_VALUE', true) . "');". "\n";
 $finderJs .= "  }". "\n";
-$finderJs .= "  value = document.id('mod-finder-searchword').getProperty('value');". "\n";
-$finderJs .= "  document.id('mod-finder-searchword').addEvent('focus', function(){". "\n";
+$finderJs .= "  value = searchField.getProperty('value');". "\n";
+$finderJs .= "  searchField.addEvent('focus', function(){". "\n";
 $finderJs .= "    if (this.getProperty('value') == '" . JText::_('MOD_FINDER_SEARCH_VALUE', true) . "'){". "\n";
 $finderJs .= "      this.setProperty('value', '');". "\n";
 $finderJs .= "      this.setStyle('color', '#353535');". "\n";
 $finderJs .= "    }". "\n";
-$finderJs .= "  });". "\n";
-$finderJs .= "  document.id('mod-finder-searchword').addEvent('blur', function(){". "\n";
+$finderJs .= "  }).addEvent('blur', function(){". "\n";
 $finderJs .= "    if (!this.getProperty('value')){". "\n";
 $finderJs .= "      this.setProperty('value', value);". "\n";
 $finderJs .= "      this.setStyle('color', '#999');". "\n";
 $finderJs .= "    }". "\n";
-$finderJs .= "  });". "\n";
-$finderJs .= "  document.id('mod-finder-searchform').addEvent('submit', function(e){". "\n";
+$finderJs .= "  }).addEvent('submit', function(e){". "\n";
 $finderJs .= "    e = new Event(e);". "\n";
 $finderJs .= "    e.stop();". "\n";
-$finderJs .= "    if (document.id('mod-finder-advanced') != null){". "\n";
-$finderJs .= "      document.id('mod-finder-advanced').getElements('select').each(function(s){". "\n";
+$finderJs .= "    if (advancedField != null){". "\n";
+$finderJs .= "      advancedField.getElements('select').each(function(s){". "\n";
 $finderJs .= "        if (!s.getProperty('value')){". "\n";
 $finderJs .= "          s.setProperty('disabled', 'disabled');". "\n";
 $finderJs .= "        }". "\n";
 $finderJs .= "      });". "\n";
 $finderJs .= "    }". "\n";
-$finderJs .="     document.id('mod-finder-searchform').submit();". "\n";
+$finderJs .="     searchField.submit();". "\n";
 $finderJs .= "  });". "\n";
 if ($params->get('show_autosuggest', 1)){
   JHtml::script('templates/' . $doc->template . '/js/autocompleter.js');
   $finderJs .= "  var url = '" . JRoute::_('index.php?option=com_finder&task=suggestions.display&format=json&tmpl=component', false) . "';". "\n";
-  $finderJs .= "  var ModCompleter = new Autocompleter.Request.JSON(document.id('mod-finder-searchword'), url, {'postVar': 'q'});". "\n";
+  $finderJs .= "  var ModCompleter = new Autocompleter.Request.JSON(searchField, url, {'postVar': 'q'});". "\n";
 }
 $finderJs .= "});". "\n";
 
