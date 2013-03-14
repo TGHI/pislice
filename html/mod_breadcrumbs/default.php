@@ -48,8 +48,8 @@ $option	= $app->input->getCmd('option', '');
 			echo 'Search results for: <strong class="bold">' . $list[$i]->name . '</strong>';
 		}else{
 		echo $list[$i]->name;
-		echo '</span>';
 		}
+		echo '</span>';
 	}
 endfor; ?>
 </div>
