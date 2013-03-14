@@ -8,6 +8,7 @@
 
 $app = JFactory::getApplication();
 $option	= $app->input->getCmd('option', '');
+$searchword	= $app->input->getCmd('searchword', '');
 
 ?>
 <div class="breadcrumbs<?php echo $moduleclass_sfx; ?>">
@@ -43,9 +44,14 @@ $option	= $app->input->getCmd('option', '');
 			echo ' <span class="icon-chevron-right"></span> ';
 		}
 		echo '<span>';
-		// if we're in finder/search, safe to assume these are results
+		// if we're in finder/search, safe to assume this is a search result
 		if ($option == "com_finder" || $option == "com_search"){
-			echo 'Search results for: <strong class="bold">' . $list[$i]->name . '</strong>';
+			if(!empty($searchword)){
+				$query = $searchword;
+			}else{
+				$query = $list[$i]->name;
+			}
+			echo JText::sprintf('TPL_PISLICE_SEARCH_RESULTS_FOR',$query);
 		}else{
 		echo $list[$i]->name;
 		}
