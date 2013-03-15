@@ -6,9 +6,9 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-$app = JFactory::getApplication();
-$option	= $app->input->getCmd('option', '');
-$searchword	= $app->input->getCmd('searchword', '');
+ $app = JFactory::getApplication();
+ $option	= $app->input->getCmd('option', '');
+ $searchword	= $app->input->getCmd('searchword', '');
 
 ?>
 <div class="breadcrumbs<?php echo $moduleclass_sfx; ?>">
