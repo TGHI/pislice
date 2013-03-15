@@ -65,7 +65,7 @@ $limitstart			= JRequest::getVar('limitstart');
           <dd><span class="icon-eye-open round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
           <?php endif; ?>
           <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-          <dd><span class="icon-list round"></span>
+          <dd><span class="icon-folder round"></span>
             <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')): ?>
             <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
             <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
