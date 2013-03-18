@@ -43,9 +43,9 @@ $doc->addStyleDeclaration($templateStyles);
 <div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2">
+    <a href="<?php echo $base_url; ?>" class="brand"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
     </div>
     <div class="span7">
-      <a href="<?php echo $base_url; ?>" class="brand pull-left"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
       <jdoc:include type="modules" name="navigation" style="none" />
     </div>
     <div class="span3">
