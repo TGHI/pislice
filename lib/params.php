@@ -49,7 +49,7 @@ $templateStyles .= "    .tags a,.tags a:before{background:" . $this->params->get
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .article-details dd > span,.article-index ul a:before,.tags a:hover,.tags a:hover:before{background:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
-$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";;
+$templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";
 
 // Theme Misc
 
