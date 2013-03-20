@@ -66,7 +66,7 @@
       <field name="complementColour" class="" type="color" default="#7dd3f7"
 					label="TPL_PISLICE_COMPLEMENT_COLOUR_LABEL"
 					description="TPL_PISLICE_COMPLEMENT_COLOUR_DESC" />
-      <field name="detailIconsColour" class="" type="color" default="#e0e1e2"
+      <field name="detailIconsColour" class="" type="color" default="#F0F1F3"
 					label="TPL_PISLICE_DETAIL_ICON_COLOUR_LABEL"
 					description="TPL_PISLICE_DETAIL_ICON_COLOUR_DESC" />
       </fieldset>
