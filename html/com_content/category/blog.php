@@ -16,7 +16,7 @@ $cparams = JComponentHelper::getParams('com_media');
 <section class="blog-roll<?php echo $this->pageclass_sfx;?>">
   <?php if ($this->params->get('show_page_heading', 1) || $this->params->get('show_category_title')): ?>
   <h1>
-  <?php 
+    <?php 
   if($this->params->get('show_page_heading', 1)){
     echo $this->escape($this->params->get('page_heading')); 
   }
@@ -47,8 +47,8 @@ $cparams = JComponentHelper::getParams('com_media');
     <article class="<?php echo $item->state == 0 ? 'system-unpublished' : null; ?>">
       <?php $this->item = &$item; echo $this->loadTemplate('item'); ?>
     </article>
-<?php $leadingcount++; ?>
-<?php endforeach; ?>
+    <?php $leadingcount++; ?>
+    <?php endforeach; ?>
   </div>
   <?php endif; ?>
   <?php
@@ -59,9 +59,8 @@ $cparams = JComponentHelper::getParams('com_media');
   <?php foreach ($this->intro_items as $key => &$item) : ?>
   <div class="blog-item">
     <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
-      <?php $this->item = &$item; ?>    
-      <?php echo $this->loadTemplate('item'); ?>
-    </article>
+      <?php $this->item = &$item; ?>
+      <?php echo $this->loadTemplate('item'); ?> </article>
   </div>
   <?php $counter++; ?>
   <?php endforeach; ?>

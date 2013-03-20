@@ -14,7 +14,6 @@ $canEdit = $this->item->params->get('access-edit');
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
 <?php if ($this->item->state == 0) : ?>
-
 <div class="system-unpublished">
   <?php endif; ?>
   <div class="article-header">

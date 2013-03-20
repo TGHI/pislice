@@ -112,36 +112,36 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php endif; ?>
       </div>
       <div class="article-contents">
-      <?php endif; ?>
-      <?php if (!$params->get('show_intro')) : echo $this->item->event->afterDisplayTitle; endif; ?>
-      <?php echo $this->item->event->beforeDisplayContent; ?>
-      <?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '0')) || ($params->get('urls_position') == '0' && empty($urls->urls_position)))
+        <?php endif; ?>
+        <?php if (!$params->get('show_intro')) : echo $this->item->event->afterDisplayTitle; endif; ?>
+        <?php echo $this->item->event->beforeDisplayContent; ?>
+        <?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '0')) || ($params->get('urls_position') == '0' && empty($urls->urls_position)))
 		|| (empty($urls->urls_position) && (!$params->get('urls_position')))) : ?>
-      <?php echo $this->loadTemplate('links'); ?>
-      <?php endif; ?>
-      <?php if ($params->get('access-view')):?>
-      <?php 
+        <?php echo $this->loadTemplate('links'); ?>
+        <?php endif; ?>
+        <?php if ($params->get('access-view')):?>
+        <?php 
 		// only display introtext/image on first page of a paginated of article
 		if (empty($limitstart)): ?>
-      <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
-      <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
-      <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
-        <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
-        <div class="zoom-in icon-zoom-in anim"></div>
-        <div class="caption icon-picture anim">
-          <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
-          <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
+        <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
+        <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
+        <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
+          <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
+          <div class="zoom-in icon-zoom-in anim"></div>
+          <div class="caption icon-picture anim">
+            <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
+            <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
+          </div>
+          <?php endif; ?>
         </div>
         <?php endif; ?>
-      </div>
-      <?php endif; ?>
-      <?php endif; ?>
-      <?php 
+        <?php endif; ?>
+        <?php 
         if (isset ($this->item->toc)){
          echo $this->item->toc;
 		}
          ?>
-      <?php 
+        <?php 
 		
 		if ($app->getTemplate(true)->params->get('pagenumbers') == 0) {
 			// get rid of those stupid page numbers
@@ -150,28 +150,28 @@ $limitstart			= JRequest::getVar('limitstart');
 		echo $this->item->text;	
 		
 		?>
-      <?php if ($info == 0): ?>
-      <?php if ($params->get('show_modify_date')) : ?>
-      <div class="modified"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
-      <?php endif; ?>
-      <?php endif; ?>
-      <?php
+        <?php if ($info == 0): ?>
+        <?php if ($params->get('show_modify_date')) : ?>
+        <div class="modified"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
+        <?php endif; ?>
+        <?php endif; ?>
+        <?php
 			if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
 			echo $this->item->pagination;
 		?>
-      <?php endif; ?>
-      <?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '1')) || ($params->get('urls_position') == '1'))): ?>
-      <?php echo $this->loadTemplate('links'); ?>
-      <?php endif; ?>
-      <?php elseif ($params->get('show_noauth') == true && $user->get('guest')) : ?>
-      <?php echo $this->item->introtext; ?>
-      <?php //Optional link to let them register to see the whole article. ?>
-      <?php if ($params->get('show_readmore') && $this->item->fulltext != null) :
+        <?php endif; ?>
+        <?php if (isset($urls) && ((!empty($urls->urls_position) && ($urls->urls_position == '1')) || ($params->get('urls_position') == '1'))): ?>
+        <?php echo $this->loadTemplate('links'); ?>
+        <?php endif; ?>
+        <?php elseif ($params->get('show_noauth') == true && $user->get('guest')) : ?>
+        <?php echo $this->item->introtext; ?>
+        <?php //Optional link to let them register to see the whole article. ?>
+        <?php if ($params->get('show_readmore') && $this->item->fulltext != null) :
 		$link1 = JRoute::_('index.php?option=com_users&view=login');
 		$link = new JURI($link1);?>
-      <p class="readmore"> <a href="<?php echo $link; ?>">
-        <?php $attribs = json_decode($this->item->attribs); ?>
-        <?php
+        <p class="readmore"> <a href="<?php echo $link; ?>">
+          <?php $attribs = json_decode($this->item->attribs); ?>
+          <?php
 		if ($attribs->alternative_readmore == null) :
 			echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 		elseif ($readmore = $this->item->alternative_readmore) :
@@ -185,16 +185,15 @@ $limitstart			= JRequest::getVar('limitstart');
 			echo JText::_('COM_CONTENT_READ_MORE');
 			echo JHtml::_('string.truncate', ($this->item->title), $params->get('readmore_limit'));
 		endif; ?>
-        </a></p>
-      <?php endif; ?>
-      <?php endif; ?>
-      <?php
+          </a></p>
+        <?php endif; ?>
+        <?php endif; ?>
+        <?php
 if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && $this->item->paginationrelative) {
 	echo $this->item->pagination; 
 	}
 ?>
-      <?php echo $this->item->event->afterDisplayContent; ?>
-      </div>
-      </article>
+        <?php echo $this->item->event->afterDisplayContent; ?> </div>
+    </article>
   </div>
 </section>
