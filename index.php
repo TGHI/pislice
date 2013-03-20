@@ -14,7 +14,6 @@ $doc				= JFactory::getDocument();
 $this->language		= $doc->language;
 $this->direction	= $doc->direction;
 $template			= $this->template;
-$script				= $this->_script;
 $user				= JFactory::getUser();
 $option				= $app->input->getCmd('option', '');
 $view				= $app->input->getCmd('view', '');
@@ -31,10 +30,10 @@ require_once('lib/params.php');
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <?php 
-$doc->addStyleSheet('templates/' . $template . '/css/template.css');
-$doc->addStyleSheet('templates/' . $template . '/css/bootstrap-responsive.min.css');
-$doc->addStyleSheet('templates/' . $template . '/css/elusive-webfont.css');
-$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleFonts);
+$doc->addStyleSheet($base_url . 'templates/' . $template . '/css/template.css');
+$doc->addStyleSheet($base_url . 'templates/' . $template . '/css/bootstrap-responsive.min.css');
+$doc->addStyleSheet($base_url . 'templates/' . $template . '/css/elusive-webfont.css');
+$doc->addStyleSheet($base_url . 'http://fonts.googleapis.com/css?family=' . $googleFonts);
 $doc->addStyleDeclaration($templateStyles);
 ?>
 <jdoc:include type="head" />
