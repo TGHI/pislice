@@ -85,6 +85,15 @@
         <option value="1">JYES</option>
         <option value="0">JNO</option>
       </field>
+	  <field name="detailIcons" 
+					type="radio"
+					class="btn-group"
+					default="1"
+					label="TPL_PISLICE_ARTICLE_DETAIL_ICONS_LABEL"
+					description="TPL_PISLICE_ARTICLE_DETAIL_ICONS_DESC">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
       <field name="pagenumbers" 
 					type="radio"
 					class="btn-group"

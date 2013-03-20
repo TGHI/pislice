@@ -54,7 +54,11 @@ $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.act
 // Theme Misc
 
 if (! $this->params->get('animations')){
-  $templateStyles .= "\n    .anim,.anim *:before,body{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}". "\n";;
+  $templateStyles .= "\n    .anim,.anim *:before,body{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}". "\n";
+}
+
+if (! $this->params->get('detailIcons')){
+  $templateStyles .= "\n    .article-details dd > span{display:none}";
 }
 
 if ($this->params->get('navbarfixed')){
