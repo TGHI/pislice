@@ -46,7 +46,6 @@ $cparams = JComponentHelper::getParams('com_media');
     <?php foreach ($this->lead_items as &$item) : ?>
     <article class="<?php echo $item->state == 0 ? 'system-unpublished' : null; ?>">
       <?php $this->item = &$item; echo $this->loadTemplate('item'); ?>
-      <div class="blog-item-separator"></div>
     </article>
 <?php $leadingcount++; ?>
 <?php endforeach; ?>
@@ -60,11 +59,8 @@ $cparams = JComponentHelper::getParams('com_media');
   <?php foreach ($this->intro_items as $key => &$item) : ?>
   <div class="blog-item">
     <article class="item <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>">
-      <?php $this->item = &$item; ?>
-     
-     <?php echo $this->loadTemplate('item'); ?>
-        <div class="blog-item-separator"></div>
-
+      <?php $this->item = &$item; ?>    
+      <?php echo $this->loadTemplate('item'); ?>
     </article>
   </div>
   <?php $counter++; ?>

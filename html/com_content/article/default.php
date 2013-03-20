@@ -111,6 +111,7 @@ $limitstart			= JRequest::getVar('limitstart');
         <div class="pull-right"> <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?> </div>
         <?php endif; ?>
       </div>
+      <div class="article-contents">
       <?php endif; ?>
       <?php if (!$params->get('show_intro')) : echo $this->item->event->afterDisplayTitle; endif; ?>
       <?php echo $this->item->event->beforeDisplayContent; ?>
@@ -192,6 +193,8 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 	echo $this->item->pagination; 
 	}
 ?>
-      <?php echo $this->item->event->afterDisplayContent; ?> </article>
+      <?php echo $this->item->event->afterDisplayContent; ?>
+      </div>
+      </article>
   </div>
 </section>
