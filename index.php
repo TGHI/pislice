@@ -33,7 +33,7 @@ require_once('lib/params.php');
 $doc->addStyleSheet($base_url . 'templates/' . $template . '/css/template.css');
 $doc->addStyleSheet($base_url . 'templates/' . $template . '/css/bootstrap-responsive.min.css');
 $doc->addStyleSheet($base_url . 'templates/' . $template . '/css/elusive-webfont.css');
-$doc->addStyleSheet($base_url . 'http://fonts.googleapis.com/css?family=' . $googleFonts);
+$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleFonts);
 $doc->addStyleDeclaration($templateStyles);
 ?>
 <jdoc:include type="head" />
