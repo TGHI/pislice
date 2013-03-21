@@ -44,7 +44,7 @@ $templateStyles .= "    .narrow{font-family:\"" . $fonts[2] . "\",sans-serif}\n"
 
 // Theme Colours
 
-$templateStyles .= "    a{color:" . $this->params->get('linkColour') . "}\n";
+$templateStyles .= "    a,.autocompleter-selected span.autocompleter-queried{color:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    .tags a,.tags a:before{background:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .article-details dd > span,.article-index ul a:before,.tags a:hover,.tags a:hover:before{background:" . $this->params->get('detailIconsColour') . "}\n";
