@@ -15,7 +15,7 @@
     <filename>templateDetails.xml</filename>
     <filename>template_preview.png</filename>
     <filename>template_thumbnail.png</filename>
-	<folder>config</folder>
+    <folder>config</folder>
     <folder>css</folder>
     <folder>font</folder>
     <folder>html</folder>
@@ -101,6 +101,18 @@
 					default="0"
 					label="TPL_PISLICE_ARTICLE_PAGENUMBERS_LABEL"
 					description="TPL_PISLICE_ARTICLE_PAGENUMBERS_DESC">
+        <option value="1">JYES</option>
+        <option value="0">JNO</option>
+      </field>
+      </fieldset>
+      <fieldset name="OPENGRAPH">
+      <field name="This feature is very beta ;)" type="spacer" class="invalid"></field>
+      <field name="opengraph" 
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="TPL_PISLICE_ALLOW_OPENGRAPH_LABEL"
+					description="TPL_PISLICE_ALLOW_OPENGRAPH_DESC">
         <option value="1">JYES</option>
         <option value="0">JNO</option>
       </field>

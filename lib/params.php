@@ -10,6 +10,7 @@ $db  				= JFactory::getDBO();
 $query				= $db->getQuery(true);
 $template_params	= (array)json_decode($this->params);
 $templateStyles		= "";
+$opengraph_meta_tags= "";
 
 
 if (empty($template_params)){
@@ -68,8 +69,15 @@ if ($this->params->get('navbarfixed')){
 
 // Misc Params
 
+if ($this->params->get('opengraph') == 1){
+  foreach($open_graph_meta as $metaName=>$metaValue){
+    $opengraph_meta_tags .= '  <meta property="' . $metaName . '" content="' . $metaValue . '" />'."\n";  
+  }	
+}
+
 if (! $this->params->get('generator')) {
   $doc->_generator = "";
 }
+
 
 ?>
