@@ -106,7 +106,7 @@
       </field>
       </fieldset>
       <fieldset name="OPENGRAPH">
-      <field name="This feature is very beta ;)" type="spacer" class="invalid"></field>
+      <field name="This feature is BETA and works ONLY for com_content (Blog/Category, Article views)." type="spacer" class="invalid"></field>
       <field name="opengraph" 
 					type="radio"
 					class="btn-group"
