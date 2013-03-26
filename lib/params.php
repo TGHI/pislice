@@ -41,7 +41,7 @@ for($i = 0; $i < count($fonts);$i++){
 
 $templateStyles .= "    h1,h2,h3,.article-introtext,blockquote,.serif{font-family:\"" . $fonts[0] . "\",serif}\n";
 $templateStyles .= "    select,input,body{font-family:\"" . $fonts[1] . "\",sans-serif}\n";
-$templateStyles .= "    .narrow{font-family:\"" . $fonts[2] . "\",sans-serif}\n";
+$templateStyles .= "    .narrow,.moduletitle{font-family:\"" . $fonts[2] . "\",sans-serif;font-weight:500}\n";
 
 // Theme Colours
 
@@ -51,6 +51,7 @@ $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .article-details dd > span,.article-index ul a:before,.tags a:hover,.tags a:hover:before{background:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";
+$templateStyles .= "    blockquote{border-color:" . $this->params->get('complementColour') . "}". "\n";
 
 // Theme Misc
 
