@@ -151,8 +151,9 @@ $limitstart			= JRequest::getVar('limitstart');
 		}
 		
 		// match/remove article nav
-		preg_match('/(<div class=\"pager\">)(.*)(<\\/div>)/', $this->item->text, $pager);
-		$this->item->text = str_replace($pager[0], '', $this->item->text);
+		if(preg_match('/(<div class=\"pager\">)(.*)(<\\/div>)/', $this->item->text, $pager)){
+		  $this->item->text = str_replace($pager[0], '', $this->item->text);
+        }
 		
 		echo $this->item->text;	
 		
@@ -165,7 +166,10 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php 
 		
 		  // put article nav down here
-		  echo $pager[0]; 
+		 if(!empty($pager)){
+			 echo $pager[0];
+		 }
+		 
 		?>
         <?php
 			if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
