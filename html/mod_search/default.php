@@ -7,12 +7,13 @@
  */
 
 $header_tag = $params->get('header_tag');
+$module_tag = $params->get('module_tag');
 
 ?>
 <?php if($module->showtitle == 1): ?>
-<<?php echo $header_tag;?>><?php echo $module->title; ?></<?php echo $header_tag;?>>
+<<?php echo $header_tag;?> class="moduletitle"><?php echo $module->title; ?></<?php echo $header_tag;?>>
 <?php endif; ?>
-<div class="search<?php echo $moduleclass_sfx ?>">
+<<?php echo $module_tag; ?> class="search<?php echo $moduleclass_sfx ?>">
     <form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
     		<?php
 				$output = '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox'.$moduleclass_sfx.' search-query" type="text" size="' . $width . '" value="' . $text . '"  onblur="if (this.value==\'\') this.value=\'' . $text . '\';" onfocus="if (this.value==\'' . $text . '\') this.value=\'\';" />';
@@ -52,4 +53,4 @@ $header_tag = $params->get('header_tag');
     	<input type="hidden" name="option" value="com_search" />
     	<input type="hidden" name="Itemid" value="<?php echo $mitemid; ?>" />
     </form>
-</div>
+</<?php echo $module_tag; ?>>
