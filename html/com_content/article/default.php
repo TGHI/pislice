@@ -111,7 +111,7 @@ $limitstart			= JRequest::getVar('limitstart');
         <div class="pull-right"> <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?> </div>
         <?php endif; ?>
       </div>
-      <div class="article-contents">
+      <div class="article-contents folded-shadow">
         <?php endif; ?>
         <?php if (!$params->get('show_intro')) : echo $this->item->event->afterDisplayTitle; endif; ?>
         <?php echo $this->item->event->beforeDisplayContent; ?>

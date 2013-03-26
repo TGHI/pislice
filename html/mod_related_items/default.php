@@ -17,7 +17,7 @@ $module_tag = $params->get('module_tag');
 <ul class="related-items-list">
   <?php foreach ($list as $item) : ?>
   <?php $cat = $item->catslug; ?>
-  <li class="span4 module-container"> <a class="serif bold" href="<?php echo $item->route; ?>"><?php echo $item->title; ?></a><br />
+  <li class="span4 module-container folded-shadow"> <a class="serif bold" href="<?php echo $item->route; ?>"><?php echo $item->title; ?></a><br />
     <span class="small grey"> Posted in <a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($cat)); ?>"><?php echo ucfirst(substr($cat,strpos($cat,':') + 1, strlen($cat))); ?></a>
     <?php if ($showDate): ?>
     <span class=""><?php echo JText::sprintf('TPL_PISLICE_PUBLISHED_ON', JHTML::_('date', $item->created, JText::_('DATE_FORMAT_LC4'))); ?></span>

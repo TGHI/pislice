@@ -98,7 +98,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
     <?php echo $this->item->event->afterDisplayTitle; ?>
     <?php endif; ?>
     <?php echo $this->item->event->beforeDisplayContent; ?> </div>
-  <div class="article-contents">
+  <div class="article-contents folded-shadow">
     <?php  if (isset($images->image_intro) and !empty($images->image_intro)) : ?>
     <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
     <div class="blog-image <?php echo htmlspecialchars($imgfloat); ?>"> <img

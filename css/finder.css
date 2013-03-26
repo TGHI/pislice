@@ -5,3 +5,6 @@ ul.autocompleter-choices {position:absolute;margin-top:-1px;list-style:none;back
 ul.autocompleter-choices li{position:relative;margin:4px;padding:4px 3px;cursor:pointer}
 ul.autocompleter-choices li.autocompleter-selected{background-color:#f7f7f7;border-radius:3px}
 ul.autocompleter-choices span.autocompleter-queried{font-weight:bold}
+
+#finder-filter-select-list div{float:left;margin:0 15px 15px 0}
+#finder-filter-select-list div *{float:left}
