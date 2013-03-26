@@ -115,7 +115,7 @@ $doc->addScriptDeclaration($finderJs);
 
 ?>
 <form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="navbar-search pull-left">
-    <div class="navbar-search-inner<?php echo $suffix; ?>">
+    <div class="search-inner<?php echo $suffix; ?>">
       <?php echo $output; ?>
       <?php if ($params->get('show_advanced', 1)) : ?>
       <?php if ($params->get('show_advanced', 1) == 2) : ?>

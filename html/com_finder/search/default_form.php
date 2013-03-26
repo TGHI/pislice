@@ -7,12 +7,13 @@
  */
  
  $doc = JFactory::getDocument();
+ JHtml::_('behavior.framework', true);
  
 ?>
 <script type="text/javascript">
 	window.addEvent('domready', function() {
-		var advSearch = document.id('advanced-search'),
-			finderSearch = document.id('advanced-search');
+		var advSearch = document.id('advancedSearch'),
+			finderSearch = document.id('advancedSearch');
 <?php if ($this->params->get('show_advanced', 1)) : ?>
 		if (advSearch != null){
 			var searchSlider = new Fx.Slide(advSearch);
@@ -20,27 +21,11 @@
 			searchSlider.hide();
 			<?php endif; ?>
 			document.id('advanced-search-toggle').addEvent('click', function(e){
-				e = new Event(e);
-				e.stop();
+				e = new Event(e);	
 				searchSlider.toggle();
 			});
 		}
-		if (finderSearch != null){
-			finderSearch.addEvent('submit', function(e){
-				e = new Event(e);
-				e.stop();
-				if (advSearch != null){
-					advSearch.getElements('select').each(function(s){
-						if (!s.getProperty('value')){
-							s.setProperty('disabled', 'disabled');
-						}
-					});
-				}
-				finderSearch.submit();
-			});
-		}
 <?php endif; ?>
-
 <?php if ($this->params->get('show_autosuggest', 1)) : ?>
 	<?php JHtml::script('/templates/' . $doc->template . '/js/autocompleter.js'); ?>
 	var url = '<?php echo JRoute::_('index.php?option=com_finder&task=suggestions.display&format=json&tmpl=component', false); ?>';
@@ -48,7 +33,7 @@
 <?php endif; ?>
 	});
 </script>
-
+<div class="component-content folded-shadow">
 <form id="finder-search" action="<?php echo JRoute::_($this->query->toURI()); ?>" method="get" class="form-inline">
   <?php echo $this->getFields(); ?>
   <?php
@@ -67,12 +52,11 @@
     <button name="Search" type="submit" class="btn btn-primary disabled"><span class="icon-search icon-white"></span> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
     <?php endif; ?>
     <?php if ($this->params->get('show_advanced', 1)) : ?>
-    <a href="#advancedSearch" data-toggle="collapse" class="btn"><span class="icon-list"></span> <?php echo JText::_('COM_FINDER_ADVANCED_SEARCH_TOGGLE'); ?></a>
+    <a href="#" id="advanced-search-toggle" class="btn"><span class="icon-list"></span> <?php echo JText::_('COM_FINDER_ADVANCED_SEARCH_TOGGLE'); ?></a>
     <?php endif; ?>
   </fieldset>
   <?php if ($this->params->get('show_advanced', 1)) : ?>
   <div id="advancedSearch" class="collapse">
-    <hr />
     <?php if ($this->params->get('show_advanced_tips', 1)) : ?>
     <div class="advanced-search-tip"> <?php echo JText::_('COM_FINDER_ADVANCED_TIPS'); ?> </div>
     <hr />
@@ -81,3 +65,4 @@
   </div>
   <?php endif; ?>
 </form>
+</div>
