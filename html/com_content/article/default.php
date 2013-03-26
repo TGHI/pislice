@@ -144,17 +144,29 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php 
 		
 		if ($app->getTemplate(true)->params->get('pagenumbers') == 0) {
-			// get rid of those stupid page numbers
-		  $this->item->text = preg_replace('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', '', $this->item->text);
+		  // get rid of those stupid page numbers
+		  if(preg_match('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', $this->item->text, $pageNumbers)){;
+		    $this->item->text = str_replace($pageNumbers[0], '', $this->item->text);
+		  }
 		}
+		
+		// match/remove article nav
+		preg_match('/(<div class=\"pager\">)(.*)(<\\/div>)/', $this->item->text, $pager);
+		$this->item->text = str_replace($pager[0], '', $this->item->text);
+		
 		echo $this->item->text;	
 		
 		?>
         <?php if ($info == 0): ?>
         <?php if ($params->get('show_modify_date')) : ?>
-        <div class="modified"> <i class="icon-calendar"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?> </div>
+        <p class="modified grey italic"><span class="icon-time"></span> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, 'l, F jS Y')); ?> </p>
         <?php endif; ?>
         <?php endif; ?>
+        <?php 
+		
+		  // put article nav down here
+		  echo $pager[0]; 
+		?>
         <?php
 			if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):
 			echo $this->item->pagination;
