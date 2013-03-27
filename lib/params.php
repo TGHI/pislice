@@ -71,7 +71,7 @@ if ($this->params->get('navbarfixed')){
 // Misc Params
 
 if ($this->params->get('opengraph') == 1){
-  foreach($metaArray as $metaName=>$metaValue){
+  foreach($meta as $metaName=>$metaValue){
     $opengraph_meta_tags .= '  <meta property="' . $metaName . '" content="' . $metaValue . '" />'."\n";  
   }	
 }
