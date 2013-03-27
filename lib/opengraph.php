@@ -38,6 +38,9 @@ if ($option == "com_content"){
     $meta["article:published_time"] = $article->publish_up;
 
   }
+
+  $meta["fb:app_id"] = $this->params->get('facebookAppId');
+
 }
 
 function getCategoryName($id){
