@@ -123,7 +123,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 	endif;
 ?>
     <div class="blog-item-separator"></div>
-    <p class="readmore"> <a href="<?php echo $link; ?>">
+    <p class="readmore button"><a href="<?php echo $link; ?>"><span class=" icon-share-alt"></span>
       <?php if (!$params->get('access-view')) :
 						echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $this->item->alternative_readmore) :
@@ -137,7 +137,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 						echo JText::_('COM_CONTENT_READ_MORE');
 						echo JHtml::_('string.truncate', ($this->item->title), $params->get('readmore_limit'));
 					endif; ?>
-      </a> </p>
+      </a></p>
     <?php endif; ?>
     <?php if ($this->item->state == 0) : ?>
   </div>

@@ -84,19 +84,19 @@ function pagination_item_active(&$item){
 
   if ($item->text == JText::_('JLIB_HTML_START')){
 	  
-	return '<li class="start span1"><span class="icon-fast-backward"></span><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a></li>';
+	return '<li class="button start span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav"><span class="icon-fast-backward"></span>' . $item->text . '</a></li>';
 	
   }elseif($item->text == JText::_('JPREV')){
 	  
-	return '<li class="prev span1"><span class="icon-backward"></span><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a></li>';
+	return '<li class="button prev span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav"><span class="icon-backward"></span>' . $item->text . '</a></li>';
 	  
   }elseif($item->text == JText::_('JNEXT')){
 	  
-    return '<li class="next span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a><span class="icon-forward"></span></li>';
+    return '<li class="button next span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '<span class="icon-forward"></span></a></li>';
 	  
   }elseif($item->text == JText::_('JLIB_HTML_END')){
 	  
-    return '<li class="end span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a><span class="icon-fast-forward"></span></li>';
+    return '<li class="button end span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '<span class="icon-fast-forward"></span></a></li>';
 	  
   }else{
 	  
@@ -109,31 +109,31 @@ function pagination_item_inactive(&$item){
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		return '<li class="start disabled span1"><span class="icon-fast-backward"></span><a>'.JText::_('JLIB_HTML_START').'</a></li>';
+		return '<li class="button start disabled span1"><a><span class="icon-fast-backward"></span>'.JText::_('JLIB_HTML_START').'</a></li>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		return '<li class="prev disabled span1"><span class="icon-backward"></span><a>'.JText::_('JPREV').'</a></li>';
+		return '<li class="button prev disabled span1"><a><span class="icon-backward"></span>'.JText::_('JPREV').'</a></li>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="next disabled span1"><a>'.JText::_('JNEXT').'</a><span class="icon-forward"></span></li>';
+		return '<li class="button next disabled span1"><a>'.JText::_('JNEXT').'<span class="icon-forward"></span></a></li>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="end disabled span1"><a>'.JText::_('JLIB_HTML_END').'</a><span class="icon-fast-forward"></span></li>';
+		return '<li class="button end disabled span1"><a>'.JText::_('JLIB_HTML_END').'<span class="icon-fast-forward"></span></a></li>';
 	}
 
 	// Check if the item is the active page
 	if (isset($item->active) && ($item->active))
 	{
-		return '<li class="pagenumber active small span1"><div class="round empty"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
+		return '<li class="button pagenumber active small span1"><div class="round empty"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
 	}
 
 	// Doesn't match any other condition, render a normal item
