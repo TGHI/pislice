@@ -46,9 +46,9 @@ $templateStyles .= "    .narrow,.moduletitle{font-family:\"" . $fonts[2] . "\",s
 // Theme Colours
 
 $templateStyles .= "    a,.autocompleter-selected span.autocompleter-queried{color:" . $this->params->get('linkColour') . "}\n";
-$templateStyles .= "    .tags a,.tags a:before{background:" . $this->params->get('linkColour') . "}\n";
+$templateStyles .= "    .pagination-list li .filled,.tags a,.tags a:before,.pagination-list li .round:hover div{background:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
-$templateStyles .= "    .article-details dd > span,.article-index ul a:before,.tags a:hover,.tags a:hover:before{background:" . $this->params->get('detailIconsColour') . "}\n";
+$templateStyles .= "    .pagination-list li > .round,.article-details dd > span,.article-index ul a:before,.tags a:hover,.tags a:hover:before{background:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";
 $templateStyles .= "    blockquote{border-color:" . $this->params->get('complementColour') . "}". "\n";
@@ -73,7 +73,7 @@ if ($this->params->get('navbarfixed')){
 if ($this->params->get('opengraph') == 1){
   foreach($meta as $metaName=>$metaValue){
     $opengraph_meta_tags .= '  <meta property="' . $metaName . '" content="' . $metaValue . '" />'."\n";  
-  }	
+  }
 }
 
 if (! $this->params->get('generator')) {

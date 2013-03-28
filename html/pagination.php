@@ -1,4 +1,4 @@
-<?php
+<?php defined('_JEXEC') or die;
 /**
  * @package     Joomla.Administrator
  * @subpackage  Templates.protostar
@@ -7,67 +7,6 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
-
-/**
- * This is a file to add template specific chrome to pagination rendering.
- *
- * pagination_list_footer
- * 	Input variable $list is an array with offsets:
- * 		$list[limit]		: int
- * 		$list[limitstart]	: int
- * 		$list[total]		: int
- * 		$list[limitfield]	: string
- * 		$list[pagescounter]	: string
- * 		$list[pageslinks]	: string
- *
- * pagination_list_render
- * 	Input variable $list is an array with offsets:
- * 		$list[all]
- * 			[data]		: string
- * 			[active]	: boolean
- * 		$list[start]
- * 			[data]		: string
- * 			[active]	: boolean
- * 		$list[previous]
- * 			[data]		: string
- * 			[active]	: boolean
- * 		$list[next]
- * 			[data]		: string
- * 			[active]	: boolean
- * 		$list[end]
- * 			[data]		: string
- * 			[active]	: boolean
- * 		$list[pages]
- * 			[{PAGE}][data]		: string
- * 			[{PAGE}][active]	: boolean
- *
- * pagination_item_active
- * 	Input variable $item is an object with fields:
- * 		$item->base	: integer
- * 		$item->link	: string
- * 		$item->text	: string
- *
- * pagination_item_inactive
- * 	Input variable $item is an object with fields:
- * 		$item->base	: integer
- * 		$item->link	: string
- * 		$item->text	: string
- *
- * This gives template designers ultimate control over how pagination is rendered.
- *
- * NOTE: If you override pagination_item_active OR pagination_item_inactive you MUST override them both
- */
-
-/**
- * Renders the pagination footer
- *
- * @param   array  $list  Array containing pagination footer
- *
- * @return  string  HTML markup for the full pagination footer
- *
- * @since   3.0
- */
 function pagination_list_footer($list)
 {
 	$html = "<div class=\"pagination\">\n";
@@ -112,7 +51,7 @@ function pagination_list_render($list)
 		}
 	}
 
-	$html = '<ul class="pagination-list">';
+	$html = '<ul class="pagination-list row-fluid">';
 	$html .= $list['start']['data'];
 	$html .= $list['previous']['data'];
 
@@ -129,98 +68,74 @@ function pagination_list_render($list)
 		$html .= $page['data'];
 	}
 
-	$html .= $list['next']['data'];
+	// swapped these around because of floats. Yuck, I know.
+
 	$html .= $list['end']['data'];
+	$html .= $list['next']['data'];
 
 	$html .= '</ul>';
 	return $html;
 }
 
-/**
- * Renders an active item in the pagination block
- *
- * @param   JPaginationObject  $item  The current pagination object
- *
- * @return  string  HTML markup for active item
- *
- * @since   3.0
- */
-function pagination_item_active(&$item)
-{
-	// Check for "Start" item
-	if ($item->text == JText::_('JLIB_HTML_START'))
-	{
-		$display = '<i class="icon-first"></i>';
-	}
 
-	// Check for "Prev" item
-	if ($item->text == JText::_('JPREV'))
-	{
-		$display = '<i class="icon-previous"></i>';
-	}
+function pagination_item_active(&$item){
 
-	// Check for "Next" item
-	if ($item->text == JText::_('JNEXT'))
-	{
-		$display = '<i class="icon-next"></i>';
-	}
+  // put round dots only under numeric items
 
-	// Check for "End" item
-	if ($item->text == JText::_('JLIB_HTML_END'))
-	{
-		$display = '<i class="icon-last"></i>';
-	}
-
-	// If the display object isn't set already, just render the item with its text
-	if (!isset($display))
-	{
-		$display = $item->text;
-	}
-
-	return "<li><a title=\"" . $item->text . "\" href=\"" . $item->link . "\" class=\"pagenav\">" . $item->text . "</a><li>";
+  if ($item->text == JText::_('JLIB_HTML_START')){
+	  
+	return '<li class="start span1"><span class="icon-fast-backward"></span><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a></li>';
+	
+  }elseif($item->text == JText::_('JPREV')){
+	  
+	return '<li class="prev span1"><span class="icon-backward"></span><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a></li>';
+	  
+  }elseif($item->text == JText::_('JNEXT')){
+	  
+    return '<li class="next span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a><span class="icon-forward"></span></li>';
+	  
+  }elseif($item->text == JText::_('JLIB_HTML_END')){
+	  
+    return '<li class="end span1"><a title="' . $item->text . '" href="' . $item->link . '" class="pagenav">' . $item->text . '</a><span class="icon-fast-forward"></span></li>';
+	  
+  }else{
+	  
+    return '<li class="pagenumber span1 small"><a title="' . $item->text . '" href="' . $item->link . '" class="round empty"><div class="round"></div></a>' . $item->text . '</li>';
+	
+  }
 }
 
-/**
- * Renders an inactive item in the pagination block
- *
- * @param   JPaginationObject  $item  The current pagination object
- *
- * @return  string  HTML markup for inactive item
- *
- * @since   3.0
- */
-function pagination_item_inactive(&$item)
-{
+function pagination_item_inactive(&$item){
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		return '<li class="disabled"><a>'.JText::_('JLIB_HTML_START').'</a></li>';
+		return '<li class="start disabled span1"><span class="icon-fast-backward"></span><a>'.JText::_('JLIB_HTML_START').'</a></li>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		return '<li class="disabled"><a>'.JText::_('JPREV').'</a></li>';
+		return '<li class="prev disabled span1"><span class="icon-backward"></span><a>'.JText::_('JPREV').'</a></li>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="disabled"><a>'.JText::_('JNEXT').'</a></li>';
+		return '<li class="next disabled span1"><a>'.JText::_('JNEXT').'</a><span class="icon-forward"></span></li>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="disabled"><a>'.JText::_('JLIB_HTML_END').'</a></li>';
+		return '<li class="end disabled span1"><a>'.JText::_('JLIB_HTML_END').'</a><span class="icon-fast-forward"></span></li>';
 	}
 
 	// Check if the item is the active page
 	if (isset($item->active) && ($item->active))
 	{
-		return '<li class="active"><a>' . $item->text . '</a></li>';
+		return '<li class="pagenumber active small span1"><div class="round empty"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
 	}
 
 	// Doesn't match any other condition, render a normal item
-	return '<li class="disabled"><a>' . $item->text . '</a></li>';
+	return '<li class="disabled span1"><a>' . $item->text . '</a></li>';
 }
