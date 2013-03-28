@@ -14,6 +14,7 @@ $canEdit = $this->item->params->get('access-edit');
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
 <?php if ($this->item->state == 0) : ?>
+
 <div class="system-unpublished">
   <?php endif; ?>
   <div class="article-header">
@@ -142,4 +143,5 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
   </div>
 </div>
 <?php endif; ?>
+</div>
 <?php echo $this->item->event->afterDisplayContent; ?>
