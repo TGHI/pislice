@@ -168,6 +168,7 @@ $limitstart			= JRequest::getVar('limitstart');
 		  // put article nav down here
 		 if(!empty($pager)){
 			 echo $pager[0];
+			 echo '<br style="clear:both" />';
 		 }
 		 
 		?>
