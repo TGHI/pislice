@@ -9,13 +9,13 @@
 ?>
 <ul class="pager clearfix">
 <?php if ($row->prev) : ?>
-  <li class="button"><a href="<?php echo $row->prev; ?>" rel="prev"><span class="icon-backward"></span> Previous Article</a></li>
+  <li class="button"><a href="<?php echo $row->prev; ?>" rel="prev"><span class="icon-backward"></span> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
 <?php else: ?>
-  <li class="button disabled grey"><a href="<?php echo $row->prev; ?>" rel="prev"><span class="icon-backward"></span> Previous Article</a></li>
+  <li class="button disabled grey"><a href="<?php echo $row->prev; ?>" rel="prev"><span class="icon-backward"></span> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
 <?php endif; ?>
 <?php if ($row->next) : ?>
-  <li class="button next"><a href="<?php echo $row->next; ?>" rel="next">Next Article <span class="icon-forward"></span></a> </li>
+  <li class="button next"><a href="<?php echo $row->next; ?>" rel="next"><?php echo JText::_('TPL_PISLICE_NEXT_ARTICLE'); ?> <span class="icon-forward"></span></a> </li>
 <?php else: ?>
-  <li class="button disabled grey"><a>Next Article <span class="icon-forward"></span></a></li>
+  <li class="button disabled grey"><a><?php echo JText::_('TPL_PISLICE_NEXT_ARTICLE'); ?><span class="icon-forward"></span></a></li>
 <?php endif; ?>
 </ul>
