@@ -29,6 +29,8 @@ blockquote,.grey{color:#bbb}
 
 /* article+blog layout */
 
+.blog-roll, .article-item{margin-top:35px}
+
 .blog-item-separator,.search-results li{border-bottom:1px solid #e6e7e9}
 
 .system-unpublished{background:#f8f8f8;color:#aaa;text-shadow:1px 0 0 #fff}
@@ -115,7 +117,7 @@ blockquote,.grey{color:#bbb}
 .button-container{height:100%;width:5px;background:#fff;box-shadow:1px 1px 1px #dedfe3;border-radius:0 3px 3px 0}
 .search-button{border:0;padding:2px 4px;line-height:16px;margin:5px 0 0 -24px;color:#fff;background:#353535;font-size:12px;transform:scale(-1, 1);-webkit-transform:scale(-1, 1);text-shadow:1px 1px 1px #111}
 
-.breadcrumbs{margin:0 0 35px;background:#f6f7f9;border-radius:3px;padding:15px;text-shadow:1px 1px 0 #fff}
+.breadcrumbs{background:#f6f7f9;border-radius:3px;padding:15px;text-shadow:1px 1px 0 #fff}
 .breadcrumbs span{color:#6f7477;margin:0 5px}
 .breadcrumbs span:before{color:#ccc}
 .breadcrumbs span:first-child{padding:0 15px 0 0;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;margin:0 15px 0 0}
