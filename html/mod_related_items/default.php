@@ -5,15 +5,7 @@
  * @copyright   Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
- 
-$header_tag = $params->get('header_tag');
-$module_tag = $params->get('module_tag');
-
 ?>
-<?php if($module->showtitle == 1): ?>
-<<?php echo $header_tag; ?> class="moduletitle"><?php echo $module->title; ?></<?php echo $header_tag; ?>>
-<?php endif; ?>
-<<?php echo $module_tag; ?> class="related-items<?php echo $moduleclass_sfx; ?>">
 <ul class="related-items-list">
   <?php foreach ($list as $item) : ?>
   <?php $cat = $item->catslug; ?>
@@ -25,4 +17,3 @@ $module_tag = $params->get('module_tag');
     </span> </li>
   <?php endforeach; ?>
 </ul>
-</<?php echo $module_tag; ?>>

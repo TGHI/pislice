@@ -29,7 +29,7 @@ require_once('lib/params.php');
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <?php
 echo $opengraph_meta_tags;
 $doc->addStyleSheet($base_url . 'templates/' . $template . '/css/template.css');
@@ -43,9 +43,7 @@ $doc->addStyleDeclaration($templateStyles);
 <body class="anim">
 <div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
-    <div class="span2">
-    <a href="<?php echo $base_url; ?>" class="brand"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
-    </div>
+    <div class="span2"> <a href="<?php echo $base_url; ?>" class="brand"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a> </div>
     <div class="span7">
       <jdoc:include type="modules" name="navigation" style="none" />
     </div>
@@ -63,7 +61,9 @@ $doc->addStyleDeclaration($templateStyles);
       <jdoc:include type="message" />
       <jdoc:include type="modules" name="article-top" style="none" />
       <jdoc:include type="component" />
-      <jdoc:include type="modules" name="article-bottom" style="none" />
+      <div class="row-fluid">
+        <jdoc:include type="modules" name="article-bottom" style="pi_default" />
+      </div>
       <jdoc:include type="modules" name="debug" style="none" />
     </div>
     <div class="span3">
@@ -73,18 +73,10 @@ $doc->addStyleDeclaration($templateStyles);
 </div>
 <div class="footer container-fluid">
   <footer>
-    <div class="row-fluid clearfix">
+    <div class="row-fluid">
       <div class="span2"></div>
       <div class="footer-inner span7 small">
-        <div class="span4">
-          <jdoc:include type="modules" name="footer-left" style="none" />
-        </div>
-        <div class="span4">
-          <jdoc:include type="modules" name="footer-middle" style="none" />
-        </div>
-        <div class="span4">
-          <jdoc:include type="modules" name="footer-right" style="none" />
-        </div>
+        <jdoc:include type="modules" name="footer" style="pi_default" />
       </div>
     </div>
   </footer>

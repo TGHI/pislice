@@ -6,14 +6,7 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-$header_tag = $params->get('header_tag');
-$module_tag = $params->get('module_tag');
-
 ?>
-<?php if($module->showtitle == 1): ?>
-<<?php echo $header_tag; ?> class="moduletitle"><?php echo $module->title; ?></<?php echo $header_tag; ?>>
-<?php endif; ?>
-<<?php echo $module_tag; ?> class="similar-tags<?php echo $moduleclass_sfx; ?>">
 <?php if ($list): ?>
 <ul >
   <?php foreach ($list as $i => $item) : ?>
@@ -30,4 +23,3 @@ $module_tag = $params->get('module_tag');
 <?php else : ?>
 <span> <?php echo JText::_('MOD_TAGS_SIMILAR_NO_MATCHING_TAGS'); ?></span>
 <?php endif; ?>
-</<?php echo $module_tag; ?>>
