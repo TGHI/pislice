@@ -36,9 +36,7 @@
     <position>article-bottom</position>
     <position>article-bottom2</position>
     <position>sidebar-right</position>
-    <position>footer-left</position>
-    <position>footer-middle</position>
-    <position>footer-right</position>
+    <position>footer</position>
   </positions>
   <languages folder="language">
     <language tag="en-GB">en-GB/en-GB.tpl_pislice.ini</language>
