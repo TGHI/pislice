@@ -12,11 +12,11 @@ function modChrome_pi_default($module, &$params, &$attribs){
 	
   $moduleArray = array();
 
-  if (isset( $attribs['shadows'] )){
-    array_push($moduleArray, "folded-shadow");
+  if (isset($attribs['shadows'] )){
+    $moduleArray[] = "folded-shadow";
   }
   if ($params->get('moduleclass_sfx')){
-    array_push($moduleArray, htmlspecialchars($params->get('moduleclass_sfx')));
+    $moduleArray[] = htmlspecialchars($params->get('moduleclass_sfx'));
   }
   
   $moduleClasses = implode(" ", $moduleArray);
