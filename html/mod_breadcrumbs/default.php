@@ -15,7 +15,7 @@
 <?php if ($params->get('showHere', 1))
 	{
 		//echo '<span class="showHere">' .JText::_('MOD_BREADCRUMBS_HERE').'</span>';
-		echo '<span class=" icon-map-marker"></span>';
+		echo '<span class="icon-map-marker"></span>';
 	}
 ?>
 <?php for ($i = 0; $i < $count; $i ++) :
