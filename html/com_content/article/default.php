@@ -47,7 +47,7 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
         <dl class="article-details">
           <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
-          <dd><span class="icon-user round"></span>
+          <dd><span class="icon-user round inset-3d"></span>
             <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
             <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -62,10 +62,10 @@ $limitstart			= JRequest::getVar('limitstart');
             <?php endif; ?>
           </dd>
           <?php if ($params->get('show_hits')) : ?>
-          <dd><span class="icon-eye-open round"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+          <dd><span class="icon-eye-open round inset-3d"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
           <?php endif; ?>
           <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-          <dd><span class="icon-folder round"></span>
+          <dd><span class="icon-folder round inset-3d"></span>
             <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')): ?>
             <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
             <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
@@ -85,7 +85,7 @@ $limitstart			= JRequest::getVar('limitstart');
           </dd>
           <?php endif; ?>
           <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
-          <dd><span class="icon-tags round"></span>
+          <dd><span class="icon-tags round inset-3d"></span>
             <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
             <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
           <?php endif; ?>
@@ -186,7 +186,7 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php if ($params->get('show_readmore') && $this->item->fulltext != null) :
 		$link1 = JRoute::_('index.php?option=com_users&view=login');
 		$link = new JURI($link1);?>
-        <p class="readmore button"> <a href="<?php echo $link; ?>">
+        <p class="readmore"><a class="button light-3d" href="<?php echo $link; ?>">
           <?php $attribs = json_decode($this->item->attribs); ?>
           <?php
 		if ($attribs->alternative_readmore == null) :

@@ -13,7 +13,7 @@
           $x = 0;
           foreach ($displayData as $i=>$tag){
             if (in_array($tag->access, JAccess::getAuthorisedViewLevels(JFactory::getUser()->get('id')))){
-              echo '<span class="small narrow tag-' . $tag->tag_id . ' tag-list' . $i . ' "><a class="anim" href="' . JRoute::_(TagsHelperRoute::getTagRoute($tag->tag_id)).'" >' . $this->escape($tag->title) . '</a></span>';
+              echo '<span class="small narrow tag-' . $tag->tag_id . ' tag-list' . $i . ' "><a class="anim light-3d" href="' . JRoute::_(TagsHelperRoute::getTagRoute($tag->tag_id)).'" >' . $this->escape($tag->title) . '</a></span>';
               if ($x !== count($displayData) - 1){
                 echo "&nbsp;";
               }

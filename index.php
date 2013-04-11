@@ -41,7 +41,7 @@ $doc->addStyleDeclaration($templateStyles);
 <jdoc:include type="head" />
 </head>
 <body class="anim">
-<div class="navbar navbar-fixed-top container-fluid">
+<div class="navbar light-3d navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2"> <a href="<?php echo $base_url; ?>" class="brand"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a> </div>
     <div class="span7">
@@ -57,9 +57,9 @@ $doc->addStyleDeclaration($templateStyles);
     <div class="span2">
       <jdoc:include type="modules" name="sidebar-left" style="none" />
     </div>
-    <div class="span7">
-      <jdoc:include type="message" />
+    <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
+      <jdoc:include type="message" />
       <jdoc:include type="component" />
       <div class="row-fluid">
         <jdoc:include type="modules" name="article-bottom" style="pi_default" />
