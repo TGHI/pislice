@@ -100,7 +100,7 @@ function pagination_item_active(&$item){
 	  
   }else{
 	  
-    return '<li class="pagenumber span1 small"><a title="' . $item->text . '" href="' . $item->link . '" class="round empty"><div class="round"></div></a>' . $item->text . '</li>';
+    return '<li class="pagenumber span1 small"><a title="' . $item->text . '" href="' . $item->link . '" class="round empty inset-3d"><div class="round"></div></a>' . $item->text . '</li>';
 	
   }
 }
@@ -133,7 +133,7 @@ function pagination_item_inactive(&$item){
 	// Check if the item is the active page
 	if (isset($item->active) && ($item->active))
 	{
-		return '<li class="pagenumber active small span1"><div class="round empty"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
+		return '<li class="pagenumber active small span1"><div class="round empty inset-3d"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
 	}
 
 	// Doesn't match any other condition, render a normal item
