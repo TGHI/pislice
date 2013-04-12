@@ -1,9 +1,6 @@
 #highlighter-start, #highlighter-end{display:none}
 .term,span.highlight{background-color:#fff;border-radius:3px;border:1px solid #ccc;box-shadow:2px 2px 0 #ccc;font-weight:bold;padding:1px 4px;margin:0 4px 0 0}
 
-ul.autocompleter-choices {position:absolute;margin-top:-1px;list-style:none;background:#fff;padding:1px 2px 1px 3px;border-left:1px solid #e3e4e8;border-right:1px solid #dedfe3;border-bottom:1px solid #dedfe3;border-radius:0 0 3px 3px;box-shadow:2px 2px 2px #dedfe3}
-ul.autocompleter-choices li{position:relative;margin:4px;padding:4px 3px;cursor:pointer}
-ul.autocompleter-choices li.autocompleter-selected{background-color:#f7f7f7;border-radius:3px}
 ul.autocompleter-choices span.autocompleter-queried{font-weight:bold}
 
 #finder-filter-select-list div{float:left;margin:0 15px 15px 0}
