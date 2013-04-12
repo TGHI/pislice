@@ -72,8 +72,6 @@ if ($params->get('show_button', 1))
 	endswitch;
 }
 
-JHtml::stylesheet('templates/' . $doc->template . '/css/finder.css', true, false, false);
-
 $finderJs  = "window.addEvent('domready', function(){". "\n";
 $finderJs .= '  var value,'. "\n";
 $finderJs .= "      searchField = document.id('mod-finder-searchword'),". "\n";

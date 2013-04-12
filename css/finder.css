@@ -1,7 +1,0 @@
-#highlighter-start, #highlighter-end{display:none}
-.term,span.highlight{background-color:#fff;border-radius:3px;border:1px solid #ccc;box-shadow:2px 2px 0 #ccc;font-weight:bold;padding:1px 4px;margin:0 4px 0 0}
-
-ul.autocompleter-choices span.autocompleter-queried{font-weight:bold}
-
-#finder-filter-select-list div{float:left;margin:0 15px 15px 0}
-#finder-filter-select-list div *{float:left}

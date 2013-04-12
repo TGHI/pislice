@@ -36,7 +36,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .button:active{box-shadow:inset 1px 1px 4px #ddd}
 
 .dropdown {position:relative}
-.dropdown-menu{position:absolute;z-index:1000;display:none;float:left;list-style:none;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip: padding-box;background:#fff;padding:1px 2px 1px 3px;border-left:1px solid #e3e4e8;border-right:1px solid #dedfe3;border-bottom:1px solid #dedfe3;border-radius:0 0 3px 3px;box-shadow:2px 2px 2px #dedfe3}
+.dropdown-menu{position:absolute;z-index:1000;display:none;list-style:none;background:#fff;padding:1px 2px 1px 3px;border-left:1px solid #e3e4e8;border-right:1px solid #dedfe3;border-bottom:1px solid #dedfe3;border-radius:0 0 3px 3px;box-shadow:2px 2px 2px #dedfe3}
 .dropdown-menu li{margin:4px;padding:4px 3px;cursor:pointer}
 .dropdown-menu li:hover{background-color:#f7f7f7;border-radius:3px}
 .open{z-index:1000}
@@ -119,6 +119,9 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 /*modules */
 
 .moduletitle{}
+
+#highlighter-start, #highlighter-end{display:none}
+.term,span.highlight{background-color:#fff;border-radius:3px;border:1px solid #ccc;box-shadow:2px 2px 0 #ccc;font-weight:bold;padding:1px 4px;margin:0 4px 0 0}
 
 .navbar{padding:8px 0;box-shadow:6px 0 6px rgba(49,52,57,0.4)}
 .navbar-inner .span2{text-align:center}
