@@ -21,7 +21,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .loading{background:#fff url(../img/loading.gif) right center no-repeat}
 .disabled,.disabled:hover{box-shadow:none!important;color:#ccc;cursor:no-drop}
 
-.light-3d{box-shadow:inset 1px 1px 0 rgba(255,255,255,.9),inset -1px -1px 0px rgba(66,66,66,.2);text-shadow:1px 1px 0 #fff}
+.light-3d{box-shadow:inset 1px 1px 0 rgba(255,255,255,.9),1px 1px 0px rgba(0,0,0,.1);text-shadow:1px 1px 0 #fff}
 .light-3d:not(a){color:#6f7477}
 .light-3d > [class*="icon-"] {color:#999;text-shadow:1px 1px 0 #fff}
 .inset-3d{box-shadow:inset -1px -1px 0 rgba(255,255,255,.8),inset 1px 1px 0 rgba(0,0,0,.1)}
@@ -32,7 +32,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .folded-shadow:after{right:10px;-webkit-transform:rotate(3deg);-moz-transform:rotate(3deg);-o-transform:rotate(3deg)}
 
 .button{padding:5px 10px;border:1px solid #e5e5e5;border-radius:3px;white-space:nowrap;outline:0}
-.button:hover{box-shadow:inset 0 5px 10px rgba(255,255,255,.9),inset -1px -1px 0px rgba(66,66,66,.2)}
+.button:hover{box-shadow:inset 0 5px 10px rgba(255,255,255,.9),1px 1px 0px rgba(0,0,0,.1)}
 .button:active,.open .button{box-shadow:inset 1px 1px 4px #ddd}
 
 .dropdown{position:relative}
@@ -97,7 +97,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .pagination-list li .empty{width:18px;height:18px;padding:4px;margin:0 auto;display:block}
 .pagination-list li .filled,.pagination-list li .round:hover div{width:7px;height:7px;padding:4px;margin:1px 0 0 1px;box-shadow:inset -1px -1px 0 rgba(0,0,0,.2),inset 1px 1px 0 rgba(255,255,255,0.6)}
-.pagination-list .pagenumber{margin:0 auto;text-align:center}
+.pagination-list .pagenumber{text-align:center}
 .pagination-list .next,.pagination-list .end{float:right !important}
 
 .footer{background:#f6f7f9;box-shadow:inset 0 10px 10px -10px #dee0e2;padding:15px 0;color:#777;text-shadow:1px 1px 0 #fff;margin-top:35px}
@@ -124,7 +124,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .term,span.highlight{background-color:#fff;border-radius:3px;border:1px solid #ccc;box-shadow:2px 2px 0 #ccc;font-weight:bold;padding:1px 4px;margin:0 4px 0 0}
 
 .navbar{padding:8px 0;box-shadow:6px 0 6px rgba(49,52,57,0.4)}
-.navbar-inner .span2{text-align:center}
+.navbar-inner .brand{margin-right:15px}
 .navbar-inner .nav{list-style-type:none;float:left;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff;border-left:1px solid #dedfe3}
 .navbar-inner .nav li{float:left;padding:0 15px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;text-shadow:1px 1px 0 #fff;text-transform:uppercase}
 .navbar-inner .nav li a{margin-top:6px;display:block;line-height:22pt;letter-spacing:-2pt}
