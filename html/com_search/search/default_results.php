@@ -34,6 +34,7 @@
     <small class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($result->href); ?></small>
     <?php endforeach; ?>
   </li>
+      <hr class="separator" />
 </ul>
 <div class="search-pagination">
   <div class="pagination"> <?php echo $this->pagination->getPagesLinks(); ?> </div>

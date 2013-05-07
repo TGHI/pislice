@@ -30,4 +30,5 @@
   <?php if ($this->params->get('show_url', 1)) : ?>
   <small class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($this->result->route); ?></small>
   <?php endif; ?>
+  <hr class="separator" />
 </li>

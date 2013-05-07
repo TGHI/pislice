@@ -50,7 +50,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .blog-item .article-actions{opacity:0.5}
 .blog-item:hover .article-actions{opacity:1}
 
-.blog-item-separator,.search-result{border-bottom:1px solid #e6e7e9}
+.separator{height:1px;border:0;border-top:1px solid #e6e7e9;}
 
 .system-unpublished{background:#f8f8f8;color:#aaa;text-shadow:1px 0 0 #fff}
 .system-unpublished .article-date{background:#888;text-shadow:1px 1px 1px #444}
@@ -115,7 +115,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 /* search */
 
 .search-result-list{list-style-type:none}
-.search-result{margin:30px auto;padding:0 0 30px 0}
+.search-result{margin:30px auto}
 
 /*modules */
 

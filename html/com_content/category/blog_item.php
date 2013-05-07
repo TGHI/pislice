@@ -126,7 +126,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		$link->setVar('return', base64_encode($returnURL));
 	endif;
 ?>
-    <div class="blog-item-separator"></div>
+    <hr class="separator" />
     <p class="readmore"><a class="button light-3d" href="<?php echo $link; ?>"><span class="icon-share-alt"></span>
       <?php if (!$params->get('access-view')) :
 						echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
