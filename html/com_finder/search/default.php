@@ -28,6 +28,6 @@
     // Load the search results layout if we are performing a search.
     if ($this->query->search === true):
 ?>
-  <div id="search-results"> <?php echo $this->loadTemplate('results'); ?> </div>
+  <div class="search-results"> <?php echo $this->loadTemplate('results'); ?> </div>
   <?php endif; ?>
 </div>

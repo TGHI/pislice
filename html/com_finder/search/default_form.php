@@ -33,7 +33,7 @@
 <?php endif; ?>
 	});
 </script>
-<div class="component-content folded-shadow">
+<div class="component-content search-results folded-shadow">
 <form id="finder-search" action="<?php echo JRoute::_($this->query->toURI()); ?>" method="get" class="form-inline">
   <?php echo $this->getFields(); ?>
   <?php
