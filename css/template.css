@@ -66,9 +66,9 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .tags{float:left;margin:-2px 0 0 10px}
 .tags a:hover{box-shadow:inset 0 1px 0 rgba(0,0,0,0.1)}
 .tags a:hover:before{box-shadow:inset 1px 0 0 rgba(0,0,0,0.1)}
-.tags a{position:relative;display:inline-block;border-radius:3px;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.2);text-transform:uppercase;padding:0 10px;line-height:25px;z-index:2}
-.tags a:before{position:absolute;content:'';height:18px;width:18px;left:-7px;top:4px;border-radius:0 0 0 5px;-webkit-transform: rotate(45deg);-moz-transform:rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);zoom:1;z-index:-1}
-.tags a:after{position:absolute;content:'';padding:3px;top:10px;left:0;background:#fff;border-radius:50%;z-index:3}
+.tags a{position:relative;display:inline-block;border-radius:3px;box-shadow:inset -1px -1px 0 rgba(0,0,0,0.2), inset 1px 1px 0 rgba(255,255,255,0.1);color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,0.2);text-transform:uppercase;margin:0 15px 5px 0;padding:0 10px;line-height:25px;z-index:2}
+.tags a:before{position:absolute;height:18px;width:18px;left:-8px;top: 4px;border-radius:0 0 0 5px;-webkit-transform: rotate(45deg);-moz-transform:rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);transform: rotate(45deg);zoom:1;content:'';z-index:-1}
+.tags a:after{position:absolute;padding:3px;top:10px;left:0;background:#fff;border-radius:50%;content:'';z-index:3}
 
 .article-contents{padding:35px;border-radius:0 0 5px 5px;margin:0 0 45px 0;background:#fff}
 
