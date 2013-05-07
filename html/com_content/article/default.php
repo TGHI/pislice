@@ -128,9 +128,12 @@ $limitstart			= JRequest::getVar('limitstart');
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
           <div class="zoom-in icon-zoom-in anim"></div>
-          <div class="caption icon-picture anim">
-            <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
-            <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
+          <div class="caption">
+            <div class="icon-picture pull-left"></div>
+            <div class="caption-inner pull-left">
+              <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
+              <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
+            </div>
           </div>
           <?php endif; ?>
         </div>
