@@ -23,21 +23,41 @@ $limitstart			= JRequest::getVar('limitstart');
   <div class="article-item <?php echo $this->pageclass_sfx?>">
     <article>
       <?php if ($this->params->get('show_page_heading', 1)) : ?>
-      <!-- <div class="page-header">
-    <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
-  </div>-->
+      <div class="page-header">
+        <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
+      </div>
       <?php endif;?>
       <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
       <div class="article-header">
         <?php if ($params->get('show_publish_date')) : ?>
-        <div class="article-date">
+        <div class="article-date pull-left">
           <?php if ($this->item->state == 0): ?>
           <span class="bold">unpusblished</span>
           <?php else : ?>
           <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
           <?php endif; ?>
         </div>
+        <?php if (!$this->print) : ?>
+        <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
+        <div class="article-actions dropdown pull-right anim"> <a class="button light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="icon-caret-down" style="font-size:8px"></span> </a>
+          <ul class="dropdown-menu">
+            <?php if ($params->get('show_print_icon')) : ?>
+            <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
+            <?php endif; ?>
+            <?php if ($params->get('show_email_icon')) : ?>
+            <li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
+            <?php endif; ?>
+            <?php if ($canEdit) : ?>
+            <li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
+            <?php endif; ?>
+          </ul>
+        </div>
         <?php endif; ?>
+        <?php else : ?>
+        <div class="pull-right"> <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?> </div>
+        <?php endif; ?>
+        <?php endif; ?>
+        <br style="clear:both" />
         <h2>
           <?php if ($params->get('show_title')) : ?>
           <?php echo $this->escape($this->item->title); ?>
@@ -91,25 +111,6 @@ $limitstart			= JRequest::getVar('limitstart');
           <?php endif; ?>
         </dl>
         <?php endif; ?>
-        <?php if (!$this->print) : ?>
-        <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-        <div class="btn-group pull-right"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="caret"></span> </a>
-          <ul class="dropdown-menu actions">
-            <?php if ($params->get('show_print_icon')) : ?>
-            <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
-            <?php endif; ?>
-            <?php if ($params->get('show_email_icon')) : ?>
-            <li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
-            <?php endif; ?>
-            <?php if ($canEdit) : ?>
-            <li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
-            <?php endif; ?>
-          </ul>
-        </div>
-        <?php endif; ?>
-        <?php else : ?>
-        <div class="pull-right"> <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?> </div>
-        <?php endif; ?>
       </div>
       <div class="article-contents folded-shadow">
         <?php endif; ?>
@@ -123,7 +124,9 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php 
 		// only display introtext/image on first page of a paginated of article
 		if (empty($limitstart)): ?>
-        <?php if($params->get('show_intro')) : ?><div class="article-introtext"> <?php echo $this->item->introtext; ?> </div><?php endif; ?>
+        <?php if($params->get('show_intro')) : ?>
+        <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
+        <?php endif; ?>
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
