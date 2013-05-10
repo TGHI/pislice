@@ -36,7 +36,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .button:active,.open .button{box-shadow:inset 1px 1px 4px #ddd}
 
 .dropdown{position:relative}
-.dropdown-menu{position:absolute;z-index:1000;display:none;list-style:none;background:#fff;padding:4px;border:1px solid #e3e4e8;border-radius:3px;box-shadow:2px 2px 2px #dedfe3;right:0}
+.dropdown-menu{position:absolute;z-index:1000;display:none;list-style:none;background:#fff;padding:4px;border:1px solid #e3e4e8;border-radius:3px;box-shadow:2px 2px 2px #dedfe3;right:0;white-space:nowrap}
 .dropdown-menu li{margin:4px;padding:4px 3px;cursor:pointer}
 .dropdown-menu li:hover{background-color:#f7f7f7;border-radius:3px}
 .open{z-index:1000}
