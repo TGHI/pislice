@@ -50,7 +50,7 @@ $templateStyles .= "    .pagination-list li .filled,.tags a,.tags a:before,.pagi
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .light-3d{background:" . $this->params->get('light3dColour') . "}\n";
 $templateStyles .= "    .inset-3d,a.light-3d:hover:before,a.light-3d:hover:not(.disabled){background:" . $this->params->get('inset3dColour') . "}\n";
-$templateStyles .= "    .article-header .round{color:" . $this->params->get('detailIconsColour') . "}\n";
+$templateStyles .= "    .article-header .round, .tags a:hover{color:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";
 $templateStyles .= "    blockquote{border-color:" . $this->params->get('complementColour') . "}". "\n";
@@ -58,7 +58,7 @@ $templateStyles .= "    blockquote{border-color:" . $this->params->get('compleme
 // Theme Misc
 
 if (! $this->params->get('animations')){
-  $templateStyles .= "\n    .anim,.anim *:before,body{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0;transform:none !important}". "\n";
+  $templateStyles .= "\n    .anim *, .anim:before{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0}". "\n";
 }
 
 if (! $this->params->get('detailIcons')){
