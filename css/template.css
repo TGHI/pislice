@@ -55,10 +55,9 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .system-unpublished{background:#f8f8f8;color:#aaa;text-shadow:1px 0 0 #fff}
 .system-unpublished .article-date{background:#888;text-shadow:1px 1px 1px #444}
 
-.article-actions{margin-top:5px}
-
-.article-header h2,.article-header h2 a{color:#353535;font-size:32pt}
 .article-date{margin:5px 0 20px;text-transform:uppercase}
+.article-actions{margin-top:5px}
+.article-header h2,.article-header h2 a{color:#353535;font-size:32pt}
 .article-details{overflow:hidden}
 .article-details dd{float:left;margin:0 20px 0 0;line-height:36px}
 .article-details dd > span{float:left;margin:0 10px 0 0;width:36px;height:36px;text-align:center}
@@ -118,8 +117,6 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .search-result{margin:30px auto}
 
 /*modules */
-
-.moduletitle{}
 
 #highlighter-start, #highlighter-end{display:none}
 .term,span.highlight{background-color:#fff;border-radius:3px;border:1px solid #ccc;box-shadow:2px 2px 0 #ccc;font-weight:bold;padding:1px 4px;margin:0 4px 0 0}
