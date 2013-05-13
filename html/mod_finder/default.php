@@ -13,63 +13,7 @@ JHtml::addIncludePath(JPATH_SITE . '/components/com_finder/helpers/html');
 $doc = JFactory::getDocument();
 $lang = JFactory::getLanguage();
 $lang->load('com_finder', JPATH_SITE);
-
 $suffix = $params->get('moduleclass_sfx');
-$output = '<input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium pull-left" size="' . $params->get('field_size', 20) . '" value="' . htmlspecialchars(JFactory::getApplication()->input->get('q', '', 'string')) . '" />';
-$button = '';
-$label = '';
-
-if ($params->get('show_label', 1))
-{
-	$label = '<label for="mod-finder-searchword" class="finder' . $suffix . '">' . $params->get('alt_label', JText::_('JSEARCH_FILTER_SUBMIT')) . '</label>';
-
-	switch ($params->get('label_pos', 'left')):
-		case 'top' :
-			$label = $label . '<br />';
-			$output = $label . $output;
-			break;
-
-		case 'bottom' :
-			$label = '<br />' . $label;
-			$output = $output . $label;
-			break;
-
-		case 'right' :
-			$output = $output . $label;
-			break;
-
-		case 'left' :
-		default :
-			$output = $label . $output;
-			break;
-	endswitch;
-}
-
-if ($params->get('show_button', 1))
-{
-	$button = '<div class="button-container pull-left"><button class="search-button round ' . $suffix . $suffix . '" type="submit" title="' . JText::_('MOD_FINDER_SEARCH_BUTTON') . '"><i class="icon-search icon-white"></i></button></div>';
-
-	switch ($params->get('button_pos', 'right')):
-		case 'top' :
-			$button = $button . '<br />';
-			$output = $button . $output;
-			break;
-
-		case 'bottom' :
-			$button = '<br />' . $button;
-			$output = $output . $button;
-			break;
-
-		case 'right' :
-			$output = $output . $button;
-			break;
-
-		case 'left' :
-		default :
-			$output = $button . $output;
-			break;
-	endswitch;
-}
 
 $finderJs  = "window.addEvent('domready', function(){". "\n";
 $finderJs .= '  var value,'. "\n";
@@ -112,14 +56,22 @@ $doc->addScriptDeclaration($finderJs);
 
 ?>
 <form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="navbar-search pull-left">
-    <div class="search-inner inset-3d<?php echo $suffix; ?>">
-      <?php echo $output; ?>
-      <?php if ($params->get('show_advanced', 1)) : ?>
-      <?php if ($params->get('show_advanced', 1) == 2) : ?>
-      <a href="<?php echo JRoute::_($route); ?>"><?php echo JText::_('COM_FINDER_ADVANCED_SEARCH'); ?></a>
-      <?php elseif ($params->get('show_advanced', 1) == 1) : ?>
-      <div id="mod-finder-advanced"> <?php echo JHtml::_('filter.select', $query, $params); ?> </div>
-      <?php endif; ?>
-      <?php endif; ?>
-      <?php echo modFinderHelper::getGetFields($route); ?> </div>
-  </form>
+  <div class="search-inner inset-3d <?php echo $suffix; ?>">
+    <input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium pull-left" size="<?php echo $params->get('field_size', 20);?>" value="<?php echo htmlspecialchars(JFactory::getApplication()->input->get('q', '', 'string')); ?>" />
+    <div class="button-container pull-left">
+    <?php if ($params->get('show_button', 1)) : ?>
+      <button class="search-button round <?php echo $suffix; ?>'" type="submit" title="<?php echo JText::_('MOD_FINDER_SEARCH_BUTTON'); ?>"><i class="icon-search icon-white"></i></button>
+    <?php endif; ?>
+    </div>
+    <?php if ($params->get('show_advanced', 1)) : ?>
+    <?php if ($params->get('show_advanced', 1) == 2) : ?>
+    <a href="<?php echo JRoute::_($route); ?>"><?php echo JText::_('COM_FINDER_ADVANCED_SEARCH'); ?></a>
+    <?php elseif ($params->get('show_advanced', 1) == 1) : ?>
+    <div id="mod-finder-advanced">
+	  <?php echo JHtml::_('filter.select', $query, $params); ?>
+    </div>
+    <?php endif; ?>
+    <?php endif; ?>
+    <?php echo modFinderHelper::getGetFields($route); ?>
+  </div>
+</form>
