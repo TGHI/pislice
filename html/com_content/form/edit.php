@@ -1,13 +1,10 @@
-<?php
+<?php defined('_JEXEC') or die;
 /**
- * @package     Joomla.Site
- * @subpackage  com_content
+ * piSlice - The simple, responsive template for Joomla! 3.0+
  *
- * @copyright   Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
+ * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
-
-defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.tooltip');
@@ -16,8 +13,6 @@ JHtml::_('behavior.formvalidation');
 
 // Create shortcut to parameters.
 $params = $this->state->get('params');
-//$images = json_decode($this->item->images);
-//$urls = json_decode($this->item->urls);
 
 // This checks if the editor config options have ever been saved. If they haven't they will fall back to the original settings.
 $editoroptions = isset($params->show_publishing_options);
@@ -196,12 +191,13 @@ if (!$editoroptions)
           <?php endif; ?>
         </div>
       </div>
+      <hr class="separator" />
       <div class="btn-toolbar">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('article.save')"> <i class="icomoon-ok"></i> <?php echo JText::_('JSAVE') ?> </button>
+          <button type="button" class="btn light-3d" onclick="Joomla.submitbutton('article.save')"><i class="icon-ok"></i> <a><?php echo JText::_('JSAVE') ?></a></button>
         </div>
         <div class="btn-group">
-          <button type="button" class="btn" onclick="Joomla.submitbutton('article.cancel')"> <i class="icomoon-cancel"></i> <?php echo JText::_('JCANCEL') ?> </button>
+          <button type="button" class="btn light-3d" onclick="Joomla.submitbutton('article.cancel')"><i class="icon-remove"></i> <a><?php echo JText::_('JCANCEL') ?></a> </button>
         </div>
       </div>
       <?php echo JHtml::_('form.token'); ?>
