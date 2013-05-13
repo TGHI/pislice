@@ -71,9 +71,6 @@
       <field name="light3dColour" class="" type="color" default="#F3F4F6"
 					label="TPL_PISLICE_3D_LIGHT_COLOUR_LABEL"
 					description="TPL_PISLICE_3D_LIGHT_COLOUR_DESC" />
-      <field name="inset3dColour" class="" type="color" default="#F0F1F3"
-					label="TPL_PISLICE_3D_INSET_COLOUR_LABEL"
-					description="TPL_PISLICE_3D_INSET_COLOUR_DESC" />
       </fieldset>
       <fieldset name="LAYOUT">
       <field name="logo" 
