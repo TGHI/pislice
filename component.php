@@ -17,6 +17,7 @@ $view				= $app->input->getCmd('view', '');
 $layout				= $app->input->getCmd('layout', '');
 $task				= $app->input->getCmd('task', '');
 $itemid				= $app->input->getCmd('Itemid', '');
+$print				= $app->input->getCmd('print', '');
 $sitename			= $app->getCfg('sitename');
 
 require_once('lib/opengraph.php');
@@ -45,9 +46,11 @@ $doc->addStyleDeclaration(
 ?>
 </head>
 <body class="contentpane modal">
+<?php if ($print == 1) : ?>
 <div class="navbar light-3d">
   <img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" />
 </div>
+<?php endif; ?>
 <jdoc:include type="message" />
 <jdoc:include type="component" />
 </body>
