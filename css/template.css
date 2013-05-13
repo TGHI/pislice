@@ -48,7 +48,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .nav-tabs > li > a {padding:8px 12px;text-transform:uppercase;margin:0 5px 0 0;text-shadow:1px 1px 0 #fff;border-radius:3px 3px 0 0}
 .nav-tabs > li.active a,.nav-tabs > li > a:hover{box-shadow:2px 0 2px rgba(0,0,0,.2);background:#fff}
 
-.btn-toolbar{padding:10px 0 0 0 }
+.btn-toolbar{padding:10px 0}
 .control-group{padding:0 6px 0 0;margin: 0 0 10px 0}
 .control-group input{width:100%}
 
