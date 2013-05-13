@@ -42,7 +42,7 @@ $doc->addStyleDeclaration($templateStyles);
 ?>
 <jdoc:include type="head" />
 </head>
-<body class="anim">
+<body>
 <div class="navbar light-3d navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2"></div>
