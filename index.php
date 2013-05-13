@@ -25,6 +25,8 @@ $sitename			= $app->getCfg('sitename');
 require_once('lib/opengraph.php');
 require_once('lib/params.php');
 
+JHtml::_('bootstrap.framework');
+
 ?>
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
