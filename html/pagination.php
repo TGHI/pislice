@@ -84,19 +84,19 @@ function pagination_item_active(&$item){
 
   if ($item->text == JText::_('JLIB_HTML_START')){
 	  
-	return '<li class="start span1"><a title="' . $item->text . '" href="' . $item->link . '" class="button light-3d pagenav"><span class="icon-fast-backward"></span>' . $item->text . '</a></li>';
+	return '<li class="start span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav"><span class="icon-fast-backward"></span>' . $item->text . '</a></li>';
 	
   }elseif($item->text == JText::_('JPREV')){
 	  
-	return '<li class="prev span1"><a title="' . $item->text . '" href="' . $item->link . '" class="button light-3d pagenav"><span class="icon-backward"></span>' . $item->text . '</a></li>';
+	return '<li class="prev span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav"><span class="icon-backward"></span>' . $item->text . '</a></li>';
 	  
   }elseif($item->text == JText::_('JNEXT')){
 	  
-    return '<li class="next span1"><a title="' . $item->text . '" href="' . $item->link . '" class="button light-3d pagenav">' . $item->text . '<span class="icon-forward"></span></a></li>';
+    return '<li class="next span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav">' . $item->text . '<span class="icon-forward"></span></a></li>';
 	  
   }elseif($item->text == JText::_('JLIB_HTML_END')){
 	  
-    return '<li class="end span1"><a title="' . $item->text . '" href="' . $item->link . '" class="button light-3d pagenav">' . $item->text . '<span class="icon-fast-forward"></span></a></li>';
+    return '<li class="end span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav">' . $item->text . '<span class="icon-fast-forward"></span></a></li>';
 	  
   }else{
 	  
@@ -109,25 +109,25 @@ function pagination_item_inactive(&$item){
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		return '<li class="start span1"><a class="light-3d button disabled"><span class="icon-fast-backward"></span>'.JText::_('JLIB_HTML_START').'</a></li>';
+		return '<li class="start span1"><a class="light-3d btn disabled"><span class="icon-fast-backward"></span>'.JText::_('JLIB_HTML_START').'</a></li>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		return '<li class="prev span1"><a class="light-3d button disabled"><span class="icon-backward"></span>'.JText::_('JPREV').'</a></li>';
+		return '<li class="prev span1"><a class="light-3d btn disabled"><span class="icon-backward"></span>'.JText::_('JPREV').'</a></li>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="next span1"><a class="light-3d button disabled">'.JText::_('JNEXT').'<span class="icon-forward"></span></a></li>';
+		return '<li class="next span1"><a class="light-3d btn disabled">'.JText::_('JNEXT').'<span class="icon-forward"></span></a></li>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="end span1"><a class="light-3d button disabled">'.JText::_('JLIB_HTML_END').'<span class="icon-fast-forward"></span></a></li>';
+		return '<li class="end span1"><a class="light-3d btn disabled">'.JText::_('JLIB_HTML_END').'<span class="icon-fast-forward"></span></a></li>';
 	}
 
 	// Check if the item is the active page

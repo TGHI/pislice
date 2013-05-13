@@ -39,7 +39,7 @@ $limitstart			= JRequest::getVar('limitstart');
         </div>
         <?php if (!$this->print) : ?>
         <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-        <div class="article-actions dropdown pull-right anim"> <a class="button light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="icon-caret-down" style="font-size:8px"></span> </a>
+        <div class="article-actions dropdown pull-right anim"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="icon-caret-down" style="font-size:8px"></span> </a>
           <ul class="dropdown-menu">
             <?php if ($params->get('show_print_icon')) : ?>
             <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
@@ -192,7 +192,7 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php if ($params->get('show_readmore') && $this->item->fulltext != null) :
 		$link1 = JRoute::_('index.php?option=com_users&view=login');
 		$link = new JURI($link1);?>
-        <p class="readmore"><a class="button light-3d" href="<?php echo $link; ?>">
+        <p class="readmore"><a class="btn light-3d" href="<?php echo $link; ?>">
           <?php $attribs = json_decode($this->item->attribs); ?>
           <?php
 		if ($attribs->alternative_readmore == null) :
