@@ -21,14 +21,14 @@
 ?>
 <li class="search-result">
   <h2 class="result-title serif <?php echo $mime; ?>"><?php echo JHtml::_('link',JRoute::_($route), $this->result->title);?></h2>
-  <?php if(!empty($this->result->category)) : ?>
+<?php if(!empty($this->result->category)) : ?>
   <p class="search-result-category small"><?php echo JText::sprintf('TPL_PISLICE_POST_LOCATION', JHtml::_('link',$category_route,$this->result->category));?></p>
-  <?php endif; ?>
-  <?php if ($this->params->get('show_description', 1)) : ?>
+<?php endif; ?>
+<?php if ($this->params->get('show_description', 1)) : ?>
   <p class="result-text<?php echo $this->pageclass_sfx; ?>"> <?php echo JHtml::_('string.truncate', $this->result->description, $this->params->get('description_length', 255)); ?> </p>
-  <?php endif; ?>
-  <?php if ($this->params->get('show_url', 1)) : ?>
+<?php endif; ?>
+<?php if ($this->params->get('show_url', 1)) : ?>
   <small class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($this->result->route); ?></small>
-  <?php endif; ?>
+<?php endif; ?>
   <hr class="separator" />
 </li>

@@ -10,8 +10,7 @@
 
 
 // Activate the highlighter if enabled.
-if (!empty($this->query->highlight) && $this->params->get('highlight_terms', 1))
-{
+if (!empty($this->query->highlight) && $this->params->get('highlight_terms', 1)){
 	JHtml::_('behavior.highlighter', $this->query->highlight);
 }
 
@@ -23,23 +22,21 @@ if (($this->suggested && $this->params->get('show_suggested_query', 1)) || ($thi
 ?>
 <div id="search-query-explained">
   <?php
-		// Display the suggested search query.
-		if ($this->suggested && $this->params->get('show_suggested_query', 1)){
-			// Replace the base query string with the suggested query string.
-			$uri = JUri::getInstance($this->query->toURI());
-			$uri->setVar('q', $this->suggested);
-			// Compile the suggested query link.
-			$link	= '<a href="' . JRoute::_($uri->toString(array('path', 'query'))) . '">'
-					. $this->escape($this->suggested)
-					. '</a>';
-
-			echo JText::sprintf('COM_FINDER_SEARCH_SIMILAR', $link);
-		}
+    // Display the suggested search query.
+  if ($this->suggested && $this->params->get('show_suggested_query', 1)){
+     // Replace the base query string with the suggested query string.
+     $uri = JUri::getInstance($this->query->toURI());
+     $uri->setVar('q', $this->suggested);
+     // Compile the suggested query link.
+     $link	= '<a href="' . JRoute::_($uri->toString(array('path', 'query'))) . '">'. $this->escape($this->suggested) . '</a>';
+     echo JText::sprintf('COM_FINDER_SEARCH_SIMILAR', $link);
+  }
 		// Display the explained search query.
-		elseif ($this->explained && $this->params->get('show_explained_query', 1)){
-			echo $this->explained;
-		}
-		?>
+  elseif ($this->explained && $this->params->get('show_explained_query', 1)){
+    echo $this->explained;
+  }
+  
+  ?>
 </div>
 <?php
 endif;
@@ -65,15 +62,13 @@ else:
 ?>
 <br id="highlighter-start" />
 <ul class="search-result-list<?php echo $this->pageclass_sfx; ?> list-striped">
-  <?php
+<?php
 		for ($i = 0, $n = count($this->results); $i < $n; $i++):
 			$this->result	= &$this->results[$i];
 			$layout			= $this->getLayoutFile($this->result->layout);
-		?>
-  <?php echo $this->loadTemplate($layout); ?>
-  <?php
-		endfor;
-		?>
+?>
+<?php echo $this->loadTemplate($layout); ?>
+<?php endfor; ?>
 </ul>
 <br id="highlighter-end" />
 <div class="search-pagination">
