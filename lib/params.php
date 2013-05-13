@@ -45,12 +45,12 @@ $templateStyles .= "    .narrow,.moduletitle{font-family:\"" . $fonts[2] . "\",s
 
 // Theme Colours
 
-$templateStyles .= "    a,.autocompleter-selected span.autocompleter-queried{color:" . $this->params->get('linkColour') . "}\n";
+$templateStyles .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    .pagination-list li .filled,.tags a,.tags a:before,.pagination-list li .round:hover div{background:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .light-3d{background:" . $this->params->get('light3dColour') . "}\n";
-$templateStyles .= "    .inset-3d,a.light-3d:hover:before,a.light-3d:hover:not(.disabled){background:" . $this->params->get('inset3dColour') . "}\n";
-$templateStyles .= "    .article-header .round, .tags a:hover{color:" . $this->params->get('detailIconsColour') . "}\n";
+$templateStyles .= "    .inset-3d,a.light-3d:hover:before,a.light-3d:hover:not(.disabled),.nav-tabs > li > a{background:" . $this->params->get('inset3dColour') . "}\n";
+$templateStyles .= "    .article-header .round, .tags a:hover,.nav-tabs > li > a {color:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";
 $templateStyles .= "    blockquote{border-color:" . $this->params->get('complementColour') . "}". "\n";
