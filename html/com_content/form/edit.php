@@ -62,7 +62,8 @@ if (!$editoroptions)
             <div class="controls"> <?php echo $this->form->getInput('alias'); ?> </div>
           </div>
           <?php endif; ?>
-          <?php echo $this->form->getInput('articletext'); ?> </div>
+          <?php echo $this->form->getInput('articletext'); ?>
+        </div>
         <?php if ($params->get('show_urls_images_frontend')): ?>
         <div class="tab-pane" id="images">
           <div class="control-group">
