@@ -55,23 +55,22 @@ $finderJs .= "});". "\n";
 $doc->addScriptDeclaration($finderJs);
 
 ?>
-<form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="navbar-search pull-left">
-  <div class="search-inner inset-3d <?php echo $suffix; ?>">
-    <input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium pull-left" size="<?php echo $params->get('field_size', 20);?>" value="<?php echo htmlspecialchars(JFactory::getApplication()->input->get('q', '', 'string')); ?>" />
-    <div class="button-container pull-left">
-    <?php if ($params->get('show_button', 1)) : ?>
-      <button class="search-button round <?php echo $suffix; ?>'" type="submit" title="<?php echo JText::_('MOD_FINDER_SEARCH_BUTTON'); ?>"><i class="icon-search icon-white"></i></button>
-    <?php endif; ?>
-    </div>
+
+<form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="navbar-search inset-3d">
+  <div class="search-inner<?php echo $suffix; ?>">
+    <input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium" size="<?php echo $params->get('field_size', 20);?>" value="<?php echo htmlspecialchars(JFactory::getApplication()->input->get('q', '', 'string')); ?>" />
     <?php if ($params->get('show_advanced', 1)) : ?>
     <?php if ($params->get('show_advanced', 1) == 2) : ?>
     <a href="<?php echo JRoute::_($route); ?>"><?php echo JText::_('COM_FINDER_ADVANCED_SEARCH'); ?></a>
     <?php elseif ($params->get('show_advanced', 1) == 1) : ?>
-    <div id="mod-finder-advanced">
-	  <?php echo JHtml::_('filter.select', $query, $params); ?>
-    </div>
+    <div id="mod-finder-advanced"> <?php echo JHtml::_('filter.select', $query, $params); ?> </div>
     <?php endif; ?>
     <?php endif; ?>
     <?php echo modFinderHelper::getGetFields($route); ?>
+      <div class="button-container">
+    <?php if ($params->get('show_button', 1)) : ?>
+    <button class="search-button round <?php echo $suffix; ?>'" type="submit" title="<?php echo JText::_('MOD_FINDER_SEARCH_BUTTON'); ?>"><i class="icon-search icon-white"></i></button>
+    <?php endif; ?>
+  </div>
   </div>
 </form>
