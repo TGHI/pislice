@@ -49,7 +49,7 @@ $templateStyles .= "    a,.autocompleter-selected span.autocompleter-queried,.na
 $templateStyles .= "    .pagination-list li .filled,.tags a,.tags a:before,.pagination-list li .round:hover div{background:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .btn,.light-3d{background:" . $this->params->get('light3dColour') . "}\n";
-$templateStyles .= "    .article-header .round, .tags a:hover,.nav-tabs > li > a {color:" . $this->params->get('detailIconsColour') . "}\n";
+$templateStyles .= "    .article-details [class*=\"icon-\"], .tags a:hover,.nav-tabs > li > a {color:" . $this->params->get('detailIconsColour') . "}\n";
 $templateStyles .= "    .article-date{color:" . $this->params->get('complementColour') . "}\n";
 $templateStyles .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $this->params->get('complementColour') . "}". "\n";
 $templateStyles .= "    blockquote{border-color:" . $this->params->get('complementColour') . "}". "\n";
