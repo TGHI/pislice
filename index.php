@@ -45,9 +45,10 @@ $doc->addStyleDeclaration($templateStyles);
 <body>
 <div class="navbar light-3d navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
-    <div class="span2"></div>
+    <div class="span2" style="text-align:right">
+      <a href="<?php echo $base_url; ?>"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
+    </div>
     <div class="span7">
-     <a href="<?php echo $base_url; ?>" class="brand pull-left"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a> 
       <jdoc:include type="modules" name="navigation" style="none" />
     </div>
     <div class="span3">
@@ -58,8 +59,8 @@ $doc->addStyleDeclaration($templateStyles);
 <div class="main container-fluid">
   <div class="row-fluid">
   <div class="span1"></div>
-    <div class="sidebar-left span1">
-      <jdoc:include type="modules" name="sidebar-left" style="none" />
+    <div class="sidebar-left span1 anim">
+      <jdoc:include type="modules" name="sidebar-left" style="pi_plain" />
     </div>
     <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
