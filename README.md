@@ -18,10 +18,6 @@ Milestones
 - 0.9.0 - Release Candidate, bugs, bugs, bugs
 - 1.0.0 - Complete version
 
-Want more?
---------------
-
-You can get the source PSDs for pislice over at [pislice-extras].
 
 Future
 --------------
@@ -41,5 +37,4 @@ piSlice is licensed under the GNU General Public License version 3 or later; see
 [bootstrap]: http://twitter.github.com/bootstrap/
 [jQuery]: http://www.jquery.com
 [K2]: http://getk2.org
-[pislice-extras]:https://github.com/TGHI/pislice-extras
 [Elusive Icon font]:https://github.com/aristath/elusive-iconfont
