@@ -20,99 +20,99 @@ $limitstart			= JRequest::getVar('limitstart');
 ?>
 
 <section class="article-content">
-  <div class="article-item <?php echo $this->pageclass_sfx?>">
+  <div class="article-item <?php echo $this->pageclass_sfx; ?>">
     <article>
       <?php if ($this->params->get('show_page_heading', 1)) : ?>
       <div class="page-header">
         <h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
       </div>
       <?php endif;?>
-      <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
-      <div class="article-header">
-        <?php if ($params->get('show_publish_date')) : ?>
-        <div class="article-date pull-left">
-          <?php if ($this->item->state == 0): ?>
-          <span class="bold">unpusblished</span>
+      <div class="article-contents folded-shadow">
+        <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
+        <div class="article-header">
+          <?php if ($params->get('show_publish_date')) : ?>
+          <div class="article-date pull-left">
+            <?php if ($this->item->state == 0): ?>
+            <span class="bold">unpusblished</span>
+            <?php else : ?>
+            <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
+            <?php endif; ?>
+          </div>
+          <?php if (!$this->print) : ?>
+          <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
+          <div class="article-actions dropdown pull-right anim"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="icon-caret-down" style="font-size:8px"></span> </a>
+            <ul class="dropdown-menu">
+              <?php if ($params->get('show_print_icon')) : ?>
+              <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
+              <?php endif; ?>
+              <?php if ($params->get('show_email_icon')) : ?>
+              <li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
+              <?php endif; ?>
+              <?php if ($canEdit) : ?>
+              <li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
+              <?php endif; ?>
+            </ul>
+          </div>
+          <?php endif; ?>
           <?php else : ?>
-          <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
+          <div class="pull-right"> <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?> </div>
           <?php endif; ?>
-        </div>
-        <?php if (!$this->print) : ?>
-        <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-        <div class="article-actions dropdown pull-right anim"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="icon-caret-down" style="font-size:8px"></span> </a>
-          <ul class="dropdown-menu">
-            <?php if ($params->get('show_print_icon')) : ?>
-            <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
-            <?php endif; ?>
-            <?php if ($params->get('show_email_icon')) : ?>
-            <li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
-            <?php endif; ?>
-            <?php if ($canEdit) : ?>
-            <li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
-            <?php endif; ?>
-          </ul>
-        </div>
-        <?php endif; ?>
-        <?php else : ?>
-        <div class="pull-right"> <?php echo JHtml::_('icon.print_screen', $this->item, $params); ?> </div>
-        <?php endif; ?>
-        <?php endif; ?>
-        <br style="clear:both" />
-        <h2>
-          <?php if ($params->get('show_title')) : ?>
-          <?php echo $this->escape($this->item->title); ?>
           <?php endif; ?>
-        </h2>
-        <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_tags', 1)): ?>
-        <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
-        <dl class="article-details">
-          <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
-          <dd><span class="icon-user round inset-3d"></span>
-            <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
-            <?php
+          <br style="clear:both" />
+          <h2>
+            <?php if ($params->get('show_title')) : ?>
+            <?php echo $this->escape($this->item->title); ?>
+            <?php endif; ?>
+          </h2>
+          <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_tags', 1)): ?>
+          <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
+          <dl class="article-details">
+            <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
+            <dd><span class="icon-user round inset-3d"></span>
+              <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
+              <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
 				$menu = JFactory::getApplication()->getMenu();
 				$item = $menu->getItems('link', $needle, true);
 				$cntlink = !empty($item) ? $needle . '&Itemid=' . $item->id : $needle;
 ?>
-            <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
-            <?php else : ?>
-            <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
+              <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+            </dd>
+            <?php if ($params->get('show_hits')) : ?>
+            <dd><span class="icon-eye-open round inset-3d"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
             <?php endif; ?>
+            <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
+            <dd><span class="icon-folder round inset-3d"></span>
+              <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')): ?>
+              <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
+              <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
+              <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($params->get('show_category')) : ?>
+              <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
+              <?php if ($params->get('link_category') && $this->item->catslug) : ?>
+              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
+              <?php else : ?>
+              <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
+              <?php endif; ?>
+              <?php endif; ?>
+            </dd>
             <?php endif; ?>
-          </dd>
-          <?php if ($params->get('show_hits')) : ?>
-          <dd><span class="icon-eye-open round inset-3d"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+            <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
+            <dd><span class="icon-tags round inset-3d"></span>
+              <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
+              <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
+            <?php endif; ?>
+          </dl>
           <?php endif; ?>
-          <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-          <dd><span class="icon-folder round inset-3d"></span>
-            <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')): ?>
-            <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
-            <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
-            <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-            <?php else : ?>
-            <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-            <?php endif; ?>
-            <?php endif; ?>
-            <?php if ($params->get('show_category')) : ?>
-            <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
-            <?php if ($params->get('link_category') && $this->item->catslug) : ?>
-            <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-            <?php else : ?>
-            <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
-            <?php endif; ?>
-            <?php endif; ?>
-          </dd>
-          <?php endif; ?>
-          <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
-          <dd><span class="icon-tags round inset-3d"></span>
-            <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
-            <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
-          <?php endif; ?>
-        </dl>
-        <?php endif; ?>
-      </div>
-      <div class="article-contents folded-shadow">
+        </div>
         <?php endif; ?>
         <?php if (!$params->get('show_intro')) : echo $this->item->event->afterDisplayTitle; endif; ?>
         <?php echo $this->item->event->beforeDisplayContent; ?>

@@ -57,7 +57,8 @@ $doc->addStyleDeclaration($templateStyles);
 </div>
 <div class="main container-fluid">
   <div class="row-fluid">
-    <div class="span2">
+  <div class="span1"></div>
+    <div class="sidebar-left span1">
       <jdoc:include type="modules" name="sidebar-left" style="none" />
     </div>
     <div class="span7 main-content">
@@ -69,8 +70,8 @@ $doc->addStyleDeclaration($templateStyles);
       </div>
       <jdoc:include type="modules" name="debug" style="none" />
     </div>
-    <div class="span3">
-      <jdoc:include type="modules" name="sidebar-right" style="none" />
+    <div class="sidebar-right span3">
+      <jdoc:include type="modules" name="sidebar-right" style="pi_plain" />
     </div>
   </div>
 </div>
@@ -79,7 +80,7 @@ $doc->addStyleDeclaration($templateStyles);
     <div class="row-fluid">
       <div class="span2"></div>
       <div class="footer-inner span7 small">
-        <jdoc:include type="modules" name="footer" style="pi_default" />
+        <jdoc:include type="modules" name="footer" style="pi_plain" />
       </div>
     </div>
   </footer>
