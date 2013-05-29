@@ -29,7 +29,7 @@ if (empty($template_params)){
 
 // Google Fonts
 
-$fonts = array($this->params->get('titleFont'),$this->params->get('bodyFont'),$this->params->get('navFont'));
+$fonts = array($this->params->get('bodyFont'),$this->params->get('navFont'));
 $googleFonts = implode("|",$fonts);
 
 for($i = 0; $i < count($fonts);$i++){
@@ -39,9 +39,8 @@ for($i = 0; $i < count($fonts);$i++){
   $fonts[$i] = str_replace('+', ' ',$fonts[$i]);
 }
 
-//$templateStyles .= "    h1,h2,h3,.article-introtext,blockquote,.serif{font-family:\"" . $fonts[0] . "\",serif}\n";
-$templateStyles .= "    select,input,body{font-family:\"" . $fonts[1] . "\",sans-serif}\n";
-$templateStyles .= "    .narrow,.moduletitle{font-family:\"" . $fonts[2] . "\",sans-serif;font-weight:500}\n";
+$templateStyles .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
+$templateStyles .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
 
 // Theme Colours
 
