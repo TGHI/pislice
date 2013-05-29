@@ -128,7 +128,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 /*modules */
 
 .moduletable > *{margin:0 0 35px 0}
-.moduletitle{border-bottom:1px solid #dedfe3;box-shadow:0 1px 0 #fff;padding:0 0 5px;text-shadow:1px 1px 0 #fff}
+.moduletitle{text-transform:uppercase;border-bottom:1px solid #dedfe3;box-shadow:0 1px 0 #fff;padding:0 0 5px;text-shadow:1px 1px 0 #fff;letter-spacing:-.03em}
 
 .categories-module h4 a{color:#424347}
 .categories-module li{list-style-type:none;line-height:2em}
