@@ -45,10 +45,7 @@
   <config>
     <fields name="params">
       <fieldset name="FONTS">
-      <field name="titleFont" class="" type="text" default="Droid+Serif:400,400italic,700"
-					label="TPL_PISLICE_FONT_TITLE_LABEL"
-					description="TPL_PISLICE_FONT_TITLE_DESC" />
-      <field name="bodyFont" class="" type="text" default="Open+Sans:300italic,700,300"
+      <field name="bodyFont" class="" type="text" default="Open+Sans:300italic,300,400,600,700,800"
 					label="TPL_PISLICE_FONT_BODY_LABEL"
 					description="TPL_PISLICE_FONT_BODY_DESC" />
       <field name="navFont" class="" type="text" default="Fjalla+One"
