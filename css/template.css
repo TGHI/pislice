@@ -60,6 +60,13 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .open{z-index:1000}
 .open >.dropdown-menu{display:block}
 
+#system-message-container{position:fixed;bottom:0px;padding:0 0;background:rgba(0,0,0,0.8);z-index:999;width:100%;display:none;box-shadow:0 -30px 30px -20px #fff}
+#system-message :not(:last-child){margin-bottom:2px}
+#system-message .alert{width:100%;position:relative;display:block;overflow:hidden}
+#system-message .alert-heading{display:none}
+#system-message .close{position:absolute;right:0;top:0;height:100%;font-size:38pt;color:#fff;padding:0 20px;cursor:pointer}
+#system-message p{font-size:32pt;float:left;padding:0;margin:0 0 0 35px;line-height:48pt;color:#eee;text-shadow:1px 1px 0 rgba(0,0,0,0.8)}
+
 /* module/component styles */
 
 .article-contents,.search-results{padding:35px;border-radius:0 0 5px 5px;margin:0 0 45px 0;background:#fff}

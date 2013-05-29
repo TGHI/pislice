@@ -41,8 +41,10 @@ $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleFonts);
 $doc->addStyleDeclaration($templateStyles);
 ?>
 <jdoc:include type="head" />
+<script src="<?php echo $base_url . 'templates/' . $template . '/'; ?>js/template.js" type="text/javascript"></script>
 </head>
 <body>
+<jdoc:include type="message" />
 <div class="navbar light-3d navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2" style="text-align:right">
@@ -64,7 +66,6 @@ $doc->addStyleDeclaration($templateStyles);
     </div>
     <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
-      <jdoc:include type="message" />
       <jdoc:include type="component" />
       <div class="row-fluid">
         <jdoc:include type="modules" name="article-bottom" style="pi_default" />

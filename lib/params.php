@@ -45,7 +45,7 @@ $templateStyles .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",s
 // Theme Colours
 
 $templateStyles .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $this->params->get('linkColour') . "}\n";
-$templateStyles .= "    .pagination-list li .filled,.pagination-list li .round:hover div{background:" . $this->params->get('linkColour') . "}\n";
+$templateStyles .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $this->params->get('linkColour') . "}\n";
 $templateStyles .= "    a:hover{" . $this->params->get('linkHover') . "}\n";
 $templateStyles .= "    .btn,.light-3d{background:" . $this->params->get('light3dColour') . "}\n";
 $templateStyles .= "    .article-details [class*=\"icon-\"],.nav-tabs > li > a,.btn > [class*=\"icon-\"] {color:" . $this->params->get('detailIconsColour') . "}\n";
