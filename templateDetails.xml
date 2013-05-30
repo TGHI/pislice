@@ -40,7 +40,6 @@
   </positions>
   <languages folder="language">
     <language tag="en-GB">en-GB/en-GB.tpl_pislice.ini</language>
-    <language tag="en-GB">en-GB/en-GB.tpl_pislice.sys.ini</language>
   </languages>
   <config>
     <fields name="params">
