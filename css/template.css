@@ -62,10 +62,15 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 #system-message-container{position:fixed;bottom:0px;padding:0 0;background:rgba(0,0,0,0.8);z-index:999;width:100%;display:none;box-shadow:0 -30px 30px -20px #fff}
 #system-message :not(:last-child){margin-bottom:2px}
-#system-message .alert{width:100%;position:relative;display:block;overflow:hidden}
+#system-message .alert{width:100%;position:relative;display:block;overflow:hidden;padding: 0 0 0 15px}
+#system-message .alert div p:before{font-family:"Elusive-Icons";overflow:hidden;padding:0 15px 0}
+#system-message .alert-message div p:before{content:"\e103"}
+#system-message .alert-notice div p:before,.alert-warning div p:before{content:"\e009"}
+#system-message .alert-error div p:before{content:"\e04C"}
 #system-message .alert-heading{display:none}
-#system-message .close{position:absolute;right:0;top:0;height:100%;font-size:38pt;color:#fff;padding:0 20px;cursor:pointer}
-#system-message p{font-size:32pt;float:left;padding:0;margin:0 0 0 35px;line-height:48pt;color:#eee;text-shadow:1px 1px 0 rgba(0,0,0,0.8)}
+#system-message .close{position:absolute;right:0;top:0;height:100%;font-size:38pt;color:#fff;padding:0 35px 0 20px;cursor:pointer}
+#system-message .alert:before,#system-message p{font-size:32px;color:#eee;text-shadow:1px 1px 0 rgba(0,0,0,0.8);line-height:48pt;float:left}
+#system-message p{margin:0}
 
 /* module/component styles */
 
@@ -91,7 +96,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .article-index{margin:20px;border-left:3px solid #e6e7e9;padding: 0 0 0 15px}
 .article-index ul{list-style-type:none}
 .article-index ul a{position:relative;top:5px}
-.article-index ul a:before{font-family:"Elusive-Icons";content:"\e0cc";float:left;color:#aaa;text-shadow:1px 1px 0 #fff;border-radius:50%;height:16px;width:12px;padding:8px 10px;margin:0 10px 0 0}
+.article-index ul a{float:left;color:#aaa;text-shadow:1px 1px 0 #fff;border-radius:50%;height:16px;width:12px;padding:8px 10px;margin:0 10px 0 0}
 .article-index ul a:hover:before{color:#fff;text-shadow:1px 1px 1px #58b9ed}
 .article-index ul a.active:before{font-family:"Elusive-Icons";content:"\e0cc";color:#fff;text-shadow:1px 1px 1px #58b9ed}
 .article-index li{padding:5px 0;margin:5px 0;overflow:hidden}

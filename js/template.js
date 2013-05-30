@@ -6,24 +6,18 @@ jQuery(document).ready(function(){
       messageContainer = jQuery('#system-message-container');
  
   if(messages.length > 0){
-    fadeSlide(messageContainer,650,500)
+    messageContainer.delay(600).slideToggle();
 	messages.each(function(i,el){
 
       var closeButton = jQuery(el).find('.close');
 	  closeButton.attr('data-dismiss','');
 	  closeButton.on('click',function(e){
-         jQuery(el).slideToggle(300);
+         jQuery(el).slideToggle();
 		 messages.length -= 1;
 		 if(messages.length == 0){
-           fadeSlide(messageContainer,0,500)
+           messageContainer.fadeOut();
 		 }
       })
     })
   }  
 })
-
-// custom fx
-
-function fadeSlide(el,delay,duration){
-  el.delay(delay).animate({'opacity':'toggle','height':'toggle'}, duration)
-}
