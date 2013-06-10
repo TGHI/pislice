@@ -17,7 +17,7 @@ class piMeta{
         
         $this->setGenerator();
         $this->meta = $this->setTags();
-		$this->generator = $this->setGenerator();
+        $this->generator = $this->setGenerator();
         
     }
     

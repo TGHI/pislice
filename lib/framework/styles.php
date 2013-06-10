@@ -13,9 +13,9 @@ class piStyle{
     function __construct($parent)
     {
         $this->parent = $parent;
-    	$this->API = $parent->API;
-		$this->styles = $this->setStyles();
-		$this->fonts = $this->setFonts();
+        $this->API = $parent->API;
+        $this->styles = $this->setStyles();
+        $this->fonts = $this->setFonts();
     }
     
     public function setStyles($style=null){
@@ -29,7 +29,7 @@ class piStyle{
         $icons =		$this->API->params->get('detailIcons');
         $animations =	$this->API->params->get('animations');
         $navbarfixed =  $this->API->params->get('navbarfixed');
-		
+        
         $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $linkcolor . "}\n";
         $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkcolor . "}\n";
         $style .= "    a:hover{" . $linkhover . "}\n";
@@ -53,36 +53,35 @@ class piStyle{
         }
         
         $this->API->addStyleDeclaration($style);
-		
-		$this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
-		$this->API->addStyleSheet($this->parent->templateURL() . '/css/bootstrap-responsive.min.css');
-		$this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
-       
+        
+        $this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
+        $this->API->addStyleSheet($this->parent->templateURL() . '/css/bootstrap-responsive.min.css');
+        $this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
+        
     }
-	
-	public function setFonts($font=null){
-		
-		$fonts = array(
-			$this->API->params->get('bodyFont'),
-			$this->API->params->get('navFont')
+    
+    public function setFonts($font=null){
+        
+        $fonts = array($this->API->params->get('bodyFont'),
+        $this->API->params->get('navFont')
         );
-		
-		if (!empty($fonts)) {
-			
-			$this->API->addStyleSheet('http://fonts.googleapis.com/css?family=' . implode("|", $fonts));
-
-			for ($i = 0; $i < count($fonts); $i++) {
-				if (strpos($fonts[$i],':')) {
-					$fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
-				}
-				$fonts[$i] = str_replace('+', ' ',$fonts[$i]);
-			}
+        
+        if (!empty($fonts)) {
             
-			$font .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
-			$font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
-			
-			$this->API->addStyleDeclaration($font);
-			
-		}	
-	}
+            $this->API->addStyleSheet('http://fonts.googleapis.com/css?family=' . implode("|", $fonts));
+            
+            for ($i = 0; $i < count($fonts); $i++) {
+                if (strpos($fonts[$i],':')) {
+                    $fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
+                }
+                $fonts[$i] = str_replace('+', ' ',$fonts[$i]);
+            }
+            
+            $font .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
+            $font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
+            
+            $this->API->addStyleDeclaration($font);
+            
+        }
+    }
 }

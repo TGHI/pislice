@@ -22,22 +22,22 @@ class piSlice{
         $this->API = $parentTpl;
         // check if we have params set
         $this->getConfig();
-
+        
         $this->styles = new piStyle($this);
-		$this->meta = new piMeta($this);
-
-	}
+        $this->meta = new piMeta($this);
+        
+    }
     
     public function getConfig()
     {
-    
+        
         $template_params  = (array)json_decode($this->API->params);
-
-	    if (empty($template_params)) {
+        
+        if (empty($template_params)) {
             
             $db     = JFactory::getDBO();
             $query  = $db->getQuery(true);
-			$template = $this->API->template;
+            $template = $this->API->template;
             
             jimport('joomla.filesystem.file');
             
@@ -51,19 +51,17 @@ class piSlice{
             }
         }
     }
-	
-	public function templateURL() {
+    
+    public function templateURL() {
         return JURI::base() . "templates/" . $this->API->template;
     }
-	
-	public function sitePath() {
+    
+    public function sitePath() {
         return JPATH_SITE;
     }
     
     public function templatePath() {
         return $this->sitePath() . DS . "templates" . DS . $this->API->template;
     }
-	
+    
 }
-
-?>
