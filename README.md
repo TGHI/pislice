@@ -1,5 +1,4 @@
-piSlice - The simple, responsive template for [Joomla!] 3.x
---------------
+**UNSTABLE BRANCH**
 
 This is the unstable branch where I post whatever changes I feel like doing on a whim, without testing.
 
