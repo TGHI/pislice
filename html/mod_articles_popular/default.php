@@ -1,13 +1,11 @@
-<?php
+<?php defined('_JEXEC') or die;
 /**
- * @package     Joomla.Site
- * @subpackage  mod_articles_popular
+ * piSlice - The simple, responsive template for Joomla! 3.0+
  *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) 2013 Justin Renaud (tghidsgn@gmail.com)
+ * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-defined('_JEXEC') or die;
 ?>
 <ul class="mostread<?php echo $moduleclass_sfx; ?>">
 <?php foreach ($list as $item) : ?>
@@ -27,7 +25,7 @@ defined('_JEXEC') or die;
 ?>
   <li>
     <h4><a class="serif" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a></h4>
-    <div class="small"><?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $item->author)); ?></div>
+    <div class="small"><?php echo JText::sprintf('TPL_PISLICE_WRITTEN_BY') . ' ' . JHtml::_('link', JRoute::_($cntlink), $item->author); ?></div>
     <a href="<?php echo $item->link; ?>"><img src="<?php echo $images->image_intro; ?>" alt="" /></a>
     <div><?php echo $item->introtext; ?></div>
   <?php endforeach; ?>
