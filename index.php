@@ -6,24 +6,16 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-define('DS', DIRECTORY_SEPARATOR);
-$base_url = JURI::base();
-
 $app				= JFactory::getApplication();
 $doc				= JFactory::getDocument();
 $this->language		= $doc->language;
 $this->direction	= $doc->direction;
 $template			= $this->template;
-$user				= JFactory::getUser();
-$option				= $app->input->getCmd('option', '');
-$view				= $app->input->getCmd('view', '');
-$layout				= $app->input->getCmd('layout', '');
-$task				= $app->input->getCmd('task', '');
-$itemid				= $app->input->getCmd('Itemid', '');
 $sitename			= $app->getCfg('sitename');
 
-require_once('lib/opengraph.php');
-require_once('lib/params.php');
+require_once('lib/framework.php');
+
+$piSlice = new piSlice($this);
 
 JHtml::_('bootstrap.framework');
 
@@ -32,16 +24,8 @@ JHtml::_('bootstrap.framework');
 <html prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<?php
-echo $opengraph_meta_tags;
-$doc->addStyleSheet($base_url . 'templates/' . $template . '/css/template.css');
-$doc->addStyleSheet($base_url . 'templates/' . $template . '/css/bootstrap-responsive.min.css');
-$doc->addStyleSheet($base_url . 'templates/' . $template . '/css/elusive-webfont.css');
-$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleFonts);
-$doc->addStyleDeclaration($templateStyles);
-?>
 <jdoc:include type="head" />
-<script src="<?php echo $base_url . 'templates/' . $template . '/'; ?>js/template.js" type="text/javascript"></script>
+<script src="<?php echo $piSlice->templateURL()  . '/js/template.js'; ?>" type="text/javascript"></script>
 </head>
 <body>
 <jdoc:include type="message" />
