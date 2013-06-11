@@ -145,10 +145,8 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .categories-module h4 a{color:#424347}
 .categories-module li{list-style-type:none;line-height:2em}
 .categories-module > li{padding:0 0 15px 0}
-.categories-module li h4 {border-bottom:1px solid #e6e7e9;padding:0 0 2px 0;margin: 0 0 10px 0}
-.categories-module h4, .categories-module h5{font-size:12pt;margin:0}
-.categories-module h4{font-weight:500}
-.categories-module h5{font-weight:300}
+.categories-module > li > :first-child{border-bottom:1px solid #e6e7e9;padding:0 0 2px 0;margin: 0 0 10px 0;font-weight:500}
+.categories-module li > *{font-size:12pt;margin:0;font-weight:300}
 
 .mostread p{margin:15px 0}
 .mostread h4,.mostread img{margin:15px 0 5px 0}
