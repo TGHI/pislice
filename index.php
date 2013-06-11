@@ -45,7 +45,7 @@ JHtml::_('bootstrap.framework');
 <div class="main container-fluid">
   <div class="row-fluid">
     <div class="sidebar-left span2 anim">
-      <jdoc:include type="modules" name="sidebar-left" style="pi_plain" />
+      <jdoc:include type="modules" name="sidebar-left" style="pi_default" />
     </div>
     <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
@@ -56,7 +56,7 @@ JHtml::_('bootstrap.framework');
       <jdoc:include type="modules" name="debug" style="none" />
     </div>
     <div class="sidebar-right span3">
-      <jdoc:include type="modules" name="sidebar-right" style="pi_plain" />
+      <jdoc:include type="modules" name="sidebar-right" style="pi_default" />
     </div>
   </div>
 </div>
