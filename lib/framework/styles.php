@@ -21,24 +21,39 @@ class piStyle{
     
     public function setStyles($style=null){
         
-        $linkcolor = $this->API->params->get('LINK_COLOUR');
+		$bodyBackground = $this->API->params->get('BODY_BACKGROUND_COLOUR');
+		$bodyFontColour = $this->API->params->get('BODY_FONT_COLOUR');
+        $linkcolour = $this->API->params->get('LINK_COLOUR');
         $linkhover = $this->API->params->get('LINK_HOVER');
         $light3dcolour = $this->API->params->get('3D_LIGHT_COLOUR');
-        $detailiconscolour = $this->API->params->get('ICON_COLOUR');
+        $componentBackgroundColor = $this->API->params->get('COMPONENT_BACKGROUND_COLOUR');
+		$detailiconscolour = $this->API->params->get('ICON_COLOUR');
+		$articleTitleColour = $this->API->params->get('ARTICLE_TITLE_COLOUR');
+		$highlight3d = $this->API->params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
+		$lowlight3d = $this->API->params->get('3D_LIGHT_LOWLIGHT_OPACITY');
+		
         $complementcolour = $this->API->params->get('COMPLEMENT_COLOUR');
         
         $icons =		$this->API->params->get('ICONS');
         $animations =	$this->API->params->get('CSS3_ANIMATIONS');
         $navbarfixed =  $this->API->params->get('NAVBAR_POSITION');
         
-        $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $linkcolor . "}\n";
-        $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkcolor . "}\n";
+		$style .= "    body{background:" . $bodyBackground . "}\n";
+		$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
+		$style .= "    .article-contents,.search-results{background:" . $componentBackgroundColor . "}\n";
+        $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $linkcolour . "}\n";
+        $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkcolour . "}\n";
         $style .= "    a:hover{" . $linkhover . "}\n";
         $style .= "    .btn,.light-3d{background:" . $light3dcolour . "}\n";
         $style .= "    .article-details [class*=\"icon-\"],.nav-tabs > li > a,.btn > [class*=\"icon-\"] {color:" . $detailiconscolour . "}\n";
+		$style .= "    .article-header h2 a{color:" . $articleTitleColour . "}\n";
         $style .= "    .article-date{color:" . $complementcolour . "}\n";
         $style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
         $style .= "    blockquote,.blog-item .article-header h2:hover,.categories-module li:hover > h4{border-color:" . $complementcolour . "}". "\n";
+		$style .= "   .moduletitle,.breadcrumbs{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ")}". "\n";
+		$style .= "   .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ")}". "\n";
+		$style .= "   .moduletitle,.breadcrumbs,.navbar-inner .nav li{border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
+
         
         if (! $animations) {
             $style .= "\n    .anim *, .anim:before{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0}". "\n";

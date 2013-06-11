@@ -1,12 +1,11 @@
-select,input,body,.article-header h2 a{color:#424347;word-wrap:break-word;font-weight:300}
-body{background:#fbfbfb}
+select,input,body,.article-header h2 a{word-wrap:break-word;font-weight:300}
 a{text-decoration:none}
 h1,h2,h3{font-weight:700}
 h1,blockquote,.big{font-size:24pt}
 img{max-width:100%;height:auto}
 p{line-height:2em;margin:1.7em 0}
 blockquote{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
-html,body,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category{margin:0;padding:0;border:0}
+html,body,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category,a img{margin:0;padding:0;border:0}
 
 .small{font-size:10pt}
 .small [class*="icon-"]{font-size:16px}
@@ -22,7 +21,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .disabled,.disabled:hover,.disabled > [class*="icon-"] {box-shadow:none!important;color:#ccc !important;cursor:no-drop}
 
-.btn,.light-3d{box-shadow:inset 1px 1px 0 rgba(255,255,255,.9),1px 1px 0px rgba(0,0,0,.1);text-shadow:1px 1px 0 #fff}
+.btn,.light-3d{box-shadow:inset 1px 1px 0 rgba(255,255,255,.9),1px 1px 0px rgba(0,0,0,.1)}
 .inset-3d{box-shadow:inset -1px -1px 0 rgba(255,255,255,.8),inset 1px 1px 0 rgba(0,0,0,.1)}
 .inset-3d,a.light-3d:hover:before,a.light-3d:hover:not(.disabled),.nav-tabs > li > a{background:rgba(22,33,44,.05)}
 
@@ -43,7 +42,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .tab-content > .tab-pane{display:none}
 .tab-content > .active{display:block}
 
-.nav-tabs:before,.nav-tabs:after{display:table;line-height:0;content: "";clear:both}
+.nav-tabs:before,.nav-tabs:after{display:table;line-height:0;content:"";clear:both}
 .nav-tabs > li{float:left;padding:0 0 4px 0;list-style-type:none}
 .nav-tabs > li > a {padding:8px 12px;text-transform:uppercase;margin:0 5px 0 0;text-shadow:1px 1px 0 #fff;border-radius:3px 3px 0 0}
 .nav-tabs > li.active a,.nav-tabs > li > a:hover{box-shadow:2px 0 2px rgba(0,0,0,.2);background:#fff}
@@ -73,7 +72,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 /* module/component styles */
 
-.article-contents,.search-results{padding:35px;border-radius:0 0 5px 5px;margin:0 0 45px 0;background:#fff}
+.article-contents,.search-results{padding:35px;border-radius:0 0 5px 5px;margin:0 0 45px 0}
 
 /* article+blog layout */
 
@@ -140,23 +139,23 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 /*modules */
 
 .moduletable > *{margin:0 0 35px 0}
-.moduletitle,.breadcrumbs{text-transform:uppercase;border-bottom:1px solid #dedfe3;box-shadow:0 1px 0 #fff;padding:0 0 5px;text-shadow:1px 1px 0 #fff;letter-spacing:-.03em}
+.moduletitle,.breadcrumbs{text-transform:uppercase;border-width:0 0 1px 0;border-style:solid;padding:0 0 5px;text-shadow:1px 1px 0 #fff;letter-spacing:-.03em}
 .moduletitle i[class*="icon-"]{padding-right:15px}
 
 .categories-module h4 a{color:#424347}
 .categories-module li{list-style-type:none;line-height:2em}
 .categories-module > li{padding:0 0 15px 0}
-.categories-module > li > :first-child{border-bottom:1px solid #e6e7e9;padding:0 0 2px 0;margin: 0 0 10px 0;font-weight:500}
+.categories-module > li > :first-child{border-bottom:1px solid rgba(0,0,0,0.1);padding:0 0 2px 0;margin: 0 0 10px 0;font-weight:500}
 .categories-module li > *{font-size:12pt;margin:0;font-weight:300}
 
 .mostread p{margin:15px 0}
 .mostread h4,.mostread img{margin:15px 0 5px 0}
 .mostread li{list-style-type:none}
 
-.navbar{box-shadow:6px 0 6px rgba(49,52,57,0.4)}
+.navbar{box-shadow:0 6px 6px rgba(0,0,0,0.2)}
 .navbar-inner > div{padding:10px 0}
-.navbar-inner .nav{list-style-type:none;float:left;box-shadow:inset 1px 0 0 #fff,1px 0 0 #fff;border-left:1px solid #dedfe3}
-.navbar-inner .nav li{float:left;padding:0 15px;border-right:1px solid #dedfe3;box-shadow:1px 0 0 #fff;text-shadow:1px 1px 0 #fff;text-transform:uppercase}
+.navbar-inner .nav{list-style-type:none;float:left;box-shadow:inset 1px 0 0 #fff,1px 0 0 rgba(255,255,255,.9);border-left:1px solid rgba(0,0,0,.1)}
+.navbar-inner .nav li{float:left;padding:0 15px;border-width: 0 1px 0 0;border-style:solid;text-transform:uppercase}
 .navbar-inner .nav li a{margin-top:6px;display:block;line-height:22pt;letter-spacing:-2pt}
 
 .navbar-search{width:100%;margin:6px 0 0 0;border-radius:3px}
