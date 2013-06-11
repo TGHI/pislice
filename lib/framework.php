@@ -51,15 +51,19 @@ class piSlice{
             }
         }
     }
+	
+	public function basePath() {
+        return JURI::base();
+    }
     
     public function templateURL() {
-        return JURI::base() . "templates/" . $this->API->template;
+        return $this->basePath() . "templates/" . $this->API->template;
     }
     
     public function sitePath() {
         return JPATH_SITE;
     }
-    
+	
     public function templatePath() {
         return $this->sitePath() . DS . "templates" . DS . $this->API->template;
     }
