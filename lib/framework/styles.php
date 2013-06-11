@@ -8,6 +8,7 @@
 
 class piStyle{
     
+    private $parent;
     public $API;
     
     function __construct($parent)
@@ -20,15 +21,15 @@ class piStyle{
     
     public function setStyles($style=null){
         
-        $linkcolor = $this->API->params->get('linkColour');
-        $linkhover = $this->API->params->get('linkHover');
-        $light3dcolour = $this->API->params->get('light3dColour');
-        $detailiconscolour = $this->API->params->get('detailIconsColour');
-        $complementcolour = $this->API->params->get('complementColour');
+        $linkcolor = $this->API->params->get('LINK_COLOUR');
+        $linkhover = $this->API->params->get('LINK_HOVER');
+        $light3dcolour = $this->API->params->get('3D_LIGHT_COLOUR');
+        $detailiconscolour = $this->API->params->get('ICON_COLOUR');
+        $complementcolour = $this->API->params->get('COMPLEMENT_COLOUR');
         
-        $icons =		$this->API->params->get('detailIcons');
-        $animations =	$this->API->params->get('animations');
-        $navbarfixed =  $this->API->params->get('navbarfixed');
+        $icons =		$this->API->params->get('ICONS');
+        $animations =	$this->API->params->get('CSS3_ANIMATIONS');
+        $navbarfixed =  $this->API->params->get('NAVBAR_POSITION');
         
         $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $linkcolor . "}\n";
         $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkcolor . "}\n";
@@ -62,8 +63,9 @@ class piStyle{
     
     public function setFonts($font=null){
         
-        $fonts = array($this->API->params->get('bodyFont'),
-        $this->API->params->get('navFont')
+        $fonts = array(
+			$this->API->params->get('MAIN_FONT'),
+			$this->API->params->get('SUB_FONT')
         );
         
         if (!empty($fonts)) {

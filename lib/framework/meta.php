@@ -8,6 +8,7 @@
 
 class piMeta{
     
+    private $parent;
     public $API;
     
     function __construct($parent)
@@ -23,7 +24,7 @@ class piMeta{
     
     public function setTags(){
         
-        if ($this->API->params->get('opengraph')) {
+        if ($this->API->params->get('OPENGRAPH_META_TAGS')) {
             
             $app = JFactory::getApplication();
             $option = JRequest::getCmd('option');
@@ -60,7 +61,7 @@ class piMeta{
                     
                 }
                 
-                $this->meta["fb:app_id"] = $this->API->params->get('facebookAppId');
+                $this->meta["fb:app_id"] = $this->API->params->get('FACEBOOK_APP_ID');
                 
                 foreach($this->meta as $metaName=>$metaValue){
                     $this->API->addCustomTag('  <meta property="' . $metaName . '" content="' . $metaValue . '" />');
@@ -71,7 +72,7 @@ class piMeta{
     
     public function setGenerator(){
         
-        if (! $this->API->params->get('generator')) {
+        if (! $this->API->params->get('META_GENERATOR')) {
             $this->API->_generator = "";
         }
     }

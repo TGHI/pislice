@@ -149,7 +149,7 @@ $limitstart			= JRequest::getVar('limitstart');
          ?>
         <?php 
 		
-		if ($app->getTemplate(true)->params->get('pagenumbers') == 0) {
+		if ($app->getTemplate(true)->params->get('ARTICLE_PAGE_NUMBERS') == 0) {
 		  // get rid of those stupid page numbers
 		  if(preg_match('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', $this->item->text, $pageNumbers)){;
 		    $this->item->text = str_replace($pageNumbers[0], '', $this->item->text);

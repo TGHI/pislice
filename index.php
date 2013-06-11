@@ -32,7 +32,7 @@ JHtml::_('bootstrap.framework');
 <div class="navbar light-3d navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2" style="text-align:right">
-      <a href="<?php echo $base_url; ?>"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
+      <a href="<?php echo $base_url; ?>"><img src="<?php echo $this->params->get('LOGO'); ?>" alt="<?php echo $sitename; ?>" /></a>
     </div>
     <div class="span7">
       <jdoc:include type="modules" name="navigation" style="none" />
