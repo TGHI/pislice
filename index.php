@@ -65,7 +65,7 @@ JHtml::_('bootstrap.framework');
     <div class="row-fluid">
       <div class="span2"></div>
       <div class="footer-inner span7 small">
-        <jdoc:include type="modules" name="footer" style="pi_plain" />
+        <jdoc:include type="modules" name="footer" style="pi_default" />
       </div>
     </div>
   </footer>
