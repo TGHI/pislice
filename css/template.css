@@ -8,9 +8,6 @@ p{line-height:2em;margin:1.7em 0}
 blockquote{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
 html,body,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category{margin:0;padding:0;border:0}
 
-.center{margin:0 auto !important}
-.huge{font-size:40pt}
-.medium{font-size:16pt !important}
 .small{font-size:10pt}
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}

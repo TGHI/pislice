@@ -24,7 +24,7 @@
 
 ?>
   <li>
-    <h4><a class="serif" href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a></h4>
+    <h4><a href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a></h4>
     <div class="small"><?php echo JText::sprintf('TPL_PISLICE_WRITTEN_BY') . ' ' . JHtml::_('link', JRoute::_($cntlink), $item->author); ?></div>
     <a href="<?php echo $item->link; ?>"><img src="<?php echo $images->image_intro; ?>" alt="" /></a>
     <div><?php echo $item->introtext; ?></div>

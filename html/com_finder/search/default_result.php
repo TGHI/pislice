@@ -20,7 +20,7 @@
 	}
 ?>
 <li class="search-result">
-  <h2 class="result-title serif <?php echo $mime; ?>"><?php echo JHtml::_('link',JRoute::_($route), $this->result->title);?></h2>
+  <h2 class="result-title <?php echo $mime; ?>"><?php echo JHtml::_('link',JRoute::_($route), $this->result->title);?></h2>
 <?php if(!empty($this->result->category)) : ?>
   <p class="search-result-category small"><?php echo JText::sprintf('TPL_PISLICE_POST_LOCATION', JHtml::_('link',$category_route,$this->result->category));?></p>
 <?php endif; ?>

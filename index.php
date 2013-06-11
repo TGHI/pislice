@@ -31,7 +31,7 @@ JHtml::_('bootstrap.framework');
 <jdoc:include type="message" />
 <div class="navbar light-3d navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
-    <div class="span2" style="text-align:right">
+    <div class="span2">
       <a href="<?php echo $base_url; ?>"><img src="<?php echo $this->params->get('LOGO'); ?>" alt="<?php echo $sitename; ?>" /></a>
     </div>
     <div class="span7">
@@ -44,8 +44,7 @@ JHtml::_('bootstrap.framework');
 </div>
 <div class="main container-fluid">
   <div class="row-fluid">
-  <div class="span1"></div>
-    <div class="sidebar-left span1 anim">
+    <div class="sidebar-left span2 anim">
       <jdoc:include type="modules" name="sidebar-left" style="pi_plain" />
     </div>
     <div class="span7 main-content">
