@@ -54,7 +54,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 #system-message-container{position:fixed;bottom:0px;padding:0 0;background:rgba(0,0,0,0.8);z-index:999;width:100%;display:none}
 #system-message :not(:last-child){margin-bottom:2px}
-#system-message .alert{width:100%;position:relative;display:block;overflow:hidden;padding: 0 0 0 15px}
+#system-message .alert{width:100%;position:relative;display:block;overflow:hidden;padding: 0 0 0 15px;color:#fff}
 #system-message .alert div p:before{font-family:"Elusive-Icons";overflow:hidden;padding:0 15px 0}
 #system-message .alert-message div p:before{content:"\e103"}
 #system-message .alert-notice div p:before,.alert-warning div p:before{content:"\e009"}
