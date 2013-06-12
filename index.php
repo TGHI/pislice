@@ -29,7 +29,7 @@ JHtml::_('bootstrap.framework');
 </head>
 <body>
 <jdoc:include type="message" />
-<div class="navbar light-3d navbar-fixed-top container-fluid">
+<div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2">
       <a href="<?php echo $piSlice->basePath(); ?>"><img src="<?php echo $this->params->get('LOGO'); ?>" alt="<?php echo $sitename; ?>" /></a>
