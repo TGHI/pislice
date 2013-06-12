@@ -60,9 +60,9 @@
       <hr class="separator" />
       <div class="btn-toolbar">
       <?php if ($this->escape($this->query->input) != '' || $this->params->get('allow_empty_search')):?>
-        <button name="Search" type="submit" class="btn btn-primary"><span class="icon-search"></span> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
+        <button name="Search" type="submit" class="btn btn-primary"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
       <?php else: ?>
-        <button name="Search" type="submit" class="btn btn-primary disabled"><span class="icon-search"></span> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
+        <button name="Search" type="submit" class="btn btn-primary disabled"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
       <?php endif; ?>
       </div>
     </div>

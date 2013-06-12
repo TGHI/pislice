@@ -35,12 +35,12 @@ $limitstart			= JRequest::getVar('limitstart');
             <?php if ($this->item->state == 0): ?>
             <span class="bold">unpusblished</span>
             <?php else : ?>
-            <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
+            <i class="icon-time"></i> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
             <?php endif; ?>
           </div>
           <?php if (!$this->print) : ?>
           <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-          <div class="article-actions dropdown pull-right anim"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <span class="icon-caret-down" style="font-size:8px"></span> </a>
+          <div class="article-actions dropdown pull-right anim"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i> </a>
             <ul class="dropdown-menu">
               <?php if ($params->get('show_print_icon')) : ?>
               <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
@@ -68,7 +68,7 @@ $limitstart			= JRequest::getVar('limitstart');
           <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
           <dl class="article-details">
             <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
-            <dd><span class="icon-user round inset-3d"></span>
+            <dd><i class="icon-user round inset-3d"></i>
               <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
               <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -83,10 +83,10 @@ $limitstart			= JRequest::getVar('limitstart');
               <?php endif; ?>
             </dd>
             <?php if ($params->get('show_hits')) : ?>
-            <dd><span class="icon-eye-open round inset-3d"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+            <dd><i class="icon-eye-open round inset-3d"></i><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
             <?php endif; ?>
             <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-            <dd><span class="icon-folder round inset-3d"></span>
+            <dd><i class="icon-folder round inset-3d"></i>
               <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')): ?>
               <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
               <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
@@ -106,7 +106,7 @@ $limitstart			= JRequest::getVar('limitstart');
             </dd>
             <?php endif; ?>
             <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
-            <dd><span class="icon-tags round inset-3d"></span>
+            <dd><i class="icon-tags round inset-3d"></i>
               <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
               <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
             <?php endif; ?>
@@ -130,9 +130,9 @@ $limitstart			= JRequest::getVar('limitstart');
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
-          <div class="zoom-in icon-zoom-in anim"></div>
+          <i class="zoom-in icon-zoom-in anim"></i>
           <div class="caption">
-            <div class="icon-picture pull-left"></div>
+            <i class="icon-picture pull-left"></i>
             <div class="caption-inner pull-left">
               <h4><?php echo htmlspecialchars($images->image_fulltext_alt); ?></h4>
               <p class="small"><?php echo htmlspecialchars($images->image_fulltext_caption); ?></p>
@@ -166,7 +166,7 @@ $limitstart			= JRequest::getVar('limitstart');
 		?>
         <?php if ($info == 0): ?>
         <?php if ($params->get('show_modify_date')) : ?>
-        <p class="modified grey italic"><span class="icon-time"></span> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, 'l, F jS Y')); ?> </p>
+        <p class="modified grey italic"><i class="icon-time"></i> <?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, 'l, F jS Y')); ?> </p>
         <?php endif; ?>
         <?php endif; ?>
         <?php 

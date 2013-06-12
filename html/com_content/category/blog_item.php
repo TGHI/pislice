@@ -29,7 +29,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       </div>
       <?php endif; ?>
       <?php if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
-      <div class="article-actions dropdown pull-right"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-cog"></span> <span class="icon-caret-down" style="font-size:8px"></span></a>
+      <div class="article-actions dropdown pull-right"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i></a>
         <ul class="dropdown-menu">
           <?php if ($params->get('show_print_icon')) : ?>
           <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
@@ -55,7 +55,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_tags', 1)): ?>
       <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
       <dl class="article-details">
-        <dd><span class="icon-user round inset-3d"></span>
+        <dd><i class="icon-user round inset-3d"></i>
           <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
           <?php
 				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
@@ -69,10 +69,10 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
           <?php endif; ?>
         </dd>
         <?php if ($params->get('show_hits')) : ?>
-        <dd><span class="icon-eye-open round inset-3d"></span><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
+        <dd><i class="icon-eye-open round inset-3d"></i><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
         <?php endif; ?>
         <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-        <dd><span class="icon-folder round inset-3d"></span>
+        <dd><i class="icon-folder round inset-3d"></i>
           <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')) : ?>
           <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
           <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
@@ -92,7 +92,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
         </dd>
         <?php endif; ?>
         <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
-        <dd><span class="icon-tags round inset-3d"></span>
+        <dd><i class="icon-tags round inset-3d"></i>
           <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
           <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
         <?php endif; ?>

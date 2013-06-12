@@ -36,7 +36,7 @@ $n = count($this->items);
 <div class="tagged-item <?php echo $i % 2; ?>" >
   <div class="article-header">
     <?php if ($this->params->get('tag_list_show_date', 1)== "publish_up"): ?>
-    <div class="article-date"> <span class="icon-time"></span> <span class="narrow"><?php echo JHTML::date($item->displayDate,'l, F jS Y',true) ?></span> </div>
+    <div class="article-date"> <i class="icon-time"></i> <span class="narrow"><?php echo JHTML::date($item->displayDate,'l, F jS Y',true) ?></span> </div>
     <?php endif; ?>
     <?php  echo '<h2> <a href="' . JRoute::_($item->link) .'">'
 						 . $this->escape($item->core_title) . '</a> </h2>';  ?>
