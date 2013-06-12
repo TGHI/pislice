@@ -40,20 +40,22 @@ class piStyle{
         
 		$style .= "    body{background:" . $bodyBackground . "}\n";
 		$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
-		$style .= "    .article-contents,.search-results{background:" . $componentBackgroundColor . "}\n";
+		$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover{background:" . $componentBackgroundColor . "}\n";
         $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $linkcolour . "}\n";
         $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkcolour . "}\n";
         $style .= "    a:hover{" . $linkhover . "}\n";
-        $style .= "    .btn,.light-3d{background:" . $light3dcolour . "}\n";
-        $style .= "    .article-details [class*=\"icon-\"],.nav-tabs > li > a,.btn > [class*=\"icon-\"] {color:" . $detailiconscolour . "}\n";
-		$style .= "    .article-header h2 a{color:" . $articleTitleColour . "}\n";
+        $style .= "    .btn,.btn:hover{background:" . $light3dcolour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ")}\n";
+		$style .= "    .dropdown-menu li:hover,.light-3d{background:" . $light3dcolour . "}". "\n";
+        $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a{color:" . $detailiconscolour . "}\n";
+		$style .= "    .article-header h2 a,.article-header h2{color:" . $articleTitleColour . "}\n";
         $style .= "    .article-date{color:" . $complementcolour . "}\n";
         $style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
         $style .= "    blockquote,.blog-item .article-header h2:hover,.categories-module li:hover > h4{border-color:" . $complementcolour . "}". "\n";
 		$style .= "   .moduletitle,.breadcrumbs{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ")}". "\n";
 		$style .= "   .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ")}". "\n";
 		$style .= "   .moduletitle,.breadcrumbs,.navbar-inner .nav li{border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
-
+		$style .= "    .navbar{box-shadow:0 6px 6px rgba(0,0,0," . $lowlight3d . ") !important}". "\n";
+		$style .= "   .inset-3d,.btn:active,.open .btn{box-shadow:inset -1px -1px 0 rgba(255,255,255," . $highlight3d . "),inset 1px 1px 0 rgba(0,0,0," . $lowlight3d . ")}". "\n";
         
         if (! $animations) {
             $style .= "\n    .anim *, .anim:before{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0}". "\n";
