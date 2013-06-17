@@ -53,10 +53,11 @@ class piStyle{
 		$style .= "    .dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
         $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a{color:" . $detaiIiconsColour . "}\n";
 		$style .= "    .article-header h2 a,.article-header h2{color:" . $articleTitleColour . "}\n";
+		$style .= "    .article-header h2{border-bottom:1px solid " . $light3dColour . " }". "\n";
         $style .= "    .article-date{color:" . $complementcolour . "}\n";
         $style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
         $style .= "    blockquote,.blog-item .article-header h2:hover,.categories-module li:hover > h4{border-color:" . $complementcolour . "}". "\n";
-		$style .= "    .moduletitle,.breadcrumbs,.article-header h2,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
+		$style .= "    .moduletitle,.breadcrumbs,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 		$style .= "    .navbar{box-shadow:0 6px 6px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
 		$style .= "    .navbar a{color:" . $navbarLinkColour . "}". "\n";
 		$style .= "    .navbar-inner .nav{box-shadow:-1px 0 0 rgba(255,255,255," . $highlight3d . ");border-left:1px solid rgba(0,0,0," . $lowlight3d . ")}". "\n";

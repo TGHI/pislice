@@ -50,7 +50,7 @@ JHtml::_('bootstrap.framework');
     <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
       <jdoc:include type="component" />
-      <div class="row-fluid">
+      <div class="article-bottom row-fluid">
         <jdoc:include type="modules" name="article-bottom" style="pi_default" />
       </div>
       <jdoc:include type="modules" name="debug" style="none" />
@@ -60,7 +60,7 @@ JHtml::_('bootstrap.framework');
     </div>
   </div>
 </div>
-<div class="footer container-fluid">
+<div class="footer inset-3d container-fluid">
   <footer>
     <div class="row-fluid">
       <div class="span2"></div>
