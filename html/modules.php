@@ -33,9 +33,7 @@ function modChrome_pi_default($module, &$params, &$attribs){
 <?php if($module->showtitle): ?>
 <<?php echo htmlspecialchars($params->get('header_tag')); ?> class="moduletitle"><i class="<?php echo htmlspecialchars($params->get('header_class')); ?>"></i><?php echo $module->title; ?></<?php echo htmlspecialchars($params->get('header_tag')); ?>>
 <?php endif; ?>
-  <div class="module-content">
-    <?php echo $module->content; ?>
-  </div>
+  <?php echo $module->content; ?>
 </<?php echo htmlspecialchars($params->get('module_tag')); ?>>
 <?php endif; ?>
 <?php 
