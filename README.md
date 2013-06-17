@@ -6,7 +6,7 @@ piSlice is also intended to showcase the new features of Joomla! 3.0+ such as th
 Milestones
 --------------
 
-**Current version: 0.3.6**
+**Current version: 0.3.8**
 
 - 0.1.0 - Basic layout, styling and functionality.
 - 0.2.0 - Further layouts (search, logins, etc)
