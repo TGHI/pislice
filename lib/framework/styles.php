@@ -25,13 +25,13 @@ class piStyle{
 		$bodyFontColour = $this->API->params->get('BODY_FONT_COLOUR');
 		$navbarBackgroundColour = $this->API->params->get('NAVBAR_BACKGROUND_COLOUR');
 		$navbarLinkColour = $this->API->params->get('NAVBAR_LINK_COLOUR');
-        $linkcolour = $this->API->params->get('LINK_COLOUR');
-        $linkhover = $this->API->params->get('LINK_HOVER');
-        $light3dcolour = $this->API->params->get('3D_LIGHT_COLOUR');
+        $linkColour = $this->API->params->get('LINK_COLOUR');
+        $linkHover = $this->API->params->get('LINK_HOVER');
+        $light3dColour = $this->API->params->get('3D_LIGHT_COLOUR');
 		$light3dIconColour = $this->API->params->get('3D_LIGHT_ICON_COLOUR');
 		$light3dFontColour = $this->API->params->get('3D_LIGHT_FONT_COLOUR');
         $componentBackgroundColor = $this->API->params->get('COMPONENT_BACKGROUND_COLOUR');
-		$detailiconscolour = $this->API->params->get('ICON_COLOUR');
+		$detaiIiconsColour = $this->API->params->get('ICON_COLOUR');
 		$articleTitleColour = $this->API->params->get('ARTICLE_TITLE_COLOUR');
 		$highlight3d = $this->API->params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
 		$lowlight3d = $this->API->params->get('3D_LIGHT_LOWLIGHT_OPACITY');
@@ -44,23 +44,23 @@ class piStyle{
         
 		$style .= "    body{background:" . $bodyBackground . "}\n";
 		$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
-		$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover{background:" . $componentBackgroundColor . "}\n";
-        $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a{color:" . $linkcolour . "}\n";
-        $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkcolour . "}\n";
-        $style .= "    a:hover{" . $linkhover . "}\n";
-        $style .= "    .btn,.btn:hover{background:" . $light3dcolour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . "}\n";
+		$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover,.related-items-list li{background:" . $componentBackgroundColor . "}\n";
+        $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a,.term,span.highlight{color:" . $linkColour . "}\n";
+        $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
+        $style .= "    a:hover{" . $linkHover . "}\n";
+        $style .= "    .btn,.btn:hover{background:" . $light3dColour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . "}\n";
 		$style .= "    .btn i[class*=\"icon-\"]{color:" . $light3dIconColour . "}\n";
-		$style .= "    .dropdown-menu li:hover{background:" . $light3dcolour . "}". "\n";
-        $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a{color:" . $detailiconscolour . "}\n";
+		$style .= "    .dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
+        $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a{color:" . $detaiIiconsColour . "}\n";
 		$style .= "    .article-header h2 a,.article-header h2{color:" . $articleTitleColour . "}\n";
         $style .= "    .article-date{color:" . $complementcolour . "}\n";
         $style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
         $style .= "    blockquote,.blog-item .article-header h2:hover,.categories-module li:hover > h4{border-color:" . $complementcolour . "}". "\n";
-		$style .= "    .moduletitle,.breadcrumbs{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ")}". "\n";
+		$style .= "    .moduletitle,.breadcrumbs,.article-header h2,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 		$style .= "    .navbar{box-shadow:0 6px 6px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
 		$style .= "    .navbar a{color:" . $navbarLinkColour . "}". "\n";
-		$style .= "    .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ")}". "\n";
-		$style .= "    .moduletitle,.breadcrumbs,.navbar-inner .nav li{border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
+		$style .= "    .navbar-inner .nav{box-shadow:-1px 0 0 rgba(255,255,255," . $highlight3d . ");border-left:1px solid rgba(0,0,0," . $lowlight3d . ")}". "\n";
+		$style .= "    .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 		$style .= "    .inset-3d,.btn:active,.open .btn{box-shadow:inset -1px -1px 0 rgba(255,255,255," . $highlight3d . "),inset 1px 1px 0 rgba(0,0,0," . $lowlight3d . ")}". "\n";
         
         if (! $animations) {
@@ -78,9 +78,9 @@ class piStyle{
         
         $this->API->addStyleDeclaration($style);
         
-        $this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/bootstrap-responsive.min.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
+        $this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
         
     }
     

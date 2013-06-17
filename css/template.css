@@ -1,11 +1,11 @@
-select,input,body,.article-header h2 a{word-wrap:break-word;font-weight:300}
+select,input,body{word-wrap:break-word;font-weight:300;font-size:12pt}
 a{text-decoration:none}
 h1,h2,h3{font-weight:700}
 h1,blockquote,.big{font-size:24pt}
 img{max-width:100%;height:auto}
 p{line-height:2em;margin:1.7em 0}
 blockquote{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
-html,body,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category,a img{margin:0;padding:0;border:0}
+html,body,button,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category,a img{margin:0;padding:0;border:0}
 
 .small{font-size:10pt}
 .small [class*="icon-"]{font-size:16px}
@@ -19,7 +19,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .container-fluid{padding-right:20px;padding-left:20px;*zoom: 1}
 
-.disabled,.disabled:hover,.disabled > [class*="icon-"] {box-shadow:none!important;color:#ccc !important;cursor:no-drop}
+.disabled,.disabled:hover,.disabled > [class*="icon-"],.light-3d.disabled,.light-3d.disabled:hover {box-shadow:none!important;color:#ccc !important;cursor:no-drop;background:#eee !important}
 
 .inset-3d,.nav-tabs > li > a{background:rgba(0,0,0,.05)}
 
@@ -80,7 +80,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .article-date{margin:0 0 17px;text-transform:uppercase}
 .article-header h2,.article-header h2 a{font-size:32pt;font-weight:700;letter-spacing:-0.05em}
-.article-header h2{border-bottom:1px solid #e6e7e9;padding-bottom:5px}
+.article-header h2{padding-bottom:5px}
 .article-details{overflow:hidden}
 .article-details dd{float:left;margin:20px 35px 10px 0;line-height:36px}
 .article-details dd > i{float:left;margin:0 10px 0 0;padding:0 10px;text-align:center}
@@ -100,12 +100,12 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .caption{position:absolute;bottom:0px;background:rgba(0,0,0,0.4);padding:20px;width:100%;color:#fff;text-shadow:1px 1px 0 #000;box-shadow:inset 0 -5px 5px -5px rgba(0,0,0,0.5);z-index:3}
 .caption-inner{padding-left:20px;border-left:1px solid rgba(255,255,255,0.1);box-shadow:-1px 0 0 rgba(0,0,0,0.3)}
-.caption .icon-picture{margin:5px 20px 0 5px;font-size:30px}
+.caption .icon-picture{margin:5px 20px 0 5px;font-size:30px;color:#fff}
 
 .readmore,.modified{margin-bottom:0}
 
-.pager ul,.pager{list-style-type:none}
-.pager{padding-top:1.5em;margin-top:1.5em;border-top:1px solid #e6e7e9}
+.pager ul{list-style-type:none}
+.pager{padding-top:1.5em}
 .pager li{float:left}
 .pager li:last-child{float:right}
 
@@ -147,23 +147,23 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .mostread li{list-style-type:none}
 
 .navbar-inner > div{padding:10px 0}
-.navbar-inner .nav{list-style-type:none;float:left;box-shadow:inset 1px 0 0 #fff,1px 0 0 rgba(255,255,255,.9);border-left:1px solid rgba(0,0,0,.1)}
+.navbar-inner .nav{list-style-type:none;float:left}
 .navbar-inner .nav li{float:left;padding:0 15px;border-width: 0 1px 0 0;border-style:solid;text-transform:uppercase}
 .navbar-inner .nav li a{margin-top:6px;display:block;line-height:22pt;letter-spacing:-2pt}
 
 .navbar-search{width:100%;margin:6px 0 0 0;border-radius:3px}
 .search-inner{height:30px;padding:5px 12px 5px 5px}
-.search-query{float:left;width:100%;height:100%;padding: 0 0 0 5px;color:#999;border-radius:3px 0 0 3px;border:0;margin-right:-33px;box-shadow: 1px 1px 1px #dedfe3;}
+.search-query{float:left;width:100%;height:100%;padding: 0 0 0 5px;color:#999;border-radius:3px 0 0 3px;border:0;margin-right:-33px;box-shadow: 1px 1px 1px rgba(0,0,0,.1);}
 .button-container{float:left;height:100%;width:28px}
-.search-button{border:0;padding:2px 2px;margin:4px 0 0 3px;color:#fff;background:#424347;font-size:12px;transform:scale(-1,1);-webkit-transform:scale(-1,1);text-shadow:1px 1px 1px #111}
+.search-button{padding:2px;margin:4px 0 0 3px;background:#424347;transform:scale(-1,1);-webkit-transform:scale(-1,1)}
+.search-button i{color:#fff !important;text-shadow:1px 1px 1px #111;font-size:12px}
 .autocompleter-choices{border-radius:0 0 3px 3px;border-top:0;padding:1px 0;margin:0}
-.term,span.highlight{background-color:#fff;border-radius:3px;border:1px solid #ccc;box-shadow:2px 2px 0 #ccc;font-weight:bold;padding:1px 4px;margin:0 4px 0 0}
 
 .breadcrumbs{font-size:14pt;margin:0 0 35px}
 .breadcrumbs i{padding:0 5px}
 .breadcrumbs i:first-child{padding:0 15px 0 0}
 
-.related-items-list li{background:#fff;padding:35px}
+.related-items-list li{padding:35px}
 
 @media (max-width: 1280px){
 .navbar-inner .nav li{padding:15px}
