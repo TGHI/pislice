@@ -48,7 +48,7 @@ class piStyle{
         $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a,.term,span.highlight{color:" . $linkColour . "}\n";
         $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
         $style .= "    a:hover{" . $linkHover . "}\n";
-        $style .= "    .btn,.btn:hover{background:" . $light3dColour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . "}\n";
+        $style .= "    .btn,.btn:hover{background:" . $light3dColour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . ";text-shadow:1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
 		$style .= "    .btn i[class*=\"icon-\"]{color:" . $light3dIconColour . "}\n";
 		$style .= "    .dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
         $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a{color:" . $detaiIiconsColour . "}\n";
@@ -56,7 +56,7 @@ class piStyle{
 		$style .= "    .article-header h2{border-bottom:1px solid " . $light3dColour . " }". "\n";
         $style .= "    .article-date{color:" . $complementcolour . "}\n";
         $style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
-        $style .= "    blockquote,.blog-item .article-header h2:hover,.categories-module li:hover > h4{border-color:" . $complementcolour . "}". "\n";
+        $style .= "    blockquote,.blog-item .article-header h2:hover,.categories-list li:hover > h4{border-color:" . $complementcolour . "}". "\n";
 		$style .= "    .moduletitle,.breadcrumbs,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 		$style .= "    .navbar{box-shadow:0 6px 6px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
 		$style .= "    .navbar a{color:" . $navbarLinkColour . "}". "\n";
@@ -78,7 +78,7 @@ class piStyle{
         }
         
         $this->API->addStyleDeclaration($style);
-        
+       
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/bootstrap-responsive.min.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
