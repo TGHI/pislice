@@ -20,7 +20,7 @@
   <?php foreach ($this->results as $result) : ?>
   <?php $category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($result->catslug)); ?>
   <li class="search-result">
-    <h2 class="result-title serif">
+    <h2 class="result-title">
       <?php if ($result->href) :?>
       <a href="<?php echo JRoute::_($result->href); ?>"<?php if ($result->browsernav == 1) :?> target="_blank"<?php endif;?>> <?php echo $this->escape($result->title);?> </a>
       <?php else:?>

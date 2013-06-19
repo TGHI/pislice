@@ -11,11 +11,10 @@
  $searchword	= $app->input->getCmd('searchword', '');
 
 ?>
-<div class="breadcrumbs<?php echo $moduleclass_sfx; ?> narrow">
+<div class="breadcrumbs moduletable<?php echo $moduleclass_sfx; ?> narrow">
 <?php if ($params->get('showHere', 1))
 	{
-		//echo '<span class="showHere">' .JText::_('MOD_BREADCRUMBS_HERE').'</span>';
-		//echo '<i class="icon-map-marker"></i>';
+		echo '<i class="icon-map-marker"></i>';
 	}
 ?>
 <?php for ($i = 0; $i < $count; $i ++) :

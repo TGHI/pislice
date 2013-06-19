@@ -29,10 +29,10 @@ JHtml::_('bootstrap.framework');
 </head>
 <body>
 <jdoc:include type="message" />
-<div class="navbar light-3d navbar-fixed-top container-fluid">
+<div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
-    <div class="span2" style="text-align:right">
-      <a href="<?php echo $base_url; ?>"><img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" /></a>
+    <div class="span2">
+      <a href="<?php echo $piSlice->basePath(); ?>"><img src="<?php echo $this->params->get('LOGO'); ?>" alt="<?php echo $sitename; ?>" /></a>
     </div>
     <div class="span7">
       <jdoc:include type="modules" name="navigation" style="none" />
@@ -44,29 +44,28 @@ JHtml::_('bootstrap.framework');
 </div>
 <div class="main container-fluid">
   <div class="row-fluid">
-  <div class="span1"></div>
-    <div class="sidebar-left span1 anim">
-      <jdoc:include type="modules" name="sidebar-left" style="pi_plain" />
+    <div class="sidebar-left span2 anim">
+      <jdoc:include type="modules" name="sidebar-left" style="pi_default" />
     </div>
     <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
       <jdoc:include type="component" />
-      <div class="row-fluid">
+      <div class="article-bottom row-fluid">
         <jdoc:include type="modules" name="article-bottom" style="pi_default" />
       </div>
       <jdoc:include type="modules" name="debug" style="none" />
     </div>
     <div class="sidebar-right span3">
-      <jdoc:include type="modules" name="sidebar-right" style="pi_plain" />
+      <jdoc:include type="modules" name="sidebar-right" style="pi_default" />
     </div>
   </div>
 </div>
-<div class="footer container-fluid">
+<div class="footer inset-3d container-fluid">
   <footer>
     <div class="row-fluid">
       <div class="span2"></div>
       <div class="footer-inner span7 small">
-        <jdoc:include type="modules" name="footer" style="pi_plain" />
+        <jdoc:include type="modules" name="footer" style="pi_default" />
       </div>
     </div>
   </footer>
