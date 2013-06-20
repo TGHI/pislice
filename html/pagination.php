@@ -51,7 +51,7 @@ function pagination_list_render($list)
 		}
 	}
 
-	$html = '<ul class="pagination-list row-fluid">';
+	$html = '<ul class="pagination-list no-bullets">';
 	$html .= $list['start']['data'];
 	$html .= $list['previous']['data'];
 
@@ -84,23 +84,23 @@ function pagination_item_active(&$item){
 
   if ($item->text == JText::_('JLIB_HTML_START')){
 	  
-	return '<li class="start span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav"><i class="icon-fast-backward"></i>' . $item->text . '</a></li>';
+	return '<li class="start pull-left"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav"><i class="icon-fast-backward"></i>' . $item->text . '</a></li>';
 	
   }elseif($item->text == JText::_('JPREV')){
 	  
-	return '<li class="prev span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav"><i class="icon-backward"></i>' . $item->text . '</a></li>';
+	return '<li class="prev pull-left"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav"><i class="icon-backward"></i>' . $item->text . '</a></li>';
 	  
   }elseif($item->text == JText::_('JNEXT')){
 	  
-    return '<li class="next span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav">' . $item->text . '<i class="icon-forward"></i></a></li>';
+    return '<li class="next pull-right"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav">' . $item->text . '<i class="icon-forward"></i></a></li>';
 	  
   }elseif($item->text == JText::_('JLIB_HTML_END')){
 	  
-    return '<li class="end span1"><a title="' . $item->text . '" href="' . $item->link . '" class="btn light-3d pagenav">' . $item->text . '<i class="icon-fast-forward"></i></a></li>';
+    return '<li class="end pull-right"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav">' . $item->text . '<i class="icon-fast-forward"></i></a></li>';
 	  
   }else{
 	  
-    return '<li class="pagenumber span1 small"><a title="' . $item->text . '" href="' . $item->link . '" class="round empty inset-3d"><div class="round"></div></a>' . $item->text . '</li>';
+    return '<li class="pagenumber pull-left small"><a title="' . $item->text . '" href="' . $item->link . '" class="round empty inset-3d"><div class="round"></div></a>' . $item->text . '</li>';
 	
   }
 }
@@ -109,33 +109,33 @@ function pagination_item_inactive(&$item){
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		return '<li class="start span1"><a class="light-3d btn disabled"><i class="icon-fast-backward"></i>'.JText::_('JLIB_HTML_START').'</a></li>';
+		return '<li class="start pull-left"><a class="btn disabled"><i class="icon-fast-backward"></i>'.JText::_('JLIB_HTML_START').'</a></li>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		return '<li class="prev span1"><a class="light-3d btn disabled"><i class="icon-backward"></i>'.JText::_('JPREV').'</a></li>';
+		return '<li class="prev pull-left"><a class="btn disabled"><i class="icon-backward"></i>'.JText::_('JPREV').'</a></li>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="next span1"><a class="light-3d btn disabled">'.JText::_('JNEXT').'<i class="icon-forward"></i></a></li>';
+		return '<li class="next pull-right"><a class="btn disabled">'.JText::_('JNEXT').'<i class="icon-forward"></i></a></li>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="end span1"><a class="light-3d btn disabled">'.JText::_('JLIB_HTML_END').'<i class="icon-fast-forward"></i></a></li>';
+		return '<li class="end pull-right"><a class="btn disabled">'.JText::_('JLIB_HTML_END').'<i class="icon-fast-forward"></i></a></li>';
 	}
 
 	// Check if the item is the active page
 	if (isset($item->active) && ($item->active))
 	{
-		return '<li class="pagenumber active small span1"><div class="round empty inset-3d"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
+		return '<li class="pagenumber active small pull-left"><div class="round empty inset-3d"><div class="round filled" title='. $item->text .'></div></div>' . $item->text . '</li>';
 	}
 
 	// Doesn't match any other condition, render a normal item
-	return '<li class="disabled span1"><a>' . $item->text . '</a></li>';
+	return '<li class="disabled pull-left"><a>' . $item->text . '</a></li>';
 }

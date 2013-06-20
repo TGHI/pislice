@@ -13,7 +13,7 @@
 
 ?>
 
-<ul class="nav menu <?php echo $class_sfx;?>"<?php
+<ul class="nav menu no-bullets <?php echo $class_sfx;?>"<?php
 	$tag = '';
 	if ($params->get('tag_id') != null)
 	{
