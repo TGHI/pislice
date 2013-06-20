@@ -40,7 +40,7 @@ if (!$editoroptions)
   </div>
   <?php endif; ?>
   <form action="<?php echo JRoute::_('index.php?option=com_content&a_id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="adminForm" class="form-validate form-vertical">
-    <ul class="nav nav-tabs narrow anim">
+    <ul class="nav nav-tabs no-bullets narrow anim">
       <li class="active"><a href="#editor" data-toggle="tab"><i class="icon-edit"></i> <?php echo JText::_('JEDITOR') ?></a></li>
       <?php if ($params->get('show_urls_images_frontend') ): ?>
       <li><a href="#images" data-toggle="tab"><?php echo JText::_('COM_CONTENT_IMAGES_AND_URLS') ?></a></li>
