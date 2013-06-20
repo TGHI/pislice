@@ -92,11 +92,11 @@ function pagination_item_active(&$item){
 	  
   }elseif($item->text == JText::_('JNEXT')){
 	  
-    return '<li class="next pull-left"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav">' . $item->text . '<i class="icon-forward"></i></a></li>';
+    return '<li class="next pull-right"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav">' . $item->text . '<i class="icon-forward"></i></a></li>';
 	  
   }elseif($item->text == JText::_('JLIB_HTML_END')){
 	  
-    return '<li class="end pull-left"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav">' . $item->text . '<i class="icon-fast-forward"></i></a></li>';
+    return '<li class="end pull-right"><a title="' . $item->text . '" href="' . $item->link . '" class="btn pagenav">' . $item->text . '<i class="icon-fast-forward"></i></a></li>';
 	  
   }else{
 	  
@@ -121,13 +121,13 @@ function pagination_item_inactive(&$item){
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="next pull-left"><a class="btn disabled">'.JText::_('JNEXT').'<i class="icon-forward"></i></a></li>';
+		return '<li class="next pull-right"><a class="btn disabled">'.JText::_('JNEXT').'<i class="icon-forward"></i></a></li>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="end pull-left"><a class="btn disabled">'.JText::_('JLIB_HTML_END').'<i class="icon-fast-forward"></i></a></li>';
+		return '<li class="end pull-right"><a class="btn disabled">'.JText::_('JLIB_HTML_END').'<i class="icon-fast-forward"></i></a></li>';
 	}
 
 	// Check if the item is the active page
