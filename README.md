@@ -1,10 +1,11 @@
-**UNSTABLE BRANCH**
+piSlice - The simple, responsive template for [Joomla!] 3.x
+--------------
+The goal of piSlice is to provide a clean, simple, lightweight template that can be used standalone or as the building blocks of your next Joomla! template.
+piSlice is also intended to showcase the new features of Joomla! 3.0+ such as the inclusion of [bootstrap] for a responsive layout and [jQuery], and is built with standards-compliant, semantic HTML5 and CSS3.
 
-This is the unstable branch where I post whatever changes I feel like doing on a whim, without testing.
+Milestones
+--------------
 
-<<<<<<< HEAD
-**USE THIS AT YOUR OWN RISK**
-=======
 **Current version: 0.3.8**
 
 - 0.1.0 - Basic layout, styling and functionality.
@@ -37,4 +38,3 @@ piSlice is licensed under the GNU General Public License version 3 or later; see
 [jQuery]: http://www.jquery.com
 [K2]: http://getk2.org
 [Elusive Icon font]:https://github.com/aristath/elusive-iconfont
->>>>>>> master
