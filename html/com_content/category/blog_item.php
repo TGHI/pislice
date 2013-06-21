@@ -29,7 +29,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       </div>
       <?php endif; ?>
       <?php if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
-      <div class="article-actions dropdown pull-right"> <a class="btn light-3d dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i></a>
+      <div class="article-actions dropdown pull-right"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i></a>
         <ul class="dropdown-menu">
           <?php if ($params->get('show_print_icon')) : ?>
           <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
@@ -125,7 +125,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		$link->setVar('return', base64_encode($returnURL));
 	endif;
 ?>
-    <p class="readmore"><a class="btn light-3d" href="<?php echo $link; ?>"><i class="icon-chevron-right"></i>
+    <p class="readmore"><a class="btn" href="<?php echo $link; ?>"><i class="icon-chevron-right"></i>
       <?php if (!$params->get('access-view')) :
 						echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $this->item->alternative_readmore) :

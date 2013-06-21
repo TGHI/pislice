@@ -195,10 +195,10 @@ if (!$editoroptions)
       <hr class="separator" />
       <div class="btn-toolbar">
         <div class="btn-group">
-          <button type="button" class="btn light-3d" onclick="Joomla.submitbutton('article.save')"><i class="icon-ok"></i> <a><?php echo JText::_('JSAVE') ?></a></button>
+          <button type="button" class="btn" onclick="Joomla.submitbutton('article.save')"><i class="icon-ok"></i> <a><?php echo JText::_('JSAVE') ?></a></button>
         </div>
         <div class="btn-group">
-          <button type="button" class="btn light-3d" onclick="Joomla.submitbutton('article.cancel')"><i class="icon-remove"></i> <a><?php echo JText::_('JCANCEL') ?></a> </button>
+          <button type="button" class="btn" onclick="Joomla.submitbutton('article.cancel')"><i class="icon-remove"></i> <a><?php echo JText::_('JCANCEL') ?></a> </button>
         </div>
       </div>
       <?php echo JHtml::_('form.token'); ?>
