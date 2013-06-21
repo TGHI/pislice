@@ -69,7 +69,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 /* article+blog layout */
 
-.main-content > div,.sidebar-right,.main-content > div,.sidebar-left{margin-top:35px}
+.main-content > div,.sidebar-right,.sidebar-left{margin-top:35px}
 
 .blog-item .article-actions{opacity:0.5}
 .blog-item:hover .article-actions{opacity:1}
