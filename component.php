@@ -47,7 +47,7 @@ $doc->addStyleDeclaration(
 </head>
 <body class="contentpane modal">
 <?php if ($print == 1) : ?>
-<div class="navbar light-3d">
+<div class="navbar">
   <img src="<?php echo $this->params->get('logo'); ?>" alt="<?php echo $sitename; ?>" />
 </div>
 <?php endif; ?>

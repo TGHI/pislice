@@ -9,13 +9,13 @@
 ?>
 <ul class="pager no-bullets clearfix">
 <?php if ($row->prev) : ?>
-  <li><a class="btn light-3d" href="<?php echo $row->prev; ?>" rel="prev"><i class="icon-backward"></i> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
+  <li><a class="btn" href="<?php echo $row->prev; ?>" rel="prev"><i class="icon-backward"></i> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
 <?php else: ?>
-  <li><a class="btn light-3d disabled" href="<?php echo $row->prev; ?>" rel="prev"><i class="icon-backward"></i> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
+  <li><a class="btn disabled" href="<?php echo $row->prev; ?>" rel="prev"><i class="icon-backward"></i> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
 <?php endif; ?>
 <?php if ($row->next) : ?>
-  <li><a class="btn light-3d next" href="<?php echo $row->next; ?>" rel="next"><?php echo JText::_('TPL_PISLICE_NEXT_ARTICLE'); ?> <i class="icon-forward"></i></a> </li>
+  <li><a class="btn next" href="<?php echo $row->next; ?>" rel="next"><?php echo JText::_('TPL_PISLICE_NEXT_ARTICLE'); ?> <i class="icon-forward"></i></a> </li>
 <?php else: ?>
-  <li><a class="btn light-3d disabled"><?php echo JText::_('TPL_PISLICE_NEXT_ARTICLE'); ?><i class="icon-forward"></i></a></li>
+  <li><a class="btn disabled"><?php echo JText::_('TPL_PISLICE_NEXT_ARTICLE'); ?><i class="icon-forward"></i></a></li>
 <?php endif; ?>
 </ul>
