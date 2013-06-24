@@ -7,7 +7,7 @@
  */
 
 ?>
-<ul class="pager no-bullets clearfix">
+<ul class="pager clearfix">
 <?php if ($row->prev) : ?>
   <li><a class="btn" href="<?php echo $row->prev; ?>" rel="prev"><i class="icon-backward"></i> <?php echo JText::_('TPL_PISLICE_PREV_ARTICLE'); ?></a></li>
 <?php else: ?>

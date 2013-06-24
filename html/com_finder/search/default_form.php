@@ -23,7 +23,7 @@
 	});
 </script>
 
-<ul class="nav nav-tabs no-bullets narrow anim">
+<ul class="nav nav-tabs narrow anim">
   <li class="active"><a href="#search" data-toggle="tab"><i class="icon-search"></i> Search </a></li>
 <?php if ($this->params->get('show_advanced', 1)) : ?>
   <li><a href="#advanced" data-toggle="tab"><i class="icon-cog"></i> Advanced </a></li>

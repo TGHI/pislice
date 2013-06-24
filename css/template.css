@@ -4,14 +4,14 @@ h1,h2,h3{font-weight:700}
 h1,blockquote,.big{font-size:24pt}
 img{max-width:100%;height:auto}
 p{line-height:2em;margin:1.7em 0}
-blockquote{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
+blockquote,.article-index{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
 html,body,button,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category,a img{margin:0;padding:0;border:0}
 
 .small{font-size:10pt}
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}
 .bold{font-weight:700}
-.no-bullets,.dropdown ul{list-style-type:none}
+.no-bullets,.dropdown ul,.nav,.pager{list-style-type:none}
 blockquote,.italic{font-style:italic}
 blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *{transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s}
@@ -84,13 +84,8 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .article-details dd{float:left;margin:10px 35px 0px 0;line-height:36px}
 .article-details dd > i{float:left;margin:0 10px 0 0;padding:0 10px;text-align:center}
 
-.article-index{margin:20px;border-left:3px solid #e6e7e9;padding: 0 0 0 15px}
-.article-index ul{list-style-type:none}
-.article-index ul a{position:relative;top:5px}
-.article-index ul a{float:left;color:#aaa;text-shadow:1px 1px 0 #fff;border-radius:50%;height:16px;width:12px;padding:8px 10px;margin:0 10px 0 0}
-.article-index ul a:hover:before{color:#fff;text-shadow:1px 1px 1px #58b9ed}
-.article-index ul a.active:before{font-family:"Elusive-Icons";content:"\e0cc";color:#fff;text-shadow:1px 1px 1px #58b9ed}
-.article-index li{padding:5px 0;margin:5px 0;overflow:hidden}
+.article-index .nav-tabs > li{float:none}
+.article-index .nav-tabs > li > a {padding:10px;background:none}
 
 .article-introtext p{font-weight:500;margin-top:0}
 .blog-image{margin-bottom:1.5em}
