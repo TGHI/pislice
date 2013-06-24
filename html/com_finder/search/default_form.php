@@ -22,7 +22,6 @@
 <?php endif; ?>
 	});
 </script>
-
 <ul class="nav nav-tabs narrow anim">
   <li class="active"><a href="#search" data-toggle="tab"><i class="icon-search"></i> Search </a></li>
 <?php if ($this->params->get('show_advanced', 1)) : ?>
@@ -42,8 +41,13 @@
     <div class="tab-content">
       <div class="tab-pane active" id="search">
         <fieldset class="word">
-          <label for="q"> <?php echo JText::_('COM_FINDER_SEARCH_TERMS'); ?> </label>
-          <input type="text" name="q" id="q" size="30" value="<?php echo $this->escape($this->query->input); ?>" class="inputbox" />
+          <label for="q" class="pull-left"> <?php echo JText::_('COM_FINDER_SEARCH_TERMS'); ?> </label>
+          <input type="text" name="q" id="q" size="30" value="<?php echo $this->escape($this->query->input); ?>" class="inputbox pull-left" />
+          <?php if ($this->escape($this->query->input) != '' || $this->params->get('allow_empty_search')):?>
+        <button name="Search" type="submit" class="btn btn-primary pull-left"><i class="icon-search"></i></button>
+      <?php else: ?>
+        <button name="Search" type="submit" class="btn btn-primary disabled pull-left"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
+      <?php endif; ?>
         </fieldset>
       </div>
       <?php if ($this->params->get('show_advanced', 1)) : ?>
@@ -56,15 +60,7 @@
           <div id="finder-filter-window"> <?php echo JHtml::_('filter.select', $this->query, $this->params); ?> </div>
         </div>
       </div>
-      <?php endif; ?>
-      <hr class="separator" />
-      <div class="btn-toolbar">
-      <?php if ($this->escape($this->query->input) != '' || $this->params->get('allow_empty_search')):?>
-        <button name="Search" type="submit" class="btn btn-primary"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
-      <?php else: ?>
-        <button name="Search" type="submit" class="btn btn-primary disabled"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
-      <?php endif; ?>
-      </div>
+      <?php endif; ?>   
     </div>
   </form>
 </div>

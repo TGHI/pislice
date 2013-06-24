@@ -126,7 +126,8 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 /* search */
 
 #highlighter-start, #highlighter-end{display:none}
-.search-result{margin:30px auto}
+.word label{margin-right:10px;padding:2px 0 0 0}
+.word button{padding:3px 6px;margin-left:10px}
 
 /*modules */
 
