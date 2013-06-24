@@ -16,7 +16,7 @@
  $pages	= JText::sprintf('TPL_PISLICE_SEARCH_RESULTS_OF', $start, $limit, $total); 
 		
 ?>
-<ul class="search-results<?php echo $this->pageclass_sfx; ?> list-striped">
+<ul class="search-result-list<?php echo $this->pageclass_sfx; ?> list-striped">
   <?php foreach ($this->results as $result) : ?>
   <?php $category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($result->catslug)); ?>
   <li class="search-result">
@@ -34,7 +34,6 @@
     <small class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($result->href); ?></small>
     <?php endforeach; ?>
   </li>
-      <hr class="separator" />
 </ul>
 <div class="search-pagination">
   <div class="pagination"> <?php echo $this->pagination->getPagesLinks(); ?> </div>
