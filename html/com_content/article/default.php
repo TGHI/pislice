@@ -43,13 +43,13 @@ $limitstart			= JRequest::getVar('limitstart');
           <div class="article-actions dropdown pull-right anim"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i> </a>
             <ul class="dropdown-menu">
               <?php if ($params->get('show_print_icon')) : ?>
-              <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
+              <li> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
               <?php endif; ?>
               <?php if ($params->get('show_email_icon')) : ?>
-              <li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
+              <li> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
               <?php endif; ?>
               <?php if ($canEdit) : ?>
-              <li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
+              <li> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
               <?php endif; ?>
             </ul>
           </div>

@@ -51,7 +51,7 @@ var Observer = new Class({
       customChoices: null,
       emptyChoices: null,
       visibleChoices: !0,
-      className: "autocompleter-choices dropdown-menu",
+      className: "autocompleter-choices dropdown-menu anim",
       zIndex: 9999,
       delay: 300,
       observerOptions: {},

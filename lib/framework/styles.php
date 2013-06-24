@@ -44,14 +44,14 @@ class piStyle{
         
 		$style .= "    body{background:" . $bodyBackground . "}\n";
 		$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
-		$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover,.related-items-list li{background:" . $componentBackgroundColor . "}\n";
+		$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover,.related-items-list li,.dropdown-menu{background:" . $componentBackgroundColor . "}\n";
         $style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a,.nav-tabs a:hover,.term,span.highlight{color:" . $linkColour . "}\n";
         $style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
         $style .= "    a:hover{" . $linkHover . "}\n";
         $style .= "    .btn,.btn:hover{background:" . $light3dColour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . ";text-shadow:1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
 		$style .= "    .btn i[class*=\"icon-\"]{color:" . $light3dIconColour . "}\n";
 		$style .= "    .dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
-        $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a,.dropdown{color:" . $detaiIiconsColour . "}\n";
+        $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a,.dropdown-menu a [class*=\"icon-\"]{color:" . $detaiIiconsColour . "}\n";
 		$style .= "    .article-header h2 a,.article-header h2{color:" . $articleTitleColour . "}\n";
 		$style .= "    .article-header h2,.categories-list > li > :first-child,.article-index h3{border-bottom:1px solid " . $light3dColour . " }". "\n";
         $style .= "    .article-date{color:" . $complementcolour . "}\n";
