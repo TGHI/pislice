@@ -4,14 +4,14 @@ h1,h2,h3{font-weight:700}
 h1,blockquote,.big{font-size:24pt}
 img{max-width:100%;height:auto}
 p{line-height:2em;margin:1.7em 0}
-blockquote,.article-index{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
-html,body,button,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-category,a img{margin:0;padding:0;border:0}
+blockquote{float:left;max-width:350px;line-height:1.4em;padding:0 .8em;border-width:0 0 0 3px;border-style:solid;margin:35px}
+html,body,button,h2,ul,li,fieldset,.caption *,.search-result-category,a img{margin:0;padding:0;border:0}
 
 .small{font-size:10pt}
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}
 .bold{font-weight:700}
-.no-bullets,.dropdown ul,.nav,.pager{list-style-type:none}
+.no-bullets,.dropdown ul,.nav,.pager,.pager ul{list-style-type:none}
 blockquote,.italic{font-style:italic}
 blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *{transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s}
@@ -39,7 +39,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .tab-content > .tab-pane{display:none}
 .tab-content > .active{display:block}
 
-.nav-tabs:before,.nav-tabs:after{display:table;line-height:0;content:"";clear:both}
+.nav-tabs:before,.nav-tabs:after{display:table;content:"";clear:both}
 .nav-tabs > li{float:left;padding:0 0 4px 0}
 .nav-tabs > li > a {padding:8px 12px;text-transform:uppercase;margin:0 5px 0 0;border-radius:3px 3px 0 0}
 .nav-tabs > li.active a,.nav-tabs > li > a:hover{box-shadow:2px 0 2px rgba(0,0,0,.2)}
@@ -84,8 +84,10 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .article-details dd{float:left;margin:10px 35px 0px 0;line-height:36px}
 .article-details dd > i{float:left;margin:0 10px 0 0;padding:0 10px;text-align:center}
 
-.article-index .nav-tabs > li{float:none}
-.article-index .nav-tabs > li > a {padding:10px;background:none}
+.article-index{margin:1.0em 35px 35px}
+.article-index h3{padding:0 0 2px 0;margin: 0 0 10px 0;font-weight:500}
+.nav-tabs.nav-stacked > li{float:none;margin:0 0 15px 0;padding:0;overflow:hidden}
+.nav-tabs.nav-stacked > li a{box-shadow:none;background:none;margin:0;padding:0}
 
 .article-introtext p{font-weight:500;margin-top:0}
 .blog-image{margin-bottom:1.5em}
@@ -98,7 +100,6 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .readmore,.modified{margin-bottom:0}
 
-.pager ul{list-style-type:none}
 .pager{padding-top:1.5em}
 .pager li{float:left}
 .pager li:last-child{float:right}
@@ -138,7 +139,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .categories-list h4 a{color:#424347}
 .categories-list li{line-height:2em}
 .categories-list > li{padding:0 0 15px 0}
-.categories-list > li > :first-child{border-bottom:1px solid rgba(0,0,0,0.1);padding:0 0 2px 0;margin: 0 0 10px 0;font-weight:500}
+.categories-list > li > :first-child{padding:0 0 2px 0;margin: 0 0 10px 0;font-weight:500}
 .categories-list li > *{font-size:12pt;margin:0;font-weight:300}
 
 .mostread p{margin:15px 0}
