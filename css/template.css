@@ -11,7 +11,7 @@ html,body,button,h2,ul,li,fieldset,.caption *,.article-index h3,.search-result-c
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}
 .bold{font-weight:700}
-ul.no-bullets{list-style-type:none}
+.no-bullets,.dropdown ul{list-style-type:none}
 blockquote,.italic{font-style:italic}
 blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *{transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s}
