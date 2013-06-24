@@ -45,7 +45,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .nav-tabs > li.active a,.nav-tabs > li > a:hover{box-shadow:2px 0 2px rgba(0,0,0,.2);outline:0}
 
 .dropdown{position:relative}
-.dropdown-menu{position:absolute;z-index:1000;display:none;padding:4px;border-radius:3px;box-shadow:2px 2px 2px rgba(0,0,0,.2);right:0;white-space:nowrap}
+.dropdown-menu{position:absolute;z-index:1000;display:none;padding:4px;border-radius:3px;box-shadow:2px 2px 2px rgba(0,0,0,.2);right:0;white-space:nowrap;background:#fff}
 .dropdown-menu li{margin:4px;padding:2px;cursor:pointer}
 .dropdown-menu li:hover{border-radius:3px}
 .open{z-index:1000}
@@ -124,7 +124,6 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .footer .icon-googleplus:hover:before{color:#D52527}
 
 /* search */
-
 #highlighter-start, #highlighter-end{display:none}
 .word label{margin-right:10px;padding:2px 0 0 0}
 .word button{padding:3px 6px;margin-left:10px}
