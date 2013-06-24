@@ -128,7 +128,19 @@ $limitstart			= JRequest::getVar('limitstart');
         <div class="article-introtext"> <?php echo $this->item->introtext; ?> </div>
         <?php endif; ?>
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
-        <div class="article-image"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
+        <?php 
+		
+		  $fulltext_class = "";
+		
+		  if ($images->float_fulltext == "left"){
+			  $fulltext_class = " pull-left";
+		  }elseif ($images->float_fulltext == "right"){
+  			  $fulltext_class = " pull-right";
+		  }
+		
+		?>
+        <div class="article-image<?php echo $fulltext_class; ?>"> 
+          <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
           <i class="zoom-in icon-zoom-in anim"></i>
           <div class="caption">
