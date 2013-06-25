@@ -125,7 +125,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		$link->setVar('return', base64_encode($returnURL));
 	endif;
 ?>
-    <p class="readmore"><a class="btn" href="<?php echo $link; ?>"><i class="icon-chevron-right"></i>
+    <a class="btn" href="<?php echo $link; ?>"><i class="icon-chevron-right"></i>
       <?php if (!$params->get('access-view')) :
 						echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $this->item->alternative_readmore) :
@@ -139,7 +139,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 						echo JText::_('COM_CONTENT_READ_MORE');
 						echo JHtml::_('string.truncate', ($this->item->title), $params->get('readmore_limit'));
 					endif; ?>
-      </a></p>
+      </a>
     <?php endif; ?>
     <?php if ($this->item->state == 0) : ?>
   </div>
