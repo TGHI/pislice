@@ -6,8 +6,6 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-JHtml::_('behavior.highlighter', (array)($this->origkeyword));
-
 ?>
 <?php if ($this->params->get('show_page_heading', 1)) : ?>
 <h1 class="page-title">
@@ -22,13 +20,11 @@ JHtml::_('behavior.highlighter', (array)($this->origkeyword));
   <?php echo $this->loadTemplate('form'); ?>
 </div>
 <div class="folded-shadow finder<?php echo $this->pageclass_sfx; ?>">
-<br id="highlighter-start" />
   <div class="search-results">
   <?php if ($this->error == null) :
 	echo $this->loadTemplate('results');
 else :
 	echo $this->loadTemplate('error');
 endif; ?>
-  <br id="highlighter-end" />
   </div>
 </div>
