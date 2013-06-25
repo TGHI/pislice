@@ -44,7 +44,8 @@ class piStyle{
             $icons = 					$this->API->params->get('ICONS');
             $animations = 				$this->API->params->get('CSS3_ANIMATIONS');
             $navbarfixed = 				$this->API->params->get('NAVBAR_POSITION');
-            
+			
+			            
             $style .= "    body{background:" . $bodyBackground . "}\n";
             $style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
             $style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover,.related-items-list li{background:" . $componentBackgroundColor . "}\n";
@@ -78,7 +79,8 @@ class piStyle{
             
             if ($navbarfixed) {
                 $style .= "    .navbar-fixed-top{position:fixed;top:0;right: 0;left: 0;z-index: 1030}" . "\n";
-                $style .= "    body{padding: 70px 0 0;margin:0}";
+                $style .= "    body{padding: 70px 0 0;margin:0}". "\n";
+				$style .= "    .autocompleter-choices{position:fixed}";
             }
 			
 			$this->API->addStyleDeclaration($style);
