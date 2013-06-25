@@ -6,8 +6,9 @@
 * @license     GNU General Public License version 3 or later; see LICENCE.txt
 */
 
-define('DS', DIRECTORY_SEPARATOR);
-
+if (!defined('DS')){
+  define('DS', DIRECTORY_SEPARATOR);
+}
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
 
