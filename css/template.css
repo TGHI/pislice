@@ -17,6 +17,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *{transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s}
 .pull-right{float:right}.pull-left{float:left}
 .loading{background:#fff url(../img/loading.gif) right center no-repeat}
+.well{padding:10px;border-radius:5px}
 
 .disabled,.disabled:hover,.disabled > [class*="icon-"],.light-3d.disabled,.light-3d.disabled:hover {box-shadow:none!important;color:#ccc !important;cursor:no-drop;background:#eee !important}
 
@@ -127,6 +128,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 #highlighter-start, #highlighter-end{display:none}
 .word label{margin-right:10px;padding:2px 0 0 0}
 .word button{padding:3px 6px;margin-left:10px}
+.search-results .well{margin:0 0 15px 0}
 
 /*modules */
 

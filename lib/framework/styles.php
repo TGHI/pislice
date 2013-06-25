@@ -67,6 +67,7 @@ class piStyle{
             $style .= "    .navbar-inner .nav{box-shadow:-1px 0 0 rgba(255,255,255," . $highlight3d . ");border-left:1px solid rgba(0,0,0," . $lowlight3d . ")}". "\n";
             $style .= "    .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
             $style .= "    .inset-3d,.btn:active,.open .btn{box-shadow:inset -1px -1px 0 rgba(255,255,255," . $highlight3d . "),inset 1px 1px 0 rgba(0,0,0," . $lowlight3d . ")}". "\n";
+			$style .= "    .well{background:rgba(50,50,50," . $lowlight3d . ");text-shadow:1px 1px 0 rgba(255,255,255," .$highlight3d  . ")}". "\n";
             
             if (! $animations) {
                 $style .= "\n    .anim *, .anim:before{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0}". "\n";
