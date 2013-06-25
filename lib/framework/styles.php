@@ -16,7 +16,6 @@ class piStyle{
         $this->parent = $parent;
         $this->API = $parent->API;
         $this->styles = $this->setStyles();
-        $this->fonts = $this->setFonts();
     }
     
     public function setStyles($style=null){
@@ -25,26 +24,26 @@ class piStyle{
         
         if (! $print) {
 			            
-            $bodyBackground = $this->API->params->get('BODY_BACKGROUND_COLOUR');
-            $bodyFontColour = $this->API->params->get('BODY_FONT_COLOUR');
-            $navbarBackgroundColour = $this->API->params->get('NAVBAR_BACKGROUND_COLOUR');
-            $navbarLinkColour = $this->API->params->get('NAVBAR_LINK_COLOUR');
-            $linkColour = $this->API->params->get('LINK_COLOUR');
-            $linkHover = $this->API->params->get('LINK_HOVER');
-            $light3dColour = $this->API->params->get('3D_LIGHT_COLOUR');
-            $light3dIconColour = $this->API->params->get('3D_LIGHT_ICON_COLOUR');
-            $light3dFontColour = $this->API->params->get('3D_LIGHT_FONT_COLOUR');
+            $bodyBackground = 			$this->API->params->get('BODY_BACKGROUND_COLOUR');
+            $bodyFontColour = 			$this->API->params->get('BODY_FONT_COLOUR');
+            $navbarBackgroundColour = 	$this->API->params->get('NAVBAR_BACKGROUND_COLOUR');
+            $navbarLinkColour = 		$this->API->params->get('NAVBAR_LINK_COLOUR');
+            $linkColour = 				$this->API->params->get('LINK_COLOUR');
+            $linkHover = 				$this->API->params->get('LINK_HOVER');
+            $light3dColour = 			$this->API->params->get('3D_LIGHT_COLOUR');
+            $light3dIconColour = 		$this->API->params->get('3D_LIGHT_ICON_COLOUR');
+            $light3dFontColour = 		$this->API->params->get('3D_LIGHT_FONT_COLOUR');
             $componentBackgroundColor = $this->API->params->get('COMPONENT_BACKGROUND_COLOUR');
-            $detaiIiconsColour = $this->API->params->get('ICON_COLOUR');
-            $articleTitleColour = $this->API->params->get('ARTICLE_TITLE_COLOUR');
-            $highlight3d = $this->API->params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
-            $lowlight3d = $this->API->params->get('3D_LIGHT_LOWLIGHT_OPACITY');
+            $detaiIiconsColour = 		$this->API->params->get('ICON_COLOUR');
+            $articleTitleColour = 		$this->API->params->get('ARTICLE_TITLE_COLOUR');
+            $highlight3d = 				$this->API->params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
+            $lowlight3d = 				$this->API->params->get('3D_LIGHT_LOWLIGHT_OPACITY');
             
-            $complementcolour = $this->API->params->get('COMPLEMENT_COLOUR');
+            $complementcolour = 		$this->API->params->get('COMPLEMENT_COLOUR');
             
-            $icons =		$this->API->params->get('ICONS');
-            $animations =	$this->API->params->get('CSS3_ANIMATIONS');
-            $navbarfixed =  $this->API->params->get('NAVBAR_POSITION');
+            $icons = 					$this->API->params->get('ICONS');
+            $animations = 				$this->API->params->get('CSS3_ANIMATIONS');
+            $navbarfixed = 				$this->API->params->get('NAVBAR_POSITION');
             
             $style .= "    body{background:" . $bodyBackground . "}\n";
             $style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
@@ -54,7 +53,7 @@ class piStyle{
             $style .= "    a:hover{" . $linkHover . "}\n";
             $style .= "    .btn,.btn:hover{background:" . $light3dColour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . ";text-shadow:1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
             $style .= "    .btn i[class*=\"icon-\"]{color:" . $light3dIconColour . "}\n";
-            $style .= "    .dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
+            $style .= "    .dropdown-menu,.dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
             $style .= "    i[class*=\"icon-\"],.nav-tabs > li > a,.dropdown-menu a [class*=\"icon-\"]{color:" . $detaiIiconsColour . "}\n";
             $style .= "    .article-header h2 a,.article-header h2{color:" . $articleTitleColour . "}\n";
             $style .= "    .article-header h2,.categories-list > li > :first-child,.article-index h3{border-bottom:1px solid " . $light3dColour . " }". "\n";
@@ -100,30 +99,5 @@ class piStyle{
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
         
-    }
-    
-    public function setFonts($font=null){
-        
-        $fonts = array($this->API->params->get('MAIN_FONT'),
-        $this->API->params->get('SUB_FONT')
-        );
-        
-        if (!empty($fonts)) {
-            
-            $this->API->addStyleSheet('http://fonts.googleapis.com/css?family=' . implode("|", $fonts));
-            
-            for ($i = 0; $i < count($fonts); $i++) {
-                if (strpos($fonts[$i],':')) {
-                    $fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
-                }
-                $fonts[$i] = str_replace('+', ' ',$fonts[$i]);
-            }
-            
-            $font .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
-            $font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
-            
-            $this->API->addStyleDeclaration($font);
-            
-        }
     }
 }

@@ -9,9 +9,10 @@
 if (!defined('DS')){
   define('DS', DIRECTORY_SEPARATOR);
 }
+
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
-
+require_once(dirname(__file__) . DS . 'framework' . DS . 'fonts.php');
 
 class piSlice{
     
@@ -24,8 +25,9 @@ class piSlice{
         // check if we have params set
         $this->getConfig();
         
-        $this->styles = new piStyle($this);
+        $this->styles =	new piStyle($this);
         $this->meta = new piMeta($this);
+		$this->fonts = new piFonts($this);
         
     }
     
