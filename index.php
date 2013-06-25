@@ -10,7 +10,6 @@ $app				= JFactory::getApplication();
 $doc				= JFactory::getDocument();
 $this->language		= $doc->language;
 $this->direction	= $doc->direction;
-$template			= $this->template;
 $sitename			= $app->getCfg('sitename');
 
 require_once('lib/framework.php');
