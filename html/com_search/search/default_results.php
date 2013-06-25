@@ -7,6 +7,8 @@
  */
 	
  require_once (JPATH_SITE . '/components/com_content/helpers/route.php');
+ 
+ JHtml::_('behavior.highlighter', (array)($this->origkeyword));
 
  $base = JURI::getInstance()->toString(array('scheme', 'host', 'port'));
  $start	= (int) $this->pagination->get('limitstart') + 1;
@@ -16,13 +18,15 @@
  $pages	= JText::sprintf('TPL_PISLICE_SEARCH_RESULTS_OF', $start, $limit, $total); 
 		
 ?>
-<h5>
+<h5 class="well">
 <?php if(count($this->results) == 1) : ?>
 <?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS_1'); ?>
 <?php else: ?>
 <?php echo JText::sprintf('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', count($this->results)); ?>
 <?php endif; ?>
 </h5>
+<?php if(count($this->results) > 0) : ?>
+<br id="highlighter-start" />
 <ul class="search-result-list<?php echo $this->pageclass_sfx; ?> list-striped">
   <?php foreach ($this->results as $result) : ?>
   <?php $category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($result->catslug)); ?>
@@ -42,9 +46,9 @@
     <?php endforeach; ?>
   </li>
 </ul>
+<br id="highlighter-end" />
 <div class="search-pagination">
   <div class="pagination"> <?php echo $this->pagination->getPagesLinks(); ?> </div>
-  <?php if(count($this->results) > 0) : ?>
   <div class="search-pages-counter"> <?php echo $pages; ?> </div>
-  <?php endif; ?>
 </div>
+<?php endif; ?>
