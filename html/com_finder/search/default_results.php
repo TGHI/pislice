@@ -6,35 +6,34 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-//print_r($this->query->highlight);
-
-
-// Activate the highlighter if enabled.
 if (!empty($this->query->highlight) && $this->params->get('highlight_terms', 1)){
 	JHtml::_('behavior.highlighter', $this->query->highlight);
 }
 
-// Get the application object.
 $app = JFactory::getApplication();
 
 // Display the suggested search if it is different from the current search.
 if (($this->suggested && $this->params->get('show_suggested_query', 1)) || ($this->explained && $this->params->get('show_explained_query', 1))):
 ?>
 <div id="search-query-explained">
-  <?php
-    // Display the suggested search query.
-  if ($this->suggested && $this->params->get('show_suggested_query', 1)){
-     // Replace the base query string with the suggested query string.
-     $uri = JUri::getInstance($this->query->toURI());
-     $uri->setVar('q', $this->suggested);
-     // Compile the suggested query link.
-     $link	= '<a href="' . JRoute::_($uri->toString(array('path', 'query'))) . '">'. $this->escape($this->suggested) . '</a>';
-     echo JText::sprintf('COM_FINDER_SEARCH_SIMILAR', $link);
-  }
-		// Display the explained search query.
-  elseif ($this->explained && $this->params->get('show_explained_query', 1)){
-    echo $this->explained;
-  }
+<?php
+  
+  if ($this->total > 0){
+  
+    if ($this->suggested && $this->params->get('show_suggested_query', 1)){
+  
+      $uri = JUri::getInstance($this->query->toURI());
+      $uri->setVar('q', $this->suggested);
+  
+      $link	= '<a href="' . JRoute::_($uri->toString(array('path', 'query'))) . '">'. $this->escape($this->suggested) . '</a>';
+      echo JText::sprintf('COM_FINDER_SEARCH_SIMILAR', $link);
+    }
+  
+    elseif ($this->explained && $this->params->get('show_explained_query', 1)){
+        echo '<h5 class="well">' . $this->explained . '</h5>';
+    }
+
+  };
   
   ?>
 </div>
@@ -44,11 +43,10 @@ endif;
 if ($this->total == 0):
 ?>
 <div id="search-result-empty">
-  <h2><?php echo JText::_('COM_FINDER_SEARCH_NO_RESULTS_HEADING'); ?></h2>
   <?php if ($app->getLanguageFilter()) : ?>
-  <p><?php echo JText::sprintf('COM_FINDER_SEARCH_NO_RESULTS_BODY_MULTILANG', $this->escape($this->query->input)); ?></p>
+  <h5 class="well"><?php echo JText::sprintf('COM_FINDER_SEARCH_NO_RESULTS_BODY_MULTILANG', $this->escape($this->query->input)); ?></h5>
   <?php else : ?>
-  <p><?php echo JText::sprintf('COM_FINDER_SEARCH_NO_RESULTS_BODY', $this->escape($this->query->input)); ?></p>
+  <h5 class="well"><?php echo JText::sprintf('COM_FINDER_SEARCH_NO_RESULTS_BODY', $this->escape($this->query->input)); ?></h5>
   <?php endif; ?>
 </div>
 <?php
