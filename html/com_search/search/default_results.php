@@ -16,6 +16,11 @@
  $pages	= JText::sprintf('TPL_PISLICE_SEARCH_RESULTS_OF', $start, $limit, $total); 
 		
 ?>
+<?php if(count($this->results == 1)) : ?>
+<?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS_1'); ?>
+<?php else: ?>
+<?php echo JText::sprintf('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', count($this->results)); ?>
+<?php endif; ?>
 <ul class="search-result-list<?php echo $this->pageclass_sfx; ?> list-striped">
   <?php foreach ($this->results as $result) : ?>
   <?php $category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($result->catslug)); ?>
@@ -28,14 +33,16 @@
       <?php endif; ?>
     </h2>
     <?php if ($result->section): ?>
-    <p class="search-result-category small"><?php echo JText::sprintf('TPL_PISLICE_POST_LOCATION', JHtml::_('link',$category_route,$this->escape($result->section)));?></p>
+    <span class="search-result-category small"><?php echo JText::sprintf('TPL_PISLICE_POST_LOCATION', JHtml::_('link',$category_route,$this->escape($result->section)));?></span>
+    <span class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($result->href); ?></span>
     <?php endif; ?>
     <p class="result-text"> <?php echo $result->text; ?></p>
-    <small class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($result->href); ?></small>
     <?php endforeach; ?>
   </li>
 </ul>
 <div class="search-pagination">
   <div class="pagination"> <?php echo $this->pagination->getPagesLinks(); ?> </div>
+  <?php if(count($this->results) > 0) : ?>
   <div class="search-pages-counter"> <?php echo $pages; ?> </div>
+  <?php endif; ?>
 </div>
