@@ -17,6 +17,8 @@ $canEdit			= $params->get('access-edit');
 $user    			= JFactory::getUser();
 $limitstart			= JRequest::getVar('limitstart');
 
+JHtml::_('bootstrap.framework');
+
 ?>
 
 <section class="article-content">

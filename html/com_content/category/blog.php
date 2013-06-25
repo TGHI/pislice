@@ -12,6 +12,8 @@ $templateparams = $app->getTemplate(true)->params;
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $cparams = JComponentHelper::getParams('com_media');
 
+JHtml::_('bootstrap.framework');
+
 ?>
 <section class="blog-roll<?php echo $this->pageclass_sfx;?>">
   <?php if ($this->params->get('show_page_heading', 1) || $this->params->get('show_category_title')): ?>

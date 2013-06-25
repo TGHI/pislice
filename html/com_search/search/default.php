@@ -6,6 +6,8 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
+JHtml::_('bootstrap.framework');
+
 ?>
 <?php if ($this->params->get('show_page_heading', 1)) : ?>
 <h1 class="page-title">

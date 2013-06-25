@@ -7,6 +7,7 @@
  */
 
  JHtml::_('behavior.framework');
+ JHtml::_('bootstrap.framework');
  JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
   
 ?>
