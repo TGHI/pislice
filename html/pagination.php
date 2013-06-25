@@ -51,7 +51,7 @@ function pagination_list_render($list)
 		}
 	}
 
-	$html = '<ul class="pagination-list no-bullets">';
+	$html = '<ul class="pagination-list">';
 	$html .= $list['start']['data'];
 	$html .= $list['previous']['data'];
 
