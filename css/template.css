@@ -46,8 +46,8 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .nav-tabs > li.active a,.nav-tabs > li > a:hover{box-shadow:2px 0 2px rgba(0,0,0,.2);outline:0}
 
 .dropdown{position:relative}
-.dropdown-menu{position:absolute;z-index:1000;display:none;padding:4px;border-radius:3px;box-shadow:2px 2px 2px rgba(0,0,0,.2);right:0;white-space:nowrap;background:#fff}
-.dropdown-menu li{margin:4px;padding:2px;cursor:pointer}
+.dropdown-menu{position:absolute;z-index:1000;display:none;border-radius:3px;box-shadow:2px 2px 2px rgba(0,0,0,.2);right:0;white-space:nowrap;margin-bottom:1px}
+.dropdown-menu li{margin:0 1px;padding:5px;cursor:pointer;background:#fff}
 .dropdown-menu li:hover{border-radius:3px}
 .open{z-index:1000}
 .open >.dropdown-menu{display:block}
@@ -161,7 +161,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .button-container{float:left;height:100%;width:28px}
 .search-button{padding:1px 5px;margin:4px 0 0 3px;background:#424347;transform:scale(-1,1);-webkit-transform:scale(-1,1)}
 .search-button i{color:#fff !important;text-shadow:1px 1px 1px #111;font-size:12px}
-.autocompleter-choices{border-radius:0 0 3px 3px;padding:0;margin-top:-2px}
+.autocompleter-choices{border-radius:0 0 3px 3px;margin-top:-2px}
 
 .breadcrumbs{font-size:14pt}
 .breadcrumbs i{padding:0 5px}
