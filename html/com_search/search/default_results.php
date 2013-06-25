@@ -16,11 +16,13 @@
  $pages	= JText::sprintf('TPL_PISLICE_SEARCH_RESULTS_OF', $start, $limit, $total); 
 		
 ?>
-<?php if(count($this->results == 1)) : ?>
+<h5>
+<?php if(count($this->results) == 1) : ?>
 <?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS_1'); ?>
 <?php else: ?>
 <?php echo JText::sprintf('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', count($this->results)); ?>
 <?php endif; ?>
+</h5>
 <ul class="search-result-list<?php echo $this->pageclass_sfx; ?> list-striped">
   <?php foreach ($this->results as $result) : ?>
   <?php $category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($result->catslug)); ?>
