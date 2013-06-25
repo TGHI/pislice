@@ -20,7 +20,7 @@
     <div class="tab-content">
       <div class="tab-pane active" id="search">
         <fieldset class="word">
-          <label for="searchword" class="pull-left"> <?php echo JText::_('COM_SEARCH_FOR');?> </label>
+          <label for="search-searchword" class="pull-left"> <?php echo JText::_('COM_SEARCH_FOR');?> </label>
           <input type="text" name="searchword" placeholder="<?php echo JText::_('COM_SEARCH_SEARCH_KEYWORD'); ?>" id="search-searchword" size="30" maxlength="<?php echo $upper_limit; ?>" value="<?php echo $this->escape($this->origkeyword); ?>" class="inputbox pull-left" />
           <button name="Search" onclick="this.form.submit()" class="btn btn-primary pull-left" title="<?php echo JText::_('COM_SEARCH_SEARCH');?>"><i class="icon-search"></i></button>
           <input type="hidden" name="task" value="search" />
