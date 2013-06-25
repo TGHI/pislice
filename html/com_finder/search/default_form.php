@@ -44,9 +44,9 @@
           <label for="q" class="pull-left"> <?php echo JText::_('COM_FINDER_SEARCH_TERMS'); ?> </label>
           <input type="text" name="q" id="q" size="30" value="<?php echo $this->escape($this->query->input); ?>" class="inputbox pull-left" />
           <?php if ($this->escape($this->query->input) != '' || $this->params->get('allow_empty_search')):?>
-        <button name="Search" type="submit" class="btn btn-primary pull-left"><i class="icon-search"></i></button>
-      <?php else: ?>
-        <button name="Search" type="submit" class="btn btn-primary disabled pull-left"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
+          <button name="Search" type="submit" class="btn btn-primary pull-left"><i class="icon-search"></i></button>
+          <?php else: ?>
+          <button name="Search" type="submit" class="btn btn-primary disabled pull-left"><i class="icon-search"></i> <?php echo JText::_('JSEARCH_FILTER_SUBMIT');?></button>
       <?php endif; ?>
         </fieldset>
       </div>
