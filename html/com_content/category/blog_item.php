@@ -55,6 +55,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
       <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_tags', 1)): ?>
       <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
       <dl class="article-details">
+       <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
         <dd><i class="icon-user round inset-3d"></i>
           <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
           <?php
@@ -68,6 +69,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
           <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
           <?php endif; ?>
         </dd>
+        <?php endif; ?>
         <?php if ($params->get('show_hits')) : ?>
         <dd><i class="icon-eye-open round inset-3d"></i><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
         <?php endif; ?>
