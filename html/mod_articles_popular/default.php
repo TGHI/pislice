@@ -25,7 +25,15 @@
 ?>
   <li>
     <h4><a href="<?php echo $item->link; ?>"><?php echo $item->title; ?></a></h4>
-    <div class="small"><?php echo JText::sprintf('TPL_PISLICE_WRITTEN_BY') . ' ' . JHtml::_('link', JRoute::_($cntlink), $item->author); ?></div>
+    
+    <div class="small">
+	  <?php echo JText::sprintf('TPL_PISLICE_WRITTEN_BY'); ?>
+      <?php if (!empty($item->contactid)): ?>
+      <?php echo JHtml::_('link', JRoute::_($cntlink), $item->author); ?>
+      <?php else: ?>
+      <?php echo $item->author; ?>
+      <?php endif; ?>
+    </div>
     <a href="<?php echo $item->link; ?>"><img src="<?php echo $images->image_intro; ?>" alt="" /></a>
     <div><?php echo $item->introtext; ?></div>
   <?php endforeach; ?>
