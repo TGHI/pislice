@@ -13,7 +13,7 @@ class piFonts{
     
     function __construct($parent)
     {
-        $this->parent = $parent;
+
         $this->API = $parent->API;
         $this->fonts = $this->setFonts();
     }

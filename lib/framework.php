@@ -11,8 +11,8 @@ if (!defined('DS')){
 }
 
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
-require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'fonts.php');
+require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
 
 class piSlice{
     
@@ -27,22 +27,32 @@ class piSlice{
         
         $this->styles =	new piStyle($this);
         $this->meta = new piMeta($this);
-		$this->fonts = new piFonts($this);
-        
+		$this->fonts = new piFonts($this); 
+		$this->layout = $this->doLayout('default.blog');
+		
     }
-    
+	
+	public function doLayout($path) {
+		
+	    jimport('joomla.filesystem.file');
+	    
+	    if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $path . '.php')) { 
+	        include($this->templatePath() . DS . 'layouts' .  DS . $path . '.php');
+	    }
+	}	
+	 
     public function getConfig()
     {
         
         $template_params  = (array)json_decode($this->API->params);
         
         if (empty($template_params)) {
+			
+			jimport('joomla.filesystem.file');
             
             $db     = JFactory::getDBO();
             $query  = $db->getQuery(true);
             $template = $this->API->template;
-            
-            jimport('joomla.filesystem.file');
             
             $config = file_get_contents($this->templatePath() . DS . 'config' . DS . 'default.config.json');
             

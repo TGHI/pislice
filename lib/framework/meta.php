@@ -16,7 +16,6 @@ class piMeta{
         
         $this->API = $parent->API;
         
-        $this->setGenerator();
         $this->meta = $this->setTags();
         $this->generator = $this->setGenerator();
         
@@ -27,7 +26,7 @@ class piMeta{
         if ($this->API->params->get('OPENGRAPH_META_TAGS')) {
             
             $app = JFactory::getApplication();
-            $option = JRequest::getCmd('option');
+            $option = $app->input->getCmd('option');
             $view = $app->input->getCmd('view', '');
             
             if ($option == "com_content") {
