@@ -8,8 +8,6 @@
 
 $params =& $this->item->params;
 $images = json_decode($this->item->images);
-$app = JFactory::getApplication();
-$canEdit = $this->item->params->get('access-edit');
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
@@ -18,93 +16,14 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 <div class="system-unpublished grey">
   <?php endif; ?>
   <div class="article-contents folded-shadow">
-    <div class="article-header anim">
-      <?php if ($params->get('show_publish_date')) : ?>
-      <div class="article-date pull-left">
-        <?php if ($this->item->state == 0): ?>
-        <span class="narrow">unpusblished</span>
-        <?php else : ?>
-        <i class="icon-time"></i> <span class="narrow"><?php echo JHTML::date($this->item->publish_up,'l, F jS Y',true) ?></span>
-        <?php endif; ?>
-      </div>
-      <?php endif; ?>
-      <?php if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
-      <div class="article-actions dropdown pull-right"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i></a>
-        <ul class="dropdown-menu">
-          <?php if ($params->get('show_print_icon')) : ?>
-          <li class="print-icon"> <?php echo JHtml::_('icon.print_popup', $this->item, $params); ?> </li>
-          <?php endif; ?>
-          <?php if ($params->get('show_email_icon')) : ?>
-          <li class="email-icon"> <?php echo JHtml::_('icon.email', $this->item, $params); ?> </li>
-          <?php endif; ?>
-          <?php if ($canEdit) : ?>
-          <li class="edit-icon"> <?php echo JHtml::_('icon.edit', $this->item, $params); ?> </li>
-          <?php endif; ?>
-        </ul>
-      </div>
-      <?php endif; ?>
-      <br style="clear:both" />
-      <?php if ($params->get('show_title')) : ?>
-      <h2>
-        <?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
-        <a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); ?>"> <?php echo $this->escape($this->item->title); ?></a>
-        <?php else : ?>
-        <?php echo $this->escape($this->item->title); ?>
-        <?php endif; ?>
-      </h2>
-      <?php if ($params->get('show_author') || $params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_tags', 1)): ?>
-      <?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
-      <dl class="article-details">
-       <?php if (!empty($this->item->author) && ($params->get('show_author'))) : ?>
-        <dd><i class="icon-user round inset-3d"></i>
-          <?php if (!empty($this->item->contactid) && $params->get('link_author') == true) : ?>
-          <?php
-				$needle = 'index.php?option=com_contact&view=contact&id=' . $this->item->contactid;
-				$menu = JFactory::getApplication()->getMenu();
-				$item = $menu->getItems('link', $needle, true);
-				$cntlink = !empty($item) ? $needle . '&Itemid=' . $item->id : $needle;
-?>
-          <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
-          <?php else : ?>
-          <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
-          <?php endif; ?>
-        </dd>
-        <?php endif; ?>
-        <?php if ($params->get('show_hits')) : ?>
-        <dd><i class="icon-eye-open round inset-3d"></i><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $this->item->hits); ?></dd>
-        <?php endif; ?>
-        <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-        <dd><i class="icon-folder round inset-3d"></i>
-          <?php if (!empty($this->item->parent_slug) && $params->get('show_parent_category')) : ?>
-          <?php $title = $this->escape($this->item->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
-          <?php if ($params->get('link_parent_category') && !empty($this->item->parent_slug)) : ?>
-          <?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-          <?php else : ?>
-          <?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
-          <?php endif; ?>
-          <?php endif; ?>
-          <?php if ($params->get('show_category')) : ?>
-          <?php $title = $this->escape($this->item->category_title); $url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)) . '">' . $title . '</a>';?>
-          <?php if ($params->get('link_category') && $this->item->catslug) : ?>
-          <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-          <?php else : ?>
-          <?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
-          <?php endif; ?>
-          <?php endif; ?>
-        </dd>
-        <?php endif; ?>
-        <?php if ($params->get('show_tags', 1) && !empty($this->item->tags->itemTags)):?>
-        <dd><i class="icon-tags round inset-3d"></i>
-          <?php $this->item->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
-          <?php echo $this->item->tagLayout->render($this->item->tags->itemTags); ?> </dd>
-        <?php endif; ?>
-      </dl>
-      <?php endif; ?>
-      <?php endif; ?>
-      <?php if (!$params->get('show_intro')) : ?>
-      <?php echo $this->item->event->afterDisplayTitle; ?>
-      <?php endif; ?>
-      <?php echo $this->item->event->beforeDisplayContent; ?> </div>
+    <?php if ($params->get('show_title') || $params->get('show_author')) : ?>
+      <?php $this->item->header = new JLayoutFile('header', JPATH_ROOT . '/templates/' . $template .'/layouts/content/');  ?>
+      <?php echo $this->item->header->render($this->item); ?>
+    <?php endif; ?>
+    <?php if (!$params->get('show_intro')) : ?>
+    <?php echo $this->item->event->afterDisplayTitle; ?>
+    <?php endif; ?>
+    <?php echo $this->item->event->beforeDisplayContent; ?>
     <?php  if (isset($images->image_intro) and !empty($images->image_intro)) : ?>
     <?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
     <div class="blog-image <?php echo htmlspecialchars($imgfloat); ?>"> <img
@@ -128,7 +47,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 	endif;
 ?>
     <a class="btn" href="<?php echo $link; ?>"><i class="icon-chevron-right"></i>
-      <?php if (!$params->get('access-view')) :
+    <?php if (!$params->get('access-view')) :
 						echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $this->item->alternative_readmore) :
 						echo $readmore;
@@ -141,10 +60,10 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 						echo JText::_('COM_CONTENT_READ_MORE');
 						echo JHtml::_('string.truncate', ($this->item->title), $params->get('readmore_limit'));
 					endif; ?>
-      </a>
+    </a>
     <?php endif; ?>
     <?php if ($this->item->state == 0) : ?>
   </div>
-<?php endif; ?>
+  <?php endif; ?>
 </div>
 <?php echo $this->item->event->afterDisplayContent; ?>
