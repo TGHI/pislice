@@ -52,11 +52,12 @@ $template		= $app->getTemplate();
     <dd><i class="icon-user round inset-3d"></i>
       <?php if (!empty($displayData->contactid) && $params->get('link_author') == true) : ?>
       <?php
-				$needle = 'index.php?option=com_contact&view=contact&id=' . $displayData->contactid;
-				$menu = JFactory::getApplication()->getMenu();
-				$item = $menu->getItems('link', $needle, true);
-				$cntlink = !empty($item) ? $needle . '&Itemid=' . $item->id : $needle;
-?>
+	  
+			$needle = 'index.php?option=com_contact&view=contact&id=' . $displayData->contactid;
+			$menu = JFactory::getApplication()->getMenu();
+			$item = $menu->getItems('link', $needle, true);
+			$cntlink = !empty($item) ? $needle . '&Itemid=' . $item->id : $needle;
+		?>
       <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', JHtml::_('link', JRoute::_($cntlink), $author)); ?>
       <?php else : ?>
       <?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>

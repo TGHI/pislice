@@ -6,17 +6,17 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-$base_url = JURI::base();
+ $base_url = JURI::base();
 
-$app				= JFactory::getApplication();
-$doc				= JFactory::getDocument();
-$this->language		= $doc->language;
-$this->direction	= $doc->direction;
-$sitename			= $app->getCfg('sitename');
+ $app				= JFactory::getApplication();
+ $doc				= JFactory::getDocument();
+ $this->language	= $doc->language;
+ $this->direction	= $doc->direction;
+ $sitename			= $app->getCfg('sitename');
 
-require_once('lib/framework.php');
+ require_once('lib/framework.php');
 
-$piSlice = new piSlice($this);
+ $piSlice = new piSlice($this);
 
 ?>
 <!DOCTYPE html>

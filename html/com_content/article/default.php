@@ -8,7 +8,6 @@
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
-
 $app	 			= JFactory::getApplication();
 $params				= $this->item->params;
 $images 			= json_decode($this->item->images);
@@ -49,15 +48,15 @@ JHtml::_('bootstrap.framework');
         <?php endif; ?>
         <?php if (isset($images->image_fulltext) && !empty($images->image_fulltext)) : ?>
         <?php 
-		
+
 		  $fulltext_class = "";
-		
+
 		  if ($images->float_fulltext == "left"){
 			  $fulltext_class = " pull-left";
 		  }elseif ($images->float_fulltext == "right"){
   			  $fulltext_class = " pull-right";
 		  }
-		
+
 		?>
         <div class="article-image<?php echo $fulltext_class; ?>"> <img <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)): echo 'class="anim"'.' title="' .htmlspecialchars($images->image_fulltext_caption) . '"';endif; ?> src="<?php echo htmlspecialchars($images->image_fulltext); ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
           <?php if (($images->image_fulltext_caption) || ($images->image_fulltext_alt)) : ?>
@@ -78,21 +77,21 @@ JHtml::_('bootstrap.framework');
 		}
          ?>
         <?php 
-		
+
 		if ($app->getTemplate(true)->params->get('ARTICLE_PAGE_NUMBERS') == 0) {
 		  // get rid of those stupid page numbers
 		  if(preg_match('/(<div class=\"pagenavcounter\">)(.*)(<\\/div>)/', $this->item->text, $pageNumbers)){;
 		    $this->item->text = str_replace($pageNumbers[0], '', $this->item->text);
 		  }
 		}
-		
+
 		// match/remove article nav
 		if(preg_match('/(<div class=\"pager\">)(.*)(<\\/div>)/', $this->item->text, $pager)){
 		  $this->item->text = str_replace($pager[0], '', $this->item->text);
         }
-		
+
 		echo $this->item->text;	
-		
+
 		?>
         <?php if ($info == 0): ?>
         <?php if ($params->get('show_modify_date')) : ?>
@@ -100,13 +99,13 @@ JHtml::_('bootstrap.framework');
         <?php endif; ?>
         <?php endif; ?>
         <?php 
-		
+
 		  // put article nav down here
 		 if(!empty($pager)){
 			 echo $pager[0];
 			 echo '<br style="clear:both" />';
 		 }
-		 
+
 		?>
         <?php
 			if (!empty($this->item->pagination) && $this->item->pagination && $this->item->paginationposition && !$this->item->paginationrelative):

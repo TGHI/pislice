@@ -19,22 +19,20 @@ if (($this->suggested && $this->params->get('show_suggested_query', 1)) || ($thi
 <?php
   
   if ($this->total > 0){
-  
+
     if ($this->suggested && $this->params->get('show_suggested_query', 1)){
-  
+
       $uri = JUri::getInstance($this->query->toURI());
       $uri->setVar('q', $this->suggested);
-  
+
       $link	= '<a href="' . JRoute::_($uri->toString(array('path', 'query'))) . '">'. $this->escape($this->suggested) . '</a>';
       echo JText::sprintf('COM_FINDER_SEARCH_SIMILAR', $link);
     }
-  
+
     elseif ($this->explained && $this->params->get('show_explained_query', 1)){
         echo '<h5 class="well">' . $this->explained . '</h5>';
     }
-
   };
-  
   ?>
 </div>
 <?php
@@ -61,9 +59,9 @@ else:
 <br id="highlighter-start" />
 <ul class="search-result-list <?php echo $this->pageclass_sfx; ?> list-striped">
 <?php
-		for ($i = 0, $n = count($this->results); $i < $n; $i++):
-			$this->result	= &$this->results[$i];
-			$layout			= $this->getLayoutFile($this->result->layout);
+	for ($i = 0, $n = count($this->results); $i < $n; $i++):
+		$this->result	= &$this->results[$i];
+		$layout			= $this->getLayoutFile($this->result->layout);
 ?>
 <?php echo $this->loadTemplate($layout); ?>
 <?php endfor; ?>
@@ -73,5 +71,4 @@ else:
   <div class="pagination"> <?php echo $this->pagination->getPagesLinks(); ?> </div>
   <div class="search-pages-counter"> <?php echo $pages; ?> </div>
 </div>
-<?php
-endif;
+<?php endif;

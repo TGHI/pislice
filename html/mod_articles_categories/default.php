@@ -6,7 +6,6 @@
 * @license     GNU General Public License version 3 or later; see LICENCE.txt
 */
 ?>
-
 <div class="categories-module">
   <button class="btn btn-navbar" data-target=".categories-list" data-toggle="collapse" type="button" style="width:100%"> Click to view category list </button>
     <ul class="categories-list collapse <?php echo $moduleclass_sfx; ?>">

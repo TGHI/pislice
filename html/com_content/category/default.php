@@ -12,7 +12,6 @@ defined('_JEXEC') or die;
 $app = JFactory::getApplication();
 $templateparams = $app->getTemplate(true)->params;
 
-
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 $pageClass = $this->params->get('pageclass_sfx');
@@ -26,7 +25,6 @@ $pageClass = $this->params->get('pageclass_sfx');
 	<?php echo $this->escape($this->params->get('page_heading')); ?>
 </h1>
 <?php endif; ?>
-
 <?php if ($this->params->get('show_category_title') or $this->params->get('page_subheading')) : ?>
 <h2>
 	<?php echo $this->escape($this->params->get('page_subheading')); ?>
@@ -41,7 +39,6 @@ $pageClass = $this->params->get('pageclass_sfx');
 </hgroup>
 <?php endif; ?>
 <?php endif; ?>
-
 <?php if ($this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
 	<div class="category-desc">
 	<?php if ($this->params->get('show_description_image') && $this->category->getParams()->get('image')) : ?>
@@ -53,8 +50,6 @@ $pageClass = $this->params->get('pageclass_sfx');
 	<div class="clr"></div>
 	</div>
 <?php endif; ?>
-
-
 <?php if (is_array($this->children[$this->category->id]) && count($this->children[$this->category->id]) > 0 && $this->params->get('maxLevel') != 0) : ?>
 		<div class="cat-children">
 
@@ -83,6 +78,4 @@ $pageClass = $this->params->get('pageclass_sfx');
 	<div class="cat-items">
 		<?php echo $this->loadTemplate('articles'); ?>
 	</div>
-
 </section>
-

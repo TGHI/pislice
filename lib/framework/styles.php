@@ -7,23 +7,23 @@
 */
 
 class piStyle{
-    
+
     private $parent;
     public $API;
-    
+
     function __construct($parent)
     {
         $this->parent = $parent;
         $this->API = $parent->API;
         $this->styles = $this->setStyles();
     }
-    
+
     public function setStyles($style=null){
-        
+
         $print = JRequest::getCmd('print', '');
-        
+
         if (! $print) {
-			            
+
             $bodyBackground = 			$this->API->params->get('BODY_BACKGROUND_COLOUR');
             $bodyFontColour = 			$this->API->params->get('BODY_FONT_COLOUR');
             $navbarBackgroundColour = 	$this->API->params->get('NAVBAR_BACKGROUND_COLOUR');
@@ -38,14 +38,13 @@ class piStyle{
             $articleTitleColour = 		$this->API->params->get('ARTICLE_TITLE_COLOUR');
             $highlight3d = 				$this->API->params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
             $lowlight3d = 				$this->API->params->get('3D_LIGHT_LOWLIGHT_OPACITY');
-            
+
             $complementcolour = 		$this->API->params->get('COMPLEMENT_COLOUR');
-            
+
             $icons = 					$this->API->params->get('ICONS');
             $animations = 				$this->API->params->get('CSS3_ANIMATIONS');
             $navbarfixed = 				$this->API->params->get('NAVBAR_POSITION');
-			
-			            
+
             $style .= "    body{background:" . $bodyBackground . "}\n";
             $style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
             $style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover,.related-items-list li{background:" . $componentBackgroundColor . "}\n";
@@ -68,27 +67,27 @@ class piStyle{
             $style .= "    .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
             $style .= "    .inset-3d,.btn:active,.open .btn{box-shadow:inset -1px -1px 0 rgba(255,255,255," . $highlight3d . "),inset 1px 1px 0 rgba(0,0,0," . $lowlight3d . ")}". "\n";
 			$style .= "    .well{background:rgba(50,50,50," . $lowlight3d . ")}". "\n";
-            
+
             if (! $animations) {
                 $style .= "\n    .anim *, .anim:before{transition:none;-webkit-transition:none;-moz-transition:none;-o-transition:all 0}". "\n";
             }
-            
+
             if (!$icons) {
                 $style .= "\n    .article-details dd > span{display:none}";
             }
-            
+
             if ($navbarfixed) {
                 $style .= "    .navbar-fixed-top{position:fixed;top:0;right: 0;left: 0;z-index: 1030}" . "\n";
                 $style .= "    body{padding: 70px 0 0;margin:0}". "\n";
 				$style .= "    .autocompleter-choices{position:fixed}";
             }
-			
+
 			$this->API->addStyleDeclaration($style);
-            
+
         } else {
-			
+
 			//print styles
-            
+
             $this->API->addStyleDeclaration('
 				body,.article-contents,.article-item{font-size:1em;padding:0;margin:0;background:#fff;box-shadow:none;color:#000} 
 				*{color:#000} 
@@ -96,10 +95,10 @@ class piStyle{
 				.top{padding:10px 0;background:#eee;overflow:hidden;margin-bottom:15px}
 				');
         }
-               
+
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/bootstrap-responsive.min.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
         $this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
-        
+
     }
 }

@@ -10,7 +10,6 @@
  $upper_limit = $lang->getUpperLimitSearchWord();
  
 ?>
-
 <ul class="nav nav-tabs narrow anim">
   <li class="active"><a href="#search" data-toggle="tab"><i class="icon-search"></i> Search </a></li>
   <li><a href="#advanced" data-toggle="tab"><i class="icon-cog"></i> Advanced </a></li>
@@ -39,7 +38,7 @@
           <legend><?php echo JText::_('COM_SEARCH_SEARCH_ONLY');?></legend>
           <?php foreach ($this->searchareas['search'] as $val => $txt) :
 		    $checked = is_array($this->searchareas['active']) && in_array($val, $this->searchareas['active']) ? 'checked="checked"' : '';
-	?>
+?>
           <label for="area-<?php echo $val;?>" class="checkbox">
             <input type="checkbox" name="areas[]" value="<?php echo $val;?>" id="area-<?php echo $val;?>" <?php echo $checked;?> >
             <?php echo JText::_($txt); ?> </label>

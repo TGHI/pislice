@@ -12,7 +12,6 @@ $images = json_decode($this->item->images);
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 ?>
 <?php if ($this->item->state == 0) : ?>
-
 <div class="system-unpublished grey">
   <?php endif; ?>
   <div class="article-contents folded-shadow">

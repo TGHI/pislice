@@ -6,18 +6,17 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
 */
 
-	require_once (JPATH_SITE . '/components/com_content/helpers/route.php');
+ require_once (JPATH_SITE . '/components/com_content/helpers/route.php');
 
-	$mime = !empty($this->result->mime) ? 'mime-' . $this->result->mime : null;
-	$base = JURI::getInstance()->toString(array('scheme', 'host', 'port'));
-	$category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($this->result->catslug));
+ $mime = !empty($this->result->mime) ? 'mime-' . $this->result->mime : null;
+ $base = JURI::getInstance()->toString(array('scheme', 'host', 'port'));
+ $category_route = JRoute::_(ContentHelperRoute::getCategoryRoute($this->result->catslug));
 
-	// Get the route with highlighting information.
-	if (!empty($this->query->highlight) && empty($this->result->mime) && $this->params->get('highlight_terms', 1) && JPluginHelper::isEnabled('system', 'highlight')){
-		$route = $this->result->route . '&highlight=' . base64_encode(json_encode($this->query->highlight));
-	} else {
-		$route = $this->result->route;
-	}
+if (!empty($this->query->highlight) && empty($this->result->mime) && $this->params->get('highlight_terms', 1) && JPluginHelper::isEnabled('system', 'highlight')){
+	$route = $this->result->route . '&highlight=' . base64_encode(json_encode($this->query->highlight));
+} else {
+	$route = $this->result->route;
+}
 ?>
 <li class="search-result">
   <h2 class="result-title <?php echo $mime; ?>"><?php echo JHtml::_('link',JRoute::_($route), $this->result->title);?></h2>

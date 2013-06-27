@@ -55,7 +55,6 @@ $finderJs .= "});". "\n";
 $doc->addScriptDeclaration($finderJs);
 
 ?>
-
 <form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="navbar-search inset-3d">
   <div class="search-inner<?php echo $suffix; ?>">
     <input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium" size="<?php echo $params->get('field_size', 20);?>" value="<?php echo htmlspecialchars(JFactory::getApplication()->input->get('q', '', 'string')); ?>" />

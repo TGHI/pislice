@@ -25,7 +25,7 @@ class JFormFieldConfigManager extends JFormField {
 		if($tpl_id !== 'none' && is_numeric($tpl_id) && $task !== 'none') {
 			if($task == 'load') {
 				if(JFile::exists($base_path . $file)) {
-					//
+
 					$query = '
 						UPDATE 
 							#__template_styles
@@ -90,13 +90,12 @@ class JFormFieldConfigManager extends JFormField {
 				}
 			} else if($task == 'delete') {
 				// Check if file exists before deleting
-				
 				if(JFile::exists($base_path . $file)) {
-					
+
 					if($file == "default.config.json"){
 						$app = JFactory::getApplication();
 						$app->redirect($redirectUrl, $file . ' ' . JText::_('TPL_PISLICE_THEME_CONFIG_DEFAULT_CONFIG_CANNOT_BE_DELETED'), 'error');
-						
+
 					} else {
 					
 						if(JFile::delete($base_path . $file)) {						
@@ -107,7 +106,7 @@ class JFormFieldConfigManager extends JFormField {
 							$app->redirect($redirectUrl, $file . ' ' . JText::_('TPL_PISLICE_THEME_CONFIG_FILE_WASNT_DELETED_PLEASE_CHECK_PERM'), 'error');
 						}
 					}
-					
+
 				} else {
 					$app = JFactory::getApplication();
 					$app->redirect($redirectUrl, $file . ' ' . JText::_('TPL_PISLICE_THEME_CONFIG_FILE_WASNT_DELETED_PLEASE_CHECK_FILE'), 'error');
@@ -131,7 +130,7 @@ class JFormFieldConfigManager extends JFormField {
 	}
 	protected function getOptions() {
 		jimport('joomla.filesystem.folder');
-	
+
 		$options = array();
 		$path = (string) $this->element['directory'];
 		if (!is_dir($path)) $path = JPATH_ROOT.'/'.$path;
@@ -144,4 +143,3 @@ class JFormFieldConfigManager extends JFormField {
 		return array_merge($options);
 	}
 }
-/* EOF */

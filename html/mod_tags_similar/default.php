@@ -8,15 +8,15 @@
 
 ?>
 <?php if ($list): ?>
-<ul >
+<ul>
   <?php foreach ($list as $i => $item) : ?>
   <li> <a href="<?php echo JRoute::_($item->url); ?>">
     <?php
-				if (!empty($item->core_title))
-				{
-					echo htmlspecialchars($item->core_title);
-				}
-				?>
+		if (!empty($item->core_title))
+		{
+			echo htmlspecialchars($item->core_title);
+		}
+	?>
     </a> <?php print_r($list); ?> <img src="" alt="" /> </li>
   <?php endforeach; ?>
 </ul>

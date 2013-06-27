@@ -12,13 +12,9 @@ defined('_JEXEC') or die;
 $app = JFactory::getApplication();
 $templateparams = $app->getTemplate(true)->params;
 
-
-
 $class = ' class="first"';
 ?>
-
 <?php if (count($this->children[$this->category->id]) > 0) :?>
-
 	<ul>
 	<?php foreach($this->children[$this->category->id] as $id => $child) : ?>
 		<?php
@@ -49,7 +45,6 @@ $class = ' class="first"';
 					</dd>
 				</dl>
 				<?php endif; ?>
-
 				<?php if (count($child->getChildren()) > 0 ) :
 					$this->children[$child->id] = $child->getChildren();
 					$this->category = $child;

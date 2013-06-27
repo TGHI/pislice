@@ -8,40 +8,40 @@
 
 ?>
 <form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
-  <?php
-				$output = '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox'.$moduleclass_sfx.' search-query" type="text" size="' . $width . '" value="' . $text . '"  onblur="if (this.value==\'\') this.value=\'' . $text . '\';" onfocus="if (this.value==\'' . $text . '\') this.value=\'\';" />';
+<?php
+	$output = '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox'.$moduleclass_sfx.' search-query" type="text" size="' . $width . '" value="' . $text . '"  onblur="if (this.value==\'\') this.value=\'' . $text . '\';" onfocus="if (this.value==\'' . $text . '\') this.value=\'\';" />';
 
-				if ($button) :
-					if ($imagebutton) :
-						$button = ' <input type="image" value="' . $button_text . '" class="button' . $moduleclass_sfx.'" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
-					else :
-						$button = ' <button class="btn' . $moduleclass_sfx . ' btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
-					endif;
-				endif;
+	if ($button) :
+		if ($imagebutton) :
+			$button = ' <input type="image" value="' . $button_text . '" class="button' . $moduleclass_sfx.'" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
+		else :
+			$button = ' <button class="btn' . $moduleclass_sfx . ' btn btn-primary" onclick="this.form.searchword.focus();">' . $button_text . '</button>';
+		endif;
+	endif;
 
-				switch ($button_pos) :
-					case 'top' :
-						$button = $button . '<br />';
-						$output = $button . $output;
-						break;
+	switch ($button_pos) :
+		case 'top' :
+			$button = $button . '<br />';
+			$output = $button . $output;
+		break;
 
-					case 'bottom' :
-						$button = '<br />' . $button;
-						$output = $output . $button;
-						break;
+		case 'bottom' :
+			$button = '<br />' . $button;
+			$output = $output . $button;
+		break;
 
-					case 'right' :
-						$output = $output . $button;
-						break;
+		case 'right' :
+			$output = $output . $button;
+		break;
 
-					case 'left' :
-					default :
-						$output = $button . $output;
-						break;
-				endswitch;
+		case 'left' :
+			default :
+				$output = $button . $output;
+		break;
+	endswitch;
 
-				echo $output;
-			?>
+	echo $output;
+?>
   <input type="hidden" name="task" value="search" />
   <input type="hidden" name="option" value="com_search" />
   <input type="hidden" name="Itemid" value="<?php echo $mitemid; ?>" />
