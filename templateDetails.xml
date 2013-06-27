@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.0" type="template" client="site">
 	<name>pislice</name>
 	<version>1.0</version>
-	<creationDate>11/28/2012</creationDate>
+	<creationDate>06/27/2013</creationDate>
 	<author>Justin Renaud</author>
 	<authorEmail>tghidsgn@gmail.com</authorEmail>
 	<copyright>Copyright (C) 2013</copyright>
 	<description>TPL_PISLICE_XML_DESCRIPTION</description>
 	<files>
 		<filename>component.php</filename>
+		<filename>error.php</filename>
 		<filename>favicon.ico</filename>
 		<filename>index.php</filename>
-		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
-		<filename>template_thumbnail.png</filename>
+		<filename>template_thumbnail.png</filename>		
+		<filename>templateDetails.xml</filename>
+		<folder>admin</folder>
 		<folder>config</folder>
 		<folder>css</folder>
 		<folder>font</folder>
@@ -22,6 +24,8 @@
 		<folder>img</folder>
 		<folder>js</folder>
 		<folder>language</folder>
+		<folder>layouts</folder>
+		<folder>lib</folder>
 	</files>
 	<positions>
 		<position>debug</position>
