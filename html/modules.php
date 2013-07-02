@@ -8,7 +8,8 @@
  
 // Standard module
 
-function modChrome_pi_default($module, &$params, &$attribs){
+function modChrome_pi_default($module, &$params, &$attribs)
+{
 	
 	$moduleArray = array();
 

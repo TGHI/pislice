@@ -8,36 +8,44 @@
 
 class piFonts{
 
-    private $parent;
-    public $API;
+	private $parent;
+	public $API;
 
-    function __construct($parent)
-    {
+	function __construct($parent)
+	{
 
-        $this->API = $parent->API;
-        $this->fonts = $this->setFonts();
-    }
+		$this->API = $parent->API;
+		$this->fonts = $this->setFonts();
 
-    public function setFonts($font=null){
+	}
 
-        $fonts = array($this->API->params->get('MAIN_FONT'), $this->API->params->get('SUB_FONT'));
+	public function setFonts($font=null)
+	{
 
-        if (!empty($fonts)) {
+		$fonts = array($this->API->params->get('MAIN_FONT'), $this->API->params->get('SUB_FONT'));
 
-            $this->API->addStyleSheet('http://fonts.googleapis.com/css?family=' . implode("|", $fonts));
+		if (!empty($fonts))
+		{
 
-            for ($i = 0; $i < count($fonts); $i++) {
-                if (strpos($fonts[$i],':')) {
-                    $fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
+			$this->API->addStyleSheet('http://fonts.googleapis.com/css?family=' . implode("|", $fonts));
+
+			for ($i = 0; $i < count($fonts); $i++)
+			{
+				if (strpos($fonts[$i],':'))
+				{
+
+					$fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
+
                 }
-                $fonts[$i] = str_replace('+', ' ',$fonts[$i]);
-            }
 
-            $font .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
-            $font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
+				$fonts[$i] = str_replace('+', ' ',$fonts[$i]);
+			}
 
-            $this->API->addStyleDeclaration($font);
+			$font .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
+			$font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
 
-        }
-    }
+			$this->API->addStyleDeclaration($font);
+
+		}
+	}
 }

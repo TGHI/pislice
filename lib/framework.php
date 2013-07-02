@@ -8,8 +8,9 @@
 
 jimport('joomla.filesystem.file');
 
-if (!defined('DS')){
-  define('DS', DIRECTORY_SEPARATOR);
+if (!defined('DS'))
+{
+	define('DS', DIRECTORY_SEPARATOR);
 }
 
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
@@ -20,64 +21,71 @@ class piSlice{
 
     public $API;
 
-    function __construct($parentTpl)
-    {
+	function __construct($parentTpl)
+	{
         //access template object
-        $this->API = $parentTpl;
+		$this->API = $parentTpl;
         // check if we have params set
-        $this->getConfig();
+		$this->getConfig();
 
-        $this->styles =	new piStyle($this);
-        $this->meta = new piMeta($this);
+		$this->styles =	new piStyle($this);
+		$this->meta = new piMeta($this);
 		$this->fonts = new piFonts($this); 
 		$this->layout = $this->doLayout('default.blog');
-		
-    }
+
+	}
 
 	public function doLayout($path)
 	{
 
-	    if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $path . '.php')) { 
-	        include($this->templatePath() . DS . 'layouts' .  DS . $path . '.php');
-	    }
-	}	
+		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $path . '.php'))
+		{ 
+			include($this->templatePath() . DS . 'layouts' .  DS . $path . '.php');
+		}
+	}
 
-    public function getConfig()
-    {
+	public function getConfig()
+	{
 
-        $template_params  = (array)json_decode($this->API->params);
+		$template_params  = (array)json_decode($this->API->params);
 
-        if (empty($template_params)) {
+		if (empty($template_params))
+		{
 
-            $db     = JFactory::getDBO();
-            $query  = $db->getQuery(true);
-            $template = $this->API->template;
+			$db = JFactory::getDBO();
+			$query = $db->getQuery(true);
+			$template = $this->API->template;
 
-            $config = file_get_contents($this->templatePath() . DS . 'config' . DS . 'default.config.json');
+			$config = file_get_contents($this->templatePath() . DS . 'config' . DS . 'default.config.json');
 
-            $db->setQuery("UPDATE #__template_styles SET params = '$config' WHERE template = '$template' LIMIT 1");
-            $result = $db->query();
+			$db->setQuery("UPDATE #__template_styles SET params = '$config' WHERE template = '$template' LIMIT 1");
+			$result = $db->query();
 
-            foreach(json_decode($config) as $param=>$value){
-                $this->API->params->set($param,$value);
-            }
-        }
-    }
+			foreach(json_decode($config) as $param=>$value)
+			{
+				$this->API->params->set($param,$value);
+			}
+		}
+	}
 
-	public function basePath() {
-        return JURI::base();
-    }
+	public function basePath()
+	{
+		return JURI::base();
+	}
 
-    public function templateURL() {
-        return $this->basePath() . "templates/" . $this->API->template;
-    }
+	public function templateURL()
+	{
+		return $this->basePath() . "templates/" . $this->API->template;
+	}
 
-    public function sitePath() {
-        return JPATH_SITE;
-    }
+	public function sitePath()
+	{
+		return JPATH_SITE;
+	}
 
-    public function templatePath() {
-        return $this->sitePath() . DS . "templates" . DS . $this->API->template;
-    }
+	public function templatePath()
+	{
+		return $this->sitePath() . DS . "templates" . DS . $this->API->template;
+	}
 
 }
