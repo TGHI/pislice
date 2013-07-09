@@ -50,7 +50,7 @@ class piStyle{
 
 			$style .= "    body{background:" . $bodyBackground . "}\n";
 			$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
-			$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover,.related-items-list li{background:" . $componentBackgroundColor . "}\n";
+			$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover{background:" . $componentBackgroundColor . "}\n";
 			$style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a,.nav-tabs a:hover,.term,span.highlight{color:" . $linkColour . "}\n";
 			$style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
 			$style .= "    a:hover{" . $linkHover . "}\n";

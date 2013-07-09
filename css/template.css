@@ -30,9 +30,9 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .btn-toolbar{padding:10px 0}
 .btn-group{float:left;margin:0 10px 0 0;padding:10px 0 0 0}
+.btn{padding:5px 10px;border-radius:3px;white-space:nowrap;outline:0}
 .control-group{padding:0 6px 0 0;margin: 0 0 10px 0}
 .control-group input{width:100%}
-.btn{padding:5px 10px;border-radius:3px;white-space:nowrap;outline:0}
 
 .tabbable,.nav-tabs{*zoom: 1}
 .tabbable:before,.tabbable:after {display:table;line-height:0;content:""}
@@ -133,7 +133,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .moduletable > *,.moduletable{margin:0 0 35px 0}
 .footer .moduletable > *{margin:0 0 15px 0}
 
-.moduletitle,.breadcrumbs{text-transform:uppercase;border-width:0 0 1px 0;border-style:solid;padding:0 0 5px;letter-spacing:-.03em}
+.moduletitle,.breadcrumbs{text-transform:uppercase;border-width:0 0 1px 0;border-style:solid;padding:0 0 5px}
 .moduletitle i[class*="icon-"]{padding-right:15px}
 
 .categories-module{overflow:hidden}
@@ -163,8 +163,6 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .breadcrumbs{font-size:14pt}
 .breadcrumbs i{padding:0 5px}
 .breadcrumbs i:first-child{padding:0 15px 0 0}
-
-.related-items-list li{padding:35px}
 
 @media (max-width: 1280px){
  .navbar-inner .nav li{padding:15px}
