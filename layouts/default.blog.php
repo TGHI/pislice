@@ -37,8 +37,13 @@
     <div class="span7 main-content">
       <jdoc:include type="modules" name="article-top" style="none" />
       <jdoc:include type="component" />
-      <div class="article-bottom row-fluid">
-        <jdoc:include type="modules" name="article-bottom" style="pi_default" />
+      <div class="article-bottom">
+        <div class="row-fluid">
+          <jdoc:include type="modules" name="article-bottom" style="pi_default" />
+        </div>
+        <div class="row-fluid">
+          <jdoc:include type="modules" name="article-bottom2" style="pi_default" />
+        </div>
       </div>
       <jdoc:include type="modules" name="debug" style="none" />
     </div>
