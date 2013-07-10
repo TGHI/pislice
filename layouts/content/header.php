@@ -49,7 +49,8 @@ $template		= $app->getTemplate();
   <?php $author = $displayData->created_by_alias ? $displayData->created_by_alias : $displayData->author; ?>
   <dl class="article-details">
     <?php if (!empty($displayData->author) && ($params->get('show_author'))) : ?>
-    <dd><i class="icon-user round inset-3d"></i>
+    <dt><i class="icon-user round inset-3d"></i></dt>
+    <dd>
       <?php if (!empty($displayData->contactid) && $params->get('link_author') == true) : ?>
       <?php
 	  
@@ -65,10 +66,13 @@ $template		= $app->getTemplate();
       <?php endif; ?>
     </dd>
     <?php if ($params->get('show_hits')) : ?>
-    <dd><i class="icon-eye-open round inset-3d"></i><?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $displayData->hits); ?></dd>
+    <dt><i class="icon-eye-open round inset-3d"></i></dt>
+	<dd>
+	<?php echo JText::sprintf('TPL_PISLICE_ARTICLE_HITS', $displayData->hits); ?></dd>
     <?php endif; ?>
     <?php if ($params->get('show_parent_category') || ($params->get('show_category'))) : ?>
-    <dd><i class="icon-folder round inset-3d"></i>
+    <dt><i class="icon-folder round inset-3d"></i></dt>
+    <dd>
       <?php if (!empty($displayData->parent_slug) && $params->get('show_parent_category')): ?>
       <?php $title = $this->escape($displayData->parent_title); $url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($displayData->parent_slug)).'">'.$title.'</a>';?>
       <?php if ($params->get('link_parent_category') && !empty($displayData->parent_slug)) : ?>
@@ -88,7 +92,8 @@ $template		= $app->getTemplate();
     </dd>
     <?php endif; ?>
     <?php if ($params->get('show_tags', 1) && !empty($displayData->tags->itemTags)):?>
-    <dd><i class="icon-tags round inset-3d"></i>
+    <dt><i class="icon-tags round inset-3d"></i></dt>
+    <dd>
       <?php $displayData->tagLayout = new JLayoutFile('tags', JPATH_ROOT . '/templates/' . $template .'/layouts/tags/');  ?>
       <?php echo $displayData->tagLayout->render($displayData->tags->itemTags); ?> </dd>
     <?php endif; ?>

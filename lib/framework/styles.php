@@ -50,7 +50,7 @@ class piStyle{
 
 			$style .= "    body{background:" . $bodyBackground . "}\n";
 			$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
-			$style .= "    .article-contents,.search-results,.nav-tabs > li.active a,.nav-tabs > li > a:hover{background:" . $componentBackgroundColor . "}\n";
+			$style .= "    .article-contents,.search-results-form,.nav-tabs > li.active a,.nav-tabs > li > a:hover{background:" . $componentBackgroundColor . "}\n";
 			$style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a,.nav-tabs a:hover,.term,span.highlight{color:" . $linkColour . "}\n";
 			$style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
 			$style .= "    a:hover{" . $linkHover . "}\n";
@@ -62,7 +62,7 @@ class piStyle{
 			$style .= "    .article-header h2,.categories-list > li > :first-child,.article-index h3{border-bottom:1px solid " . $light3dColour . " }". "\n";
 			$style .= "    .article-date{color:" . $complementcolour . "}\n";
 			$style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
-			$style .= "    blockquote,.article-index,.blog-item .article-header h2:hover,.categories-list li:hover > h4{border-color:" . $complementcolour . "}". "\n";
+			$style .= "    blockquote,.article-index,.article-header h2:hover,.categories-list li:hover > h4{border-color:" . $complementcolour . "}". "\n";
 			$style .= "    .moduletitle,.breadcrumbs,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 			$style .= "    .navbar{box-shadow:0 6px 6px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
 			$style .= "    .navbar a{color:" . $navbarLinkColour . "}". "\n";
@@ -81,7 +81,7 @@ class piStyle{
             if (!$icons)
 			{
 
-				$style .= "\n    .article-details dd > span{display:none}";
+				$style .= "\n    .article-details dt > i{display:none}";
 
 			}
 
