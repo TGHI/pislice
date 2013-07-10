@@ -23,7 +23,7 @@
 <?php if ($this->params->get('show_search_form', 1)) : ?>
 <div id="search-form"> <?php echo $this->loadTemplate('form'); ?> </div>
 <?php endif; ?>
-<div class="folded-shadow finder<?php echo $this->pageclass_sfx; ?>">
+<div class="<?php echo $this->pageclass_sfx; ?>">
 <?php
     // Load the search results layout if we are performing a search.
     if ($this->query->search === true):

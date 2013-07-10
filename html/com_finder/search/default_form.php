@@ -28,7 +28,7 @@
   <li><a href="#advanced" data-toggle="tab"><i class="icon-cog"></i> Advanced </a></li>
 <?php endif; ?>
 </ul>
-<div class="component-content search-results folded-shadow">
+<div class="component-content search-results-form folded-shadow">
   <form id="finder-search" action="<?php echo JRoute::_($this->query->toURI()); ?>" method="get" class="form-inline">
     <?php echo $this->getFields(); ?>
     <?php

@@ -18,15 +18,25 @@ if (!empty($this->query->highlight) && empty($this->result->mime) && $this->para
 	$route = $this->result->route;
 }
 ?>
-<li class="search-result">
-  <h2 class="result-title <?php echo $mime; ?>"><?php echo JHtml::_('link',JRoute::_($route), $this->result->title);?></h2>
-  <?php if(!empty($this->result->category)) : ?>
-  <span class="search-result-category small"><?php echo JText::sprintf('TPL_PISLICE_POST_LOCATION', JHtml::_('link',$category_route,$this->result->category));?></span>
-<?php endif; ?>
-<?php if ($this->params->get('show_url', 1)) : ?>
-  <span class="small grey result-url<?php echo $this->pageclass_sfx; ?>">(<?php echo $base . JRoute::_($this->result->route); ?>)</span>
-<?php endif; ?>
+<div class="article-contents folded-shadow">
+  <div class="article-header anim">
+    <div class="article-date pull-left">
+      <i class="icon-time"></i>
+      <span class="narrow"><?php echo JHTML::date($this->result->publish_start_date,'l, F jS Y',true); ?></span>
+    </div>
+    <br style="clear:both" />
+    <h2><?php echo JHtml::_('link',JRoute::_($route), $this->result->title);?></h2>  
+    <dl class="article-details">
+    <?php if(!empty($this->result->category)) : ?>
+      <dt><i class="icon-folder round inset-3d"></i></dt>
+      <dd><?php echo JText::sprintf('TPL_PISLICE_POST_LOCATION', JHtml::_('link',$category_route,$this->result->category));?></dd>
+    <?php endif; ?>
+    </dl>
+  </div>
 <?php if ($this->params->get('show_description', 1)) : ?>
   <p class="result-text<?php echo $this->pageclass_sfx; ?>"> <?php echo JHtml::_('string.truncate', $this->result->description, $this->params->get('description_length', 255)); ?> </p>
 <?php endif; ?>
-</li>
+<?php if ($this->params->get('show_url', 1)) : ?>
+  <span class="small grey result-url<?php echo $this->pageclass_sfx; ?>"><?php echo $base . JRoute::_($this->result->route); ?></span>
+<?php endif; ?>
+</div>

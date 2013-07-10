@@ -57,7 +57,7 @@ else:
 	$pages	= JText::sprintf('COM_FINDER_SEARCH_RESULTS_OF', $start, $limit, $total);
 ?>
 <br id="highlighter-start" />
-<ul class="search-result-list <?php echo $this->pageclass_sfx; ?> list-striped">
+<div class="search-result-list <?php echo $this->pageclass_sfx; ?> list-striped">
 <?php
 	for ($i = 0, $n = count($this->results); $i < $n; $i++):
 		$this->result	= &$this->results[$i];
@@ -65,7 +65,7 @@ else:
 ?>
 <?php echo $this->loadTemplate($layout); ?>
 <?php endfor; ?>
-</ul>
+</div>
 <br id="highlighter-end" />
 <div class="search-pagination">
   <div class="pagination"> <?php echo $this->pagination->getPagesLinks(); ?> </div>
