@@ -6,6 +6,8 @@
 * @license     GNU General Public License version 3 or later; see LICENCE.txt
 */
 
+$app = JFactory::getApplication();
+
 ?>
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->API->language; ?>" lang="<?php echo $this->API->language; ?>" dir="<?php echo $this->API->direction; ?>">
@@ -19,7 +21,9 @@
 <div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2">
-      <a href="<?php echo $this->basePath(); ?>"><img src="<?php echo $this->API->params->get('LOGO'); ?>" /></a>
+    <?php if($this->API->params->get('LOGO')) : ?>
+      <a href="<?php echo $this->basePath(); ?>"><img src="<?php echo $this->API->params->get('LOGO'); ?>" alt="<?php echo $app->getCfg('sitename'); ?>" /></a>
+	 <?php endif; ?>
     </div>
     <div class="span7">
       <jdoc:include type="modules" name="navigation" style="none" />
