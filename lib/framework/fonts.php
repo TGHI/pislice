@@ -41,7 +41,7 @@ class piFonts{
 				$fonts[$i] = str_replace('+', ' ',$fonts[$i]);
 			}
 
-			$font .= "    select,input,body{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
+			$font .= "    select,input,body,.deeper li{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
 			$font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
 
 			$this->API->addStyleDeclaration($font);
