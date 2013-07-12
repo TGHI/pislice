@@ -31,7 +31,9 @@
       <?php echo $item->author; ?>
       <?php endif; ?>
     </div>
+    <?php if ($images->image_intro):?>
     <a href="<?php echo $item->link; ?>"><img src="<?php echo $images->image_intro; ?>" alt="" /></a>
+    <?php endif; ?>
     <div><?php echo $item->introtext; ?></div>
     <?php endforeach; ?>
 </ul>
