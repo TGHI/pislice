@@ -6,7 +6,7 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 ?>
-<ul class="nav menu <?php echo $class_sfx;?>"<?php
+<ul class="nav menu anim narrow big <?php echo $class_sfx;?>"<?php
 	$tag = '';
 	if ($params->get('tag_id') != null)
 	{
@@ -33,13 +33,17 @@ foreach ($list as $i => &$item) :
 			$class .= ' alias-parent-active';
 		}
 	}
+	
+	if ($item->type == 'heading') {
+		$class .= ' heading';
+	}
 
 	if ($item->type == 'separator') {
 		$class .= ' divider';
 	}
 
 	if ($item->deeper) {
-		$class .= ' deeper';
+		$class .= ' deeper dropdown';
 	}
 
 	if ($item->parent) {
@@ -68,7 +72,7 @@ foreach ($list as $i => &$item) :
 
 	// The next item is deeper.
 	if ($item->deeper) {
-		echo '<ul class="nav-child unstyled small">';
+		echo '<ul class="nav-child dropdown-menu">';
 	}
 	// The next item is shallower.
 	elseif ($item->shallower) {

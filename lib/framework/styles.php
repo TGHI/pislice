@@ -49,14 +49,15 @@ class piStyle{
 			$navbarfixed = 				$this->API->params->get('NAVBAR_POSITION');
 
 			$style .= "    body{background:" . $bodyBackground . "}\n";
-			$style .= "    body,input,select{color:" . $bodyFontColour . "}\n";
+			$style .= "    body,input,select,.nav li a{color:" . $bodyFontColour . "}\n";
 			$style .= "    .article-contents,.search-results-form,.nav-tabs > li.active a,.nav-tabs > li > a:hover{background:" . $componentBackgroundColor . "}\n";
 			$style .= "    a,.autocompleter-selected span.autocompleter-queried,.nav-tabs > .active > a,.nav-tabs a:hover,.term,span.highlight{color:" . $linkColour . "}\n";
 			$style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
 			$style .= "    a:hover{" . $linkHover . "}\n";
 			$style .= "    .btn,.btn:hover{background:" . $light3dColour . " !important;border:1px solid rgba(0,0,0," . $lowlight3d . ");box-shadow:inset 1px 1px 0 rgba(255,255,255," . $highlight3d . "),1px 1px 0px rgba(0,0,0," . $lowlight3d . ");color:" . $light3dFontColour . ";text-shadow:1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
+			$style .= "    .navbar-inner .nav > li > a{text-shadow:1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
 			$style .= "    .btn i[class*=\"icon-\"]{color:" . $light3dIconColour . "}\n";
-			$style .= "    .dropdown-menu,.dropdown-menu li:hover{background:" . $light3dColour . "}". "\n";
+			$style .= "    .dropdown-menu li:not(.heading):hover{background:" . $light3dColour . "}". "\n";
 			$style .= "    i[class*=\"icon-\"],.nav-tabs > li > a,.dropdown-menu a [class*=\"icon-\"]{color:" . $detaiIiconsColour . "}\n";
 			$style .= "    .article-header h2 a,.article-header h2{color:" . $articleTitleColour . "}\n";
 			$style .= "    .article-header h2,.categories-list > li > :first-child,.article-index h3{border-bottom:1px solid " . $light3dColour . " }". "\n";
@@ -66,8 +67,6 @@ class piStyle{
 			$style .= "    .moduletitle,.breadcrumbs,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 			$style .= "    .navbar{box-shadow:0 6px 6px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
 			$style .= "    .navbar a{color:" . $navbarLinkColour . "}". "\n";
-			$style .= "    .navbar-inner .nav{box-shadow:-1px 0 0 rgba(255,255,255," . $highlight3d . ");border-left:1px solid rgba(0,0,0," . $lowlight3d . ")}". "\n";
-			$style .= "    .navbar-inner .nav li{box-shadow:1px 0 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(0,0,0," . $lowlight3d . ")}". "\n";
 			$style .= "    .inset-3d,.btn:active,.open .btn{box-shadow:inset -1px -1px 0 rgba(255,255,255," . $highlight3d . "),inset 1px 1px 0 rgba(0,0,0," . $lowlight3d . ")}". "\n";
 			$style .= "    .well{background:rgba(50,50,50," . $lowlight3d . ")}". "\n";
 
