@@ -24,16 +24,16 @@ function modChrome_pi_default($module, &$params, &$attribs)
   
 	$moduleClasses = implode(" ", $moduleArray);
   
-	if($params->get('bootstrap_size') != 0)
+	if($params->get('bootstrap_size'))
 	{
 		$bootstrapSize = "span" . htmlspecialchars($params->get('bootstrap_size'));
   	}else
 	{
-		$bootstrapSize = "";
+		$bootstrapSize = "span12";
 	}
   
 ?>
-<?php if (!empty ($module->content)):?>
+<?php if (!empty($module->content)):?>
 <<?php echo htmlspecialchars($params->get('module_tag')); ?> class="pi_default moduletable <?php echo $bootstrapSize; ?> <?php echo $moduleClasses; ?>">
 <?php if($module->showtitle): ?>
 <<?php echo htmlspecialchars($params->get('header_tag')); ?> class="moduletitle"><i class="<?php echo htmlspecialchars($params->get('header_class')); ?>"></i><?php echo $module->title; ?></<?php echo htmlspecialchars($params->get('header_tag')); ?>>
