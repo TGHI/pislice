@@ -11,7 +11,7 @@ html,body,button,h2,ul,li,fieldset,.caption *,a img{margin:0;padding:0;border:0}
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}
 .bold{font-weight:700}
-.pagination-list,.dropdown-menu,.nav,.pager,.pager ul,.search-result-list,.mostread,.related-items-list{list-style-type:none}
+.pagination-list,.dropdown-menu,.nav,.pager,.pager ul,.search-result-list,.mostread,.relateditems,.tagssimilar ul,.list-striped{list-style-type:none}
 blockquote,.italic{font-style:italic}
 blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *,.anim *:before,.anim *:after{transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s}
@@ -131,11 +131,11 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 /*modules */
 
-.moduletable > *,.moduletable{margin:0 0 35px 0}
+.moduletable > *,.moduletable{margin:0 0 15px 0}
 .footer .moduletable > *{margin:0 0 15px 0}
 
 .moduletitle,.breadcrumbs{text-transform:uppercase;border-width:0 0 1px 0;border-style:solid;padding:0 0 5px}
-.moduletitle i[class*="icon-"]{padding-right:10px}
+.moduletitle i[class*="icon-"]{padding-right:5px}
 
 .categories-module{overflow:hidden}
 .categories-module .btn-navbar{display:none}
@@ -175,12 +175,12 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .navbar-inner .deeper:hover > .dropdown-menu li{display:block}
 .navbar-inner .deeper:hover > .dropdown-menu ul{left:100%;top:5px;margin-left:0}
 
-.navbar-inner .nav-child{font-size:10pt;white-space:nowrap;left:0;border:1px solid #ddd}
+.navbar-inner .nav-child{font-size:12pt;white-space:nowrap;border:1px solid #ddd}
 .navbar-inner .nav-child li{display:none;text-transform:none}
 .navbar-inner .nav-child .divider{font-size:0;padding:0;border-bottom:1px solid #ddd;margin:4px 6px}
 .navbar-inner .nav-child .heading{font-weight:700;color:#999;text-transform:uppercase;font-size:8pt;padding:4px 6px}
 .navbar-inner .nav-child .deeper{padding-right:20px}
-.navbar-inner .nav-child .deeper:before{content:"\e118";float:right;font-size:8px;margin:4px -15px 0 0;color:#aaa}
+.navbar-inner .nav-child .deeper:before{content:"\e118";float:right;font-size:8px;margin:6px -15px 0 0;color:#aaa}
 .navbar-inner .nav-child .deeper:hover:before {margin-right:-18px;color:#666}
 
 .navbar-search{width:100%;border-radius:5px;overflow:hidden}
