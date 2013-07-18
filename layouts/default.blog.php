@@ -21,9 +21,9 @@ $app = JFactory::getApplication();
 <div class="navbar navbar-fixed-top container-fluid">
   <div class="navbar-inner row-fluid">
     <div class="span2">
-    <?php if($this->API->params->get('LOGO')) : ?>
-      <a href="<?php echo $this->basePath(); ?>"><img src="<?php echo $this->API->params->get('LOGO'); ?>" alt="<?php echo $app->getCfg('sitename'); ?>" /></a>
-	 <?php endif; ?>
+      <?php if($this->API->params->get('LOGO')) : ?>
+      <a style="float:left" href="<?php echo $this->basePath(); ?>"><img src="<?php echo $this->API->params->get('LOGO'); ?>" alt="<?php echo $app->getCfg('sitename'); ?>" /></a>
+      <?php endif; ?>
     </div>
     <div class="span7">
       <jdoc:include type="modules" name="navigation" style="none" />
