@@ -27,18 +27,17 @@ function modChrome_pi_default($module, &$params, &$attribs)
 	if($params->get('bootstrap_size'))
 	{
 		$bootstrapSize = "span" . htmlspecialchars($params->get('bootstrap_size'));
-  	}else
-	{
-		$bootstrapSize = "span12";
-	}
+  	}
   
 ?>
 <?php if (!empty($module->content)):?>
 <<?php echo htmlspecialchars($params->get('module_tag')); ?> class="pi_default moduletable <?php echo $bootstrapSize; ?> <?php echo $moduleClasses; ?>">
 <?php if($module->showtitle): ?>
-<<?php echo htmlspecialchars($params->get('header_tag')); ?> class="moduletitle"><i class="<?php echo htmlspecialchars($params->get('header_class')); ?>"></i><?php echo $module->title; ?></<?php echo htmlspecialchars($params->get('header_tag')); ?>>
+<<?php echo htmlspecialchars($params->get('header_tag')); ?> class="moduletitle"><i class="round inset-3d <?php echo htmlspecialchars($params->get('header_class')); ?>"></i><?php echo $module->title; ?></<?php echo htmlspecialchars($params->get('header_tag')); ?>>
 <?php endif; ?>
+<div class="modulecontent">
   <?php echo $module->content; ?>
+</div>
 </<?php echo htmlspecialchars($params->get('module_tag')); ?>>
 <?php endif; ?>
 <?php 
