@@ -56,7 +56,7 @@ var Observer = new Class({
       delay: 300,
       observerOptions: {},
       fxOptions: {},
-      autoSubmit: !1,
+      autoSubmit: !0,
       overflow: !1,
       overflowMargin: 25,
       selectFirst: !1,
@@ -228,7 +228,6 @@ var Observer = new Class({
       this.setSelection(!0);
       this.queryValue = !0;
       this.hideChoices();
-	  $('mod-finder-searchform').submit();
 	 },
     filter: function (a) {
       return (a || this.tokens).filter(function (a) {
