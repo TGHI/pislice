@@ -11,7 +11,7 @@ html,body,button,h2,ul,li,fieldset,.caption *,a img{margin:0;padding:0;border:0}
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}
 .bold{font-weight:700}
-.pagination-list,.dropdown-menu,.nav,.pager,.pager ul,.search-result-list,.mostread,.relateditems,.tagssimilar ul,.list-striped{list-style-type:none}
+.pagination-list,.dropdown-menu,.nav,.pager,.pager ul,.search-result-list,.mostread,.relateditems,.tagssimilar ul,.list-striped,.cat-children ul,.unstyled,.tagspopular ul{list-style-type:none}
 blockquote,.italic{font-style:italic}
 blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *,.anim *:before,.anim *:after{transition:all 0.35s;-webkit-transition:all 0.35s;-moz-transition:all 0.35s;-o-transition:all 0.35s}
@@ -19,7 +19,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .loading{background:#fff url(../img/loading.gif) right center no-repeat}
 .well{padding:10px;border-radius:5px}
 
-.disabled,.disabled:hover,.disabled > [class*="icon-"]{box-shadow:none!important;color:#ccc !important;cursor:no-drop;background:#eee !important}
+.disabled,.disabled:hover,.disabled > [class*="icon-"],.pager li{box-shadow:none !important;color:#ccc !important;cursor:no-drop}
 
 .inset-3d,.nav-tabs > li > a{background:rgba(0,0,0,.05)}
 
@@ -30,7 +30,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .btn-toolbar{padding:10px 0}
 .btn-group{float:left;margin:0 10px 0 0;padding:10px 0 0 0}
-.btn{padding:5px 10px;border-radius:3px;white-space:nowrap;outline:0}
+.btn,.pager li a:not(:empty){padding:5px 10px;border-radius:3px;white-space:nowrap;outline:0}
 .control-group{padding:0 6px 0 0;margin: 0 0 10px 0}
 .control-group input{width:100%}
 
@@ -50,7 +50,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .dropdown-menu > li{margin:0 4px;padding:5px;cursor:pointer}
 .dropdown-menu > li:first-child{margin-top:4px}
 .dropdown-menu > li:last-child{margin-bottom:4px}
-.dropdown-menu li:hover{border-radius:3px}
+.dropdown-menu li:hover,.autocompleter-selected{border-radius:3px}
 .open{z-index:1000}
 .open >.dropdown-menu{display:block;opacity:1}
 
@@ -72,7 +72,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 /* article+blog layout */
 
-.main-content,.sidebar-right,.sidebar-left{margin-top:35px}
+.main-content,.sidebar-right,.sidebar-left{margin-top:15px}
 
 .blog-item .article-actions{opacity:0.5}
 .blog-item:hover .article-actions{opacity:1}
@@ -132,10 +132,12 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 /*modules */
 
 .moduletable > *,.moduletable{margin:0 0 15px 0}
+.modulecontent{padding:0 10px}
 .footer .moduletable > *{margin:0 0 15px 0}
 
-.moduletitle,.breadcrumbs{text-transform:uppercase;border-width:0 0 1px 0;border-style:solid;padding:0 0 5px}
-.moduletitle i[class*="icon-"]{padding-right:5px}
+.moduletitle,.breadcrumbs{text-transform:uppercase;border-width:0 0 1px 0;border-style:solid;padding:10px 10px 8px 8px;border-radius:3px 3px 0 0}
+.moduletitle{background:#eee}
+.moduletitle i[class*="icon-"]{padding:6px;font-size:16px;margin-right:6px}
 
 .categories-module{overflow:hidden}
 .categories-module .btn-navbar{display:none}
@@ -150,7 +152,6 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .mostread h4,.mostread img{margin:15px 0 5px 0}
 
 .navbar-inner > div{padding:10px 0}
-.navbar-inner .span2{text-align:center}
 .navbar-inner .nav{float:left}
 .navbar-inner .nav > li{float:left;text-transform:uppercase;margin-right:5px}
 .navbar-inner .nav > li > a,.navbar-inner .nav > li > div{padding:0 10px;border-radius:5px}
