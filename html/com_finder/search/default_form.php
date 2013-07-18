@@ -44,7 +44,6 @@
           <label for="q" class="pull-left"> <?php echo JText::_('COM_FINDER_SEARCH_TERMS'); ?> </label>
           <input type="text" name="q" id="q" size="30" value="<?php echo $this->escape($this->query->input); ?>" class="inputbox pull-left" />
           <button name="Search" type="submit" class="btn btn-primary pull-left"><i class="icon-search"></i></button>
-      <?php endif; ?>
         </fieldset>
       </div>
       <?php if ($this->params->get('show_advanced', 1)) : ?>
