@@ -16,7 +16,6 @@
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>		
 		<filename>templateDetails.xml</filename>
-		<folder>admin</folder>
 		<folder>config</folder>
 		<folder>css</folder>
 		<folder>font</folder>
@@ -47,9 +46,9 @@
 	</languages>
 	<config>
 		<fields name="params">
-			<fieldset name="themeSettings" addfieldpath="/templates/pislice/admin/elements" label="COM_TEMPLATES_THEMES_FIELDSET_LABEL">
+			<fieldset name="themeSettings" addfieldpath="/templates/pislice/layouts/admin/elements" label="COM_TEMPLATES_THEMES_FIELDSET_LABEL">
 				<field name="config_manager" type="configmanager" directory="templates/pislice/config/" />
-				<field name="asset_js" type="asset" extension="js" path="templates/pislice/admin/scripts.js" />
+				<field name="asset_js" type="asset" extension="js" path="templates/pislice/layouts/admin/scripts.js" />
 			</fieldset>
 			<fieldset name="FONTS">
 				<field name="MAIN_FONT" class="" type="text" default="Open+Sans:300italic,300,400,600,700,800" label="TPL_PISLICE_FONT_BODY_LABEL" description="TPL_PISLICE_FONT_BODY_DESC" />

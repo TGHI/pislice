@@ -16,7 +16,8 @@ class JFormFieldConfigManager extends JFormField {
 		$tpl_id = $uri->getVar('id', 'none');
 		$task = $uri->getVar('template_task', 'none');
 		$file = $uri->getVar('template_file', 'none');
-		$base_path = str_replace('admin'.DS.'elements', '', dirname(__FILE__)).'config'.DS;
+		$base_path = str_replace('layouts'.DS.'admin'.DS.'elements', '', dirname(__FILE__)).'config'.DS;
+		echo $base_path;
 		// message
 		$msg = '';
 		// helping variables
