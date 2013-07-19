@@ -14,7 +14,7 @@ $app = JFactory::getApplication();
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
-<script src="<?php echo $this->templateURL()  . '/js/template.js'; ?>" type="text/javascript"></script>
+<script src="<?php echo $this->parent->templateURL()  . '/js/template.js'; ?>" type="text/javascript"></script>
 </head>
 <body>
 <jdoc:include type="message" />
@@ -22,7 +22,7 @@ $app = JFactory::getApplication();
   <div class="navbar-inner row-fluid">
     <div class="span2">
       <?php if($this->API->params->get('LOGO')) : ?>
-      <a style="float:left" href="<?php echo $this->basePath(); ?>"><img src="<?php echo $this->API->params->get('LOGO'); ?>" alt="<?php echo $app->getCfg('sitename'); ?>" /></a>
+      <a style="float:left" href="<?php echo $this->parent->basePath(); ?>"><img src="<?php echo $this->API->params->get('LOGO'); ?>" alt="<?php echo $app->getCfg('sitename'); ?>" /></a>
       <?php endif; ?>
     </div>
     <div class="span7">

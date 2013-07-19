@@ -13,6 +13,7 @@ if (!defined('DS'))
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
+require_once(dirname(__file__) . DS . 'framework' . DS . 'layout.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'fonts.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
@@ -31,17 +32,8 @@ class piSlice{
 		$this->styles =	new piStyle($this);
 		$this->meta = new piMeta($this);
 		$this->fonts = new piFonts($this); 
-		$this->layout = $this->doLayout('default.blog');
+		$this->layout = new piLayout($this);
 
-	}
-
-	public function doLayout($path)
-	{
-
-		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $path . '.php'))
-		{ 
-			include($this->templatePath() . DS . 'layouts' .  DS . $path . '.php');
-		}
 	}
 
 	public function getConfig()
