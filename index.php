@@ -6,9 +6,7 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors','On');
-
 require_once('lib/framework.php');
 
 $output = new piSlice($this);
+$output->render('blog');

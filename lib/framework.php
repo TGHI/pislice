@@ -6,13 +6,15 @@
 * @license     GNU General Public License version 3 or later; see LICENCE.txt
 */
 
-jimport('joomla.filesystem.file');
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors','On');
 
 if (!defined('DS'))
 {
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
+jimport('joomla.filesystem.file');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'fonts.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
@@ -25,42 +27,28 @@ class piSlice{
 	{
         //access template object
 		$this->API = $parentTpl;
-        // check if we have params set
+
 		$this->getConfig();
 
 		$this->styles =	new piStyle($this);
 		$this->meta = new piMeta($this);
 		$this->fonts = new piFonts($this); 
-		$this->layout = $this->doLayout();
-
+	
 	}
 	
-	public function doLayout()
+	public function render($layout)
 	{
-		
-		$tmpl = JRequest::getCmd('tmpl', '');
-		
-		if($tmpl == "component")
+		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $layout . '.php'))
 		{
-			if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . 'default.component.php'))
-			{
-				include($this->templatePath() . DS . 'layouts' . DS . 'default.component.php');
-			}
-			
-		}else{
-
-			if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . 'default.blog.php'))
-			{ 
-				include($this->templatePath() . DS . 'layouts' . DS . 'default.blog.php');
-			}
-	
+			include($this->templatePath() . DS . 'layouts' . DS . $layout . '.php');
 		}
 	}
 
 	public function getConfig()
 	{
-
-		$template_params  = (array)json_decode($this->API->params);
+		$app = JFactory::getApplication();
+		$params = $app->getTemplate(true)->params;
+		$template_params  = (array)json_decode($params);
 
 		if (empty($template_params))
 		{

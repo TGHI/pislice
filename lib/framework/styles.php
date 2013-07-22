@@ -13,40 +13,41 @@ class piStyle{
 
 	function __construct($parent)
 	{
-
 		$this->parent = $parent;
 		$this->API = $parent->API;
 		$this->styles = $this->setStyles();
-
 	}
 
 	public function setStyles($style=null){
+		
+		$app = JFactory::getApplication();
+		$params = $app->getTemplate(true)->params;
 
 		$print = JRequest::getCmd('print', '');
 
 		if (! $print)
 		{
 
-			$bodyBackground = 			$this->API->params->get('BODY_BACKGROUND_COLOUR');
-			$bodyFontColour = 			$this->API->params->get('BODY_FONT_COLOUR');
-			$navbarBackgroundColour = 	$this->API->params->get('NAVBAR_BACKGROUND_COLOUR');
-			$navbarLinkColour = 		$this->API->params->get('NAVBAR_LINK_COLOUR');
-			$linkColour = 				$this->API->params->get('LINK_COLOUR');
-			$linkHover = 				$this->API->params->get('LINK_HOVER');
-			$light3dColour = 			$this->API->params->get('3D_LIGHT_COLOUR');
-			$light3dIconColour = 		$this->API->params->get('3D_LIGHT_ICON_COLOUR');
-			$light3dFontColour = 		$this->API->params->get('3D_LIGHT_FONT_COLOUR');
-			$componentBackgroundColor = $this->API->params->get('COMPONENT_BACKGROUND_COLOUR');
-			$detaiIiconsColour = 		$this->API->params->get('ICON_COLOUR');
-			$articleTitleColour = 		$this->API->params->get('ARTICLE_TITLE_COLOUR');
-			$highlight3d = 				$this->API->params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
-			$lowlight3d = 				$this->API->params->get('3D_LIGHT_LOWLIGHT_OPACITY');
+			$bodyBackground = 			$params->get('BODY_BACKGROUND_COLOUR');
+			$bodyFontColour = 			$params->get('BODY_FONT_COLOUR');
+			$navbarBackgroundColour = 	$params->get('NAVBAR_BACKGROUND_COLOUR');
+			$navbarLinkColour = 		$params->get('NAVBAR_LINK_COLOUR');
+			$linkColour = 				$params->get('LINK_COLOUR');
+			$linkHover = 				$params->get('LINK_HOVER');
+			$light3dColour = 			$params->get('3D_LIGHT_COLOUR');
+			$light3dIconColour = 		$params->get('3D_LIGHT_ICON_COLOUR');
+			$light3dFontColour = 		$params->get('3D_LIGHT_FONT_COLOUR');
+			$componentBackgroundColor = $params->get('COMPONENT_BACKGROUND_COLOUR');
+			$detaiIiconsColour = 		$params->get('ICON_COLOUR');
+			$articleTitleColour = 		$params->get('ARTICLE_TITLE_COLOUR');
+			$highlight3d = 				$params->get('3D_LIGHT_HIGHLIGHT_OPACITY');
+			$lowlight3d = 				$params->get('3D_LIGHT_LOWLIGHT_OPACITY');
 
-			$complementcolour = 		$this->API->params->get('COMPLEMENT_COLOUR');
+			$complementcolour = 		$params->get('COMPLEMENT_COLOUR');
 
-			$icons = 					$this->API->params->get('ICONS');
-			$animations = 				$this->API->params->get('CSS3_ANIMATIONS');
-			$navbarfixed = 				$this->API->params->get('NAVBAR_POSITION');
+			$icons = 					$params->get('ICONS');
+			$animations = 				$params->get('CSS3_ANIMATIONS');
+			$navbarfixed = 				$params->get('NAVBAR_POSITION');
 
 			$style .= "    body{background:" . $bodyBackground . "}\n";
 			$style .= "    body,input,select,.nav li a{color:" . $bodyFontColour . "}\n";
