@@ -7,7 +7,7 @@
 */
 
 class piFonts{
-
+	
 	private $parent;
 	public $API;
 
@@ -21,8 +21,11 @@ class piFonts{
 
 	public function setFonts($font=null)
 	{
+		
+		$app = JFactory::getApplication();
+		$params = $app->getTemplate(true)->params;
 
-		$fonts = array($this->API->params->get('MAIN_FONT'), $this->API->params->get('SUB_FONT'));
+		$fonts = array($params->get('MAIN_FONT'), $params->get('SUB_FONT'));
 
 		if (!empty($fonts))
 		{

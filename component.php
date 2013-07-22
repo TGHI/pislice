@@ -6,8 +6,7 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
- require_once('lib/framework.php');
+require_once('lib/framework.php');
 
- $piSlice = new piSlice($this);
-
-?>
+$output = new piSlice($this);
+$output->render('component');

@@ -6,17 +6,12 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
- $base_url = JURI::base();
-
  $app				= JFactory::getApplication();
- $doc				= JFactory::getDocument();
- $this->language	= $doc->language;
- $this->direction	= $doc->direction;
  $sitename			= $app->getCfg('sitename');
 
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->API->language; ?>" lang="<?php echo $this->API->language; ?>" dir="<?php echo $this->API->direction; ?>">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />

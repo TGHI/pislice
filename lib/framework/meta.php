@@ -13,18 +13,16 @@ class piMeta{
 
 	function __construct($parent)
 	{
-
 		$this->API = $parent->API;
-
 		$this->meta = $this->setTags();
-		$this->generator = $this->setGenerator();
-
 	}
 
 	public function setTags()
 	{
+		$app = JFactory::getApplication();
+		$params = $app->getTemplate(true)->params;
 
-		if ($this->API->params->get('OPENGRAPH_META_TAGS'))
+		if ($params->get('OPENGRAPH_META_TAGS'))
 		{
 
 			$app = JFactory::getApplication();
@@ -65,7 +63,7 @@ class piMeta{
 
 				}
 
-				$this->meta["fb:app_id"] = $this->API->params->get('FACEBOOK_APP_ID');
+				$this->meta["fb:app_id"] = $params->get('FACEBOOK_APP_ID');
 
 				foreach($this->meta as $metaName=>$metaValue)
 				{
@@ -75,15 +73,12 @@ class piMeta{
 				}
 			}
 		}
-	}
-
-	public function setGenerator()
-	{
-
-		if (! $this->API->params->get('META_GENERATOR'))
+		
+		if (! $params->get('META_GENERATOR'))
 		{
 			$this->API->_generator = "";
 		}
+		
 	}
 
 	private function getCategoryName($id)
