@@ -6,9 +6,7 @@
  * @license     GNU General Public License version 3 or later; see LICENCE.txt
  */
 
-$uri = JURI::getInstance();
 $app = JFactory::getApplication();
-$doc = JFactory::getDocument();
 $params = $app->getTemplate(true)->params;
 
 $errorCode	= $this->API->error->getCode();
@@ -27,8 +25,7 @@ if ($errorCode == '403'){ $message = JText::_('TPL_PISLICE_ERROR_RESOURCE_FORBID
 <link rel="stylesheet" type="text/css" href="<?php echo $this->templateURL(); ?>/css/elusive-webfont.css" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=<?php echo $params->get('MAIN_FONT'); ?>" type="text/css" />
   <style type="text/css">
-	body{background:<?php echo $params->get('BODY_BACKGROUND_COLOUR'); ?>}
-	a{color:<?php echo $params->get('LINK_COLOUR'); ?>}
+    <?php echo $this->styles->css; ?>
 	h1,h2{text-shadow:1px 1px 0 #fff;margin:0}
 	h1{font-size:200pt;color:#d9dadc}
 	h2{margin-bottom:20px;font-weight:300}

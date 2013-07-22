@@ -15,7 +15,7 @@ class piFonts{
 	{
 
 		$this->API = $parent->API;
-		$this->fonts = $this->setFonts();
+		$this->font = $this->setFonts();
 
 	}
 
@@ -30,24 +30,7 @@ class piFonts{
 		if (!empty($fonts))
 		{
 
-			$this->API->addStyleSheet('http://fonts.googleapis.com/css?family=' . implode("|", $fonts));
-
-			for ($i = 0; $i < count($fonts); $i++)
-			{
-				if (strpos($fonts[$i],':'))
-				{
-
-					$fonts[$i] = substr($fonts[$i], 0, strpos($fonts[$i],':'));
-
-                }
-
-				$fonts[$i] = str_replace('+', ' ',$fonts[$i]);
-			}
-
-			$font .= "    select,input,body,.deeper li{font-family:\"" . $fonts[0] . "\",sans-serif}\n";
-			$font .= "    .narrow,.moduletitle{font-family:\"" . $fonts[1] . "\",sans-serif;font-weight:500}\n";
-
-			$this->API->addStyleDeclaration($font);
+			return $fonts;
 
 		}
 	}

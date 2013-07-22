@@ -15,6 +15,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
+<?php $this->render('document/head'); ?>
 </head>
 <body class="contentpane">
 <div class="top">

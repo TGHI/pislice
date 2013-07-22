@@ -14,7 +14,6 @@ if (!defined('DS'))
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
-jimport('joomla.filesystem.file');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'fonts.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
@@ -38,6 +37,8 @@ class piSlice{
 	
 	public function render($layout)
 	{
+		jimport('joomla.filesystem.file');
+		
 		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $layout . '.php'))
 		{
 			include($this->templatePath() . DS . 'layouts' . DS . $layout . '.php');

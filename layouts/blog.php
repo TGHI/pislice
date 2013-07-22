@@ -14,7 +14,7 @@ $app = JFactory::getApplication();
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <jdoc:include type="head" />
-<script src="<?php echo $this->templateURL()  . '/js/template.js'; ?>" type="text/javascript"></script>
+<?php $this->render('document/head'); ?>
 </head>
 <body>
 <jdoc:include type="message" />
