@@ -47,12 +47,14 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .dropdown{position:relative}
 .dropdown-menu{position:absolute;z-index:1000;border-radius:3px;opacity:0;box-shadow:2px 2px 2px rgba(0,0,0,.2);background:#fff;margin-top:-5px;white-space:nowrap;}
+.dropdown-menu li{display:none}
+.autocompleter-choices li{display:block}
 .dropdown-menu > li{margin:0 4px;padding:5px;cursor:pointer}
 .dropdown-menu > li:first-child{margin-top:4px}
 .dropdown-menu > li:last-child{margin-bottom:4px}
 .dropdown-menu li:hover,.autocompleter-selected{border-radius:3px}
 .open{z-index:1000}
-.open >.dropdown-menu{display:block;opacity:1}
+.open > .dropdown-menu, .open > .dropdown-menu li{display:block;opacity:1}
 
 #system-message-container{position:fixed;bottom:0px;padding:0 0;background:rgba(0,0,0,0.8);z-index:999;width:100%;display:none}
 #system-message :not(:last-child){margin-bottom:2px}
