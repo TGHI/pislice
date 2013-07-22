@@ -38,9 +38,9 @@ class piSlice{
 	
 	public function render($layout)
 	{
-		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . 'default.' . $layout . '.php'))
+		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $layout . '.php'))
 		{
-			include($this->templatePath() . DS . 'layouts' . DS . 'default.' . $layout . '.php');
+			include($this->templatePath() . DS . 'layouts' . DS . $layout . '.php');
 		}
 	}
 
