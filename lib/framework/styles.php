@@ -107,7 +107,6 @@ class piStyle{
 				');
 		}
 
-			return $style;
-
+		return $style;
 	}
 }
