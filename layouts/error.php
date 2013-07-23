@@ -11,27 +11,12 @@ $params = $app->getTemplate(true)->params;
 
 $errorCode	= $this->API->error->getCode();
 
-switch ($errorCode) {
-    case 404:
-		$message = JText::_('TPL_PISLICE_ERROR_RESOURCE_NOT_FOUND');
-		break;
-    case 403:
-		$message = JText::_('TPL_PISLICE_ERROR_RESOURCE_FORBIDDEN');
-		break;
-    case 500:
-		$message = JText::_('TPL_PISLICE_ERROR_INTERNAL_SERVER_ERROR');
-		break;
-	default;
-		$message = JText::_('TPL_PISLICE_ERROR_UNKNOWN');
-	break;
-}
-
 ?>
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->API->language; ?>" lang="<?php echo $this->API->language; ?>" dir="<?php echo $this->API->direction; ?>">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><?php echo $errorCode; ?> - <?php echo $message; ?></title>
+<title><?php echo $this->API->error->getCode(); ?> - <?php echo $this->API->error->getMessage(); ?></title>
 <link rel="stylesheet" type="text/css" href="<?php echo $this->templateURL(); ?>/css/template.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo $this->templateURL(); ?>/css/elusive-webfont.css" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=<?php echo $params->get('MAIN_FONT'); ?>" type="text/css" />
@@ -48,8 +33,8 @@ switch ($errorCode) {
 </head>
 <body>
   <div class="center">
-    <h1><?php echo $errorCode ?> :(</h1>
-    <h2><?php echo $message; ?></h2>
+    <h1><?php echo $this->API->error->getCode(); ?> :(</h1>
+    <h2><?php echo $this->API->error->getMessage(); ?></h2>
     <div class="search">
       <?php $this->searchmodules = JModuleHelper::getModules('search');
 			foreach ($this->searchmodules as $searchmodule) {
