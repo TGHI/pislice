@@ -46,7 +46,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .nav-tabs > li.active a,.nav-tabs > li > a:hover{box-shadow:2px 0 2px rgba(0,0,0,.2);outline:0}
 
 .dropdown{position:relative}
-.dropdown-menu{position:absolute;z-index:1000;border-radius:3px;opacity:0;box-shadow:2px 2px 2px rgba(0,0,0,.2);background:#fff;margin-top:-5px;white-space:nowrap;}
+.dropdown-menu{position:absolute;z-index:1000;border-radius:3px;opacity:0;box-shadow:2px 2px 2px rgba(0,0,0,.2);background:#fff;margin:-5px 0 0 0;white-space:nowrap;}
 .dropdown-menu li{display:none}
 .autocompleter-choices li{display:block}
 .dropdown-menu > li{margin:0 4px;padding:5px;cursor:pointer}
@@ -174,12 +174,12 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .navbar-inner .nav > li.deeper:before {content:"\e11a";float:right;font-size:12px;padding:13px 0 0 0;margin:0 5px 0 0}
 .navbar-inner .nav > li.deeper:hover:before{margin-top:5px}
 
-.navbar-inner .deeper:hover > .dropdown-menu{opacity:1;margin-top:0;height:auto}
+.navbar-inner .deeper:hover > .dropdown-menu,.navbar-inner .deeper > .dropdown-menu > .deeper:hover > .dropdown-menu{opacity:1;margin:0;height:auto}
+.navbar-inner .deeper:hover > .dropdown-menu ul{left:100%;top:10px;margin:0 0 0 -8px}
 .navbar-inner .deeper:hover > .dropdown-menu li{display:block}
-.navbar-inner .deeper:hover > .dropdown-menu ul{left:100%;top:5px;margin-left:0}
 
 .navbar-inner .nav-child{font-size:12pt;white-space:nowrap;border:1px solid #ddd}
-.navbar-inner .nav-child li{display:none;text-transform:none}
+.navbar-inner .nav-child li{text-transform:none}
 .navbar-inner .nav-child .divider{font-size:0;padding:0;border-bottom:1px solid #ddd;margin:4px 6px}
 .navbar-inner .nav-child .heading{font-weight:700;color:#999;text-transform:uppercase;font-size:8pt;padding:4px 6px}
 .navbar-inner .nav-child .deeper{padding-right:20px}
@@ -199,11 +199,8 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .breadcrumbs i:first-child{padding:0 15px 0 0}
 
 @media (max-width: 1280px){
- .navbar-inner .nav li{padding:15px}
  .navbar-inner .nav li div{display:none}
- .navbar-inner .nav li a{font-size:22pt}
- .navbar-search-inner{margin:5px 0 0}
-.search-query{width:175px}
+
 }
 /* at least handheld devices */
 @media (min-width: 979px){
@@ -212,15 +209,11 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 }
 /* handheld devices */
 @media (max-width: 980px){
-.navbar{width:auto;padding:2px 0}
 .article-image .zoom-in{display:none}
-.navbar-inner .nav li{padding:10px}
-.navbar-inner .nav li a{font-size:16pt}
-.navbar-search-inner{margin:3px 0 0}
 .anim,.anim:before{transition:none!important} 
 .caption{padding:5px}
 .caption:before{padding:10px 15px 10px;margin-right:10px;font-size:16px}
-.search-query{width:175px}
+
 }
 /* Landscape phone to portrait tablet */
 
@@ -228,19 +221,21 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .categories-list{height:auto !important}
 }
 @media (max-width: 767px){
-body{padding:0!important;overflow-x:hidden}
-
-.navbar-inner > div{padding:5px 0 0 0}
+body{padding:0!important}
 .navbar{position:relative!important;margin:0!important}
-.navbar-inner ul,.navbar-inner .nav li{box-shadow:none !important;border:0!important;padding:0}
-.navbar-inner .nav li{margin:0 15px 5px 0}
+.navbar-inner > div{padding:5px 0 0 0}
+.navbar-inner .nav{margin-bottom:10px}
+.navbar-inner .nav > .deeper > .dropdown-menu{padding:5px}
+.navbar-inner .nav .dropdown-menu,.navbar-inner .nav .dropdown-menu > li{background:transparent;display:block;opacity:1;position:relative;margin:0;border:0;box-shadow:none;border-radius:0;font-size:10pt;padding:2px 0}
+.navbar-inner .nav .dropdown-menu li:hover{background:transparent}
+.navbar-inner .nav-child .deeper:before{content:''}
+.navbar-inner .deeper:hover > .dropdown-menu ul{float:none;left:inherit;top:0;margin:0}
 
 .search-query{width:100%;overflow:hidden}
 .search-button,.button-container{display:none !important}
 ul.autocompleter-choices{padding:2px 0!important}
 
-.container-fluid{padding:0 15px}
-.moduletable > *,.moduletable{margin:0 0 15px 0}
+.container-fluid{padding:0 10px}
 
 .categories-list{height:0}
 .categories-module .btn-navbar{display:block}
