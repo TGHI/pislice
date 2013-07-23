@@ -15,7 +15,7 @@ class piStyle{
 	{
 		$this->parent = $parent;
 		$this->API = $parent->API;
-		$this->styles = $this->setStyles();
+		$this->css = $this->setStyles();
 	}
 
 	public function setStyles($style=null){
@@ -93,11 +93,9 @@ class piStyle{
 				$style .= "    .autocompleter-choices{position:fixed}";
 
             }
-
-			$this->API->addStyleDeclaration($style);
-
-			} else
-			{
+			
+			
+			} else{
 
 			//print styles
 
@@ -109,9 +107,6 @@ class piStyle{
 				');
 		}
 
-		$this->API->addStyleSheet($this->parent->templateURL() . '/css/bootstrap-responsive.min.css');
-		$this->API->addStyleSheet($this->parent->templateURL() . '/css/elusive-webfont.css');
-		$this->API->addStyleSheet($this->parent->templateURL() . '/css/template.css');
-
+		return $style;
 	}
 }

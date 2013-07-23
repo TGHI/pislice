@@ -6,6 +6,8 @@
 * @license     GNU General Public License version 3 or later; see LICENCE.txt
 */
 
+//show all php errors
+
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors','On');
 
@@ -14,7 +16,6 @@ if (!defined('DS'))
 	define('DS', DIRECTORY_SEPARATOR);
 }
 
-jimport('joomla.filesystem.file');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'meta.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'fonts.php');
 require_once(dirname(__file__) . DS . 'framework' . DS . 'styles.php');
@@ -25,7 +26,7 @@ class piSlice{
 
 	function __construct($parentTpl)
 	{
-        //access template object
+        // access jdochtml object
 		$this->API = $parentTpl;
 
 		$this->getConfig();
@@ -33,14 +34,22 @@ class piSlice{
 		$this->styles =	new piStyle($this);
 		$this->meta = new piMeta($this);
 		$this->fonts = new piFonts($this); 
-	
+
 	}
-	
+
 	public function render($layout)
 	{
+		jimport('joomla.filesystem.file');
+
 		if(JFile::exists($this->templatePath() . DS . 'layouts' . DS . $layout . '.php'))
 		{
 			include($this->templatePath() . DS . 'layouts' . DS . $layout . '.php');
+		}
+		else
+		{	
+
+			JError::raiseError(500,JText::sprintf('TPL_PISLICE_ERROR_LAYOUT_NOT_FOUND', $layout),$info=null);
+
 		}
 	}
 
