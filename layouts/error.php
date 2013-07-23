@@ -11,9 +11,20 @@ $params = $app->getTemplate(true)->params;
 
 $errorCode	= $this->API->error->getCode();
 
-if ($errorCode == '500'){ $message = JText::_('TPL_PISLICE_ERROR_INTERNAL_SERVER_ERROR'); }
-if ($errorCode == '404'){ $message = JText::_('TPL_PISLICE_ERROR_RESOURCE_NOT_FOUND'); }
-if ($errorCode == '403'){ $message = JText::_('TPL_PISLICE_ERROR_RESOURCE_FORBIDDEN'); }
+switch ($errorCode) {
+    case 404:
+		$message = JText::_('TPL_PISLICE_ERROR_RESOURCE_NOT_FOUND');
+		break;
+    case 403:
+		$message = JText::_('TPL_PISLICE_ERROR_RESOURCE_FORBIDDEN');
+		break;
+    case 500:
+		$message = JText::_('TPL_PISLICE_ERROR_INTERNAL_SERVER_ERROR');
+		break;
+	default;
+		$message = JText::_('TPL_PISLICE_ERROR_UNKNOWN');
+	break;
+}
 
 ?>
 <!DOCTYPE html>
@@ -26,8 +37,8 @@ if ($errorCode == '403'){ $message = JText::_('TPL_PISLICE_ERROR_RESOURCE_FORBID
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=<?php echo $params->get('MAIN_FONT'); ?>" type="text/css" />
   <style type="text/css">
     <?php echo $this->styles->css; ?>
-	h1,h2{text-shadow:1px 1px 0 #fff;margin:0}
-	h1{font-size:200pt;color:#d9dadc}
+	h1,h2{margin:0;text-shadow:1px 1px 0 rgba(255,255,255,<?php echo $params->get('3D_LIGHT_HIGHLIGHT_OPACITY'); ?>)}
+	h1{font-size:200pt}
 	h2{margin-bottom:20px;font-weight:300}
     body{padding: 70px 0 0;margin:0}
     body,input{font-family:"Open Sans",sans-serif}
@@ -48,7 +59,7 @@ if ($errorCode == '403'){ $message = JText::_('TPL_PISLICE_ERROR_RESOURCE_FORBID
 				echo $output;
 			}?>
     </div>
-   <p class="small">Return <a href="<?php echo $this->basePath(); ?>">Home</a></p>
+   <p><a class="btn" href="<?php echo $this->basePath(); ?>"><i class="icon-home"></i> Return Home</a></p>
   </div>
   <script type="text/javascript">
 	var input=document.getElementById("mod-finder-searchword"),value="Find something else?";input.value=value;input.onfocus=function(){if(this.value==value)return this.value=""};input.onblur=function(){if(""==this.value)return this.value=value};
