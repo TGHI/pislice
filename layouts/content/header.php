@@ -23,16 +23,16 @@ $template		= $app->getTemplate();
   </div>
   <?php endif; ?>
   <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
-  <div class="article-actions dropdown pull-right anim"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:8px"></i> </a>
+  <div class="article-actions dropdown pull-right"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-cog"></i> <i class="icon-caret-down" style="font-size:6px"></i> </a>
     <ul class="dropdown-menu">
       <?php if ($params->get('show_print_icon')) : ?>
-      <li> <?php echo JHtml::_('icon.print_popup', $displayData, $params); ?> </li>
+      <li><?php echo JHtml::_('icon.print_popup', $displayData, $params); ?></li>
       <?php endif; ?>
       <?php if ($params->get('show_email_icon')) : ?>
-      <li> <?php echo JHtml::_('icon.email', $displayData, $params); ?> </li>
+      <li><?php echo JHtml::_('icon.email', $displayData, $params); ?></li>
       <?php endif; ?>
       <?php if ($canEdit) : ?>
-      <li> <?php echo JHtml::_('icon.edit', $displayData, $params); ?> </li>
+      <li><?php echo JHtml::_('icon.edit', $displayData, $params); ?></li>
       <?php endif; ?>
     </ul>
   </div>
