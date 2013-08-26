@@ -45,7 +45,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 		$link->setVar('return', base64_encode($returnURL));
 	endif;
 ?>
-    <a class="btn" href="<?php echo $link; ?>"><i class="icon-chevron-right"></i>
+    <a class="btn" href="<?php echo $link; ?>"><i class=" icon-share-alt"></i>
     <?php if (!$params->get('access-view')) :
 						echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 					elseif ($readmore = $this->item->alternative_readmore) :
