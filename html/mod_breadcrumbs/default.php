@@ -35,14 +35,14 @@
 		}
 		if ($i < $count - 2)
 		{
-			echo ' <i class="icon-chevron-right"></i> ';
+			echo " / ";
 		}
 	}  elseif ($params->get('showLast', 1)) { // when $i == $count -1 and 'showLast' is true
 		if ($i > 0)
 		{
-			echo ' <i class="icon-chevron-right"></i> ';
+			echo " / ";
 		}
-		echo '<span>';
+		echo '<span class="current">';
 		// if we're in finder/search, safe to assume this is a search result
 		if ($option == "com_finder" || $option == "com_search"){
 			if(!empty($searchword)){
