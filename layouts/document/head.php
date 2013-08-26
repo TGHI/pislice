@@ -24,7 +24,7 @@ for ($i = 0; $i < count($this->fonts->font); $i++)
 }
 
 $font  = "    select,input,body,.deeper li{font-family:\"" . $this->fonts->font[0] . "\",sans-serif}\n";
-$font .= "    .narrow,.moduletitle{font-family:\"" . $this->fonts->font[1] . "\",sans-serif;font-weight:500}\n";
+$font .= "    .narrow,.moduletitle,.btn{font-family:\"" . $this->fonts->font[1] . "\",sans-serif;font-weight:500}\n";
 
 $this->API->addStyleDeclaration($font);
 
