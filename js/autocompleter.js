@@ -13,7 +13,7 @@ var Observer = new Class({
   },
   changed: function () {
     var a = this.element.get("value");
-    $equals(this.value, a) || ($$('.button-container').addClass("loading"), this.clear(), this.value = a, this.timeout = this.onFired.delay(this.options.delay, this))
+    $equals(this.value, a) || ($$('.search-inner .loading').setStyle('display','inline-block'), this.clear(), this.value = a, this.timeout = this.onFired.delay(this.options.delay, this))
   },
   setValue: function (a) {
     this.value = a;
@@ -22,7 +22,7 @@ var Observer = new Class({
   },
   onFired: function () {
     this.fireEvent("onFired", [this.value, this.element]);
-    $$('.button-container').removeClass("loading")
+    $$('.search-inner .loading').setStyle('display','none')
   },
   clear: function () {
     clearTimeout(this.timeout || null);
