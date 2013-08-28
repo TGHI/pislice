@@ -55,7 +55,7 @@ class piStyle{
 			$style .= "    .pagination-list li .filled,.pagination-list li .round:hover div, #system-message .close{background:" . $linkColour . "}\n";
 			$style .= "    a:hover{" . $linkHover . "}\n";
 			$style .= "    .btn,.inset-3d,.nav-tabs > li > a{background:" . $light3dColour . ";color:" . $light3dFontColour . ";text-transform:uppercase;font-size:12pt;text-shadow: 1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
-			$style .= "    .btn,li.current{box-shadow:2px 2px 0px rgba(0,0,0," . $lowlight3d . ")}\n";
+			$style .= "    .btn,.nav > li.current{box-shadow:2px 2px 0px rgba(0,0,0," . $lowlight3d . ")}\n";
 			$style .= "    .navbar-inner .nav > li > a{text-shadow:1px 1px 0 rgba(255,255,255," . $highlight3d . ")}\n";
 			$style .= "    i[class*=\"icon-\"], a span[class*=\"icon-\"]{color:" . $iconColor . "}\n";
 			$style .= "    .dropdown-menu li:not(.heading):hover,.autocompleter-selected{background:" . $light3dColour . "}". "\n";
