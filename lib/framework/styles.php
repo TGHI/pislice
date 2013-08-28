@@ -65,7 +65,7 @@ class piStyle{
 			$style .= "    .article-index ul a:hover:before,.article-index ul a.active:before{background:" . $complementcolour . "}". "\n";
 			$style .= "    blockquote,.article-index,.article-header h2:hover,.categories-list li:hover > h4{border-color:" . $complementcolour . "}". "\n";
 			$style .= "    .moduletitle,.separator{box-shadow:0 1px 0 rgba(255,255,255," . $highlight3d . ");border-color:rgba(100,100,100," . $lowlight3d . ")}". "\n";
-			$style .= "    .navbar{box-shadow:0 4px 3px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
+			$style .= "    .navbar{box-shadow:0 3px 3px rgba(0,0,0," . $lowlight3d . ") !important;background:" . $navbarBackgroundColour . "}". "\n";
 			$style .= "    .navbar a{color:" . $navbarLinkColour . "}". "\n";
 			$style .= "    .inset-3d,.btn:active,.pager li a:not(:empty):active,.open .btn{box-shadow:inset 2px 2px 0 rgba(0,0,0," . $lowlight3d . ")}". "\n";
 			$style .= "    .well,.btn:hover, .open .btn{background:rgba(25,25,25," . $lowlight3d . ")}". "\n";
