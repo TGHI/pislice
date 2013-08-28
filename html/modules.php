@@ -27,7 +27,9 @@ function modChrome_pi_default($module, &$params, &$attribs)
 	if($params->get('bootstrap_size'))
 	{
 		$bootstrapSize = "span" . htmlspecialchars($params->get('bootstrap_size'));
-  	}
+  	}else{
+		$bootstrapSize = "";
+	}
   
 ?>
 <?php if (!empty($module->content)):?>
