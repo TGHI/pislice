@@ -11,7 +11,7 @@ html,body,button,h2,ul,li,fieldset,.caption *,a img{margin:0;padding:0;border:0}
 .small [class*="icon-"]{font-size:16px}
 .round{border-radius:50%}
 .bold{font-weight:700}
-.pagination-list,.dropdown-menu,.nav,.pager,.pager ul,.search-result-list,.mostread,.relateditems,.tagssimilar ul,.list-striped,.cat-children ul,.unstyled,.tagspopular ul,.category-module *{list-style-type:none}
+.pagination-list,.dropdown-menu,.nav,.pager ul,.search-result-list,.list-striped,.cat-children ul,.unstyled{list-style-type:none}
 blockquote,.italic{font-style:italic}
 blockquote,.grey,.pagenavcounter{color:#bbb}
 .anim,.anim *,.anim *:before,.anim *:after,.btn{transition:all 0.25s;-webkit-transition:all 0.25s;-moz-transition:all 0.25s;-o-transition:all 0.25s}
@@ -140,6 +140,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 
 .moduletable > *,.moduletable,.pagination-list{margin:0 0 15px 0}
 .modulecontent{padding:0 10px}
+.modulecontent ul{list-style-type:none}
 .footer .moduletable > *{margin:0 0 15px 0}
 
 .moduletitle{text-transform:uppercase;padding:10px 10px 8px 8px;border-radius:3px 3px 0 0}
@@ -202,7 +203,7 @@ blockquote,.grey,.pagenavcounter{color:#bbb}
 .breadcrumbs i:first-child{padding:0 10px 0 0}
 .breadcrumbs a ,.breadcrumbs span{padding:0 2px}
 
-@keyframes spin{from{transform: rotate(0deg);}to{transform:rotate(360deg)}
+@keyframes spin{from{transform: rotate(0deg);}to{transform:rotate(360deg)}}
 
 @media (max-width: 1280px){
 .navbar-inner .nav li div{display:none}
