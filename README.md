@@ -1,5 +1,8 @@
 pislice - The simple, responsive template for [Joomla!] 3.x
 --------------
+
+**THIS PROJECT IS NOW ABANDONED - Some new coming soon...**
+
 The goal of pislice is to provide a clean, simple, lightweight template that can be used standalone or as the building blocks of your next Joomla! template.
 pislice is also intended to showcase the new features of Joomla! 3.1+ such as the inclusion of [Bootstrap] for a responsive layout and [jQuery], and is built with standards-compliant, semantic HTML5 and CSS3.
 
